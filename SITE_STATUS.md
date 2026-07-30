@@ -1,5 +1,26 @@
 # L-One Main Site Status
 
+更新时间：2026-07-30
+
+## L-One Store 与 Catalog 功能分支
+
+- 任务：`B-20260730-01`，关联 `L-One-Tools/L-One-main-site#1` 与
+  Control Center Project #1。
+- 分支：`feat/store-and-catalog`；正式 `main` 和生产站尚未变更。
+- 新增 `/store/` 独立静态页面，沿用主站双语导航、白色背景、细边框、低强度阴影、
+  系统字体与窄屏横向导航。
+- 主站、Materials、Motion Library 和首页中心导航均已增加 Store / 工具入口。
+- Story Flow 当前真实状态为私有仓库内部版本 `0.5.8`，无 GitHub Release、
+  Release Asset 或公共安装包；Store 明确显示“内测中 / 暂无公开下载”。
+- 人工产品资料、机器版本快照、JSON Schema 和公开 Catalog 已分离。
+- 新增无第三方运行时依赖的 Catalog 生成、校验、私有 Release 同步和回退测试。
+- 新增每小时、手动和 repository dispatch 触发的 GitHub Actions 工作流；
+  尚未配置 `STORE_SYNC_GITHUB_TOKEN`，因此未执行云端私有仓库同步。
+- 本地真实私有仓库检查确认 Story Flow 没有 Release，现有 Catalog 保持不变。
+- 两轮数据测试、失败保留旧 Catalog、桌面/手机页面、空/错误/回退状态和全站导航
+  已通过；EdgeOne PR 预览与生产部署尚未执行。
+- 正式合并 `main` 与生产部署必须进入用户确认闸门，不得提前标记为已发布。
+
 更新时间：2026-06-15
 
 ## 2026-06-15 固定素材管理后台

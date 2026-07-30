@@ -1,7 +1,9 @@
 # Story Flow 发布能力审计
 
-审计日期：2026-07-30（Asia/Shanghai）  
-任务编号：`B-20260730-01`  
+审计日期：2026-07-30（Asia/Shanghai）
+
+任务编号：`B-20260730-01`
+
 审计仓库：`L-One-Tools/story-flow`
 
 ## 仓库与版本
