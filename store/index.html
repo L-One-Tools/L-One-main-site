@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="L-One Store 汇集正在开发和发布中的 L-One 工具。Story Flow 当前处于内测阶段，暂未开放公开下载。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="L-One">
+  <meta property="og:title" content="L-One Store｜工具">
+  <meta property="og:description" content="查看 L-One 工具的真实发布状态、支持平台与版本信息。">
+  <meta property="og:url" content="https://l-one.asia/store/">
+  <meta property="og:image" content="https://l-one.asia/assets/diffuse-home-bg.png">
+  <link rel="canonical" href="https://l-one.asia/store/">
+  <title>L-One Store｜工具</title>
+  <link rel="stylesheet" href="../materials/materials.css?v=20260612-2">
+  <link rel="stylesheet" href="store.css?v=20260730-1">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "L-One Store",
+      "url": "https://l-one.asia/store/",
+      "description": "L-One 工具的真实发布状态、支持平台与版本信息。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "L-One",
+        "url": "https://l-one.asia/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#store-content">跳到主要内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html#home">L-One</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html#recent"><strong>Recent</strong><span>最近</span></a>
+        <a href="../index.html#works"><strong>Works</strong><span>作品</span></a>
+        <a href="../index.html#skills"><strong>Notes</strong><span>学习笔记</span></a>
+        <a href="../materials/"><strong>Materials</strong><span>素材库</span></a>
+        <a class="active" href="./" aria-current="page"><strong>Store</strong><span>工具</span></a>
+        <a href="../index.html#about"><strong>About</strong><span>L-One</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="store-page" id="store-content">
+    <section class="store-hero" aria-labelledby="store-title">
+      <p class="eyebrow">L-One Store</p>
+      <h1 id="store-title">工具</h1>
+      <p class="store-intro">查看 L-One 工具的真实版本、支持平台与发布状态。下载仅在经过验证的公开安装包可用时开放。</p>
+      <div class="store-note">
+        <span aria-hidden="true"></span>
+        <p>首个接入工具为 Story Flow。当前处于内测阶段，暂无公开下载；版本信息来自受校验的统一 Catalog。</p>
+      </div>
+    </section>
+
+    <section class="store-list-section" aria-labelledby="tool-list-title">
+      <div class="store-section-heading">
+        <div>
+          <p class="eyebrow">Catalog</p>
+          <h2 id="tool-list-title">工具列表</h2>
+        </div>
+        <p class="catalog-meta" data-catalog-meta aria-live="polite">正在读取 Catalog</p>
+      </div>
+
+      <div class="store-state store-loading" data-loading role="status">
+        <span class="loading-mark" aria-hidden="true"></span>
+        <div>
+          <strong>正在加载工具资料</strong>
+          <p>正在读取经过校验的 Store Catalog。</p>
+        </div>
+      </div>
+
+      <div class="store-state store-error" data-error role="alert" hidden>
+        <div>
+          <strong>工具资料暂时无法更新</strong>
+          <p data-error-message>正在尝试使用上一份有效快照。</p>
+        </div>
+        <button type="button" data-retry>重新加载</button>
+      </div>
+
+      <div class="store-state store-empty" data-empty hidden>
+        <strong>暂无可展示工具</strong>
+        <p>Catalog 当前没有通过校验的工具资料，请稍后再试。</p>
+      </div>
+
+      <div class="tool-list" data-tool-list aria-live="polite" aria-busy="true"></div>
+    </section>
+  </main>
+
+  <footer class="store-footer">
+    <p>L-One Store · 真实发布状态与可回退数据快照</p>
+    <a href="../index.html#home">返回 L-One</a>
+  </footer>
+
+  <script src="store.js?v=20260730-1" defer></script>
+</body>
+</html>
