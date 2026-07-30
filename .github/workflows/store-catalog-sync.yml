@@ -1,6 +1,19 @@
 name: Store Catalog Sync
 
 on:
+  pull_request:
+    paths:
+      - ".github/workflows/store-catalog-sync.yml"
+      - "index.html"
+      - "materials/index.html"
+      - "motion-library.html"
+      - "public/data/store/**"
+      - "scripts/generate-store-catalog.mjs"
+      - "scripts/site-audit.js"
+      - "scripts/store-catalog-lib.mjs"
+      - "scripts/test-store-catalog.mjs"
+      - "scripts/validate-store-catalog.mjs"
+      - "store/**"
   workflow_dispatch:
   schedule:
     - cron: "17 * * * *"
@@ -14,8 +27,8 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: store-catalog-sync
-  cancel-in-progress: false
+  group: store-catalog-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   sync:
@@ -36,6 +49,7 @@ jobs:
           node-version: 22
 
       - name: Check private repository credential
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           if [[ -z "$STORE_SYNC_GITHUB_TOKEN" ]]; then
@@ -44,6 +58,7 @@ jobs:
           fi
 
       - name: Read Story Flow release
+        if: github.event_name != 'pull_request'
         run: node scripts/sync-story-flow-release.mjs
 
       - name: Generate and validate Catalog
@@ -54,6 +69,7 @@ jobs:
           node scripts/site-audit.js
 
       - name: Detect Catalog changes
+        if: github.event_name != 'pull_request'
         id: changes
         shell: bash
         run: |
@@ -64,7 +80,7 @@ jobs:
           fi
 
       - name: Create Catalog update branch
-        if: steps.changes.outputs.changed == 'true'
+        if: github.event_name != 'pull_request' && steps.changes.outputs.changed == 'true'
         env:
           BRANCH_NAME: automation/store-catalog-${{ github.run_id }}
         shell: bash
@@ -84,9 +100,9 @@ jobs:
             --body "Automated Story Flow release synchronization. Closes no issue; relates to #1. Catalog validation and Store regression checks passed."
 
       - name: Record synchronized update
-        if: steps.changes.outputs.changed == 'true'
+        if: github.event_name != 'pull_request' && steps.changes.outputs.changed == 'true'
         run: gh issue comment 1 --body "Store Catalog 同步已生成更新 PR。运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 
       - name: Record synchronization failure
-        if: failure()
+        if: failure() && github.event_name != 'pull_request'
         run: gh issue comment 1 --body "Store Catalog 同步失败；上一份有效 Catalog 未被空数据覆盖。运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
