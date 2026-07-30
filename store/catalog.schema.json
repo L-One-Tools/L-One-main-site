@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://l-one.asia/store/catalog.schema.json",
+  "title": "L-One Store Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "tools"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tool"
+      }
+    }
+  },
+  "$defs": {
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "slug",
+        "name",
+        "summary",
+        "description",
+        "status",
+        "featured",
+        "sort_order",
+        "repository",
+        "icon",
+        "cover",
+        "screenshots",
+        "features",
+        "platforms",
+        "release",
+        "links"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "internal",
+            "coming-soon",
+            "beta",
+            "stable",
+            "unavailable"
+          ]
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "sort_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "screenshots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/platform"
+          }
+        },
+        "release": {
+          "$ref": "#/$defs/release"
+        },
+        "links": {
+          "$ref": "#/$defs/links"
+        }
+      }
+    },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "architectures",
+        "minimum_version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "architectures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "minimum_version": {
+          "type": "string"
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "channel",
+        "version",
+        "tag",
+        "published_at",
+        "release_notes",
+        "download_available",
+        "recalled",
+        "assets"
+      ],
+      "properties": {
+        "source": {
+          "enum": [
+            "repository-audit",
+            "github-release",
+            "manual"
+          ]
+        },
+        "channel": {
+          "enum": [
+            "internal",
+            "test",
+            "beta",
+            "stable"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(?:[0-9]+\\.[0-9]+\\.[0-9]+)?$"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "release_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "download_available": {
+          "type": "boolean"
+        },
+        "recalled": {
+          "type": "boolean"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/asset"
+          }
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "platform",
+        "architecture",
+        "size",
+        "url",
+        "sha256",
+        "minimum_system",
+        "available",
+        "recalled"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "architecture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "url": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^(?:[a-fA-F0-9]{64})?$"
+        },
+        "minimum_system": {
+          "type": "string"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "recalled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "docs",
+        "privacy",
+        "feedback"
+      ],
+      "properties": {
+        "docs": {
+          "type": "string"
+        },
+        "privacy": {
+          "type": "string"
+        },
+        "feedback": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

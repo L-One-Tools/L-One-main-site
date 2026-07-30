@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-07-30T00:00:00+08:00",
+  "tools": [
+    {
+      "id": "story-flow",
+      "slug": "story-flow",
+      "name": "Story Flow",
+      "summary": "本地视觉故事、分页内容与界面流程编辑工具。",
+      "description": "以可视化画布、属性编辑、分页预览和本地文件工作流为核心，支持明亮与暗夜主题、导入导出、模板和异常退出恢复。",
+      "status": "internal",
+      "featured": true,
+      "sort_order": 1,
+      "repository": "L-One-Tools/story-flow",
+      "icon": "",
+      "cover": "",
+      "screenshots": [],
+      "features": [
+        "可视化画布与属性编辑",
+        "分页预览与本地文件工作流",
+        "明亮、暗夜主题与模板",
+        "持续自动保存与异常退出恢复"
+      ],
+      "platforms": [
+        {
+          "id": "windows",
+          "name": "Windows",
+          "architectures": [
+            "x64"
+          ],
+          "minimum_version": "Windows 10"
+        }
+      ],
+      "links": {
+        "docs": "",
+        "privacy": "",
+        "feedback": "https://github.com/L-One-Tools/L-One-main-site/issues/1"
+      }
+    }
+  ]
+}
