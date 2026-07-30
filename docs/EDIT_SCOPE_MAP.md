@@ -55,3 +55,31 @@
 - 可见影响：网站页面、文案、样式和功能应完全不变；只新增协作文档。
 - 测试：仓库审计、网站文件哈希不变、静态站审计、后端测试和正式域名抽查。
 - 回滚：对本轮单一文档 commit 执行 `git revert`。
+
+## 本轮范围：B-20260730-01
+
+- 执行设备：B
+- 任务目标：为 L-One Asia 建立 Store 页面、Story Flow 产品资料、稳定 Catalog、
+  版本同步与失败回退链路；正式生产部署前暂停确认。
+- 功能分支：`feat/store-and-catalog`
+- 关联任务：`L-One-Tools/L-One-main-site#1`
+- 允许修改：`index.html`、`materials/index.html`、`motion-library.html`、
+  `store/`、`public/data/store/`、`.github/workflows/` 中本任务新增工作流、
+  `scripts/` 中本任务新增或直接相关的 Store 审计脚本、`robots.txt`、
+  `sitemap.xml`、`docs/store/`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、
+  本文件中的本轮范围声明。
+- 允许修改的代码区域：全站公开导航中的 Store 入口、首页搜索中的 Store 入口、
+  Store 独立页面及其数据读取逻辑、Store Catalog 生成/校验/同步逻辑、
+  Store 专项回归检查和对应 SEO 文件。
+- 只读参考：现有页面视觉 Token、Works/Notes/Materials 内容与交互、
+  `server/materials-service/`、`L-One-Tools/story-flow`、GitHub/EdgeOne 当前状态。
+- 明确禁止修改：现有作品正文和素材、Motion Library 动效内容、Materials 数据、
+  后端业务与数据库、生产服务器、EdgeOne/DNS/正式域名、云端 Secret、
+  Story Flow 源码和发布物。
+- 预计影响范围：新增 `/store/`；在现有桌面与窄屏横向导航中加入 Store；
+  新增公开静态 Catalog。现有路由、页面、API、正式域名和下载分发保持不变。
+- 测试方式：现有静态站与 Motion Library 审计、后端 37 项回归、Store Schema
+  与生成测试、失败保留旧 Catalog 测试、本地桌面/平板/手机浏览器检查、
+  EdgeOne 预览及两轮非 Stable 数据更新验证。
+- 回滚方式：使用 `git revert` 撤销本任务提交；Catalog 同步失败时保留上一份
+  已验证快照；EdgeOne 仅在获得权限后使用上一成功部署回退。
