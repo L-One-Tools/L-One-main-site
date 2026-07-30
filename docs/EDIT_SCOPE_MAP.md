@@ -58,7 +58,7 @@
 
 ## 本轮范围：B-20260730-01
 
-- 执行设备：B
+- 执行设备：A（公司台式机）
 - 任务目标：为 L-One Asia 建立 Store 页面、Story Flow 产品资料、稳定 Catalog、
   版本同步与失败回退链路；正式生产部署前暂停确认。
 - 功能分支：`feat/store-and-catalog`
