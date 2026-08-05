@@ -2,30 +2,20 @@
 
 更新时间：2026-08-05
 
-## L-One Store 与 Catalog 功能分支
+## 2026-08-05 Store 发布与一级导航精简
 
-- 任务：`B-20260730-01`，关联 `L-One-Tools/L-One-main-site#1` 与
-  Control Center Project #1。
-- 分支：`feat/store-and-catalog`；正式 `main` 和生产站尚未变更。
-- 新增 `/store/` 独立静态页面，沿用主站双语导航、白色背景、细边框、低强度阴影、
-  系统字体与窄屏横向导航。
-- 主站、Materials、Motion Library 和首页中心导航均已增加 Store / 工具入口。
-- Story Flow 当前真实状态为私有仓库内部版本 `0.5.8`，无 GitHub Release、
-  Release Asset 或公共安装包；Store 明确显示“内测中 / 暂无公开下载”。
-- 人工产品资料、机器版本快照、JSON Schema 和公开 Catalog 已分离。
-- 新增无第三方运行时依赖的 Catalog 生成、校验、私有 Release 同步和回退测试。
-- 新增每小时、手动和 repository dispatch 触发的 GitHub Actions 工作流；
-  尚未配置 `STORE_SYNC_GITHUB_TOKEN`，因此未执行云端私有仓库同步。
-- 本地真实私有仓库检查确认 Story Flow 没有 Release，现有 Catalog 保持不变。
-- 两轮数据测试、失败保留旧 Catalog、桌面/手机页面、空/错误/回退状态和全站导航
-  已通过；EdgeOne PR 预览与生产部署尚未执行。
-- 正式合并 `main` 与生产部署必须进入用户确认闸门，不得提前标记为已发布。
-- Draft PR #2 已创建并通过当前 commit 的 GitHub Actions；PR 保持 Draft，等待
-  EdgeOne 功能分支预览和用户验收。
-- 2026-08-05 复核确认 `main` 仍为 `c0918e7`，正式站 `/store/` 与 Catalog 返回
-  404；这表示 Store 尚未生产部署，并非线上页面覆盖失败。
-- 后台 Project Center 已转入独立任务和分支；为避免交接文档冲突，发布顺序固定为
-  先完成 Store，再让后台分支同步新的 `main`。
+- Store 与稳定 Catalog 已通过 PR #2 合并并部署到生产，正式 `main` 为
+  `d163c3f7852bf02d445a74e82392f5c5d9299558`；`/store/`、页面资源、Catalog 与
+  last-known-good 均已通过正式站 HTTP 200 和桌面/移动浏览器验收。
+- Story Flow 当前真实状态仍为内部版本 `0.5.8`，无公开安装包；Store 下载按钮保持禁用。
+- 新任务：`A-20260805-01`；功能分支：`work/A-20260805-01-store-first`。
+- 本任务删除全站一级 `Recent / 最近` 页面、入口、路由和搜索项，并把
+  `Store / 工具` 调整为主页、Store、Materials 与 Motion Library 一级导航第一项。
+- 旧 `#recent` 继续沿用未知路由回退逻辑显示首页，不保留空白 Recent 页面。
+- 已通过静态站 14 作品审计、64 项 Motion Library 审计、Store Catalog 校验，以及
+  1440px 桌面和 390px 移动浏览器导航、旧路由、横向溢出与控制台检查。
+- 当前变化只存在于功能分支；正式站仍运行 `d163c3f`，合并 `main` 前需完成 PR、
+  EdgeOne 预览与用户确认。
 
 更新时间：2026-06-15
 
@@ -183,6 +173,7 @@
 - 腾讯云 EdgeOne Pages 应根据 GitHub 仓库自动重新部署；若未自动更新，由本“网站上线”对话负责提醒到控制台手动重新部署。
 
 ## 最近变更
+- 2026-08-05：在 `work/A-20260805-01-store-first` 删除一级 Recent 页面、导航、路由、搜索索引与专属样式；全站一级导航统一为 Store、Works、Notes、Materials、About，Store 位于第一项。旧 `#recent` 回退首页，作品内容、Store 布局与 Catalog 未修改。
 - 2026-06-15：正式域名 `l-one.asia` 已绑定腾讯云 EdgeOne Pages，免费 HTTPS 证书已部署并启用 HTTP `301` 强制跳转；主站 HTTPS 公网访问正常。新增 Cloudflare DNS 记录 `static.l-one.asia -> 62.234.73.162`，腾讯云轻量服务器已放行 `443/TCP`，安装 Certbot 并为 `static.l-one.asia` 部署 Let's Encrypt 证书及自动续期。素材 API、素材清单与静态资源已通过 HTTPS 访问，公网管理页继续返回 403。主站 `materials/config.json` 已切换到 `https://static.l-one.asia/materials/`，素材库开始读取轻量服务器的正式清单与媒体地址。
 - 2026-06-14：在腾讯云轻量应用服务器 `62.234.73.162` 部署 L-One 素材服务：FastAPI 上传 API、SQLite 串行任务队列、单 worker FFmpeg 转码、Nginx 静态发布、systemd 守护和每日自动清理。转码产物为最长边 1280 的 H.264/AAC MP4、WebP 封面和 4 秒 VP9 WebM 预览；成功后删除临时原文件并重建 `materials/data/assets.json`。管理页新增上传、服务空间、任务列表、失败重试、已发布素材预览与删除功能；公网 `/admin/` 保持 403，仅通过本机 SSH 通道访问，并由管理令牌二次鉴权。服务器端完整上传、转码、发布、删除测试通过，测试素材已清理，未上传真实素材。主站 `materials/config.json` 暂未切换到服务器 IP，等待 `static.l-one.asia` 与 HTTPS 就绪后再接入，避免 HTTPS 主站触发混合内容拦截。
 - 2026-06-14：完成镜头素材库本地转码工具链与首批 10 条样片。源目录固定为 `D:\L-One Center\视频素材参考2026`，保持只读；FFmpeg 8.1.1、脚本、测试、日志、manifest、审计报告和转码产物统一位于 `D:\L-One Center\L-One素材库上传包`，未向 C 盘或主站仓库写入媒体。输出规则为 H.264 MP4（最长边 1280、AAC 96kbps）、WebP 封面（最长边 640）和从第 1 秒开始的 4 秒静音 VP9 WebM 预览（最长边 640）。10 条样片全部通过独立审计，源文件 87.09 MB，站点产物 21.10 MB，比例 24.23%；重复运行全部幂等跳过。另记录 9 个零字节、缺少 `moov atom` 的源 MP4，已排除且未修改。当前仅完成样片，尚未执行 1523 条 MP4 全量转码或服务器上传。

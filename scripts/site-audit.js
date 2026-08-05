@@ -80,6 +80,20 @@ if (!html.includes('href="store/"') || !html.includes('<strong>Store</strong><sp
 if (!html.includes('{ url: "store/", title: "Store"')) {
   fail("Home search index should include the Store page.");
 }
+if (/#recent|page-recent|data-route="recent"|route: "recent"/.test(html)) {
+  fail("The removed Recent section must not remain in main navigation, routes, page markup, or search.");
+}
+if (!html.includes("grid-template-columns: repeat(5, minmax(0, 1fr));")) {
+  fail("Home center navigation should use five columns after removing Recent.");
+}
+const mainNav = html.match(/<nav class="nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+if (mainNav.indexOf('href="store/"') === -1 || mainNav.indexOf('href="store/"') > mainNav.indexOf('href="#works"')) {
+  fail("Store should be the first item in the main site navigation.");
+}
+const homeNav = html.match(/<nav class="home-m3-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+if (homeNav.indexOf('href="store/"') === -1 || homeNav.indexOf('href="store/"') > homeNav.indexOf('href="#works"')) {
+  fail("Store should be the first item in the home center navigation.");
+}
 if (!html.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>')) {
   fail("Main navigation should display Notes / \u5b66\u4e60\u7b14\u8bb0.");
 }
@@ -102,8 +116,8 @@ if (!notesSection.includes('href="motion-library.html"') || !notesSection.includ
 if (notesSection.includes('class="filters"')) {
   fail("Notes page should not show empty category filters.");
 }
-if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
-  fail("Home center navigation should keep all six links on one row.");
+if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(5,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
+  fail("Home center navigation should keep all five links on one row.");
 }
 
 [
@@ -144,6 +158,10 @@ if (fs.existsSync(materialsHtmlPath)) {
   if (!materialsHtml.includes('href="../store/"')) {
     fail("Materials navigation should link to Store.");
   }
+  const materialsNav = materialsHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+  if (materialsNav.includes("#recent") || materialsNav.indexOf('href="../store/"') > materialsNav.indexOf('href="../index.html#works"')) {
+    fail("Materials navigation should remove Recent and place Store first.");
+  }
 }
 
 if (fs.existsSync(materialsCssPath)) {
@@ -182,6 +200,10 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
   if (!motionLibraryHtml.includes('href="store/"')) {
     fail("Motion Library navigation should link to Store.");
   }
+  const motionNav = motionLibraryHtml.match(/<nav class="motion-nav"[^>]*>([\s\S]*?)<\/nav>/)?.[1] || "";
+  if (motionNav.includes("#recent") || motionNav.indexOf('href="store/"') > motionNav.indexOf('href="index.html#works"')) {
+    fail("Motion Library navigation should remove Recent and place Store first.");
+  }
 }
 
 [
@@ -210,6 +232,10 @@ if (fs.existsSync(storeHtmlPath)) {
   });
   if (!storeHtml.includes('class="active" href="./" aria-current="page"')) {
     fail("Store navigation should expose an active current-page state.");
+  }
+  const storeNav = storeHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+  if (storeNav.includes("#recent") || storeNav.indexOf('href="./"') > storeNav.indexOf('href="../index.html#works"')) {
+    fail("Store navigation should remove Recent and keep Store first.");
   }
 }
 

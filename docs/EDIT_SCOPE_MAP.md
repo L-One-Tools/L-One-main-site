@@ -83,3 +83,24 @@
   EdgeOne 预览及两轮非 Stable 数据更新验证。
 - 回滚方式：使用 `git revert` 撤销本任务提交；Catalog 同步失败时保留上一份
   已验证快照；EdgeOne 仅在获得权限后使用上一成功部署回退。
+
+## 本轮范围：A-20260805-01
+
+- 执行设备：A（公司台式机）。
+- 任务目标：删除全站一级 `Recent / 最近` 板块，并将 `Store / 工具` 调整为
+  所有一级导航的第一项。
+- 功能分支：`work/A-20260805-01-store-first`。
+- 允许修改：`index.html`、`store/index.html`、`materials/index.html`、
+  `motion-library.html`、`scripts/site-audit.js`、`SITE_STATUS.md`、
+  `docs/CURRENT_HANDOFF.md` 与本文件中的本轮范围声明。
+- 允许修改的代码区域：Recent 专属样式、页面结构、路由与搜索索引；主站首页、
+  Store、Materials、Motion Library 的一级导航顺序；对应静态站回归检查和交接记录。
+- 只读参考：作品、Notes、Materials、Motion Library 与 Store Catalog 的既有内容和
+  交互；公开生产站与 GitHub/EdgeOne 当前状态。
+- 明确禁止修改：作品正文和素材、Store 页面布局与 Catalog、Materials 数据、
+  Motion Library 动效内容、后端与数据库、服务器、EdgeOne/DNS/正式域名和云端 Secret。
+- 预计影响范围：全站不再显示或搜索到 Recent；旧 `#recent` 因不再属于有效路由而
+  按现有未知路由规则回到首页；Store 在五项一级导航中位于第一位。
+- 测试方式：`node scripts/site-audit.js`、Motion Library 审计、Store Catalog 校验，
+  本地桌面与 390px 移动浏览器检查导航顺序、旧路由回退、关键页面与控制台错误。
+- 回滚方式：使用 `git revert` 撤销本任务提交；正式发布异常时保留 EdgeOne 上一成功部署。

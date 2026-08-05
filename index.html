@@ -206,7 +206,7 @@
     .home-m3-nav {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 0;
       align-items: center;
       color: rgba(255,255,255,.86);
@@ -729,79 +729,6 @@
       margin: 60px 0 0;
       padding: 22px 0 28px;
       text-align: center;
-    }
-
-    .recent-page {
-      padding-bottom: 110px;
-    }
-    .recent-intro {
-      max-width: 560px;
-      margin: -48px auto 72px;
-      color: var(--text);
-      font-size: 13px;
-      line-height: 2;
-      text-align: center;
-    }
-    .recent-feed {
-      display: grid;
-      gap: 18px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .recent-entry {
-      display: grid;
-      grid-template-columns: 120px 1fr auto;
-      gap: 28px;
-      align-items: center;
-      padding: 22px 0;
-      border-top: 1px solid rgba(0,0,0,.08);
-      transition: opacity .18s ease, transform .18s ease;
-    }
-    .recent-entry:last-child {
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-    .recent-entry:hover {
-      opacity: .78;
-      transform: translateY(-1px);
-    }
-    .recent-date {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .recent-main {
-      display: grid;
-      gap: 8px;
-    }
-    .recent-main strong {
-      font-size: clamp(20px, 2.2vw, 28px);
-      font-weight: 500;
-      line-height: 1.18;
-      letter-spacing: -.02em;
-    }
-    .recent-main span {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-    .recent-type {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    @media (max-width: 720px) {
-      .recent-intro {
-        margin-top: -54px;
-        text-align: left;
-      }
-      .recent-entry {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 22px 0;
-      }
-      .recent-type {
-        justify-self: start;
-      }
     }
 
     .article-columns {
@@ -1953,11 +1880,10 @@
     <div class="container header-inner">
       <a class="logo" href="#home" data-route="home">L-One</a>
       <nav class="nav" aria-label="主导航">
-        <a class="nav-link" href="#recent" data-route="recent"><strong>Recent</strong><span>最近</span></a>
+        <a class="nav-link" href="store/"><strong>Store</strong><span>工具</span></a>
         <a class="nav-link" href="#works" data-route="works"><strong>Works</strong><span>作品</span></a>
         <a class="nav-link" href="#skills" data-route="skills"><strong>Notes</strong><span>学习笔记</span></a>
         <a class="nav-link" href="materials/"><strong>Materials</strong><span>素材库</span></a>
-        <a class="nav-link" href="store/"><strong>Store</strong><span>工具</span></a>
         <a class="nav-link" href="#about" data-route="about"><strong>About</strong><span>L-One</span></a>
       </nav>
       <label class="search" aria-label="搜索知识库">
@@ -1978,11 +1904,10 @@
         <a class="home-m3-brand" href="#home" data-route="home">L-One</a>
         <div class="home-m3-center">
           <nav class="home-m3-nav" aria-label="主导航">
-            <a href="#recent" data-route="recent"><span class="en">recent</span><span class="zh">最近</span></a>
+            <a href="store/"><span class="en">store</span><span class="zh">工具</span></a>
             <a href="#works" data-route="works"><span class="en">work</span><span class="zh">作品</span></a>
             <a href="#skills" data-route="skills"><span class="en">notes</span><span class="zh">学习笔记</span></a>
             <a href="materials/"><span class="en">materials</span><span class="zh">素材库</span></a>
-            <a href="store/"><span class="en">store</span><span class="zh">工具</span></a>
             <a href="#about" data-route="about"><span class="en">about</span><span class="zh">关于</span></a>
           </nav>
           <form class="home-m3-search" id="home-search-form" role="search" autocomplete="off">
@@ -2066,45 +1991,6 @@
             </article>
           </div>
           <footer class="footer-line"><button class="ghost-btn" type="button" data-top>回到顶部</button></footer>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="page-recent">
-      <div class="container recent-page">
-        <div class="section-head"><h1>Recent</h1></div>
-        <p class="recent-intro">这里集中放置 L-One 最近更新的作品、学习笔记和站点内容入口。首页保持轻入口，Recent 负责承接持续更新。</p>
-        <div class="recent-feed">
-          <a class="recent-entry" href="#work-action-camera-accessory" data-route="work-action-camera-accessory">
-            <time class="recent-date">2025.10.15</time>
-            <span class="recent-main"><strong>解放双手的小配件 | 运动相机</strong><span>小红书 · 视频</span></span>
-            <span class="recent-type">查看作品</span>
-          </a>
-          <a class="recent-entry" href="#work-shougang" data-route="work-shougang">
-            <time class="recent-date">2025.09.27</time>
-            <span class="recent-main"><strong>首钢园 | 永定河畔的微凉惬意</strong><span>小红书 · 图文</span></span>
-            <span class="recent-type">查看作品</span>
-          </a>
-          <a class="recent-entry" href="#work-art798-wall-story" data-route="work-art798-wall-story">
-            <time class="recent-date">2025.09.23</time>
-            <span class="recent-main"><strong>798艺术区 | 能把故事画墙上的地方</strong><span>小红书 · 视频</span></span>
-            <span class="recent-type">查看作品</span>
-          </a>
-          <a class="recent-entry" href="#work-universal-halloween" data-route="work-universal-halloween">
-            <time class="recent-date">2025.09.14</time>
-            <span class="recent-main"><strong>北环影万圣节 | 证明我胆儿小的时候到了</strong><span>小红书 · 视频</span></span>
-            <span class="recent-type">查看作品</span>
-          </a>
-          <a class="recent-entry" href="#works" data-route="works">
-            <time class="recent-date">Works</time>
-            <span class="recent-main"><strong>作品归档</strong><span>进入图文、视频、文章的统一作品入口</span></span>
-            <span class="recent-type">进入 Works</span>
-          </a>
-          <a class="recent-entry" href="#skills" data-route="skills">
-            <time class="recent-date">Notes</time>
-            <span class="recent-main"><strong>学习笔记</strong><span>进入已经整理并公开的学习内容</span></span>
-            <span class="recent-type">进入 Notes</span>
-          </a>
         </div>
       </div>
     </section>
@@ -2936,7 +2822,7 @@
   </div>
 
   <script>
-    const routes = ["home","recent","works","work-action-camera-accessory","work-shougang","work-art798-wall-story","work-universal-halloween","work-jiangfu-railway","work-dawanglu-after-work","work-west-railway","work-hidden-view","work-universal-summary-3","work-universal-food-2","work-universal-summary-1","work-baitasi","work-shunyi-kamakura","work-youhuayuan","skills","about"];
+    const routes = ["home","works","work-action-camera-accessory","work-shougang","work-art798-wall-story","work-universal-halloween","work-jiangfu-railway","work-dawanglu-after-work","work-west-railway","work-hidden-view","work-universal-summary-3","work-universal-food-2","work-universal-summary-1","work-baitasi","work-shunyi-kamakura","work-youhuayuan","skills","about"];
     const pages = Object.fromEntries(routes.map((route) => [route, document.getElementById("page-" + route)]));
     const navLinks = Array.from(document.querySelectorAll("[data-route]"));
     const preview = document.getElementById("photo-preview");
@@ -2948,11 +2834,10 @@
     let activePreviewImages = [];
     let previewIndex = 0;
     const searchItems = [
-      { route: "recent", title: "Recent", meta: "最近更新 · 作品与技能入口", keywords: "最近 更新 recent 入口" },
+      { url: "store/", title: "Store", meta: "工具 · 版本与发布状态", keywords: "工具 store story flow 版本 下载 内测" },
       { route: "works", title: "Works", meta: "作品归档 · 图文 视频 文章", keywords: "作品 图文 视频 文章 works" },
       { route: "skills", title: "Notes", meta: "学习笔记 · 已整理内容", keywords: "学习笔记 notes skills skill 资料" },
       { url: "materials/", title: "Materials", meta: "素材库 · 视频 图片 GIF 创作资产", keywords: "素材库 materials 视频 图片 gif 资产 下载" },
-      { url: "store/", title: "Store", meta: "工具 · 版本与发布状态", keywords: "工具 store story flow 版本 下载 内测" },
       { url: "motion-library.html", title: "文字动效图书馆", meta: "Motion Library · 动效库 · 素材库", keywords: "文字动效 动效库 motion library 素材库 代码" },
       { route: "about", title: "About", meta: "L-One · 个人介绍", keywords: "关于 about l-one" },
       { route: "work-action-camera-accessory", title: "解放双手的小配件 | 运动相机", meta: "小红书 · 视频 · 2025.10.15", keywords: "运动相机 配件 视频" },
