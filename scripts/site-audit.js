@@ -11,6 +11,17 @@ const materialsJsPath = path.join(materialsDir, "materials.js");
 const materialsConfigPath = path.join(materialsDir, "config.json");
 const materialsDataPath = path.join(materialsDir, "data", "assets.json");
 const motionLibraryHtmlPath = path.join(root, "motion-library.html");
+const storeDir = path.join(root, "store");
+const storeHtmlPath = path.join(storeDir, "index.html");
+const storeCssPath = path.join(storeDir, "store.css");
+const storeJsPath = path.join(storeDir, "store.js");
+const storeSourcePath = path.join(storeDir, "catalog.source.json");
+const storeSchemaPath = path.join(storeDir, "catalog.schema.json");
+const storeCatalogPath = path.join(root, "public", "data", "store", "catalog.json");
+const storeFallbackPath = path.join(root, "public", "data", "store", "catalog.last-known-good.json");
+const storeWorkflowPath = path.join(root, ".github", "workflows", "store-catalog-sync.yml");
+const robotsPath = path.join(root, "robots.txt");
+const sitemapPath = path.join(root, "sitemap.xml");
 
 const SOURCE_PLATFORM = "\u5c0f\u7ea2\u4e66";
 const TYPE_IMAGE_TEXT = "\u56fe\u6587";
@@ -63,6 +74,12 @@ if (!html.includes('href="materials/"') || !html.includes('<strong>Materials</st
 if (!html.includes('{ url: "materials/", title: "Materials"')) {
   fail("Home search index should include the Materials page.");
 }
+if (!html.includes('href="store/"') || !html.includes('<strong>Store</strong><span>工具</span>')) {
+  fail("Main navigation should include Store / 工具 linking to store/.");
+}
+if (!html.includes('{ url: "store/", title: "Store"')) {
+  fail("Home search index should include the Store page.");
+}
 if (!html.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>')) {
   fail("Main navigation should display Notes / \u5b66\u4e60\u7b14\u8bb0.");
 }
@@ -85,8 +102,8 @@ if (!notesSection.includes('href="motion-library.html"') || !notesSection.includ
 if (notesSection.includes('class="filters"')) {
   fail("Notes page should not show empty category filters.");
 }
-if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(5,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
-  fail("Home center navigation should keep all five links on one row.");
+if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
+  fail("Home center navigation should keep all six links on one row.");
 }
 
 [
@@ -124,6 +141,9 @@ if (fs.existsSync(materialsHtmlPath)) {
   if (!materialsHtml.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>')) {
     fail("Materials navigation should display Notes / \u5b66\u4e60\u7b14\u8bb0.");
   }
+  if (!materialsHtml.includes('href="../store/"')) {
+    fail("Materials navigation should link to Store.");
+  }
 }
 
 if (fs.existsSync(materialsCssPath)) {
@@ -158,6 +178,74 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
   }
   if (!motionLibraryHtml.includes('class="motion-back-link" href="index.html#skills"')) {
     fail("Motion Library should include a back link to Notes.");
+  }
+  if (!motionLibraryHtml.includes('href="store/"')) {
+    fail("Motion Library navigation should link to Store.");
+  }
+}
+
+[
+  storeHtmlPath,
+  storeCssPath,
+  storeJsPath,
+  storeSourcePath,
+  storeSchemaPath,
+  storeCatalogPath,
+  storeFallbackPath,
+  storeWorkflowPath,
+  robotsPath,
+  sitemapPath,
+].forEach((filePath) => {
+  if (!fs.existsSync(filePath)) fail(`Store file is missing: ${path.relative(root, filePath)}.`);
+});
+
+if (fs.existsSync(storeHtmlPath)) {
+  const storeHtml = read(storeHtmlPath);
+  checkNoCorruption("visible store/index.html", stripNonVisibleBlocks(storeHtml));
+  ["L-One Store", "工具列表", "Story Flow", "暂无公开下载"].forEach((term) => {
+    if (!storeHtml.includes(term)) fail(`Store page is missing required text: ${term}.`);
+  });
+  ["description", "canonical", "og:title", "application/ld+json"].forEach((term) => {
+    if (!storeHtml.includes(term)) fail(`Store page is missing SEO metadata: ${term}.`);
+  });
+  if (!storeHtml.includes('class="active" href="./" aria-current="page"')) {
+    fail("Store navigation should expose an active current-page state.");
+  }
+}
+
+if (fs.existsSync(storeWorkflowPath)) {
+  const workflow = read(storeWorkflowPath);
+  ["workflow_dispatch", "schedule", "repository_dispatch", "STORE_SYNC_GITHUB_TOKEN"].forEach((term) => {
+    if (!workflow.includes(term)) fail(`Store workflow is missing required trigger/configuration: ${term}.`);
+  });
+}
+
+if (fs.existsSync(robotsPath) && !read(robotsPath).includes("https://l-one.asia/sitemap.xml")) {
+  fail("robots.txt should reference the public sitemap.");
+}
+if (fs.existsSync(sitemapPath) && !read(sitemapPath).includes("https://l-one.asia/store/")) {
+  fail("sitemap.xml should include the Store route.");
+}
+
+if (fs.existsSync(storeJsPath)) {
+  const storeJs = read(storeJsPath);
+  try {
+    new Function(storeJs);
+  } catch (error) {
+    fail(`store.js syntax error: ${error.message}`);
+  }
+  ["PRIMARY_CATALOG_URL", "FALLBACK_CATALOG_URL", "isAllowedDownloadUrl", "loadCatalog"].forEach((term) => {
+    if (!storeJs.includes(term)) fail(`store.js is missing required data hook: ${term}.`);
+  });
+}
+
+if (fs.existsSync(storeCatalogPath)) {
+  const storeCatalog = JSON.parse(read(storeCatalogPath));
+  if (storeCatalog.schema_version !== "1.0") fail("Store Catalog schema_version should be 1.0.");
+  const storyFlow = storeCatalog.tools?.find((tool) => tool.id === "story-flow");
+  if (!storyFlow) fail("Store Catalog should include Story Flow.");
+  if (storyFlow?.release?.download_available !== false) {
+    fail("Story Flow must remain unavailable until a public installer is verified.");
   }
 }
 

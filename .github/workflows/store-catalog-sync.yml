@@ -1,0 +1,109 @@
+name: Store Catalog Sync
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/store-catalog-sync.yml"
+      - "index.html"
+      - "materials/index.html"
+      - "motion-library.html"
+      - "public/data/store/**"
+      - "scripts/generate-store-catalog.mjs"
+      - "scripts/site-audit.js"
+      - "scripts/store-catalog-lib.mjs"
+      - "scripts/test-store-catalog.mjs"
+      - "scripts/validate-store-catalog.mjs"
+      - "store/**"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+  repository_dispatch:
+    types:
+      - story-flow-release
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: store-catalog-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      STORE_SYNC_GITHUB_TOKEN: ${{ secrets.STORE_SYNC_GITHUB_TOKEN }}
+      STORE_DOWNLOAD_BASE_URL: ${{ vars.STORE_DOWNLOAD_BASE_URL }}
+      STORE_ALLOWED_DOWNLOAD_HOSTS: ${{ vars.STORE_ALLOWED_DOWNLOAD_HOSTS }}
+      STORE_ASSETS_MIRRORED: ${{ vars.STORE_ASSETS_MIRRORED }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Check private repository credential
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          if [[ -z "$STORE_SYNC_GITHUB_TOKEN" ]]; then
+            echo "::error::STORE_SYNC_GITHUB_TOKEN is not configured."
+            exit 1
+          fi
+
+      - name: Read Story Flow release
+        if: github.event_name != 'pull_request'
+        run: node scripts/sync-story-flow-release.mjs
+
+      - name: Generate and validate Catalog
+        run: |
+          node scripts/generate-store-catalog.mjs
+          node scripts/validate-store-catalog.mjs
+          node scripts/test-store-catalog.mjs
+          node scripts/site-audit.js
+
+      - name: Detect Catalog changes
+        if: github.event_name != 'pull_request'
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- store/releases public/data/store; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Catalog update branch
+        if: github.event_name != 'pull_request' && steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH_NAME: automation/store-catalog-${{ github.run_id }}
+        shell: bash
+        run: |
+          git config user.name "L-One Store Bot"
+          git config user.email "macabyavaha7-sys@users.noreply.github.com"
+          git switch -c "$BRANCH_NAME"
+          git add store/releases/story-flow.json
+          git add public/data/store/catalog.json
+          git add public/data/store/catalog.last-known-good.json
+          git commit -m "chore(store): synchronize Story Flow Catalog"
+          git push --set-upstream origin "$BRANCH_NAME"
+          gh pr create \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "chore(store): synchronize Story Flow Catalog" \
+            --body "Automated Story Flow release synchronization. Closes no issue; relates to #1. Catalog validation and Store regression checks passed."
+
+      - name: Record synchronized update
+        if: github.event_name != 'pull_request' && steps.changes.outputs.changed == 'true'
+        run: gh issue comment 1 --body "Store Catalog 同步已生成更新 PR。运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+      - name: Record synchronization failure
+        if: failure() && github.event_name != 'pull_request'
+        run: gh issue comment 1 --body "Store Catalog 同步失败；上一份有效 Catalog 未被空数据覆盖。运行记录：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"

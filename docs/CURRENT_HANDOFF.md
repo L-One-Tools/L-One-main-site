@@ -2,73 +2,82 @@
 
 ## 项目信息
 
-- 仓库：`https://github.com/macabyavaha7-sys/L-One-main-site`
+- 仓库：`https://github.com/L-One-Tools/L-One-main-site`
 - 生产分支：`main`
-- 当前设备：B
+- 功能分支：`feat/store-and-catalog`
+- 当前设备：A（公司台式机）
 - 当前 AI 工具：Codex
-- 最后更新时间：2026-07-28（Asia/Shanghai）
+- 最后更新时间：2026-08-05（Asia/Shanghai）
 
 ## 当前基线
 
-- 开始 commit：`8e88ca41ad5c7b584a742e8c6dc26bc3420d721c`
-- 当前 commit：`8e88ca41ad5c7b584a742e8c6dc26bc3420d721c`
-- 远程 main commit：`8e88ca41ad5c7b584a742e8c6dc26bc3420d721c`
-- 工作区状态：本轮五份协作文档已完成并通过本地验证
+- 开始 commit：`c0918e7b0f4e780c8855acdd6718c5c5b5ff368e`
+- 远程 main commit：`c0918e7b0f4e780c8855acdd6718c5c5b5ff368e`
+- 主任务：`L-One-Tools/L-One-main-site#1`
+- Control Center：Project #1，Status `测试中`，Release Status `构建中`
+- Draft PR：`https://github.com/L-One-Tools/L-One-main-site/pull/2`
+- 发布前复核的 Store 业务代码 commit：`15ddaa276c0ae50a94915b2824a7b50fab1a40a7`
 
 ## 当前任务
 
-- 任务编号：`B-20260728-00`
-- 任务目标：建立 A/B 多设备与 AI 协作规则，完成一次只含文档的 GitHub/EdgeOne 闭环
-- 当前状态：等待本文件所在提交完成远程与部署核对
-
-## 编辑范围
-
-- 允许修改：本轮新增的五份协作文档
-- 只读参考：仓库内全部现有文件、Git 历史与公开网站
-- 禁止修改：网站源码、业务代码、配置、依赖、数据库、素材、部署和域名
+- 任务编号：`B-20260730-01`
+- 目标：为 L-One Asia 建立 Store 页面、Story Flow Catalog、版本同步、
+  下载安全门槛和失败回退链路。
+- 编辑范围：见 `docs/EDIT_SCOPE_MAP.md` 的本轮声明。
 
 ## 已完成
 
-- 在全新目录 `E:\L-One-main-site` 克隆远程仓库
-- 验证本地 `main`、`origin/main` 和接手 commit 一致
-- 确认工作区初始状态干净，无 Git 子模块；Git LFS 可用
-- 审计主站、Motion Library、素材库、FastAPI/SQLite 后端和部署目录
-- 建立本轮五份协作文档
+- 审计并记录主仓库、网站结构、EdgeOne 和 Story Flow 发布能力。
+- 确认正式站根页与当前 `main` 内容一致。
+- 创建 `/store/`、全站导航入口、SEO、robots 和 sitemap。
+- 建立人工 source、机器 release snapshot、Schema、生成 Catalog 和稳定快照。
+- 建立私有 Release 同步器、每小时/手动/事件触发工作流和自动 PR 流程。
+- 建立运维、数据架构和回退文档。
+- 将 Issue #1 加入 Control Center 并设置任务字段。
+- 完成 8 个分阶段 commit，推送 `feat/store-and-catalog` 并创建 Draft PR #2。
+- GitHub Actions 已在当前 commit 通过 Store Catalog Sync PR 校验。
 
-## 未完成
+## 当前 Story Flow 状态
 
-- Commit、GitHub 推送与远程 commit 核对
-- EdgeOne 自动部署和正式域名部署后验证
+- 私有仓库，版本 `0.5.8`。
+- 无 tag、GitHub Release、Release Asset 或公共安装包。
+- Store 通道为 `internal`，下载按钮禁用。
+- 本地使用已授权 GitHub 凭据执行真实 Release 查询，确认无 Release 且 Catalog 未变。
 
 ## 测试结果
 
-- 启动测试：本轮不改运行代码；静态站无需构建，正式域名推送前状态待记录
-- 页面测试：`node scripts/site-audit.js` 通过，14 个作品检查通过
-- API 测试：`python -m unittest discover -s tests -v` 通过，37 项测试通过
-- 控制台检查：`node scripts/audit-motion-library.js` 通过，64 个独立动效检查通过
-- 腾讯云部署：待推送后验证
+- Store Catalog 生成与 Schema/跨字段校验：通过。
+- 两轮 0.5.8 → 0.5.9 test 数据更新：通过；回退快照保留 0.5.8。
+- 重复 ID/版本、日期、下载域名、SHA-256 与失败保留旧数据：通过。
+- `node scripts/site-audit.js`：通过，14 个作品。
+- `node scripts/audit-motion-library.js`：通过，64 个动效。
+- 后端 unittest：通过，37 项。
+- GitHub Actions YAML：解析通过。
+- Chromium 桌面与 390px 手机：布局、导航、Catalog、禁用下载、空/错误/回退状态通过，
+  无控制台错误。
 
-## 本轮提交
+## 尚未完成
 
-- 分支：`main`
-- commit ID：以本文件所在提交为准
-- commit 信息：`docs(workflow): establish multi-device collaboration protocol [B-20260728-00]`
-- 推送状态：随本提交推送后，以 GitHub `origin/main` 核对结果为准
+- EdgeOne 功能分支预览部署。
+- 用户预览验收、合并 `main` 和生产部署。
+- `STORE_SYNC_GITHUB_TOKEN` 与任何公共下载存储配置。
 
-## 已知问题
+## 2026-08-05 复核
 
-- GitHub CLI 2.96.0 已安装；浏览器设备授权未写入 `gh` 配置，Git 操作使用
-  Windows Git Credential Manager，并以远程 commit 结果独立核对。
-- 当前终端默认读取旧 UTF-8 中文文档时可能显示乱码；文件内容本身由 Git 按原样保存。
-- 腾讯云 EdgeOne 控制台尚未授权，因此自动部署只能在获得访问后确认。
+- 本地工作区干净，功能分支与远程同步；`origin/main` 仍为 `c0918e7`。
+- PR #2 仍为 Open / Draft / Mergeable，当前 CI 通过。
+- 重新运行 Store 生成/校验/两轮回退、全站、64项 Motion Library 与37项后端测试，
+  均通过。
+- 正式站首页返回 200；`/store/` 与公开 Catalog 返回 404，符合尚未合并状态。
+- EdgeOne Preview 自动部署关闭，功能分支没有 Deployment 记录。
+- Issue #1 已从误关闭状态重新打开，正文和两条旧评论的中文编码已修复。
+- Project字段已确认：Status `测试中`、Release Status `构建中`、执行设备A。
+- 后台 Project Center 工作位于独立分支，未修改 Store 业务代码；两分支仅交接文档重叠，
+  因此先完成 Store 上线，再由后台分支同步最新 `main`。
 
-## 下一台设备操作
+## 安全与回退
 
-1. 阅读全部协作、边界、状态和交接文档。
-2. 检查工作区并安全拉取 `origin/main`。
-3. 记录接手 commit，运行基线测试后再声明下一任务范围。
-
-## 风险提示
-
-- `main` 推送会触发 EdgeOne 正式部署，推送前必须确认 diff 仅包含五份文档。
-- 后端认证、数据库、服务器及域名配置均为受保护区域。
+- 未修改 EdgeOne、DNS、正式域名、生产环境变量、数据库或服务器。
+- 未上传安装包，未向公开 Catalog 写入私有 GitHub URL 或 Token。
+- 代码回退使用 `git revert`；Catalog 失败保留上一有效快照。
+- `main` 合并会触发正式部署，必须在确认闸门二获得用户明确确认。
