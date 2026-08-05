@@ -5,16 +5,18 @@
 - 仓库：`https://github.com/L-One-Tools/L-One-main-site`
 - 生产分支：`main`
 - 功能分支：`feat/store-and-catalog`
-- 当前设备：B
+- 当前设备：A（公司台式机）
 - 当前 AI 工具：Codex
-- 最后更新时间：2026-07-30（Asia/Shanghai）
+- 最后更新时间：2026-08-05（Asia/Shanghai）
 
 ## 当前基线
 
 - 开始 commit：`c0918e7b0f4e780c8855acdd6718c5c5b5ff368e`
 - 远程 main commit：`c0918e7b0f4e780c8855acdd6718c5c5b5ff368e`
 - 主任务：`L-One-Tools/L-One-main-site#1`
-- Control Center：Project #1，Status `执行中`，Release Status `构建中`
+- Control Center：Project #1，Status `测试中`，Release Status `构建中`
+- Draft PR：`https://github.com/L-One-Tools/L-One-main-site/pull/2`
+- 发布前复核的 Store 业务代码 commit：`15ddaa276c0ae50a94915b2824a7b50fab1a40a7`
 
 ## 当前任务
 
@@ -32,6 +34,8 @@
 - 建立私有 Release 同步器、每小时/手动/事件触发工作流和自动 PR 流程。
 - 建立运维、数据架构和回退文档。
 - 将 Issue #1 加入 Control Center 并设置任务字段。
+- 完成 8 个分阶段 commit，推送 `feat/store-and-catalog` 并创建 Draft PR #2。
+- GitHub Actions 已在当前 commit 通过 Store Catalog Sync PR 校验。
 
 ## 当前 Story Flow 状态
 
@@ -54,11 +58,22 @@
 
 ## 尚未完成
 
-- 分阶段 commit、push 和 Draft PR。
-- GitHub Actions 云端 CI 与 Store 同步运行。
 - EdgeOne 功能分支预览部署。
 - 用户预览验收、合并 `main` 和生产部署。
 - `STORE_SYNC_GITHUB_TOKEN` 与任何公共下载存储配置。
+
+## 2026-08-05 复核
+
+- 本地工作区干净，功能分支与远程同步；`origin/main` 仍为 `c0918e7`。
+- PR #2 仍为 Open / Draft / Mergeable，当前 CI 通过。
+- 重新运行 Store 生成/校验/两轮回退、全站、64项 Motion Library 与37项后端测试，
+  均通过。
+- 正式站首页返回 200；`/store/` 与公开 Catalog 返回 404，符合尚未合并状态。
+- EdgeOne Preview 自动部署关闭，功能分支没有 Deployment 记录。
+- Issue #1 已从误关闭状态重新打开，正文和两条旧评论的中文编码已修复。
+- Project字段已确认：Status `测试中`、Release Status `构建中`、执行设备A。
+- 后台 Project Center 工作位于独立分支，未修改 Store 业务代码；两分支仅交接文档重叠，
+  因此先完成 Store 上线，再由后台分支同步最新 `main`。
 
 ## 安全与回退
 

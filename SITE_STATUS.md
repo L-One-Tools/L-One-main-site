@@ -1,6 +1,6 @@
 # L-One Main Site Status
 
-更新时间：2026-07-30
+更新时间：2026-08-05
 
 ## L-One Store 与 Catalog 功能分支
 
@@ -20,6 +20,12 @@
 - 两轮数据测试、失败保留旧 Catalog、桌面/手机页面、空/错误/回退状态和全站导航
   已通过；EdgeOne PR 预览与生产部署尚未执行。
 - 正式合并 `main` 与生产部署必须进入用户确认闸门，不得提前标记为已发布。
+- Draft PR #2 已创建并通过当前 commit 的 GitHub Actions；PR 保持 Draft，等待
+  EdgeOne 功能分支预览和用户验收。
+- 2026-08-05 复核确认 `main` 仍为 `c0918e7`，正式站 `/store/` 与 Catalog 返回
+  404；这表示 Store 尚未生产部署，并非线上页面覆盖失败。
+- 后台 Project Center 已转入独立任务和分支；为避免交接文档冲突，发布顺序固定为
+  先完成 Store，再让后台分支同步新的 `main`。
 
 更新时间：2026-06-15
 
