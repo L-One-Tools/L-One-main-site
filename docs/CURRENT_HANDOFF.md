@@ -49,7 +49,7 @@
 
 ## 尚未完成
 
-- 等待 PR #3 GitHub Actions 完成。
+- PR #3 的 `f72f3f3` GitHub Actions 已通过；最终交接文档提交仍需复核最新检查。
 - EdgeOne 功能分支预览与用户验收。
 - 用户确认后合并 `main` 并执行生产站验证。
 
