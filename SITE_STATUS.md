@@ -16,6 +16,8 @@
   1440px 桌面和 390px 移动浏览器导航、旧路由、横向溢出与控制台检查。
 - 当前变化只存在于功能分支；正式站仍运行 `d163c3f`，合并 `main` 前需完成 PR、
   EdgeOne 预览与用户确认。
+- 功能提交：`ad35bf5`；Draft PR #3：
+  `https://github.com/L-One-Tools/L-One-main-site/pull/3`。
 
 更新时间：2026-06-15
 

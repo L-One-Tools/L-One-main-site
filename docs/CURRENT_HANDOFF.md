@@ -15,6 +15,8 @@
 - 远程 main commit：`d163c3f7852bf02d445a74e82392f5c5d9299558`
 - Store 发布 PR：`https://github.com/L-One-Tools/L-One-main-site/pull/2`，已合并。
 - 正式站：Store、页面资源、Catalog 与稳定回退快照均为 HTTP 200。
+- 本任务 commit：`ad35bf5b64d21caccf41e992df8027b827345942`。
+- Draft PR：`https://github.com/L-One-Tools/L-One-main-site/pull/3`。
 
 ## 当前任务
 
@@ -47,8 +49,7 @@
 
 ## 尚未完成
 
-- 检查最终 diff、敏感信息与任务外文件。
-- 提交并推送功能分支，创建 PR 并等待 CI。
+- 等待 PR #3 GitHub Actions 完成。
 - EdgeOne 功能分支预览与用户验收。
 - 用户确认后合并 `main` 并执行生产站验证。
 
