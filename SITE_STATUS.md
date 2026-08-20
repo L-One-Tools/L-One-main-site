@@ -1,22 +1,19 @@
 # L-One Main Site Status
 
-更新时间：2026-08-05
+更新时间：2026-08-20
 
-## 2026-08-05 Store 发布与一级导航精简
+## 2026-08-20 Store 前置与 Recent 移除正式发布
 
-- Store 与稳定 Catalog 已通过 PR #2 合并并部署到生产，正式 `main` 为
-  `d163c3f7852bf02d445a74e82392f5c5d9299558`；`/store/`、页面资源、Catalog 与
-  last-known-good 均已通过正式站 HTTP 200 和桌面/移动浏览器验收。
-- Story Flow 当前真实状态仍为内部版本 `0.5.8`，无公开安装包；Store 下载按钮保持禁用。
-- 新任务：`A-20260805-01`；功能分支：`work/A-20260805-01-store-first`。
-- 本任务删除全站一级 `Recent / 最近` 页面、入口、路由和搜索项，并把
-  `Store / 工具` 调整为主页、Store、Materials 与 Motion Library 一级导航第一项。
-- 旧 `#recent` 继续沿用未知路由回退逻辑显示首页，不保留空白 Recent 页面。
-- 已通过静态站 14 作品审计、64 项 Motion Library 审计、Store Catalog 校验，以及
-  1440px 桌面和 390px 移动浏览器导航、旧路由、横向溢出与控制台检查。
-- 当前变化只存在于功能分支；正式站仍运行 `d163c3f`，合并 `main` 前需完成 PR、
-  EdgeOne 预览与用户确认。
-- 功能提交：`ad35bf5`；Draft PR #3：
+- Store 与稳定 Catalog 已通过 PR #2 合并并部署到生产；Story Flow 当前真实状态仍为
+  内部版本 `0.5.8`，无公开安装包，下载按钮保持禁用。
+- `A-20260805-01` 已通过 PR #3 合并；正式 `main` 为
+  `7e81562a95d93fb4fca2ccdb89deb0d447833bf3`。
+- 全站一级 `Recent / 最近` 页面、入口、路由和搜索项已移除；`Store / 工具` 已调整为
+  主页、Store、Materials 与 Motion Library 一级导航第一项。旧 `#recent` 安全回退首页。
+- 静态站 14 作品、64 项 Motion Library 和 Store Catalog 审计通过；正式
+  `l-one.asia` 的电脑、iPad 与手机共 18 项页面检查通过，导航无溢出、无 Recent、
+  无页面脚本错误。
+- 功能提交：`ad35bf5`；正式合并提交：`7e81562`；PR #3：
   `https://github.com/L-One-Tools/L-One-main-site/pull/3`。
 
 更新时间：2026-06-15
