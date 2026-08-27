@@ -15,6 +15,9 @@ const storeDir = path.join(root, "store");
 const storeHtmlPath = path.join(storeDir, "index.html");
 const storeCssPath = path.join(storeDir, "store.css");
 const storeJsPath = path.join(storeDir, "store.js");
+const fileToTextDir = path.join(storeDir, "l-1-file-to-text");
+const fileToTextHtmlPath = path.join(fileToTextDir, "index.html");
+const fileToTextCssPath = path.join(fileToTextDir, "tool-detail.css");
 const storeSourcePath = path.join(storeDir, "catalog.source.json");
 const storeSchemaPath = path.join(storeDir, "catalog.schema.json");
 const storeCatalogPath = path.join(root, "public", "data", "store", "catalog.json");
@@ -210,6 +213,8 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
   storeHtmlPath,
   storeCssPath,
   storeJsPath,
+  fileToTextHtmlPath,
+  fileToTextCssPath,
   storeSourcePath,
   storeSchemaPath,
   storeCatalogPath,
@@ -224,7 +229,7 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
 if (fs.existsSync(storeHtmlPath)) {
   const storeHtml = read(storeHtmlPath);
   checkNoCorruption("visible store/index.html", stripNonVisibleBlocks(storeHtml));
-  ["L-One Store", "工具列表", "Story Flow", "暂无公开下载"].forEach((term) => {
+  ["L-One Store", "工具列表", "L-1 File To Text 2.0.8 已开放公开下载", "Story Flow 仍处于内测阶段"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing required text: ${term}.`);
   });
   ["description", "canonical", "og:title", "application/ld+json"].forEach((term) => {
@@ -239,6 +244,36 @@ if (fs.existsSync(storeHtmlPath)) {
   }
 }
 
+if (fs.existsSync(fileToTextHtmlPath)) {
+  const fileToTextHtml = read(fileToTextHtmlPath);
+  checkNoCorruption("visible store/l-1-file-to-text/index.html", stripNonVisibleBlocks(fileToTextHtml));
+  [
+    "L-1 File To Text",
+    "2.0.8 公开可用",
+    "Windows 10/11 64 位",
+    "174,867,225 bytes",
+    "0B4080D6CF4FB9B47FA230CB8AC3C14A37C7202BEDC266869EE8BBEDB71418D8",
+    "CPU 基础版",
+    "FFmpeg",
+    "SmartScreen",
+    "媒体与文本不上传到 L-One",
+    "软件权利声明"
+  ].forEach((term) => {
+    if (!fileToTextHtml.includes(term)) fail(`File To Text detail page is missing required text: ${term}.`);
+  });
+  const exactDownloadUrl = "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe";
+  if ((fileToTextHtml.match(new RegExp(exactDownloadUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length !== 1) {
+    fail("File To Text detail page should expose the unique verified 2.0.8 direct download URL exactly once.");
+  }
+  if (fileToTextHtml.includes('href="file:') || fileToTextHtml.includes("localhost")) {
+    fail("File To Text detail page must not expose local download paths.");
+  }
+  const detailNav = fileToTextHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+  if (detailNav.includes("#recent") || detailNav.indexOf('href="../"') > detailNav.indexOf('href="../../index.html#works"')) {
+    fail("File To Text detail navigation should remove Recent and keep Store first.");
+  }
+}
+
 if (fs.existsSync(storeWorkflowPath)) {
   const workflow = read(storeWorkflowPath);
   ["workflow_dispatch", "schedule", "repository_dispatch", "STORE_SYNC_GITHUB_TOKEN"].forEach((term) => {
@@ -249,8 +284,8 @@ if (fs.existsSync(storeWorkflowPath)) {
 if (fs.existsSync(robotsPath) && !read(robotsPath).includes("https://l-one.asia/sitemap.xml")) {
   fail("robots.txt should reference the public sitemap.");
 }
-if (fs.existsSync(sitemapPath) && !read(sitemapPath).includes("https://l-one.asia/store/")) {
-  fail("sitemap.xml should include the Store route.");
+if (fs.existsSync(sitemapPath) && (!read(sitemapPath).includes("https://l-one.asia/store/") || !read(sitemapPath).includes("https://l-one.asia/store/l-1-file-to-text/"))) {
+  fail("sitemap.xml should include the Store and File To Text routes.");
 }
 
 if (fs.existsSync(storeJsPath)) {
@@ -269,9 +304,17 @@ if (fs.existsSync(storeCatalogPath)) {
   const storeCatalog = JSON.parse(read(storeCatalogPath));
   if (storeCatalog.schema_version !== "1.0") fail("Store Catalog schema_version should be 1.0.");
   const storyFlow = storeCatalog.tools?.find((tool) => tool.id === "story-flow");
+  const fileToText = storeCatalog.tools?.find((tool) => tool.id === "l-1-file-to-text");
   if (!storyFlow) fail("Store Catalog should include Story Flow.");
+  if (!fileToText) fail("Store Catalog should include L-1 File To Text.");
   if (storyFlow?.release?.download_available !== false) {
     fail("Story Flow must remain unavailable until a public installer is verified.");
+  }
+  if (fileToText?.release?.version !== "2.0.8" || fileToText?.release?.download_available !== true) {
+    fail("L-1 File To Text should expose only the verified 2.0.8 public release.");
+  }
+  if (fileToText?.release?.assets?.[0]?.url !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe") {
+    fail("L-1 File To Text Catalog should use only the verified 2.0.8 direct download URL.");
   }
 }
 

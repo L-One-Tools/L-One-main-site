@@ -1,7 +1,39 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-07-30T00:00:00+08:00",
+  "updated_at": "2026-08-28T00:00:00+08:00",
   "tools": [
+    {
+      "id": "l-1-file-to-text",
+      "slug": "l-1-file-to-text",
+      "name": "L-1 File To Text",
+      "summary": "Windows 本地音视频转写工具，可整理为 TXT、Markdown 或 HTML 文件。",
+      "description": "转写与输出默认在本机完成。安装包不含模型权重；首次使用时由用户在资源中心主动下载模型。",
+      "status": "stable",
+      "featured": true,
+      "sort_order": 1,
+      "repository": "L-One-Tools/l-one-tools-releases",
+      "icon": "",
+      "cover": "",
+      "screenshots": [],
+      "features": [
+        "将音频或视频整理为 TXT、Markdown 或 HTML",
+        "转写与输出默认在本机完成",
+        "下载前可用 SHA-256 校验安装包"
+      ],
+      "platforms": [
+        {
+          "id": "windows",
+          "name": "Windows",
+          "architectures": ["x64"],
+          "minimum_version": "Windows 10/11 64 位"
+        }
+      ],
+      "links": {
+        "docs": "/store/l-1-file-to-text/",
+        "privacy": "https://github.com/L-One-Tools/l-one-tools-releases/blob/main/l-1-file-to-text/2.0.8_2026-08-27/PRIVACY.md",
+        "feedback": "https://github.com/L-One-Tools/L-One-main-site/issues/1"
+      }
+    },
     {
       "id": "story-flow",
       "slug": "story-flow",

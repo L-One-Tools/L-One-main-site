@@ -15,13 +15,21 @@ import { writeCatalogWithFallback } from "./generate-store-catalog.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = await readJson(path.join(root, "store", "catalog.source.json"));
 const release = await readJson(path.join(root, "store", "releases", "story-flow.json"));
+const fileToTextRelease = await readJson(path.join(root, "store", "releases", "l-1-file-to-text.json"));
 const schema = await readJson(path.join(root, "store", "catalog.schema.json"));
-const catalog = buildCatalog(source, [release]);
+const catalog = buildCatalog(source, [release, fileToTextRelease]);
 assert.equal(schema.$id, "https://l-one.asia/store/catalog.schema.json");
 assert.deepEqual(validateCatalog(catalog), []);
-assert.equal(catalog.tools[0].release.version, "0.5.8");
-assert.equal(catalog.tools[0].release.download_available, false);
-assert.equal(catalog.tools[0].release.assets.length, 0);
+const storyFlow = catalog.tools.find((tool) => tool.id === "story-flow");
+const fileToText = catalog.tools.find((tool) => tool.id === "l-1-file-to-text");
+assert.equal(storyFlow.release.version, "0.5.8");
+assert.equal(storyFlow.release.download_available, false);
+assert.equal(storyFlow.release.assets.length, 0);
+assert.equal(fileToText.release.version, "2.0.8");
+assert.equal(fileToText.release.download_available, true);
+assert.equal(fileToText.release.assets.length, 1);
+assert.equal(fileToText.release.assets[0].size, 174867225);
+assert.equal(fileToText.release.assets[0].sha256, "0b4080d6cf4fb9b47fa230cb8ac3c14a37c7202bedc266869ee8bbedb71418d8");
 
 const testRelease = structuredClone(release);
 testRelease.updated_at = "2026-07-30T01:00:00+08:00";
@@ -29,12 +37,12 @@ testRelease.source = "manual";
 testRelease.channel = "test";
 testRelease.version = "0.5.9";
 testRelease.release_notes = ["端到端测试版本字段，不代表 Stable 发布。"];
-const secondRoundCatalog = buildCatalog(source, [testRelease]);
+const secondRoundCatalog = buildCatalog(source, [testRelease, fileToTextRelease]);
 assert.deepEqual(validateCatalog(secondRoundCatalog), []);
-assert.equal(secondRoundCatalog.tools[0].release.version, "0.5.9");
-assert.equal(secondRoundCatalog.tools[0].release.channel, "test");
-assert.equal(secondRoundCatalog.tools[0].release.download_available, false);
-assert.equal(catalog.tools[0].release.version, "0.5.8");
+assert.equal(secondRoundCatalog.tools.find((tool) => tool.id === "story-flow").release.version, "0.5.9");
+assert.equal(secondRoundCatalog.tools.find((tool) => tool.id === "story-flow").release.channel, "test");
+assert.equal(secondRoundCatalog.tools.find((tool) => tool.id === "story-flow").release.download_available, false);
+assert.equal(storyFlow.release.version, "0.5.8");
 
 const duplicate = structuredClone(catalog);
 duplicate.tools.push(structuredClone(duplicate.tools[0]));
@@ -43,12 +51,13 @@ assert(duplicateErrors.some((error) => error.includes("duplicate tool id")));
 assert(duplicateErrors.some((error) => error.includes("duplicate version")));
 
 const invalidDate = structuredClone(catalog);
-invalidDate.tools[0].release.published_at = "not-a-date";
+invalidDate.tools.find((tool) => tool.id === "story-flow").release.published_at = "not-a-date";
 assert(validateCatalog(invalidDate).some((error) => error.includes("published_at")));
 
 const invalidDownload = structuredClone(catalog);
-invalidDownload.tools[0].release.download_available = true;
-invalidDownload.tools[0].release.assets = [{
+const invalidStoryFlow = invalidDownload.tools.find((tool) => tool.id === "story-flow");
+invalidStoryFlow.release.download_available = true;
+invalidStoryFlow.release.assets = [{
   name: "Story-Flow-Setup-v0.5.8.exe",
   platform: "windows",
   architecture: "x64",
@@ -59,8 +68,9 @@ invalidDownload.tools[0].release.assets = [{
   available: true,
   recalled: false
 }];
-assert(validateCatalog(invalidDownload).some((error) => error.includes("download host is not allowed")));
+assert(validateCatalog(invalidDownload).some((error) => error.includes("official L-One GitHub Release path")));
 assert.equal(validateDownloadUrl("https://download.l-one.asia/story-flow/v0.5.8/setup.exe"), "");
+assert.equal(validateDownloadUrl(fileToText.release.assets[0].url), "");
 
 const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "l-one-store-test-"));
 try {
@@ -69,14 +79,14 @@ try {
   await writeCatalogWithFallback(catalog, stablePath, fallbackPath);
   const stableBeforeFailure = await readFile(stablePath, "utf8");
   const broken = structuredClone(catalog);
-  broken.tools[0].release.download_available = true;
+  broken.tools.find((tool) => tool.id === "story-flow").release.download_available = true;
   const errors = validateCatalog(broken);
   assert(errors.length > 0);
   if (!errors.length) await writeFile(stablePath, "unexpected", "utf8");
   assert.equal(await readFile(stablePath, "utf8"), stableBeforeFailure);
   await writeCatalogWithFallback(secondRoundCatalog, stablePath, fallbackPath);
-  assert.equal((await readJson(stablePath)).tools[0].release.version, "0.5.9");
-  assert.equal((await readJson(fallbackPath)).tools[0].release.version, "0.5.8");
+  assert.equal((await readJson(stablePath)).tools.find((tool) => tool.id === "story-flow").release.version, "0.5.9");
+  assert.equal((await readJson(fallbackPath)).tools.find((tool) => tool.id === "story-flow").release.version, "0.5.8");
 } finally {
   await rm(temporaryDirectory, { recursive: true, force: true });
 }

@@ -34,8 +34,21 @@ store/store.js --> /store/
 | `public/data/store/catalog.last-known-good.json` | 自动生成 | 最新 Catalog 失败时读取的稳定快照 |
 
 页面不读取私有 GitHub API、GitHub Project、腾讯云 Secret 或 Story Flow 私有下载地址。
+公开 GitHub 下载仅允许 `L-One-Tools/l-one-tools-releases/releases/download/` 路径，
+其他 GitHub 仓库或路径不能通过 Catalog 下载校验。
 
-## 当前 Story Flow 数据
+## 当前公开数据
+
+### L-1 File To Text
+
+- 工具状态：`stable`
+- 版本：`2.0.8`
+- 发布通道：`stable`
+- 下载：可用，仅允许公开仓库 `L-One-Tools/l-one-tools-releases` 的正式 Release 路径
+- 平台：Windows 10/11 x64 CPU 基础版
+- 页面：`/store/l-1-file-to-text/`
+
+### Story Flow
 
 - 工具状态：`internal`
 - 版本：`0.5.8`

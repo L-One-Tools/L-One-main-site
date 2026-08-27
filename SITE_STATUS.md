@@ -1,5 +1,18 @@
 # L-One Main Site Status
 
+更新时间：2026-08-28
+
+## 2026-08-28 L-1 File To Text 2.0.8 官网发布候选
+
+- `A-20260828-01` 已把 L-1 File To Text 2.0.8 接入 Store Catalog，并新增
+  `/store/l-1-file-to-text/` 详情页；下载只指向公开仓库的唯一 GitHub Release 资产。
+- 页面已公开说明适用/不适用人群、Windows 10/11 x64 CPU 基础版、安装与模型下载、
+  FFmpeg、SmartScreen、隐私与权利、174,867,225 bytes 文件大小及 SHA-256 核验方法。
+- Catalog 生成、校验、失败回退、全站、Motion Library、后端 37 项回归及本地桌面、
+  iPad、手机验收通过；Release、资料、隐私与安装包响应检查通过。
+- 当前状态：功能分支发布候选；GitHub PR、CI、`main` 合并、EdgeOne 部署与正式域名
+  验收尚未完成，不得写作“官网发布成功”。
+
 更新时间：2026-08-20
 
 ## 2026-08-20 Store 前置与 Recent 移除正式发布
