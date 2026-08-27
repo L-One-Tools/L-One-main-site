@@ -2,7 +2,7 @@
 
 更新时间：2026-08-28
 
-## 2026-08-28 L-1 File To Text 2.0.8 官网发布候选
+## 2026-08-28 L-1 File To Text 2.0.8 官网正式发布
 
 - `A-20260828-01` 已把 L-1 File To Text 2.0.8 接入 Store Catalog，并新增
   `/store/l-1-file-to-text/` 详情页；下载只指向公开仓库的唯一 GitHub Release 资产。
@@ -10,8 +10,13 @@
   FFmpeg、SmartScreen、隐私与权利、174,867,225 bytes 文件大小及 SHA-256 核验方法。
 - Catalog 生成、校验、失败回退、全站、Motion Library、后端 37 项回归及本地桌面、
   iPad、手机验收通过；Release、资料、隐私与安装包响应检查通过。
-- 当前状态：功能分支发布候选；GitHub PR、CI、`main` 合并、EdgeOne 部署与正式域名
-  验收尚未完成，不得写作“官网发布成功”。
+- 功能提交：`ea5edbc8b110720ae0f5f6fcfbd2ebd55d1aaab7`；PR #4 的 CI run #439
+  成功；合并提交：`9bf4910345b9f9e2f2f05d90029a0793e9eb95ca`。
+- EdgeOne 已从 `main` 更新正式站；首页、Store、详情页和 Catalog 均为 HTTP 200。
+  详情页与 Catalog 的线上字节哈希和合并后的仓库文件完全一致，Store 页面统一换行为
+  LF 后内容完全一致；EdgeOne 控制台部署 ID 未验证。
+- 正式域名桌面、iPad、手机验收通过：无横向溢出或页面错误，版本、下载按钮、Release、
+  版本资料、文件大小、SHA-256 和键盘焦点均正确。L-1 File To Text 官网发布成功。
 
 更新时间：2026-08-20
 

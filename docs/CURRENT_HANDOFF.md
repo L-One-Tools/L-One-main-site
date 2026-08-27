@@ -1,6 +1,6 @@
 # 当前任务交接
 
-## 2026-08-28 发布候选：L-1 File To Text 2.0.8
+## 2026-08-28 正式发布：L-1 File To Text 2.0.8
 
 - 任务编号：`A-20260828-01`；功能分支：`work/A-20260828-01-file-to-text`。
 - 任务开始 commit：`6112815f363a9cfba6778a8c4b206b099fc41eac`；开始时工作区干净，
@@ -13,9 +13,19 @@
   Store 显示 2 个工具，详情入口、唯一下载 URL、版本、文件大小、SHA-256 与键盘焦点通过。
 - 外链验收：Release、版本资料与隐私页 HTTP 200；安装包直链一次跳转后 HTTP 200，
   `application/octet-stream`、文件名与 `174867225` bytes 均匹配。
-- 当前未完成：commit、push、PR、CI、`main` 合并、EdgeOne 和正式域名生产验收；
-  上述项目完成前部署状态明确为“未验证”。
-- 回滚：对本任务合并提交执行 `git revert`；若生产下载异常，先回退页面/Catalog 到
+- GitHub：功能提交 `ea5edbc8b110720ae0f5f6fcfbd2ebd55d1aaab7`；PR #4；CI
+  `Store Catalog Sync` run #439 成功；合并提交
+  `9bf4910345b9f9e2f2f05d90029a0793e9eb95ca`。
+- 生产：`https://l-one.asia/`、`https://l-one.asia/store/`、
+  `https://l-one.asia/store/l-1-file-to-text/` 与公开 Catalog 均为 HTTP 200；正式站桌面、
+  iPad、手机无横向溢出、无页面或控制台错误，下载、Release、版本资料、文件大小、
+  SHA-256 和键盘焦点全部通过。
+- 部署证据：线上详情页与 Catalog 的 SHA-256 和 `9bf4910` 仓库文件一致；Store 页面
+  统一换行为 LF 后与仓库内容一致，详情页 `Last-Modified` 为 2026-08-27 23:12:46 GMT。
+  EdgeOne 控制台部署 ID 未验证，但正式域名内容已确认对应本次合并。
+- 当前状态：L-1 File To Text 2.0.8 官网发布成功。
+- 回滚：对合并提交 `9bf4910345b9f9e2f2f05d90029a0793e9eb95ca` 执行 `git revert`；
+  若生产下载异常，先回退页面/Catalog 到
   `6112815f363a9cfba6778a8c4b206b099fc41eac` 对应的上一稳定站点内容。
 
 ## 项目信息
