@@ -7,6 +7,7 @@ const RELEASE_SOURCES = new Set(["repository-audit", "github-release", "manual"]
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const VERSION_PATTERN = /^(?:\d+\.\d+\.\d+)?$/;
 const SHA256_PATTERN = /^(?:[a-f0-9]{64})?$/i;
+const OFFICIAL_GITHUB_RELEASE_PREFIX = "/L-One-Tools/l-one-tools-releases/releases/download/";
 
 export async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"));
@@ -19,6 +20,7 @@ function isDateTime(value) {
 function allowedDownloadHost(hostname, extraHosts = []) {
   const normalized = hostname.toLowerCase();
   if (normalized === "l-one.asia" || normalized.endsWith(".l-one.asia")) return true;
+  if (normalized === "github.com") return true;
   return extraHosts.some((host) => normalized === host || normalized.endsWith(`.${host}`));
 }
 
@@ -31,6 +33,9 @@ export function validateDownloadUrl(value, extraHosts = []) {
     return "download URL is invalid";
   }
   if (parsed.protocol !== "https:") return "download URL must use HTTPS";
+  if (parsed.hostname.toLowerCase() === "github.com" && !parsed.pathname.startsWith(OFFICIAL_GITHUB_RELEASE_PREFIX)) {
+    return "download URL must use the official L-One GitHub Release path";
+  }
   if (!allowedDownloadHost(parsed.hostname, extraHosts)) {
     return `download host is not allowed: ${parsed.hostname}`;
   }

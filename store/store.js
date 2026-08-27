@@ -4,10 +4,11 @@ const STATUS_LABELS = {
   internal: "内测中",
   "coming-soon": "即将开放",
   beta: "Beta",
-  stable: "Stable",
+  stable: "公开可用",
   unavailable: "暂不可用"
 };
 const ALLOWED_DOWNLOAD_HOSTS = ["l-one.asia"];
+const OFFICIAL_GITHUB_RELEASE_PREFIX = "/L-One-Tools/l-one-tools-releases/releases/download/";
 
 const elements = {
   loading: document.querySelector("[data-loading]"),
@@ -43,8 +44,10 @@ function isAllowedDownloadUrl(value) {
   if (!value) return false;
   try {
     const url = new URL(value, location.origin);
-    return url.protocol === "https:"
-      && ALLOWED_DOWNLOAD_HOSTS.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`));
+    return url.protocol === "https:" && (
+      ALLOWED_DOWNLOAD_HOSTS.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`))
+      || (url.hostname === "github.com" && url.pathname.startsWith(OFFICIAL_GITHUB_RELEASE_PREFIX))
+    );
   } catch {
     return false;
   }
@@ -151,6 +154,13 @@ function createToolCard(tool, index) {
     download.disabled = true;
   }
   actionGroup.appendChild(download);
+  if (tool.links?.docs) {
+    const detail = document.createElement("a");
+    detail.className = "store-button";
+    detail.href = tool.links.docs;
+    detail.textContent = "查看详情";
+    actionGroup.appendChild(detail);
+  }
   if (tool.links?.feedback) {
     const feedback = document.createElement("a");
     feedback.className = "store-button";

@@ -104,3 +104,35 @@
 - 测试方式：`node scripts/site-audit.js`、Motion Library 审计、Store Catalog 校验，
   本地桌面与 390px 移动浏览器检查导航顺序、旧路由回退、关键页面与控制台错误。
 - 回滚方式：使用 `git revert` 撤销本任务提交；正式发布异常时保留 EdgeOne 上一成功部署。
+
+## 本轮范围：A-20260828-01
+
+- 执行设备：当前 Codex 工作树。
+- 任务目标：把已验证的 L-1 File To Text 2.0.8 正式接入 L-One Store，建立官网说明、
+  GitHub Release 下载与 SHA-256 核验闭环，并完成生产发布验收。
+- 功能分支：`work/A-20260828-01-file-to-text`。
+- 允许修改：`store/index.html`、`store/l-1-file-to-text/`、`store/catalog.source.json`、
+  `store/releases/l-1-file-to-text.json`、`store/store.js`、
+  `public/data/store/catalog.json`、`public/data/store/catalog.last-known-good.json`、
+  `scripts/store-catalog-lib.mjs`、`scripts/test-store-catalog.mjs`、
+  `scripts/site-audit.js`、本任务新增的 Store 专项验收脚本、`sitemap.xml`、
+  `docs/store/` 中直接相关的发布说明、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`
+  与本文件中的本轮范围声明。
+- 允许修改的代码区域：L-1 File To Text 产品资料、2.0.8 Release 快照、官网详情页、
+  Store 卡片详情/下载入口、GitHub 官方 Release 下载域名与路径校验、对应 Catalog 生成
+  快照、静态审计、链接与三端验收规则、站点地图和发布交接记录。
+- 只读参考：临时候选副本
+  `E:\L1 Control Center\temp\l-one-file-to-text-preview-20260825`、公开 2.0.8 Release
+  与版本资料、现有页面视觉 Token、Works/Notes/Materials/Motion Library 内容与交互、
+  Store 中 Story Flow 的既有资料和状态。
+- 明确禁止修改：候选副本中的临时预览服务器、安装包、源码、模型、用户资料、现有作品
+  与媒体、Materials 数据、Motion Library 动效、后端与数据库、生产服务器、EdgeOne/DNS、
+  正式域名配置、仓库权限、云端 Secret 和生产环境变量。
+- 预计影响范围：`/store/` 新增一个公开可下载工具卡片；新增
+  `/store/l-1-file-to-text/`；Catalog 新增一项经过校验的 Stable 2.0.8 数据；原有路由、
+  Story Flow 内测状态、API 与其他页面内容保持不变。
+- 测试方式：Store Catalog 生成/校验/回退测试、`node scripts/site-audit.js`、Motion
+  Library 审计、后端回归、公开 Release/资料/下载链接检查、本地及生产桌面/iPad/手机
+  浏览器检查、键盘焦点与横向溢出检查，并核对版本、大小和 SHA-256 文案。
+- 回滚方式：使用 `git revert` 撤销本任务合并提交；下载或页面异常时保留安装包 Release，
+  通过回退 Catalog/页面使官网恢复上一稳定版本；必要时使用 EdgeOne 上一成功部署。

@@ -1,7 +1,68 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T16:00:00.000Z",
+  "generated_at": "2026-08-27T16:00:00.000Z",
   "tools": [
+    {
+      "id": "l-1-file-to-text",
+      "slug": "l-1-file-to-text",
+      "name": "L-1 File To Text",
+      "summary": "Windows 本地音视频转写工具，可整理为 TXT、Markdown 或 HTML 文件。",
+      "description": "转写与输出默认在本机完成。安装包不含模型权重；首次使用时由用户在资源中心主动下载模型。",
+      "status": "stable",
+      "featured": true,
+      "sort_order": 1,
+      "repository": "L-One-Tools/l-one-tools-releases",
+      "icon": "",
+      "cover": "",
+      "screenshots": [],
+      "features": [
+        "将音频或视频整理为 TXT、Markdown 或 HTML",
+        "转写与输出默认在本机完成",
+        "下载前可用 SHA-256 校验安装包"
+      ],
+      "platforms": [
+        {
+          "id": "windows",
+          "name": "Windows",
+          "architectures": [
+            "x64"
+          ],
+          "minimum_version": "Windows 10/11 64 位"
+        }
+      ],
+      "links": {
+        "docs": "/store/l-1-file-to-text/",
+        "privacy": "https://github.com/L-One-Tools/l-one-tools-releases/blob/main/l-1-file-to-text/2.0.8_2026-08-27/PRIVACY.md",
+        "feedback": "https://github.com/L-One-Tools/L-One-main-site/issues/1"
+      },
+      "release": {
+        "source": "github-release",
+        "channel": "stable",
+        "version": "2.0.8",
+        "tag": "l-1-file-to-text-v2.0.8",
+        "published_at": "2026-08-27T16:07:42+08:00",
+        "release_notes": [
+          "当前正式推荐版本；公开材料已补齐权利、隐私、SBOM 与第三方许可证。",
+          "219 项自动测试以及安装、启动、卸载和 ClamAV 深度扫描均已通过。",
+          "安装包不包含模型权重；转写与输出默认在本机完成。"
+        ],
+        "download_available": true,
+        "recalled": false,
+        "assets": [
+          {
+            "name": "L-1.File.To.Text.Setup.v2.0.8.exe",
+            "platform": "windows",
+            "architecture": "x64",
+            "size": 174867225,
+            "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe",
+            "sha256": "0b4080d6cf4fb9b47fa230cb8ac3c14a37c7202bedc266869ee8bbedb71418d8",
+            "minimum_system": "Windows 10/11 64 位",
+            "available": true,
+            "recalled": false
+          }
+        ]
+      }
+    },
     {
       "id": "story-flow",
       "slug": "story-flow",
