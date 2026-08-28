@@ -1,5 +1,22 @@
 # 当前任务交接
 
+## 2026-08-28 预览通过：L-1 File To Text 2.0.8 详情页升级
+
+- 任务编号：`A-20260828-02`；功能分支：
+  `work/A-20260828-02-file-to-text-showcase-preview`；开始 commit：
+  `8b1c555175c8ad9d51e44b0e25eb39f7f183076f`。
+- 已完成：2.0.8 详情页内容与版式升级；保留唯一官方下载、Release、公开资料、
+  文件大小和 SHA-256；加入适合/不适合判断、真实 UI 截图、输出格式 Tab、键盘可达 FAQ、
+  下载状态及平板/手机章节索引锚点保护。
+- 素材边界：仅使用已核验、已脱敏的 `txt-1.png`、`txt-2.png`、`txt-3.png`；禁用素材
+  `93d82e74-a597-4ee5-8018-e00a8a521b80.png` 未引用。三张导入素材的 SHA-256 已纳入站点审查。
+- 本地验证：`node scripts/site-audit.js`、`node scripts/validate-store-catalog.mjs`、
+  `node scripts/audit-motion-library.js`、`git diff --check` 通过。Chrome 1440×900、
+  834×1112、390×844 无横向溢出；Tab、FAQ 焦点、下载链接、锚点与控制台检查通过。
+- 预览验收：宣讲人 P0/P1 已通过；生产、CI、GitHub PR 和 EdgeOne 部署尚未验证，
+  不得据此声称官网发布成功。
+- 回滚：合并后使用 `git revert <本任务合并提交>`；不修改 GitHub Release 或安装包。
+
 ## 2026-08-28 正式发布：L-1 File To Text 2.0.8
 
 - 任务编号：`A-20260828-01`；功能分支：`work/A-20260828-01-file-to-text`。
