@@ -136,3 +136,28 @@
   浏览器检查、键盘焦点与横向溢出检查，并核对版本、大小和 SHA-256 文案。
 - 回滚方式：使用 `git revert` 撤销本任务合并提交；下载或页面异常时保留安装包 Release，
   通过回退 Catalog/页面使官网恢复上一稳定版本；必要时使用 EdgeOne 上一成功部署。
+
+## 本轮范围：A-20260828-02
+
+- 执行设备：当前 Codex 工作树。
+- 任务目标：在预览分支重构 L-1 File To Text 2.0.8 产品详情页的内容与版式，使用三张
+  已核验、已脱敏的真实产品截图完成桌面、平板与手机截图，供宣讲人 P0 复核。
+- 功能分支：`work/A-20260828-02-file-to-text-showcase-preview`。
+- 允许修改：`store/l-1-file-to-text/index.html`、`store/l-1-file-to-text/tool-detail.css`、
+  `store/l-1-file-to-text/` 中本任务新增的语义交互脚本及截图资源、
+  `scripts/site-audit.js`、`docs/CURRENT_HANDOFF.md`、本文件中的本轮范围声明和本任务新增的本地验收脚本。
+- 允许修改的代码区域：详情页正文、语义章节、人工分行标题/小字、章节目录、输出格式 Tab、
+  FAQ、下载控制状态、响应式样式、键盘焦点、减少动态效果和直接相关的静态审查。
+- 只读参考：`E:\L-1Studio\file-to-text-2.0.8-product-page-copy-v2.md`、
+  `E:\L-1Studio\l-one-product-showcase-publishing-rules-v1.md`、
+  `E:\L-1Studio\file-to-text-2.0.8-visual-protocol-review.md`、三张素材的
+  `ASSET_MANIFEST.md`、当前 Store/Catalog、公开 2.0.8 Release 与版本资料。
+- 明确禁止修改：唯一 2.0.8 下载 URL、Release/公开资料 URL、版本、文件大小、SHA-256、
+  Catalog、安装包、任何其他 Store 工具、顶级导航、生产分支、EdgeOne/DNS/服务器、秘密、
+  禁用截图 `93d82e74-a597-4ee5-8018-e00a8a521b80.png` 及其内容恢复或增强。
+- 预计影响范围：仅 `/store/l-1-file-to-text/` 的呈现与本地验收截图；P0/P1 已通过，
+  后续可按仓库规则提交、PR、CI 与生产验收；不创建 Release、不改变下载闭环。
+- 测试方式：素材哈希、静态审查、Catalog 校验、全站审查、键盘 Tab/FAQ/下载状态、
+  1440×900、834×1112、390×844 截图与横向溢出检查；本轮截图比较在相同内容与状态下
+  用于 P0/P1/P2 复核。
+- 回滚方式：在未合并前丢弃预览分支；获批并合并后使用 `git revert` 撤销该详情页提交。

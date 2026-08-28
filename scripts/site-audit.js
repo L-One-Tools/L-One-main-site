@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const root = path.resolve(__dirname, "..");
 const htmlPath = path.join(root, "index.html");
@@ -18,6 +19,7 @@ const storeJsPath = path.join(storeDir, "store.js");
 const fileToTextDir = path.join(storeDir, "l-1-file-to-text");
 const fileToTextHtmlPath = path.join(fileToTextDir, "index.html");
 const fileToTextCssPath = path.join(fileToTextDir, "tool-detail.css");
+const fileToTextJsPath = path.join(fileToTextDir, "tool-detail.js");
 const storeSourcePath = path.join(storeDir, "catalog.source.json");
 const storeSchemaPath = path.join(storeDir, "catalog.schema.json");
 const storeCatalogPath = path.join(root, "public", "data", "store", "catalog.json");
@@ -215,6 +217,7 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
   storeJsPath,
   fileToTextHtmlPath,
   fileToTextCssPath,
+  fileToTextJsPath,
   storeSourcePath,
   storeSchemaPath,
   storeCatalogPath,
@@ -249,21 +252,30 @@ if (fs.existsSync(fileToTextHtmlPath)) {
   checkNoCorruption("visible store/l-1-file-to-text/index.html", stripNonVisibleBlocks(fileToTextHtml));
   [
     "L-1 File To Text",
-    "2.0.8 公开可用",
-    "Windows 10/11 64 位",
+    "完成的价值",
+    "远大于创新",
+    "Windows 10/11 x64",
     "174,867,225 bytes",
     "0B4080D6CF4FB9B47FA230CB8AC3C14A37C7202BEDC266869EE8BBEDB71418D8",
     "CPU 基础版",
     "FFmpeg",
     "SmartScreen",
-    "媒体与文本不上传到 L-One",
-    "软件权利声明"
+    "不上传到 L-One 服务",
+    "219项测试通过",
+    "ClamAV 深度扫描感染文件 0"
   ].forEach((term) => {
     if (!fileToTextHtml.includes(term)) fail(`File To Text detail page is missing required text: ${term}.`);
   });
   const exactDownloadUrl = "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe";
-  if ((fileToTextHtml.match(new RegExp(exactDownloadUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length !== 1) {
-    fail("File To Text detail page should expose the unique verified 2.0.8 direct download URL exactly once.");
+  const downloadAnchors = [...fileToTextHtml.matchAll(/<a[^>]*data-download[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]);
+  if (downloadAnchors.length !== 2 || downloadAnchors.some((url) => url !== exactDownloadUrl)) {
+    fail("File To Text detail page should use only the verified 2.0.8 direct download URL for both download controls.");
+  }
+  if (!fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/releases/tag/l-1-file-to-text-v2.0.8") || !fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/tree/main/l-1-file-to-text/2.0.8_2026-08-27")) {
+    fail("File To Text detail page is missing the verified Release or public materials link.");
+  }
+  if (fileToTextHtml.includes("93d82e74-a597-4ee5-8018-e00a8a521b80.png")) {
+    fail("File To Text detail page must not reference the prohibited screenshot.");
   }
   if (fileToTextHtml.includes('href="file:') || fileToTextHtml.includes("localhost")) {
     fail("File To Text detail page must not expose local download paths.");
@@ -273,6 +285,39 @@ if (fs.existsSync(fileToTextHtmlPath)) {
     fail("File To Text detail navigation should remove Recent and keep Store first.");
   }
 }
+
+if (fs.existsSync(fileToTextJsPath)) {
+  const fileToTextJs = read(fileToTextJsPath);
+  try {
+    new Function(fileToTextJs);
+  } catch (error) {
+    fail(`File To Text detail script syntax error: ${error.message}`);
+  }
+  ["desktopLines", "mobileLines", "ArrowRight", "dataset.error"].forEach((term) => {
+    if (!fileToTextJs.includes(term)) fail(`File To Text detail script is missing required interaction hook: ${term}.`);
+  });
+}
+
+if (fs.existsSync(fileToTextCssPath)) {
+  const fileToTextCss = read(fileToTextCssPath);
+  ["white-space: nowrap", "prefers-reduced-motion", "aria-selected", "data-state=\"disabled\""].forEach((term) => {
+    if (!fileToTextCss.includes(term)) fail(`File To Text detail stylesheet is missing required responsive/accessibility state: ${term}.`);
+  });
+}
+
+[
+  ["assets/txt-1.png", "038973D97B6DEEEB592DE834D7FBA370B4BBBF87AA81751722C7903721643C1F"],
+  ["assets/txt-2.png", "1638E40D414923267A4B3C03B8A206BFFAD961F0F21E67F293FE1A9C793FD7DD"],
+  ["assets/txt-3.png", "43D2018DA5C4F45F6B961F312B5AC91C9F52DD008E50FECE764296345D0C0846"]
+].forEach(([relativePath, expectedHash]) => {
+  const assetPath = path.join(fileToTextDir, relativePath);
+  if (!fs.existsSync(assetPath)) {
+    fail(`File To Text safe screenshot is missing: ${relativePath}.`);
+    return;
+  }
+  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(assetPath)).digest("hex").toUpperCase();
+  if (actualHash !== expectedHash) fail(`File To Text screenshot hash mismatch: ${relativePath}.`);
+});
 
 if (fs.existsSync(storeWorkflowPath)) {
   const workflow = read(storeWorkflowPath);
