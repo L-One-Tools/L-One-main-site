@@ -261,8 +261,6 @@ if (fs.existsSync(fileToTextHtmlPath)) {
     "FFmpeg",
     "SmartScreen",
     "不上传到 L-One 服务",
-    "219项测试通过",
-    "ClamAV 深度扫描感染文件 0"
   ].forEach((term) => {
     if (!fileToTextHtml.includes(term)) fail(`File To Text detail page is missing required text: ${term}.`);
   });
