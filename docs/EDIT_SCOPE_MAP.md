@@ -161,3 +161,38 @@
   1440×900、834×1112、390×844 截图与横向溢出检查；本轮截图比较在相同内容与状态下
   用于 P0/P1/P2 复核。
 - 回滚方式：在未合并前丢弃预览分支；获批并合并后使用 `git revert` 撤销该详情页提交。
+
+## 本轮范围：A-20260828-03
+
+- 执行设备：当前 Codex 工作树。
+- 任务目标：仅在独立本地预览分支为 L-1 File To Text 的 Store 卡片与详情页补充已授权的
+  产品 Logo 和结尾出版方落版，交付可滚动 HTML 与三端截图给 L-One 人工审核。
+- 功能分支：`work/A-20260828-03-file-to-text-logo-preview`；开始 commit：
+  `bf5bc2eddbcd566a0340605cefcd994ed5e84c9b`。
+- 允许修改：`store/index.html`、`store/store.css`、`store/store.js`、
+  `store/l-1-file-to-text/index.html`、`store/l-1-file-to-text/tool-detail.css`、
+  `store/assets/products/l-1-file-to-text/product-logo.png`、
+  `store/assets/brand/l-one-lockup-stacked.png` 与本文件中的本轮范围声明。
+- 允许修改的代码区域：Store 运行时卡片身份块；详情页首屏产品身份区和结尾出版方署名区；
+  仅为上述区块所需的响应式 CSS。
+- 只读参考：`E:\L-1Studio\assets\brand\ASSET_MANIFEST.md`、
+  `E:\L-1Studio\assets\products\l-1-file-to-text\ASSET_MANIFEST.md`、
+  `E:\L-1Studio\l-one-product-showcase-publishing-rules-v1.md`、当前 2.0.8
+  页面、Catalog、Release 与公开资料。
+- 明确禁止修改：现有文案、版本、下载/Release/资料 URL、文件大小、SHA-256、Catalog、
+  全站导航、其他工具、安装包、生产分支、推送、PR、合并、部署、EdgeOne/DNS/服务器、
+  秘密和立体品牌符号。
+- 预计影响范围：仅本地分支上的 Store 卡片和详情页预览；生产内容不变。
+- 测试方式：Logo SHA-256、静态审查、Store/详情本地浏览器、1440×900、834×1112、
+  390×844 截图，检查完整图块、尺寸、无溢出、最终链接和既有交互。
+- 回滚方式：不提交；人工审核未通过则在该预览分支继续修正或废弃该分支。
+
+### 2026-08-29 L-One 人工审核后的范围更新
+
+- L-One 已通过页面排版，并明确授权将该预览直接更新至 `l-one.asia`。
+- 后续已确认的详情页调整包括：首屏/落版的平面 2D 产品 Logo、移除不适合官网呈现的
+  FFmpeg 与发布验证段、精简章节索引、人工分行与响应式文字间距规则。
+- 允许提交、推送、创建并合并本轮 PR，随后验证生产页面；仍不得修改安装包、下载 URL、
+  Release、文件大小、SHA-256、其他工具或秘密。
+- 新增发布资产：`store/assets/products/l-1-file-to-text/product-logo-2d-v2.png`。首版
+  `product-logo-2d.png` 是未采用的本地草稿，不进入提交。

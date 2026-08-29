@@ -99,10 +99,11 @@ function createToolCard(tool, index) {
   identity.className = "tool-identity";
   const mark = document.createElement("div");
   mark.className = "tool-mark";
-  if (tool.icon) {
+  const productLogo = tool.id === "l-1-file-to-text" ? "assets/products/l-1-file-to-text/product-logo.png" : tool.icon;
+  if (productLogo) {
     const image = document.createElement("img");
-    image.src = tool.icon;
-    image.alt = `${tool.name} 图标`;
+    image.src = productLogo;
+    image.alt = `${tool.name} 产品 Logo`;
     mark.appendChild(image);
   } else {
     mark.textContent = tool.name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase();
