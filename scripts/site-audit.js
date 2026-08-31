@@ -264,7 +264,7 @@ if (fs.existsSync(fileToTextHtmlPath)) {
   ].forEach((term) => {
     if (!fileToTextHtml.includes(term)) fail(`File To Text detail page is missing required text: ${term}.`);
   });
-  const exactDownloadUrl = "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe";
+  const exactDownloadUrl = "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe";
   const downloadAnchors = [...fileToTextHtml.matchAll(/<a[^>]*data-download[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]);
   if (downloadAnchors.length !== 2 || downloadAnchors.some((url) => url !== exactDownloadUrl)) {
     fail("File To Text detail page should use only the verified 2.0.8 direct download URL for both download controls.");
@@ -356,7 +356,7 @@ if (fs.existsSync(storeCatalogPath)) {
   if (fileToText?.release?.version !== "2.0.8" || fileToText?.release?.download_available !== true) {
     fail("L-1 File To Text should expose only the verified 2.0.8 public release.");
   }
-  if (fileToText?.release?.assets?.[0]?.url !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe") {
+  if (fileToText?.release?.assets?.[0]?.url !== "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe") {
     fail("L-1 File To Text Catalog should use only the verified 2.0.8 direct download URL.");
   }
 }

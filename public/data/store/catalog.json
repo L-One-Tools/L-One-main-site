@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-27T16:00:00.000Z",
+  "generated_at": "2026-08-31T04:00:00.000Z",
   "tools": [
     {
       "id": "l-1-file-to-text",
@@ -36,7 +36,7 @@
         "feedback": "https://github.com/L-One-Tools/L-One-main-site/issues/1"
       },
       "release": {
-        "source": "github-release",
+        "source": "manual",
         "channel": "stable",
         "version": "2.0.8",
         "tag": "l-1-file-to-text-v2.0.8",
@@ -54,7 +54,7 @@
             "platform": "windows",
             "architecture": "x64",
             "size": 174867225,
-            "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe",
+            "url": "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe",
             "sha256": "0b4080d6cf4fb9b47fa230cb8ac3c14a37c7202bedc266869ee8bbedb71418d8",
             "minimum_system": "Windows 10/11 64 位",
             "available": true,
