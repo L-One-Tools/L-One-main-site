@@ -1,5 +1,22 @@
 # 当前任务交接
 
+## 2026-08-31 待发布：L-1 File To Text 自有下载域名迁移
+
+- 任务编号：`A-20260831-01`；功能分支：`hotfix/A-20260831-self-hosted-download`；
+  开始 commit：`9b3f4f31d0b10b1a0a0ffdb446c6c35df3ff4239`。
+- 已完成的下载基础设施核验：`dl.l-one.asia` 的 HTTPS 证书已签发；安装包响应为 HTTP
+  200、`Content-Length: 174867225`、`Content-Disposition: attachment`，Range 请求返回
+  206。服务器文件 SHA-256 为
+  `0B4080D6CF4FB9B47FA230CB8AC3C14A37C7202BEDC266869EE8BBEDB71418D8`。
+- 待发布代码：详情页两个下载按钮和稳定 Catalog 改为
+  `https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe`；
+  GitHub Release 与公开资料链接保持不变。
+- 本地验证：Catalog 生成与校验、`node scripts/site-audit.js`、`git diff --check` 通过。
+- 发布后验证：访问官网 Store 卡片与详情页，检查三端点击下载不跳转 GitHub、直接开始
+  `.exe` 下载；复核 Release/公开资料仍为 GitHub 链接。
+- 回滚：`git revert <本轮合并 commit>`，恢复 GitHub 2.0.8 下载直链；不删除服务器或
+  COS 中的安装包。
+
 ## 2026-08-28 预览通过：L-1 File To Text 2.0.8 详情页升级
 
 - 任务编号：`A-20260828-02`；功能分支：

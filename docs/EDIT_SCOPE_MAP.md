@@ -196,3 +196,26 @@
   Release、文件大小、SHA-256、其他工具或秘密。
 - 新增发布资产：`store/assets/products/l-1-file-to-text/product-logo-2d-v2.png`。首版
   `product-logo-2d.png` 是未采用的本地草稿，不进入提交。
+
+## 本轮范围：A-20260831-01
+
+- 执行设备：当前 Codex 工作树。
+- 任务目标：将 L-1 File To Text 2.0.8 的官网官方下载按钮和稳定 Catalog 从 GitHub
+  直链迁移到已核验的自有 HTTPS 下载域名。
+- 功能分支：`hotfix/A-20260831-self-hosted-download`；开始 commit：
+  `9b3f4f31d0b10b1a0a0ffdb446c6c35df3ff4239`。
+- 允许修改：`store/l-1-file-to-text/index.html`、`store/releases/l-1-file-to-text.json`、
+  `public/data/store/catalog.json`、`public/data/store/catalog.last-known-good.json`、
+  `scripts/site-audit.js`、`docs/CURRENT_HANDOFF.md`、`SITE_STATUS.md` 与本范围声明。
+- 允许修改的代码区域：File To Text 的两个 `data-download` 按钮、Stable 2.0.8 单一
+  安装包资产 URL、由发布快照生成的 Catalog、对该 URL 的静态审查断言和发布交接记录。
+- 只读参考：自有下载端点 `https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe`，
+  其 HTTP 200、`Content-Length: 174867225`、附件下载响应头、Range 206 和服务器 SHA-256
+  核验；GitHub 2.0.8 Release 与公开资料。
+- 明确禁止修改：安装包、版本号、文件大小、SHA-256、Release/公开资料 URL、页面文案、
+  Logo、样式、Catalog 以外的工具、全站导航、云端 Secret、DNS、服务器配置及部署配置。
+- 预计影响范围：Store 卡片和 File To Text 详情页的官方下载按钮改为自有域名；Release
+  与公开资料继续保留在 GitHub。
+- 测试方式：生成并校验 Catalog、`node scripts/site-audit.js`、`git diff --check`、本地
+  Store/详情页下载链接抽查、正式下载端点响应头与三端浏览器检查。
+- 回滚方式：对本轮单一 hotfix commit 执行 `git revert`，恢复上一个 GitHub 下载直链。

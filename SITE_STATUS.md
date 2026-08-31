@@ -1,6 +1,15 @@
 # L-One Main Site Status
 
-更新时间：2026-08-28
+更新时间：2026-08-31
+
+## 2026-08-31 L-1 File To Text 2.0.8 自有下载域名迁移待发布
+
+- `A-20260831-01` 将官网下载按钮和稳定 Catalog 切换到
+  `https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe`。
+- 自有端点已在服务器侧通过 HTTPS、附件下载响应头、174,867,225 bytes、Range 206 与
+  SHA-256 核验；GitHub Release 与公开资料入口保留。
+- 本地 Catalog 与全站审计通过；尚未合并、部署或完成官网三端复核，因此不得在此阶段
+  声称官网按钮已完成迁移。
 
 ## 2026-08-28 L-1 File To Text 2.0.8 官网正式发布
 
