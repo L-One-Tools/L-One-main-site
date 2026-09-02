@@ -95,10 +95,14 @@
   `public/data/store/catalog.json` `B210C1C4079F534D38A5FBF6701960F1AE957AF3F8A159399335B3A65A6468E7`；
   `public/data/store/catalog.last-known-good.json` `B210C1C4079F534D38A5FBF6701960F1AE957AF3F8A159399335B3A65A6468E7`。
 
-## 10. Release lock and next action
+## 10. Production release and rollback
 
 - 当前批准基线已锁定。后续仅允许接入已经核验的真实下载链接与反馈入口；正文、图片、主布局、版本、
   Logo、人工分行、功能承诺或交互任一变化，批准立即失效，必须重新预览并交 L-One 审核。
-- 已核验下载与反馈字段已按最小范围接入 Store Catalog 和详情页。仍不推送、不建 PR、不合并、不部署；
-  等待单独的发布授权。撤回时以发布仓库的撤回状态为准，官网应停止使用该下载按钮，并指导用户从
-  `chrome://extensions` 移除扩展。
+- 已核验下载与反馈字段已按最小范围接入 Store Catalog 和详情页。PR [#10](https://github.com/L-One-Tools/L-One-main-site/pull/10)
+  的 `sync` CI 已通过；合并提交 `3d570089591d1fee9da75f746e59de1d9756bc98`。
+- 生产验证：`https://l-one.asia/store/`、`https://l-one.asia/store/l-1-web-capture/` 与
+  `https://l-one.asia/public/data/store/catalog.json` 均为 HTTP 200；三个线上文件 SHA-256 与合并仓库
+  对应文件一致。生产三端截图位于 `E:\L-One知识库\codex\visualizations\2026\09\03\l1-web-capture-production\`。
+- 回滚使用 `git revert -m 1 3d570089591d1fee9da75f746e59de1d9756bc98` 创建可审计回退提交；不删除
+  GitHub Release、ZIP 或 Issue。撤回后官网停止使用下载入口，并指导用户从 `chrome://extensions` 移除扩展。
