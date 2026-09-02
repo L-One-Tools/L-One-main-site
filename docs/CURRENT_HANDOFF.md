@@ -1,6 +1,6 @@
 # 当前任务交接
 
-## 2026-09-02 本地预览：L-1 网页拓印 v0.2.2
+## 2026-09-03 已发布：L-1 网页拓印 v0.2.2
 
 - 任务编号：`A-20260902-01`；本地预览分支：`work/A-20260902-01-web-capture-preview`；
   开始 commit：`6d43d037af5ea527db3342affcfc864e50cd4cd9`。
@@ -30,11 +30,16 @@
   远程响应文件名 `L-1-.-v0.2.2-.zip`；`16,700` bytes；SHA-256
   `FB9441ED595E24E6A6B9E8DD3D994E353B412FA22EFC44C923AD7E7D499DF055`；反馈
   `https://github.com/L-One-Tools/l-one-tools-releases/issues/3`。Release、版本资料与 Issue 均为 HTTP 200。
-- 仍未获推送、PR、合并或部署授权；这些操作继续暂停。
+- 已发布：PR [#10](https://github.com/L-One-Tools/L-One-main-site/pull/10) 的 `sync` CI 于 2026-09-03
+  通过；合并提交为 `3d570089591d1fee9da75f746e59de1d9756bc98`，EdgeOne 已更新正式站。
+- 生产验证：`https://l-one.asia/store/`、`https://l-one.asia/store/l-1-web-capture/` 和
+  `https://l-one.asia/public/data/store/catalog.json` 均为 HTTP 200；正式 Store、详情页和 Catalog
+  均含 v0.2.2、下载入口、`16,700 bytes`、SHA-256 与反馈入口。三端无横向溢出，未发现本任务资源错误。
 - 批准基线：分支 `work/A-20260902-01-web-capture-preview`；基准 HEAD
   `6d43d037af5ea527db3342affcfc864e50cd4` 加当前未提交任务文件，详细文件哈希和测试结果见
   `docs/store/L1_WEB_CAPTURE_PREVIEW_REVIEW.md` 的“L-One approved baseline”。
-- 回滚：当前没有提交或推送。若日后接入发布字段后出现问题，使用 `git revert` 撤销对应提交。
+- 回滚：使用 `git revert -m 1 3d570089591d1fee9da75f746e59de1d9756bc98` 创建可审计回退提交，
+  使官网撤回本工具入口与下载；不删除 GitHub Release、ZIP 或反馈 Issue。
 
 ## 2026-08-31 已发布：L-1 File To Text 自有下载域名迁移
 
