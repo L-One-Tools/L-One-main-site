@@ -3,7 +3,7 @@ const FALLBACK_CATALOG_URL = "../public/data/store/catalog.last-known-good.json"
 const STATUS_LABELS = {
   internal: "内测中",
   "coming-soon": "即将开放",
-  beta: "Beta",
+  beta: "公开内测",
   stable: "公开可用",
   unavailable: "暂不可用"
 };
@@ -146,7 +146,7 @@ function createToolCard(tool, index) {
   actionGroup.className = "tool-actions-group";
   const download = document.createElement(primaryAsset ? "a" : "button");
   download.className = "store-button primary";
-  download.textContent = primaryAsset ? "下载安装包" : "暂无公开下载";
+  download.textContent = primaryAsset ? "下载安装包" : tool.status === "beta" ? "内测包准备中" : "暂无公开下载";
   if (primaryAsset) {
     download.href = primaryAsset.url;
     download.setAttribute("download", "");

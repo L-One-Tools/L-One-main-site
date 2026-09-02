@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-31T04:00:00.000Z",
+  "generated_at": "2026-09-02T16:00:00.000Z",
   "tools": [
     {
       "id": "l-1-file-to-text",
@@ -64,6 +64,66 @@
       }
     },
     {
+      "id": "l-1-web-capture",
+      "slug": "l-1-web-capture",
+      "name": "L-1 网页拓印",
+      "summary": "把当前网页保存为长图 PNG，或录成一段无声滚动视频。",
+      "description": "停留在当前标签页，选择网页长图或网页录制，等待自动滚动结束后到浏览器下载目录查看文件。",
+      "status": "beta",
+      "featured": true,
+      "sort_order": 2,
+      "repository": "L-One-Tools/l-one-tools-releases",
+      "icon": "assets/products/l-1-web-capture/logo-2d-local-preview.png",
+      "cover": "",
+      "screenshots": [],
+      "features": [
+        "将当前网页保存为长图 PNG",
+        "将当前网页录成无声滚动视频",
+        "结果保存在浏览器下载目录"
+      ],
+      "platforms": [
+        {
+          "id": "chrome",
+          "name": "Chrome",
+          "architectures": [
+            "116+"
+          ],
+          "minimum_version": "Chrome 116 或更高版本"
+        }
+      ],
+      "links": {
+        "docs": "/store/l-1-web-capture/",
+        "privacy": "",
+        "feedback": "https://github.com/L-One-Tools/l-one-tools-releases/issues/3"
+      },
+      "release": {
+        "source": "github-release",
+        "channel": "beta",
+        "version": "0.2.2",
+        "tag": "l-1-web-imprint-v0.2.2",
+        "published_at": "",
+        "release_notes": [
+          "Chrome 116+ 的真实加载、启用、网页长图、网页录制和移除流程已完成 P0 验收。",
+          "公开内测包与反馈入口已开放；当前不是正式稳定版。"
+        ],
+        "download_available": true,
+        "recalled": false,
+        "assets": [
+          {
+            "name": "L-1-.-v0.2.2-.zip",
+            "platform": "chrome",
+            "architecture": "116+",
+            "size": 16700,
+            "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip",
+            "sha256": "fb9441ed595e24e6a6b9e8dd3d994e353b412fa22efc44c923ad7e7d499df055",
+            "minimum_system": "Chrome 116 或更高版本",
+            "available": true,
+            "recalled": false
+          }
+        ]
+      }
+    },
+    {
       "id": "story-flow",
       "slug": "story-flow",
       "name": "Story Flow",
@@ -71,7 +131,7 @@
       "description": "以可视化画布、属性编辑、分页预览和本地文件工作流为核心，支持明亮与暗夜主题、导入导出、模板和异常退出恢复。",
       "status": "internal",
       "featured": true,
-      "sort_order": 1,
+      "sort_order": 3,
       "repository": "L-One-Tools/story-flow",
       "icon": "",
       "cover": "",

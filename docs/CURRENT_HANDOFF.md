@@ -1,5 +1,41 @@
 # 当前任务交接
 
+## 2026-09-02 本地预览：L-1 网页拓印 v0.2.2
+
+- 任务编号：`A-20260902-01`；本地预览分支：`work/A-20260902-01-web-capture-preview`；
+  开始 commit：`6d43d037af5ea527db3342affcfc864e50cd4cd9`。
+- 已完成：本地 Store 新工具卡片与 `/store/l-1-web-capture/` 详情页；状态为公开内测，
+  版本为 v0.2.2；2026-09-03 已按批准边界接入已核验的下载与反馈入口。
+- 已使用：L-One 本轮提供的 2D 工具标识（SHA-256 `68ED144F372F34B25E16C1D8A810CBAC6E55543790115AE1DD7518AD99865C79`）
+  作为 Store/首屏身份；3D 标识（SHA-256 `9F7F6DE885CB2454FBA762B10D065E0895A86DD42FF854ACAC6F0B4EF441418C`）
+  只保留为本地候选、未进入页面。真实弹窗原图仅在首段以裁切方式显示任务入口，未来公开提交前
+  必须重新确认标识授权与设计清理素材。
+- 本地地址：`http://127.0.0.1:4173/store/l-1-web-capture/`；Store：
+  `http://127.0.0.1:4173/store/`。
+- 2026-09-02 复审后结构：首段以真实弹窗裁切解释“网页长图 / 网页录制”；第二段标题为
+  “网页自己滚动”并在第三步说明浏览器下载目录结果；第三段为 Chrome 解压加载的文字安装提示；
+  第四段为“仍有瑕疵”；第五段为“FAQ”。已去除 01—04 段落注解和“使用前再确认一次”。
+- 三端截图：`E:\L-One知识库\codex\visualizations\2026\09\02\l1-web-capture-preview-r2\`
+  下的 `desktop-1440x900.png`、`tablet-834x1112.png`、`mobile-390x844.png`；另有
+  `desktop-popup-crop-1440x900.png` 用于核对首段裁切不含浏览器工具栏。三端页面滚动宽度均不超过对应视口。
+- 本地验证：Catalog 生成、校验、回退测试、站点审计、Motion Library 审计、`git diff --check`
+  通过；Store 已实测渲染第三张卡片、下载与反馈入口均可见。
+- `l_one_decision`（2026-09-03）：L-One 已通过本任务中最近一次调整后的本地预览；批准对象是
+  当前 Store 卡片和详情页状态，包括 2D 标识的页面使用、3D 标识作为本地候选、首段真实功能图裁切、
+  章节合并与重命名、安装提示、限制说明和 FAQ 结构。不得以更早预览版替代本批准基线。
+- 发布前唯一允许的页面改动：接入已经核验的真实下载链接与反馈入口。正文、图片、主布局、版本、
+  Logo、人工分行、功能承诺或交互若有变化，必须重新本地预览并交 L-One 审核。
+- 渠道字段已由“工具发布与渠道运维”交付并复核：下载 URL
+  `https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip`；
+  远程响应文件名 `L-1-.-v0.2.2-.zip`；`16,700` bytes；SHA-256
+  `FB9441ED595E24E6A6B9E8DD3D994E353B412FA22EFC44C923AD7E7D499DF055`；反馈
+  `https://github.com/L-One-Tools/l-one-tools-releases/issues/3`。Release、版本资料与 Issue 均为 HTTP 200。
+- 仍未获推送、PR、合并或部署授权；这些操作继续暂停。
+- 批准基线：分支 `work/A-20260902-01-web-capture-preview`；基准 HEAD
+  `6d43d037af5ea527db3342affcfc864e50cd4` 加当前未提交任务文件，详细文件哈希和测试结果见
+  `docs/store/L1_WEB_CAPTURE_PREVIEW_REVIEW.md` 的“L-One approved baseline”。
+- 回滚：当前没有提交或推送。若日后接入发布字段后出现问题，使用 `git revert` 撤销对应提交。
+
 ## 2026-08-31 已发布：L-1 File To Text 自有下载域名迁移
 
 - 任务编号：`A-20260831-01`；功能分支：`hotfix/A-20260831-self-hosted-download`；

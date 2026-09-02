@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "tool_id": "l-1-web-capture",
+  "updated_at": "2026-09-03T00:00:00+08:00",
+  "source": "github-release",
+  "channel": "beta",
+  "version": "0.2.2",
+  "tag": "l-1-web-imprint-v0.2.2",
+  "published_at": "",
+  "release_notes": [
+    "Chrome 116+ 的真实加载、启用、网页长图、网页录制和移除流程已完成 P0 验收。",
+    "公开内测包与反馈入口已开放；当前不是正式稳定版。"
+  ],
+  "download_available": true,
+  "recalled": false,
+  "assets": [
+    {
+      "name": "L-1-.-v0.2.2-.zip",
+      "platform": "chrome",
+      "architecture": "116+",
+      "size": 16700,
+      "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip",
+      "sha256": "fb9441ed595e24e6a6b9e8dd3d994e353b412fa22efc44c923ad7e7d499df055",
+      "minimum_system": "Chrome 116 或更高版本",
+      "available": true,
+      "recalled": false
+    }
+  ]
+}
