@@ -1,5 +1,27 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260902-01
+
+- 执行设备：当前 Codex 工作树。
+- 任务目标：在独立本地分支制作 `L-1 网页拓印` v0.2.2 的 Store 入口与详情页预览，交付可打开的本地页面和 1440×900、834×1112、390×844 三端截图供 L-One 审核。
+- 功能分支：`work/A-20260902-01-web-capture-preview`；开始 commit：`6d43d037af5ea527db3342affcfc864e50cd4cd9`。
+- 允许修改：`store/index.html`、`store/store.css`、`store/store.js`、`store/catalog.source.json`、`store/releases/l-1-web-capture.json`、`public/data/store/catalog.json`、`public/data/store/catalog.last-known-good.json`、`store/l-1-web-capture/`、`store/assets/products/l-1-web-capture/`、`scripts/test-store-catalog.mjs`、`scripts/site-audit.js`、`docs/store/L1_WEB_CAPTURE_PREVIEW_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本文件中的本轮范围声明。
+- 允许修改的代码区域：Web Capture 对应的预览 Catalog 数据、Store 卡片身份与禁用下载状态、详情页内容、人工分行、响应式版式、FAQ、两张获授权本地预览原图的展示、字标、直接相关审计与交接。
+- 只读参考：L-One 对外表达规范、现有 File To Text 详情页视觉 Token、v0.2.2 P0 验收事实、两张授权测试原图及锁定轮廓字标。
+- 明确禁止修改：真实安装包、真实下载 URL、扩展源码、现有工具内容与下载、全站导航结构、生产分支、GitHub PR、远程仓库、EdgeOne/DNS/服务器、秘密及生产环境变量；原始浏览器截图不得作为未来公开提交素材。
+- 预计影响范围：仅当前本地预览分支的 `/store/` 与 `/store/l-1-web-capture/`；正式站和远程仓库完全不变。
+- 测试方式：Catalog 生成、校验、失败回退、`node scripts/site-audit.js`、Motion Library 审计、`git diff --check`、Chrome 本地预览、三端截图、横向溢出、人工分行、禁用下载、图片裁切、FAQ 键盘可达与控制台检查。
+- 回滚方式：未提交、未推送；审核不通过时废弃本地预览分支。未来获批合并后使用 `git revert` 创建可审计回退提交。
+
+### 2026-09-03 渠道字段最小接入授权
+
+- `l_one_decision`：最新本地预览已经通过；只接入已核验的发布字段，不改写批准页面基线。
+- 允许修改：`store/l-1-web-capture/index.html` 的既有下载/反馈控件、`store/catalog.source.json` 的本工具反馈字段、`store/releases/l-1-web-capture.json`、生成的 `public/data/store/catalog.json` 与 `public/data/store/catalog.last-known-good.json`、直接相关的 `scripts/site-audit.js` 和 `scripts/test-store-catalog.mjs`、`docs/store/L1_WEB_CAPTURE_PREVIEW_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`。
+- 允许字段：下载 URL、远程响应文件名、文件大小 `16,700`、SHA-256、Release URL、版本资料 URL、反馈 URL、公开内测下载状态与撤回规则。
+- 明确禁止：正文、图片、主布局、版本、Logo、人工分行、功能承诺、限制说明、安装说明、非本工具内容、安装包文件、推送、PR、合并、部署。
+- 验证：下载端点的 HTTP 状态、附件文件名、字节数、SHA-256；Release/资料/反馈页 HTTP 状态；Catalog 生成/校验/测试；站点审计；链接与禁用状态解除后的本地页面检查；`git diff --check`。
+- 回滚：尚未提交或推送；未来若下载或反馈入口异常，使用 `git revert` 撤回渠道字段接入提交，恢复上一已批准预览状态。
+
 本地图依据仓库在 `8e88ca41ad5c7b584a742e8c6dc26bc3420d721c`
 的真实结构编制。具体任务仍须进一步缩小到明确文件和代码区域。
 

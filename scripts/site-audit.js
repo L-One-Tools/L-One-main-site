@@ -20,6 +20,10 @@ const fileToTextDir = path.join(storeDir, "l-1-file-to-text");
 const fileToTextHtmlPath = path.join(fileToTextDir, "index.html");
 const fileToTextCssPath = path.join(fileToTextDir, "tool-detail.css");
 const fileToTextJsPath = path.join(fileToTextDir, "tool-detail.js");
+const webCaptureDir = path.join(storeDir, "l-1-web-capture");
+const webCaptureHtmlPath = path.join(webCaptureDir, "index.html");
+const webCaptureCssPath = path.join(webCaptureDir, "web-capture.css");
+const webCaptureJsPath = path.join(webCaptureDir, "web-capture.js");
 const storeSourcePath = path.join(storeDir, "catalog.source.json");
 const storeSchemaPath = path.join(storeDir, "catalog.schema.json");
 const storeCatalogPath = path.join(root, "public", "data", "store", "catalog.json");
@@ -232,7 +236,7 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
 if (fs.existsSync(storeHtmlPath)) {
   const storeHtml = read(storeHtmlPath);
   checkNoCorruption("visible store/index.html", stripNonVisibleBlocks(storeHtml));
-  ["L-One Store", "工具列表", "L-1 File To Text 2.0.8 已开放公开下载", "Story Flow 仍处于内测阶段"].forEach((term) => {
+  ["L-One Store", "工具列表", "L-1 File To Text 2.0.8 已开放公开下载", "L-1 网页拓印 v0.2.2 正在公开内测预览", "Story Flow 仍处于内测阶段"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing required text: ${term}.`);
   });
   ["description", "canonical", "og:title", "application/ld+json"].forEach((term) => {
@@ -246,6 +250,65 @@ if (fs.existsSync(storeHtmlPath)) {
     fail("Store navigation should remove Recent and keep Store first.");
   }
 }
+
+[webCaptureHtmlPath, webCaptureCssPath, webCaptureJsPath].forEach((filePath) => {
+  if (!fs.existsSync(filePath)) fail(`Web Capture preview file is missing: ${path.relative(root, filePath)}.`);
+});
+
+if (fs.existsSync(webCaptureHtmlPath)) {
+  const webCaptureHtml = read(webCaptureHtmlPath);
+  checkNoCorruption("visible Web Capture detail page", stripNonVisibleBlocks(webCaptureHtml));
+  ["L-1 网页拓印", "公开内测", "v0.2.2", "Chrome 116+", "网页长图", "网页录制", "下载内测包", "内测反馈："].forEach((term) => {
+    if (!webCaptureHtml.includes(term)) fail(`Web Capture detail page is missing required text: ${term}.`);
+  });
+  ["网页自己滚动", "浏览器插件", "仍有瑕疵", 'chrome://extensions'].forEach((term) => {
+    if (!webCaptureHtml.includes(term)) fail(`Web Capture detail page is missing revised preview text: ${term}.`);
+  });
+  ["01 · TWO WAYS", "02 · THREE STEPS", "03 · WHAT YOU WILL FIND", "04 · BETA BOUNDARIES", "使用前再确认一次"].forEach((term) => {
+    if (webCaptureHtml.includes(term)) fail(`Web Capture detail page retains removed section annotation or FAQ title: ${term}.`);
+  });
+  const webCaptureDownloadUrl = "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip";
+  const webCaptureDownloadAnchors = [...webCaptureHtml.matchAll(/<a[^>]*data-download[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]);
+  if (webCaptureDownloadAnchors.length !== 2 || webCaptureDownloadAnchors.some((url) => url !== webCaptureDownloadUrl)) {
+    fail("Web Capture detail page should use only the verified v0.2.2 public download URL for both download controls.");
+  }
+  if (!webCaptureHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/issues/3")) {
+    fail("Web Capture detail page is missing the verified feedback link.");
+  }
+}
+
+if (fs.existsSync(webCaptureJsPath)) {
+  const webCaptureJs = read(webCaptureJsPath);
+  try { new Function(webCaptureJs); } catch (error) { fail(`Web Capture detail script syntax error: ${error.message}`); }
+  ["desktopLines", "mobileLines", "IntersectionObserver"].forEach((term) => {
+    if (!webCaptureJs.includes(term)) fail(`Web Capture detail script is missing required interaction hook: ${term}.`);
+  });
+}
+
+if (fs.existsSync(webCaptureCssPath) && !read(webCaptureCssPath).includes("preview-download")) {
+  fail("Web Capture detail stylesheet is missing the download control styling.");
+}
+
+[
+  ["assets/wordmark.svg", "33C4EBC479C0097411F5888E81B5D1D294569974656922DA9E2B5A6A50DF68BB"],
+  ["assets/real-long-page-preview.png", "EFAAD8B0538B75709380B753A41731684C185784DA7E7C6D7A2DB78EB71AFB98"],
+  ["assets/real-popup-preview.png", "D961EBE7A6A8239CC48957A1230E4A7A0A02077A6446250194E476CBE7F61AEA"]
+].forEach(([relativePath, expectedHash]) => {
+  const assetPath = path.join(webCaptureDir, relativePath);
+  if (!fs.existsSync(assetPath)) { fail(`Web Capture preview asset is missing: ${relativePath}.`); return; }
+  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(assetPath)).digest("hex").toUpperCase();
+  if (actualHash !== expectedHash) fail(`Web Capture preview asset hash mismatch: ${relativePath}.`);
+});
+
+[
+  ["assets/products/l-1-web-capture/logo-2d-local-preview.png", "68ED144F372F34B25E16C1D8A810CBAC6E55543790115AE1DD7518AD99865C79"],
+  ["assets/products/l-1-web-capture/logo-3d-local-preview.png", "9F7F6DE885CB2454FBA762B10D065E0895A86DD42FF854ACAC6F0B4EF441418C"]
+].forEach(([relativePath, expectedHash]) => {
+  const assetPath = path.join(storeDir, relativePath);
+  if (!fs.existsSync(assetPath)) { fail(`Web Capture local-preview logo is missing: ${relativePath}.`); return; }
+  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(assetPath)).digest("hex").toUpperCase();
+  if (actualHash !== expectedHash) fail(`Web Capture local-preview logo hash mismatch: ${relativePath}.`);
+});
 
 if (fs.existsSync(fileToTextHtmlPath)) {
   const fileToTextHtml = read(fileToTextHtmlPath);
@@ -348,8 +411,10 @@ if (fs.existsSync(storeCatalogPath)) {
   if (storeCatalog.schema_version !== "1.0") fail("Store Catalog schema_version should be 1.0.");
   const storyFlow = storeCatalog.tools?.find((tool) => tool.id === "story-flow");
   const fileToText = storeCatalog.tools?.find((tool) => tool.id === "l-1-file-to-text");
+  const webCapture = storeCatalog.tools?.find((tool) => tool.id === "l-1-web-capture");
   if (!storyFlow) fail("Store Catalog should include Story Flow.");
   if (!fileToText) fail("Store Catalog should include L-1 File To Text.");
+  if (!webCapture) fail("Store Catalog should include L-1 网页拓印.");
   if (storyFlow?.release?.download_available !== false) {
     fail("Story Flow must remain unavailable until a public installer is verified.");
   }
@@ -358,6 +423,12 @@ if (fs.existsSync(storeCatalogPath)) {
   }
   if (fileToText?.release?.assets?.[0]?.url !== "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe") {
     fail("L-1 File To Text Catalog should use only the verified 2.0.8 direct download URL.");
+  }
+  if (webCapture?.release?.version !== "0.2.2" || webCapture?.release?.channel !== "beta" || webCapture?.release?.download_available !== true) {
+    fail("L-1 网页拓印 Catalog must expose the verified v0.2.2 public beta download.");
+  }
+  if (webCapture?.release?.assets?.[0]?.url !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip" || webCapture?.release?.assets?.[0]?.size !== 16700 || webCapture?.release?.assets?.[0]?.sha256 !== "fb9441ed595e24e6a6b9e8dd3d994e353b412fa22efc44c923ad7e7d499df055") {
+    fail("L-1 网页拓印 Catalog must match the verified v0.2.2 asset metadata.");
   }
 }
 

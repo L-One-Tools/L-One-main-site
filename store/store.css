@@ -168,6 +168,13 @@
   height: 80px;
   background: #fff;
 }
+.tool-card[data-tool-id="l-1-web-capture"] .tool-mark {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  background: #fff;
+}
+.tool-card[data-tool-id="l-1-web-capture"] .tool-mark img { object-fit: cover; }
 .tool-index {
   color: var(--muted);
   font-size: 11px;
