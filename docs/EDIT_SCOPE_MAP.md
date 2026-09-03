@@ -1,5 +1,15 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260903-04
+
+- 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。
+- 任务目标：以 L-One 提供的 `l-1logo3.png` 为唯一来源，生成透明背景的 3D L/1 导航标记，替换全站主导航中错误的二维标记和旧文字 Logo。
+- 功能分支：`hotfix/A-20260903-04-transparent-3d-logo`；开始 commit：`f2ae627aeb8b061aaa7579b166fdcb020ec7a07d`。
+- 允许修改：`assets/brand/l1-site-mark-3d-transparent-v1.png`、`index.html`、`materials/index.html`、`materials/materials.css`、`motion-library.html`、`motion-library.css`、`store/index.html`、`store/l-1-file-to-text/index.html`、`store/l-1-web-capture/index.html`、`docs/CURRENT_HANDOFF.md` 与本文件。
+- 明确禁止：下载链接、版本、Catalog、工具内容、Materials 权限与数据、作品内容、后端、生产配置、DNS、密钥与安装包。
+- 验证：透明 Alpha 通道、32px 导航渲染、44×44px 点击区、三端无横向溢出、全站审计与 `git diff --check`、CI 与正式域名回读。
+- 回滚：对本轮合并提交执行 `git revert`；保留原二维 SVG 作为未引用的历史资产。
+
 ## 本轮范围：A-20260903-03
 
 - 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。

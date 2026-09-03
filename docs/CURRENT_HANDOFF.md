@@ -1,5 +1,14 @@
 # 当前任务交接
 
+## 2026-09-03 待发布：透明 3D L/1 导航标记
+
+- 任务编号：`A-20260903-04`；分支：`hotfix/A-20260903-04-transparent-3d-logo`；开始 commit：`f2ae627aeb8b061aaa7579b166fdcb020ec7a07d`。
+- 来源与处理：L-One 提供 `E:\L-1设计部\l-1logo3.png`；已生成透明 RGBA PNG，Alpha 范围为 0–255，未保留白色画布。使用文件为 `assets/brand/l1-site-mark-3d-transparent-v1.png`；原 2D SVG 不覆盖、仅停止引用。
+- 影响：主站、Store、Materials、Motion Library 与两个工具详情页的左上导航统一换用该标记。下载、版本、Catalog、正文和业务逻辑不变。
+- 本地验收：白底导航 40px 图像渲染清晰，44×44px 链接点击区保留，Store 1440px 无横向溢出。
+- 发布授权：L-One 要求将透明正式 Logo 改到网页中；通过 PR、CI 和生产回读后发布。
+- 回滚：`git revert <merge-commit>`，恢复此前二维导航标记；不删除新 PNG 或原始设计文件。
+
 ## 2026-09-03 待发布：全站子页壳层与工具目录 v2
 
 - 任务编号：`A-20260903-03`；分支：`work/A-20260903-03-subpage-shell-tools-catalog`；开始 commit：`d974d195efaef528104db77797f1074b269a0ae0`。
