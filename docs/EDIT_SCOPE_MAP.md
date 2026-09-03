@@ -1,5 +1,15 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260903-03
+
+- 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。
+- 任务目标：移除 Tools、Notes、Works、Materials 的内部说明型首屏，使访问者直接进入真实内容；将 Store 改为两项公开工具的编辑目录，并使用 L/1 二维导航标记。
+- 功能分支：`work/A-20260903-03-subpage-shell-tools-catalog`；开始 commit：`d974d195efaef528104db77797f1074b269a0ae0`。
+- 允许修改：`index.html`、`materials/index.html`、`materials/materials.css`、`store/index.html`、`store/store.css`、`store/store.js`、`assets/brand/l1-site-mark-2d-v1.svg`、`scripts/site-audit.js`、`docs/CURRENT_HANDOFF.md` 与本文件。
+- 明确禁止：工具详情页、下载链接、版本与 Catalog 事实、Materials 权限和数据、作品内容、后端、生产配置、DNS、密钥与安装包。
+- 验证：三端 1440×900、834×1112、390×844 截图；Logo 键盘焦点与 44×44px 点击区；Catalog、Motion、全站审计与 `git diff --check`；PR CI 与正式域名复核。
+- 回滚：对本轮合并提交执行 `git revert`；若生产异常，保留 EdgeOne 上一成功部署，不删除工具 Release 或数据。
+
 ## 本轮范围：A-20260902-01
 
 - 执行设备：当前 Codex 工作树。

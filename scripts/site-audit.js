@@ -109,8 +109,8 @@ if (!html.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>'
 if (!html.includes('<span class="en">notes</span><span class="zh">\u5b66\u4e60\u7b14\u8bb0</span>')) {
   fail("Home center navigation should display notes / \u5b66\u4e60\u7b14\u8bb0.");
 }
-if (!html.includes('<h1>Notes \u5b66\u4e60\u7b14\u8bb0</h1>')) {
-  fail("Notes page title is missing.");
+if (html.includes('class="lib-hero"')) {
+  fail("Notes page must not retain the removed introductory hero.");
 }
 if (!html.includes('{ route: "skills", title: "Notes"')) {
   fail("Home search index should expose the renamed Notes page.");
@@ -236,9 +236,12 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
 if (fs.existsSync(storeHtmlPath)) {
   const storeHtml = read(storeHtmlPath);
   checkNoCorruption("visible store/index.html", stripNonVisibleBlocks(storeHtml));
-  ["L-One Store", "工具列表", "L-1 File To Text 2.0.8 已开放公开下载", "L-1 网页拓印 v0.2.2 正在公开内测预览", "Story Flow 仍处于内测阶段"].forEach((term) => {
+  ["L-One Store", "Catalog / 02", "工具目录", "编辑推荐"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing required text: ${term}.`);
   });
+  if (storeHtml.includes('class="store-hero"')) {
+    fail("Store page must not retain the removed introductory hero.");
+  }
   ["description", "canonical", "og:title", "application/ld+json"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing SEO metadata: ${term}.`);
   });
@@ -296,7 +299,11 @@ if (fs.existsSync(webCaptureCssPath) && !read(webCaptureCssPath).includes("previ
 ].forEach(([relativePath, expectedHash]) => {
   const assetPath = path.join(webCaptureDir, relativePath);
   if (!fs.existsSync(assetPath)) { fail(`Web Capture preview asset is missing: ${relativePath}.`); return; }
-  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(assetPath)).digest("hex").toUpperCase();
+  const rawAsset = fs.readFileSync(assetPath);
+  const canonicalAsset = relativePath.endsWith(".svg")
+    ? Buffer.from(rawAsset.toString("utf8").replace(/\r\n/g, "\n"), "utf8")
+    : rawAsset;
+  const actualHash = crypto.createHash("sha256").update(canonicalAsset).digest("hex").toUpperCase();
   if (actualHash !== expectedHash) fail(`Web Capture preview asset hash mismatch: ${relativePath}.`);
 });
 
@@ -488,8 +495,8 @@ if (originalNoteCss.includes("border-top") || originalNoteCss.includes("border-b
 if (html.includes('<a class="work-featured"')) {
   fail("Works page should not render the old static featured card.");
 }
-if (!html.includes('<div class="section-head"><h1>WORKS</h1></div>')) {
-  fail("Works page title should be WORKS.");
+if (html.includes('<div class="section-head"><h1>WORKS</h1></div>')) {
+  fail("Works page must not retain the removed introductory hero.");
 }
 if (!html.includes('class="works-spotlight" data-works-spotlight')) {
   fail("Works page should include a scoped recent spotlight module.");

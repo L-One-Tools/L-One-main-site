@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">L-One 二维导航标记</title>
+  <desc id="desc">透明背景、炭黑色的 L 和 1 组合标记。</desc>
+  <g fill="#242526">
+    <path d="M53 18C35 18 21 32 21 50v140c0 30 24 54 54 54h128c18 0 32-14 32-32s-14-32-32-32H85V50c0-18-14-32-32-32Z"/>
+    <path d="M178 31c16-12 33-17 43-8 8 7 10 17 10 31v91c0 18-14 32-32 32s-32-14-32-32V83l-11 8c-14 10-34 7-44-8s-7-34 8-44l58-8Z"/>
+  </g>
+</svg>

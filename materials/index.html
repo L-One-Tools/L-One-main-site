@@ -10,7 +10,9 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="../index.html#home">L-One</a>
+      <a class="logo" href="../index.html#home" aria-label="返回 L-One 首页">
+        <img src="../assets/brand/l1-site-mark-2d-v1.svg" alt="" width="32" height="32">
+      </a>
       <nav class="site-nav" aria-label="主导航">
         <a href="../store/"><strong>Store</strong><span>工具</span></a>
         <a href="../index.html#works"><strong>Works</strong><span>作品</span></a>
@@ -22,15 +24,6 @@
   </header>
 
   <main class="materials-page">
-    <section class="materials-hero">
-      <div>
-        <p class="eyebrow">L-One Materials</p>
-        <h1>素材库</h1>
-        <p class="intro">统一浏览、筛选和管理创作素材。媒体迁移完成后，素材会从配置中的统一云端地址加载。</p>
-      </div>
-      <button class="upload-button" type="button" data-upload disabled title="上传后台将在后续阶段接入">素材上传</button>
-    </section>
-
     <section class="materials-controls" aria-label="素材筛选">
       <label class="search-box">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
@@ -64,6 +57,7 @@
     <section class="materials-toolbar" aria-label="视图设置">
       <p><strong data-visible-count>0</strong> 个素材</p>
       <div class="toolbar-controls">
+        <button class="upload-button" type="button" data-upload disabled title="上传后台将在后续阶段接入">素材上传</button>
         <div class="segmented" aria-label="素材视图">
           <button class="is-active" type="button" data-view="grid">网格</button>
           <button type="button" data-view="list">列表</button>
