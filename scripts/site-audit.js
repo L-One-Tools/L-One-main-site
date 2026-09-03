@@ -293,13 +293,17 @@ if (fs.existsSync(webCaptureCssPath) && !read(webCaptureCssPath).includes("previ
 }
 
 [
-  ["assets/wordmark.svg", "99D5006F36EADC5AB8574B2370A747B49CE0E29BCF280A11BB4DB66DAFF83D96"],
+  ["assets/wordmark.svg", "33C4EBC479C0097411F5888E81B5D1D294569974656922DA9E2B5A6A50DF68BB"],
   ["assets/real-long-page-preview.png", "EFAAD8B0538B75709380B753A41731684C185784DA7E7C6D7A2DB78EB71AFB98"],
   ["assets/real-popup-preview.png", "D961EBE7A6A8239CC48957A1230E4A7A0A02077A6446250194E476CBE7F61AEA"]
 ].forEach(([relativePath, expectedHash]) => {
   const assetPath = path.join(webCaptureDir, relativePath);
   if (!fs.existsSync(assetPath)) { fail(`Web Capture preview asset is missing: ${relativePath}.`); return; }
-  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(assetPath)).digest("hex").toUpperCase();
+  const rawAsset = fs.readFileSync(assetPath);
+  const canonicalAsset = relativePath.endsWith(".svg")
+    ? Buffer.from(rawAsset.toString("utf8").replace(/\r\n/g, "\n"), "utf8")
+    : rawAsset;
+  const actualHash = crypto.createHash("sha256").update(canonicalAsset).digest("hex").toUpperCase();
   if (actualHash !== expectedHash) fail(`Web Capture preview asset hash mismatch: ${relativePath}.`);
 });
 

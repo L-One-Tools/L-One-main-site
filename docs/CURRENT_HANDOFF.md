@@ -7,7 +7,7 @@
 - 未修改：工具详情、下载、版本、Catalog 资料、Materials 权限和数据、作品内容、后端或生产配置。
 - 本地验收：独立 Chrome 配置生成 1440×900、834×1112、390×844 截图；所有页面的文档滚动宽度不超过视口，Logo 点击与键盘焦点目标为 44×44px。预览：`http://127.0.0.1:4173/store/`、`/index.html#skills`、`/index.html#works`、`/materials/`。
 - 发布授权：L-One 已在 `l-one asia-1` 确认执行官网上线。发布前仍须完成当前分支精确提交、PR、CI、合并和生产域名验证。
-- 审计基线修正：PR #10 新增的 `store/l-1-web-capture/assets/wordmark.svg` 实际 SHA-256 为 `99D5006F36EADC5AB8574B2370A747B49CE0E29BCF280A11BB4DB66DAFF83D96`；审计值已改为以当前已合并文件为准。该修正不改动资源内容。
+- 审计基线修正：PR #10 新增的 `store/l-1-web-capture/assets/wordmark.svg` 使用 LF 规范化后 SHA-256 为 `33C4EBC479C0097411F5888E81B5D1D294569974656922DA9E2B5A6A50DF68BB`。审计现对 SVG 规范化换行后再核验，避免 Windows 检出为 CRLF 时产生假失败；不改动资源内容。
 - 回滚：合并后使用 `git revert <merge-commit>` 创建回退提交，恢复此前页面结构；不影响已发布的工具下载和 Release。
 
 ## 2026-09-03 已发布：L-1 网页拓印 v0.2.2
