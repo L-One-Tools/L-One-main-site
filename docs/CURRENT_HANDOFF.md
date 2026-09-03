@@ -1,5 +1,15 @@
 # 当前任务交接
 
+## 2026-09-03 待发布：全站子页壳层与工具目录 v2
+
+- 任务编号：`A-20260903-03`；分支：`work/A-20260903-03-subpage-shell-tools-catalog`；开始 commit：`d974d195efaef528104db77797f1074b269a0ae0`。
+- 已完成本地候选：Store 移除说明型 Hero，首屏直接显示两项公开工具的同规格目录卡和真实的编辑推荐空状态；Notes 与 Works 首屏直接进入内容；Materials 首屏直接进入筛选和素材网格，素材上传控件仅移动到工具栏；主站、Store 和 Materials 导航换用 2D L/1 标记。
+- 未修改：工具详情、下载、版本、Catalog 资料、Materials 权限和数据、作品内容、后端或生产配置。
+- 本地验收：独立 Chrome 配置生成 1440×900、834×1112、390×844 截图；所有页面的文档滚动宽度不超过视口，Logo 点击与键盘焦点目标为 44×44px。预览：`http://127.0.0.1:4173/store/`、`/index.html#skills`、`/index.html#works`、`/materials/`。
+- 发布授权：L-One 已在 `l-one asia-1` 确认执行官网上线。发布前仍须完成当前分支精确提交、PR、CI、合并和生产域名验证。
+- 审计基线修正：PR #10 新增的 `store/l-1-web-capture/assets/wordmark.svg` 实际 SHA-256 为 `99D5006F36EADC5AB8574B2370A747B49CE0E29BCF280A11BB4DB66DAFF83D96`；审计值已改为以当前已合并文件为准。该修正不改动资源内容。
+- 回滚：合并后使用 `git revert <merge-commit>` 创建回退提交，恢复此前页面结构；不影响已发布的工具下载和 Release。
+
 ## 2026-09-03 已发布：L-1 网页拓印 v0.2.2
 
 - 任务编号：`A-20260902-01`；本地预览分支：`work/A-20260902-01-web-capture-preview`；

@@ -82,115 +82,45 @@ function appendText(parent, tag, className, text) {
   return element;
 }
 
-function createFact(label, value) {
-  const fact = document.createElement("div");
-  fact.className = "tool-fact";
-  appendText(fact, "span", "", label);
-  appendText(fact, "strong", "", value);
-  return fact;
-}
-
-function createToolCard(tool, index) {
-  const card = document.createElement("article");
-  card.className = "tool-card";
+function createToolCard(tool) {
+  const card = document.createElement("a");
+  card.className = "catalog-card";
   card.dataset.toolId = tool.id;
+  card.href = tool.links.docs;
 
-  const identity = document.createElement("div");
-  identity.className = "tool-identity";
-  const mark = document.createElement("div");
-  mark.className = "tool-mark";
+  const cover = document.createElement("div");
+  cover.className = "catalog-cover";
   const productLogo = tool.id === "l-1-file-to-text" ? "assets/products/l-1-file-to-text/product-logo.png" : tool.icon;
   if (productLogo) {
     const image = document.createElement("img");
     image.src = productLogo;
-    image.alt = `${tool.name} 产品 Logo`;
-    mark.appendChild(image);
-  } else {
-    mark.textContent = tool.name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase();
-    mark.setAttribute("aria-label", `${tool.name} 文字标记`);
+    image.alt = "";
+    cover.appendChild(image);
   }
-  appendText(identity, "span", "tool-index", String(index + 1).padStart(2, "0"));
-  identity.prepend(mark);
 
-  const content = document.createElement("div");
-  content.className = "tool-content";
-  const heading = document.createElement("div");
-  heading.className = "tool-heading";
-  const headingCopy = document.createElement("div");
-  appendText(headingCopy, "h3", "", tool.name);
-  appendText(headingCopy, "p", "tool-summary", tool.summary);
-  appendText(heading, "span", "status-badge", STATUS_LABELS[tool.status] || "状态待确认");
-  heading.prepend(headingCopy);
-
-  const availableAssets = tool.release.assets.filter((asset) => (
-    asset.available && !asset.recalled && isAllowedDownloadUrl(asset.url)
-  ));
-  const primaryAsset = availableAssets[0] || null;
+  const copy = document.createElement("div");
+  appendText(copy, "h2", "", tool.name);
+  appendText(copy, "p", "", tool.summary);
   const platforms = tool.platforms.map((platform) => {
     const architectures = Array.isArray(platform.architectures) ? platform.architectures.join("/") : "";
     return `${platform.name}${architectures ? ` ${architectures}` : ""}`;
   }).join("、") || "待补充";
-  const facts = document.createElement("div");
-  facts.className = "tool-facts";
-  facts.append(
-    createFact("Version", tool.release.version || "待补充"),
-    createFact("Published", formatDate(tool.release.published_at)),
-    createFact("Platform", platforms),
-    createFact("File size", formatSize(primaryAsset?.size))
-  );
-
-  const footer = document.createElement("div");
-  const actions = document.createElement("div");
-  actions.className = "tool-actions";
-  const actionGroup = document.createElement("div");
-  actionGroup.className = "tool-actions-group";
-  const download = document.createElement(primaryAsset ? "a" : "button");
-  download.className = "store-button primary";
-  download.textContent = primaryAsset ? "下载安装包" : tool.status === "beta" ? "内测包准备中" : "暂无公开下载";
-  if (primaryAsset) {
-    download.href = primaryAsset.url;
-    download.setAttribute("download", "");
-  } else {
-    download.type = "button";
-    download.disabled = true;
-  }
-  actionGroup.appendChild(download);
-  if (tool.links?.docs) {
-    const detail = document.createElement("a");
-    detail.className = "store-button";
-    detail.href = tool.links.docs;
-    detail.textContent = "查看详情";
-    actionGroup.appendChild(detail);
-  }
-  if (tool.links?.feedback) {
-    const feedback = document.createElement("a");
-    feedback.className = "store-button";
-    feedback.href = tool.links.feedback;
-    feedback.textContent = "反馈与任务";
-    actionGroup.appendChild(feedback);
-  }
-  actions.append(actionGroup);
-  appendText(
-    actions,
-    "span",
-    "download-note",
-    tool.release.recalled ? "当前版本已撤回" : primaryAsset ? "HTTPS · SHA-256 可校验" : "内测中"
-  );
-  footer.appendChild(actions);
-
-  if (tool.release.release_notes.length) {
-    const details = document.createElement("details");
-    details.className = "release-notes";
-    appendText(details, "summary", "", "查看更新说明");
-    const list = document.createElement("ul");
-    tool.release.release_notes.forEach((note) => appendText(list, "li", "", note));
-    details.appendChild(list);
-    footer.appendChild(details);
-  }
-
-  content.append(heading, facts, footer);
-  card.append(identity, content);
+  const meta = document.createElement("div");
+  meta.className = "catalog-meta-row";
+  appendText(meta, "span", "", platforms);
+  appendText(meta, "span", "", STATUS_LABELS[tool.status] || "状态待确认");
+  copy.appendChild(meta);
+  card.append(cover, copy);
   return card;
+}
+
+function createCatalogNote() {
+  const note = document.createElement("aside");
+  note.className = "catalog-note";
+  note.setAttribute("aria-label", "工具目录说明");
+  appendText(note, "p", "eyebrow", "Catalog note");
+  note.insertAdjacentHTML("beforeend", "<h2>先选工具，<br>再看详细说明。</h2><p>目录页不承担下载、校验和限制说明；这些留给单项详情页。</p><small>第 3 项公开工具加入后，此栏将替换为同规格工具卡。</small>");
+  return note;
 }
 
 async function fetchCatalog(url, cache) {
@@ -230,16 +160,14 @@ async function loadCatalog() {
     }
   }
 
-  const tools = catalog.tools.filter(validTool);
+  const tools = catalog.tools.filter((tool) => validTool(tool) && tool.links?.docs && ["stable", "beta"].includes(tool.status));
   elements.loading.hidden = true;
   elements.empty.hidden = tools.length > 0;
-  tools.forEach((tool, index) => elements.list.appendChild(createToolCard(tool, index)));
+  tools.forEach((tool) => elements.list.appendChild(createToolCard(tool)));
+  elements.list.appendChild(createCatalogNote());
   elements.list.setAttribute("aria-busy", "false");
   const date = formatDate(catalog.generated_at);
   elements.meta.textContent = `${usingFallback ? "稳定快照" : "Catalog"} · 更新于 ${date}`;
-  if (tools.length !== catalog.tools.length) {
-    showError("部分工具资料未通过页面校验，已安全跳过。");
-  }
 }
 
 elements.retry?.addEventListener("click", loadCatalog);
