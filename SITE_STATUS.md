@@ -2,6 +2,13 @@
 
 更新时间：2026-09-03
 
+## 2026-09-05 L-1 File To Text v2.1.0 公开内测版待发布
+
+- 本地候选已将官网 File To Text 的发布快照、Catalog、详情页和审计断言切换至 v2.1.0 公开内测版；尚未推送、合并或部署，正式站仍为已发布的 2.0.8。
+- 已核验的发布附件为 `L-1.File.To.Text.Setup.v2.1.0.exe`，`146,969,357` bytes，SHA-256 `B4CB233299B9660EAC81F702A7215DA13401AEFB79D6591EB651C3F47CDA3406`；官网唯一下载入口将使用公开 GitHub Release 路径。
+- 候选页明确：首次在资源中心确认下载 FireRed 中文识别模型和 FFmpeg；只验证短样本本地 Markdown 转写；大批量真实文件仍在测试；不提供中文翻译稿、SRT/VTT 或自动歌词/台词裁决。
+- 本地 Catalog、回退测试、全站、Motion 审计和三端（1440×900、834×1112、390×844）验证通过。手机 Store 的目录横向截断已在 `store/store.css` 的手机断点修为单列；等待 PR、CI、合并及正式域名验证。
+
 ## 2026-09-03 L-1 网页拓印 v0.2.2 已正式发布
 
 - `A-20260902-01` 已通过 PR [#10](https://github.com/L-One-Tools/L-One-main-site/pull/10) 合并至 `main`；

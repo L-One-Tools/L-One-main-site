@@ -68,8 +68,8 @@ Story Flow 将来可使用 GitHub API 向主站发送：
 - Store Catalog URL 通过允许域名检查。
 - 用户明确同意上传或发布真实安装包。
 
-L-1 File To Text 2.0.8 已通过公开 GitHub Release 分发，不依赖上述 Story Flow 镜像
-Variables。其 Catalog 下载地址只允许
+L-1 File To Text v2.1.0 公开内测版已通过公开 GitHub Release 分发，不依赖上述 Story Flow 镜像
+Variables。该版本不是稳定版；大批量真实文件仍在测试。其 Catalog 下载地址只允许
 `L-One-Tools/l-one-tools-releases/releases/download/` 下的正式资产路径；变更版本、文件名、
 大小或 SHA-256 时必须重新完成页面、Catalog、下载和三端验收。
 

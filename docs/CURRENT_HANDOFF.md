@@ -1,5 +1,15 @@
 # 当前任务交接
 
+## 2026-09-05 待发布：L-1 File To Text v2.1.0 公开内测版
+
+- 任务编号：`A-20260904-01`；分支：`work/A-20260904-01-file-to-text-public-beta`；开始 commit：`5b3322ee1ae78197ad647600ca265b80f58f1b67`。
+- 已核验的唯一发布字段：GitHub Release `l-1-file-to-text-v2.1.0-public-beta`；安装包 `L-1.File.To.Text.Setup.v2.1.0.exe`；大小 `146,969,357` bytes；SHA-256 `B4CB233299B9660EAC81F702A7215DA13401AEFB79D6591EB651C3F47CDA3406`；反馈 Issue #4。下载响应为 Release 重定向后附件 200，并包含正确文件名、长度与 Range 支持。
+- 用户可见状态：公开内测，不是稳定版；已验证首次资源下载/校验、短样本本地 Markdown 转写和 275 项自动测试。大批量真实文件仍在测试；不提供中文翻译稿、SRT/VTT，歌词或台词只提示人工复核。
+- 本地验收：Catalog 生成/校验、Catalog 回退测试、站点审计、Motion 审计和 `git diff --check` 通过。隔离 Chrome CDP 的 1440×900、834×1112、390×844 Store/详情页截图均无横向溢出；手机 Store 目录已由横向流修为单列。下载和 Store 卡片均可键盘聚焦。
+- 截图与 Intent Lock：`E:\L-One知识库\codex\visualizations\2026\09\04\l1-file-to-text-v2-1-0-public-beta\`；`docs/store/L1_FILE_TO_TEXT_2_1_0_PUBLIC_BETA_REVIEW.md`。
+- 发布前剩余：精确暂存、PR、CI、合并，等待 EdgeOne 更新后从正式域名复核 Store、详情、Catalog、下载、反馈、版本、大小和 SHA-256。
+- 回滚：正式异常时对本轮合并提交执行 `git revert`，回到 `5b3322e` 对应的 2.0.8 页面/Catalog；不删除 GitHub Release 或安装包。
+
 ## 2026-09-03 待发布：透明 3D L/1 导航标记
 
 - 任务编号：`A-20260903-04`；分支：`hotfix/A-20260903-04-transparent-3d-logo`；开始 commit：`f2ae627aeb8b061aaa7579b166fdcb020ec7a07d`。

@@ -254,6 +254,14 @@ if (fs.existsSync(storeHtmlPath)) {
   }
 }
 
+if (fs.existsSync(storeCssPath)) {
+  const storeCss = read(storeCssPath);
+  const mobileStoreRules = storeCss.match(/@media \(max-width: 580px\) \{([\s\S]*?)\n\}/)?.[1] || "";
+  if (!mobileStoreRules.includes(".tool-list { grid-template-columns: minmax(0, 1fr); overflow: visible;")) {
+    fail("Store mobile catalog should use a single-column grid without horizontal overflow.");
+  }
+}
+
 [webCaptureHtmlPath, webCaptureCssPath, webCaptureJsPath].forEach((filePath) => {
   if (!fs.existsSync(filePath)) fail(`Web Capture preview file is missing: ${path.relative(root, filePath)}.`);
 });
@@ -322,24 +330,25 @@ if (fs.existsSync(fileToTextHtmlPath)) {
   checkNoCorruption("visible store/l-1-file-to-text/index.html", stripNonVisibleBlocks(fileToTextHtml));
   [
     "L-1 File To Text",
-    "完成的价值",
-    "远大于创新",
-    "Windows 10/11 x64",
-    "174,867,225 bytes",
-    "0B4080D6CF4FB9B47FA230CB8AC3C14A37C7202BEDC266869EE8BBEDB71418D8",
-    "CPU 基础版",
+    "先把音视频",
+    "变成可读文字",
+    "Windows",
+    "公开内测",
+    "146,969,357 bytes",
+    "B4CB233299B9660EAC81F702A7215DA13401AEFB79D6591EB651C3F47CDA3406",
+    "FireRed",
     "FFmpeg",
-    "SmartScreen",
-    "不上传到 L-One 服务",
+    "不提供中文翻译稿、SRT 或 VTT",
+    "大批量真实文件仍在测试",
   ].forEach((term) => {
     if (!fileToTextHtml.includes(term)) fail(`File To Text detail page is missing required text: ${term}.`);
   });
-  const exactDownloadUrl = "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe";
+  const exactDownloadUrl = "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.1.0-public-beta/L-1.File.To.Text.Setup.v2.1.0.exe";
   const downloadAnchors = [...fileToTextHtml.matchAll(/<a[^>]*data-download[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]);
   if (downloadAnchors.length !== 2 || downloadAnchors.some((url) => url !== exactDownloadUrl)) {
-    fail("File To Text detail page should use only the verified 2.0.8 direct download URL for both download controls.");
+    fail("File To Text detail page should use only the verified v2.1.0 public beta download URL for both download controls.");
   }
-  if (!fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/releases/tag/l-1-file-to-text-v2.0.8") || !fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/tree/main/l-1-file-to-text/2.0.8_2026-08-27")) {
+  if (!fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/releases/tag/l-1-file-to-text-v2.1.0-public-beta") || !fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/tree/main/l-1-file-to-text/2.1.0_2026-09-04") || !fileToTextHtml.includes("https://github.com/L-One-Tools/l-one-tools-releases/issues/4")) {
     fail("File To Text detail page is missing the verified Release or public materials link.");
   }
   if (fileToTextHtml.includes("93d82e74-a597-4ee5-8018-e00a8a521b80.png")) {
@@ -425,11 +434,11 @@ if (fs.existsSync(storeCatalogPath)) {
   if (storyFlow?.release?.download_available !== false) {
     fail("Story Flow must remain unavailable until a public installer is verified.");
   }
-  if (fileToText?.release?.version !== "2.0.8" || fileToText?.release?.download_available !== true) {
-    fail("L-1 File To Text should expose only the verified 2.0.8 public release.");
+  if (fileToText?.release?.version !== "2.1.0" || fileToText?.release?.channel !== "beta" || fileToText?.release?.download_available !== true) {
+    fail("L-1 File To Text should expose only the verified v2.1.0 public beta release.");
   }
-  if (fileToText?.release?.assets?.[0]?.url !== "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe") {
-    fail("L-1 File To Text Catalog should use only the verified 2.0.8 direct download URL.");
+  if (fileToText?.release?.assets?.[0]?.url !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.1.0-public-beta/L-1.File.To.Text.Setup.v2.1.0.exe") {
+    fail("L-1 File To Text Catalog should use only the verified v2.1.0 public beta download URL.");
   }
   if (webCapture?.release?.version !== "0.2.2" || webCapture?.release?.channel !== "beta" || webCapture?.release?.download_available !== true) {
     fail("L-1 网页拓印 Catalog must expose the verified v0.2.2 public beta download.");

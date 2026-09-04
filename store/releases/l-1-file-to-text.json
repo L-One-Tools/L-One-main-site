@@ -1,27 +1,27 @@
 {
   "schema_version": "1.0",
   "tool_id": "l-1-file-to-text",
-  "updated_at": "2026-08-31T12:00:00+08:00",
-  "source": "manual",
-  "channel": "stable",
-  "version": "2.0.8",
-  "tag": "l-1-file-to-text-v2.0.8",
-  "published_at": "2026-08-27T16:07:42+08:00",
+  "updated_at": "2026-09-04T17:58:25+08:00",
+  "source": "github-release",
+  "channel": "beta",
+  "version": "2.1.0",
+  "tag": "l-1-file-to-text-v2.1.0-public-beta",
+  "published_at": "2026-09-04T17:58:25+08:00",
   "release_notes": [
-    "当前正式推荐版本；公开材料已补齐权利、隐私、SBOM 与第三方许可证。",
-    "219 项自动测试以及安装、启动、卸载和 ClamAV 深度扫描均已通过。",
-    "安装包不包含模型权重；转写与输出默认在本机完成。"
+    "公开内测，不是稳定版；大批量真实文件仍在测试。",
+    "首次使用时，在资源中心确认下载 FireRed 中文识别模型与 FFmpeg。",
+    "已验证首次资源下载/校验和短样本本地 Markdown 转写；共通过 275 项自动测试。"
   ],
   "download_available": true,
   "recalled": false,
   "assets": [
     {
-      "name": "L-1.File.To.Text.Setup.v2.0.8.exe",
+      "name": "L-1.File.To.Text.Setup.v2.1.0.exe",
       "platform": "windows",
       "architecture": "x64",
-      "size": 174867225,
-      "url": "https://dl.l-one.asia/l-1-file-to-text/2.0.8/L-1.File.To.Text.Setup.v2.0.8.exe",
-      "sha256": "0b4080d6cf4fb9b47fa230cb8ac3c14a37c7202bedc266869ee8bbedb71418d8",
+      "size": 146969357,
+      "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-file-to-text-v2.1.0-public-beta/L-1.File.To.Text.Setup.v2.1.0.exe",
+      "sha256": "b4cb233299b9660eac81f702a7215da13401aefb79d6591eb651c3f47cda3406",
       "minimum_system": "Windows 10/11 64 位",
       "available": true,
       "recalled": false
