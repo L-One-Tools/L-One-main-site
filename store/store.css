@@ -350,9 +350,9 @@ summary:focus-visible {
   .featured-empty,
   .store-footer { align-items: flex-start; flex-direction: column; }
   .catalog-meta { text-align: left; }
-  .tool-list { display: flex; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 18px 10px 0; }
-  .catalog-card { flex: 0 0 276px; scroll-snap-align: start; }
-  .catalog-note { display: grid; flex: 0 0 276px; min-height: auto; }
+  .tool-list { grid-template-columns: minmax(0, 1fr); overflow: visible; padding: 0; scroll-snap-type: none; }
+  .catalog-card { flex: none; }
+  .catalog-note { display: grid; flex: none; min-height: auto; }
   .featured-empty { margin-top: 44px; padding-top: 32px; }
 }
 

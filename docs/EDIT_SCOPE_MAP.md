@@ -1,5 +1,18 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260904-01
+
+- 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。
+- 任务目标：将 L-1 File To Text 从已发布的 2.0.8 稳定版，更新为已核验的 `v2.1.0 公开内测版`；让普通 Windows 用户在下载前看懂首次资源准备、已验证范围、限制、反馈和回退方式。
+- 功能分支：`work/A-20260904-01-file-to-text-public-beta`；开始 commit：`5b3322ee1ae78197ad647600ca265b80f58f1b67`。
+- 允许修改：`store/releases/l-1-file-to-text.json`、`store/catalog.source.json`、`public/data/store/catalog.json`、`public/data/store/catalog.last-known-good.json`、`store/l-1-file-to-text/index.html`、`store/l-1-file-to-text/tool-detail.js`、`store/store.css` 的 `max-width: 580px` 工具目录断点、`scripts/site-audit.js`、`scripts/test-store-catalog.mjs`、`docs/store/STORE_OPERATIONS.md`、`docs/store/STORE_DATA_ARCHITECTURE.md`、`docs/store/L1_FILE_TO_TEXT_2_1_0_PUBLIC_BETA_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本范围声明。
+- 允许修改的代码区域：File To Text 的发布快照与 Catalog 字段；详情页中版本、下载状态、首次资源准备、已验证范围、限制、适合/不适合、安装校验、反馈与 FAQ；`store/store.css` 在手机端将工具目录改为单列以消除横向截断；直接相关的审计和测试断言。
+- 只读参考：CEO 事实卡、GitHub Release `l-1-file-to-text-v2.1.0-public-beta`、版本资料、现有 2.0.8 页面视觉 Token、`L-ONE_PUBLIC_EXPRESSION_STANDARD.md` 与 Design-to-Code Protocol。
+- 明确禁止：Store 布局、其他工具、导航、Logo、下载域配置、安装包、GitHub Release、版本资料源文件、服务器、EdgeOne/DNS、密钥、数据库、作品和 Materials 内容。
+- 预计影响范围：`/store/` 中的 File To Text 卡片元数据、`/store/l-1-file-to-text/` 的发布信息和下载交互；其余公开页面及生产配置不变。
+- 测试方式：Release 与下载响应头复核；Catalog 生成、校验与失败回退测试；站点与 Motion 审计；`git diff --check`；隔离浏览器在 1440×900、834×1112、390×844 检查版本、人工分行、下载、反馈、键盘焦点、无横向溢出和控制台错误；PR CI 与生产域名回读。
+- 回滚方式：若合并后发现事实、下载或页面回归，对本轮合并提交执行 `git revert`，恢复 `5b3322e` 所代表的 2.0.8 页面和 Catalog；不删除 GitHub Release 或安装包。
+
 ## 本轮范围：A-20260903-04
 
 - 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。

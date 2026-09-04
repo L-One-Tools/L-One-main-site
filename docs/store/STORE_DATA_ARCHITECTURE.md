@@ -41,11 +41,11 @@ store/store.js --> /store/
 
 ### L-1 File To Text
 
-- 工具状态：`stable`
-- 版本：`2.0.8`
-- 发布通道：`stable`
+- 工具状态：`beta`
+- 版本：`2.1.0`
+- 发布通道：`beta`（公开内测，不是稳定版）
 - 下载：可用，仅允许公开仓库 `L-One-Tools/l-one-tools-releases` 的正式 Release 路径
-- 平台：Windows 10/11 x64 CPU 基础版
+- 平台：Windows x64；首次使用在资源中心确认下载 FireRed 中文识别模型与 FFmpeg
 - 页面：`/store/l-1-file-to-text/`
 
 ### Story Flow

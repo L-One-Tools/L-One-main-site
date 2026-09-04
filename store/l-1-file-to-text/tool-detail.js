@@ -23,9 +23,7 @@
     const panelLabel = panel?.querySelector("[data-format-label]");
     const panelDescription = panel?.querySelector("[data-format-description]");
     const copy = {
-      txt: "TXT 是最轻的纯文本格式，适合搜索、复制与继续整理。",
-      md: "Markdown 保留清晰层级，适合写作、知识库与版本管理。",
-      html: "HTML 适合在浏览器中阅读，便于保留结构后再分发。"
+      md: "短样本本地转写已经验证。公开内测阶段，请先用自己的小文件核对结果。"
     };
     const select = (tab) => {
       tabs.forEach((candidate) => {
@@ -62,7 +60,7 @@
       status.textContent = message;
     };
     const updateNetworkState = () => {
-      if (navigator.onLine) setState("ready", "Windows 10/11 x64 · 174,867,225 bytes · SHA-256 可核验 · GitHub Release 在线", false);
+      if (navigator.onLine) setState("ready", "v2.1.0 公开内测 · Windows · 146,969,357 bytes · SHA-256 可核验 · GitHub Release 在线", false);
       else setState("disabled", "当前离线，下载链接暂不可用。请恢复网络后重试。", true);
     };
     controls.forEach((control) => {
