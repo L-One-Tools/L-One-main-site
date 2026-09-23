@@ -1,5 +1,12 @@
 # 当前任务交接
 
+## 2026-09-23 3D 卡片资料库部署
+
+- 任务编号：`A-20260923-01`；分支：`codex/20260923-spatial-library`；开始 commit：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。
+- 已建立 `/library/` 独立页面。11 张卡片的名称、简介、标签、复制提示词、来源文件 ID 由 Google Drive 正式 Style/Image 索引及各自 Registry 生成；封面和已有细节图从 Drive 正式文件及资产包取得。Style-003/004 无正式细节包，详情播放器显示封面。页面只读本地静态快照。
+- 来源和刷新流程：`docs/library/README.md`；手动刷新由 Codex 读取 Drive 重新生成快照、核对资源、完成主站发布流程。定时任务未配置。
+- 本地审计：`node scripts/site-audit.js` 已通过；正式域名部署状态待发布后回读，不得据本地结果推断生产已更新。
+
 ## 2026-09-20 本地候选：About v4.2 替换
 
 - 任务编号：`A-20260920-01`；分支：`work/A-20260920-01-about-v42-replacement`；开始 commit：`34f2ff2e5b19804ecf45bae3ac3996e0f8834eca`。

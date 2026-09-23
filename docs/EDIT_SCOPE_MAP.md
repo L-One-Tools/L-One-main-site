@@ -1,5 +1,17 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260923-01
+
+- 执行设备：Codex 本地隔离工作树；任务入口：L-One 3D Card Web 接入主站。
+- 任务目标：将 3D 卡片网页发布到 `l-one.asia/library/`，页面当前卡片内容、封面和可用详情素材从 Google Drive 的正式 Style/Image Library 读取并形成可追溯发布快照；提供手动刷新交接方式。
+- 功能分支：`codex/20260923-spatial-library`；开始 commit：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。
+- 允许新增或修改：`library/` 下的页面、只读数据快照和经 Drive 来源核验的网页资产；`docs/library/` 下的来源映射与发布记录；`scripts/site-audit.js` 中直接相关的页面与数据检查；`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 和本范围声明。
+- 只读参考：用户提供的 V5.4 网页包；Google Drive 的 `L-One Style Library` 与 `L-One Image Library` 正式 Index、Registry、Preview 及其来源资产包；主站公开表达规范、现有站点导航与部署记录。
+- 明确禁止：现有主站首页、About、Works、Notes、Store、Materials、Motion Library 的内容与布局；登录、后台、生产凭据、DNS、EdgeOne 配置、数据库和服务器数据；Drive 的写入与权限变更。
+- 预计影响范围：新增 `https://l-one.asia/library/` 静态页面及其独立资源；其余已发布路由保持现状。
+- 验证方式：逐卡核对 Drive ID、版本、文案和资产哈希；运行 `node scripts/site-audit.js`、`git diff --check`；本地检查桌面、平板、手机的加载、卡片选择、复制提示词、详情查看和资源请求；发布后回读正式域名与 GitHub commit。
+- 回滚方式：若合并发布后出现问题，使用 `git revert <merge-commit>` 撤销本轮可审计提交，并核对正式路由恢复结果。
+
 ## 本轮范围：A-20260920-01
 
 - 执行设备：Codex 本地隔离工作树；任务入口：L-One 主站 About v4.2 本地候选。

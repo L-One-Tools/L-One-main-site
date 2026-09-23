@@ -1,0 +1,1272 @@
+[
+  {
+    "id": "STYLE-001",
+    "fileId": "1qwdW8pGba9ZpGDhf5ZbDDgCuYX4mInwR",
+    "assets": [
+      {
+        "path": "01_PREVIEWS/STYLE-001__cover-square__backfill-v01.webp",
+        "sha256": "be26511fb9d4c2be68fc28b76eb61653f18666ac99215895ebd172efd816bcca"
+      },
+      {
+        "path": "01_PREVIEWS/STYLE-001__cover-portrait__backfill-v01.webp",
+        "sha256": "9a65b3a1f364d1b532c6324916579ee69ff78b9949d12d1a305a661dd9813d81"
+      },
+      {
+        "path": "01_PREVIEWS/STYLE-001__cover-landscape__backfill-v01.webp",
+        "sha256": "1c8fa88601227addc8bca97c69f9c4dd9a8ae49183f024b21f9b4515dac4f63b"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-001__dt01__backfill-v01.webp",
+        "sha256": "cb2cf551dd39c590abedfb758e09ab7aead28f3ac95c9786b17e40d7e21a7b57"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-001__dt02__backfill-v01.webp",
+        "sha256": "f246e6c23e3df886809a8daa523d320eb87507add2f99b94444be299fbdf3a1f"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-001__dt03__backfill-v01.webp",
+        "sha256": "d805a4943688edfe0692f4a052f701a0fe451d96f0af4e9bc658d2da93c1c1ae"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-001__dt04__backfill-v01.webp",
+        "sha256": "0a725591946d3e09c560f32c565bce90d9e378412eea2d303d5cc371aef63f8a"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-001__dt05__backfill-v01.webp",
+        "sha256": "86fef7edd8752f895935c03614696beb4c07684890cb9e8be6070de62063e2ab"
+      },
+      {
+        "path": "03_AVATARS/STYLE-001__avatar-01__backfill-v01.webp",
+        "sha256": "4d72b7f510aa384a0c5b137328e43bbeafea139a0a39ac60418cea9b6bdf30c0"
+      },
+      {
+        "path": "03_AVATARS/STYLE-001__avatar-02__backfill-v01.webp",
+        "sha256": "102e447ed8ce77039732315bed35d0e35db554a2a264b0e5fe63a42345cf4d00"
+      },
+      {
+        "path": "03_AVATARS/STYLE-001__avatar-03__backfill-v01.webp",
+        "sha256": "ad9c5300aec300367a33c2cac6f32e5003ed316c1699ffdc84cb6a870405d1af"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty01__backfill-v01.webp",
+        "sha256": "8e7a04fec335be0bbb60d84fae885144a1402d332940b316d6d3aa32fad80b24"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty02__backfill-v01.webp",
+        "sha256": "b52db764b00b0d962dbcf3e051254f43e2319d8a63fd4c651a9b33bfb1da9ffd"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty03__backfill-v01.webp",
+        "sha256": "e0a4d9f8d17db8bcb4900a0ef8ad2aee08a84e633770d889d50e63d3047e70aa"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty04__backfill-v01.webp",
+        "sha256": "b596223da3edf025caf428d65be71c561630fe98c8874ce2672810877b4c0942"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty05__backfill-v01.webp",
+        "sha256": "01cc7923cefdb3ae5079815e602d42743b4e4f9d763f1edfcbd8fb54568d7b93"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty06__backfill-v01.webp",
+        "sha256": "0465fc82e2f12bf6cf51122396d19c89a4448ffb22c5fb1501157a9ecf8da553"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-001__ty07__backfill-v01.webp",
+        "sha256": "8d024d0ef9e01fc55de3a8fb1cf5043a7d2704e203d282634b39f8f9dce7f8e1"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw01__backfill-v01.webp",
+        "sha256": "9733d7be896baa63f836e71dc63bd6e0eababd52113697c0e8eeff97331bb624"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw02__backfill-v01.webp",
+        "sha256": "732c6f68e9f012b9d14fd3d86b58728197c8cc2d4976e7574bdb912dee76fc70"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw03__backfill-v01.webp",
+        "sha256": "32cf6029c0b738a7110597e74bb519025f2950752941de4c64769d22af3c30fb"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw04__backfill-v01.webp",
+        "sha256": "9cde4fdde203f180ef23d0d5d3063b0ff3d79df49bc3c8d12d2a0156febb82c2"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw05__backfill-v01.webp",
+        "sha256": "0ff792bf78f2e94fb1797597717ed163d8a53e5ab11805e4f0909fbb04da7b3e"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw06__backfill-v01.webp",
+        "sha256": "786a927d4cc2b88df8a82ed60aef677868559bae98c2c1317c3303c2cd715e47"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw07__backfill-v01.webp",
+        "sha256": "c2b00554ee6f537b3d64e7b7d909008e5e632bbe1b1b0b87ebacf887576fd31b"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw08__backfill-v01.webp",
+        "sha256": "df88c4701ff6c3f5ec95decb26a43ecfbf144642d79ab61dd10d48b6bd186f2a"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-001__cw09__backfill-v01.webp",
+        "sha256": "f7de5b702c23ac071ee4f124e08c38357d26acb98b822e0526097e9c071eeafb"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl01__backfill-v01.webp",
+        "sha256": "c49dec9dcb294076dc4c8715cc790f2a3c45b882cdd425f411b2b9227c507817"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl02__backfill-v01.webp",
+        "sha256": "ec13bdf4a6bfbbc06b66131228489a773810d72a24877bad6a58382c3eec7c25"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl03__backfill-v01.webp",
+        "sha256": "530e069cf0c695653f9a535e8f3bc6333b61f4ca20f77e1b2dcfc7602f702427"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl04__backfill-v01.webp",
+        "sha256": "23fc3592eb51bcc7884592d36de623aeb7db301cbfb4253763fa1052f6d40d39"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl05__backfill-v01.webp",
+        "sha256": "fda4a512c7bc24dd651cdc6cbe8ec05cad74eb2ffc3524a110b5a33ffe7add11"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl06__backfill-v01.webp",
+        "sha256": "0836ad3223729345d4c11de461a405dcad2acd95c2db89966d600364a95b7148"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl07__backfill-v01.webp",
+        "sha256": "fdfc439c8e8e67817cf24857db198cb3da8e87ad491ffa428722fa29311f2c28"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-001__pl08__backfill-v01.webp",
+        "sha256": "17ede5632d82a580618aa2d75fe31884fa96f783d3f40de2c91bd46894b71e00"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch01__backfill-v01.webp",
+        "sha256": "320723970b98cb22578d69f4a0288bed0b19f27d20b46516c981d3e285ee83f7"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch02__backfill-v01.webp",
+        "sha256": "d889dc33cbc8862abe54a793c8fb8b3a2895d82b57aba589efa4b8a76a689fb9"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch03__backfill-v01.webp",
+        "sha256": "c94eaa2354154d80780b9f69684f69b60e2387b68c11cc3d0bfaa44392eb0776"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch04__backfill-v01.webp",
+        "sha256": "69db62b98067225de2802534e904c0f103cedab533fcdb8b7843a10ab8712394"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch05__backfill-v01.webp",
+        "sha256": "4ee7731b86f0fc49d4e10da680d2c93829b3c5d0d55f011ee20a4391ed264c93"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-001__ch06__backfill-v01.webp",
+        "sha256": "1754e2650cb1d57fa56b5847d495175fbd3575dde7a1bd94a05e0be37f5114cc"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg01__backfill-v01.webp",
+        "sha256": "db6bf0bbf8fcdf4cece0ce1435fcce7e5c85fb0b11c5d7c7a221db36c45468e1"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg02__backfill-v01.webp",
+        "sha256": "db482622a713e93282b760c5733604c4c4a8846fa846b7b0bfbb84638558b959"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg03__backfill-v01.webp",
+        "sha256": "d858c3791eb3f9b0a0d40f3b382a64145e472e2e19ac5a20f503b029ea0ace1e"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg04__backfill-v01.webp",
+        "sha256": "61f323916e6444a41488579ed7855e587dd4fe7a00b8da1b974de267188f4232"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg05__backfill-v01.webp",
+        "sha256": "390c5cbf1ee4a2c31da245af8c268aace72c9160b7a86d282f1381e71093af90"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-001__bg06__backfill-v01.webp",
+        "sha256": "cda7e66a32c64d889f321b93b8a494f43c2f961ec49144f3508c4c96d8f27d47"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic01-menu__backfill-v01.webp",
+        "sha256": "096263d83b967f51e86fd4685364e7b23670f045aa762ea14ec3f164e6167117"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic02-search__backfill-v01.webp",
+        "sha256": "fd5fec6c90c271120972ba6406d617f6a2e84f4a57d64f7871e0730ee418bfd4"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic03-play__backfill-v01.webp",
+        "sha256": "4670e1fce3c3c39524426c7cbcf1c5b0bd9863eb42fe2781dd53b40b0dc1732f"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic04-pause__backfill-v01.webp",
+        "sha256": "fffde4da4b2bcbc78e78bdbc5135713db424f83c8aed1630dda2e8ced6a0a8b9"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic05-prev__backfill-v01.webp",
+        "sha256": "7f2d62f6c80de66ddd6763c170d853ccc6ad9048d9a81888fb2a91802d4313b5"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic06-next__backfill-v01.webp",
+        "sha256": "b96f0d7b58c657246ca68f85e2c04c910f794981d164d934f835cd7ee0264a78"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic07-close__backfill-v01.webp",
+        "sha256": "b642792318ddea8d4d368db8f0e10c0f6d946cd00a937115c08c11cc95f87d3e"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic08-add__backfill-v01.webp",
+        "sha256": "31ef5491924c4c2ee2e980bb3220a063a6edf5785cd23921799ea77088f9e694"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic09-remove__backfill-v01.webp",
+        "sha256": "621288d96f302a4a1cd28969dea1529412049f952579c05ba2298b5aa2e52260"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic10-expand__backfill-v01.webp",
+        "sha256": "0676ad0ee65767317e4b014afd6a0bf0da6945ab5f61480d46724b2800ec60b5"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic11-collapse__backfill-v01.webp",
+        "sha256": "cf0a89d3126e5525e32a46c3667a894542331e5bb75c63fb54479648b9156c44"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic12-status__backfill-v01.webp",
+        "sha256": "c72443f2f3ec0590c2ea6ab728b2dfc5bf1659acaf180bcd29f35dba5612ba17"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic13-arrow-up__backfill-v01.webp",
+        "sha256": "f94bf93f6487a149a8a115278cd2afced6db3861d99085a2c02d9329b0556333"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic14-arrow-down__backfill-v01.webp",
+        "sha256": "c81efbbf8ff7cb02106f7cf7927876fc64a60954a4962508cea1be4fd9514ed9"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic15-arrow-left__backfill-v01.webp",
+        "sha256": "2cdc95bda37182fd6518f064d9a1e97032857dabce55f24462d1a524cf5737f9"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-001__ic16-arrow-right__backfill-v01.webp",
+        "sha256": "64edc5b60467229118f373b04b55a4d73daae665c7387eff8fbc5bf14262fc4c"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc01__backfill-v01.webp",
+        "sha256": "01ed279237a3767e8e38c04734cfdf8d131468f2d4090bbdb5ff6869a3a63054"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc02__backfill-v01.webp",
+        "sha256": "8374a01dbce838b5bf643a70e80410ce031e70b2c1519843b08efae3ceb221aa"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc03__backfill-v01.webp",
+        "sha256": "bdfeb30c51327c9163f6b22f11c6853b31199a8a33268e805a1081efb802c6c8"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc04__backfill-v01.webp",
+        "sha256": "65bfd43a949ed7c4b600e549132bb6f6701e703ca234331cf118643f24e71692"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc05__backfill-v01.webp",
+        "sha256": "45432570fbb05dd0e0fa7523baf78a551354f5d7d90bef65534dead7a2ace0f4"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc06__backfill-v01.webp",
+        "sha256": "6d0c231cf050fc78d45ad0636a739ff8713037f5b54e5372432fda706af7036a"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc07__backfill-v01.webp",
+        "sha256": "e5f75a2ee4da09b6b42b8dfc32186a6916762ab93df884aaa4ba4c7ddcc1ead4"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc08__backfill-v01.webp",
+        "sha256": "1c0ed7c9e6d381fc7d7ac964404314874546353623d934db62c14d55f4f5b79d"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-001__dc09__backfill-v01.webp",
+        "sha256": "e7ef0a9ddd9943bd773d7ef017d6120a6a1a9f8e8b9c03d4a0454cdcc59b6daf"
+      },
+      {
+        "path": "06_ASSET_BOARD/STYLE-001__long-asset-board__backfill-v01.webp",
+        "sha256": "d955e03a059334074f5c78962db05842f8bf706f78d2b9427f91ab9749ee0a17"
+      },
+      {
+        "path": "07_CONTACT_SHEET/STYLE-001__contact-sheet__backfill-v01.webp",
+        "sha256": "21a96e4935596ed9d4b68ffbdd76664eefaab614276e1826a136230539643fc0"
+      }
+    ]
+  },
+  {
+    "id": "STYLE-002",
+    "fileId": "1d4oMXrWLiH7WeLOq8X4o_0ybOmlHlNQq",
+    "assets": [
+      {
+        "path": "01_PREVIEWS/STYLE-002__pv01__v1.2.0.webp",
+        "sha256": "b789ebbf7ff3967a0fb0951d2446b6fc58d1bbd242084d05b48f4d1a37e3070c"
+      },
+      {
+        "path": "01_PREVIEWS/STYLE-002__pv02__v1.2.0.webp",
+        "sha256": "eed5e93e4e4b48a11713228323c3a38f107259d83b605f632e0c13bf7cf46f1f"
+      },
+      {
+        "path": "01_PREVIEWS/STYLE-002__pv03__v1.2.0.webp",
+        "sha256": "6d0e35406eedaff8b97fa5cb1e3226119890b73389bab1d59fd8aaaebee70b6c"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-002__dt01__v1.2.0.webp",
+        "sha256": "385d7f4c3c6154d1cf1c14c8b75d1fcd0c7433c311d10e29c89e225d9ff5dfee"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-002__dt02__v1.2.0.webp",
+        "sha256": "b56afc9e43fafe17cd4823dbc7cab78b938048850a8f290636bd2ee8c9ccab29"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-002__dt03__v1.2.0.webp",
+        "sha256": "a7f83a72a1920410527b848ffca74798712364b85081338a48ef9cdbae918f2c"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-002__dt04__v1.2.0.webp",
+        "sha256": "0ec966e3f5111cad15e84847c096b6c4f9af396fbfa0ad71bc163bea579a6231"
+      },
+      {
+        "path": "02_DETAIL_PAGES/STYLE-002__dt05__v1.2.0.webp",
+        "sha256": "ed3bfd4a24ba0fa491f986cbf674324467e69c06871e2aeca8f2c563e93c5c52"
+      },
+      {
+        "path": "03_AVATARS/STYLE-002__avatar-01__v1.2.0.webp",
+        "sha256": "c5056d709943da1c036ac8a4139771fb427553dcfd8ab050f74a9d6834a6894b"
+      },
+      {
+        "path": "03_AVATARS/STYLE-002__avatar-02__v1.2.0.webp",
+        "sha256": "bd3338825d224d06ae7585865f3b2ca5f07e9790b3b30dfc30665fde3622fd58"
+      },
+      {
+        "path": "03_AVATARS/STYLE-002__avatar-03__v1.2.0.webp",
+        "sha256": "9e66f79ad6cf1b34d92946a354c203394256c33bedd95ea84a020cb06946c9ea"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty01__v1.2.0.webp",
+        "sha256": "158b828dd2670d5e9b383a6c598df6bf792877893557838f8ef76184e0da1f46"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty02__v1.2.0.webp",
+        "sha256": "e0b3f8e6eb7fdbcb8d23f92b628d282b85f319985e0692c363090d6ed218d118"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty03__v1.2.0.webp",
+        "sha256": "06c4f47a4a4eb84cc4547eaa4aa8e0a885d7a2f16f6ea91415d207b68d332f13"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty04__v1.2.0.webp",
+        "sha256": "b8d36d4fe710fd927d56b445a9e88f1ad6b62b6ea28a33656559d52c39f243fd"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty05__v1.2.0.webp",
+        "sha256": "8321ab1451b5e8f0b261574fc2385f9824e31d1822c2b245ab9034a81e2c6bb8"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty06__v1.2.0.webp",
+        "sha256": "a59e68e39eed6bf7655103ffdecc870e3971dc6ffb851694db9075d810d59cd3"
+      },
+      {
+        "path": "04_COMPONENTS/01_TYPOGRAPHY/STYLE-002__ty07__v1.2.0.webp",
+        "sha256": "f476f17e189e4af0601ce49dc812b034529180dcbd27e612d1c6030385d5d21e"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw01__v1.2.0.webp",
+        "sha256": "b622de10cdec2e58061a1c98e62175db12d29e831075a9024008566dfa25e8e6"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw02__v1.2.0.webp",
+        "sha256": "d7a5161a26e2b7cb47e51f871b1f5e0f4ac932b24b602c2edcde9abed04faa73"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw03__v1.2.0.webp",
+        "sha256": "04725a247e8f08ee9063e3495bc028cd7008a562979742d1baa1d881e81c5b57"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw04__v1.2.0.webp",
+        "sha256": "eff620658876586dad041bbfc6627b9beaddef0ad8fa2f05b6598c1e2b4c69e0"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw05__v1.2.0.webp",
+        "sha256": "a4d3fd70ac632371e745418116fb97902e7ae661450a709b42beaa1c53bd453e"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw06__v1.2.0.webp",
+        "sha256": "c57b89261c087c2cadd918b0a304156f7dd002600710150354632d5c4fab4af3"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw07__v1.2.0.webp",
+        "sha256": "0e938c334e3dc195fb588a2c62954e3ee57d4ac3bbd84b484e3e6154e228c025"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw08__v1.2.0.webp",
+        "sha256": "2b47608d509179d3cdf136b4f0aab3b627e163a18b85752d8166557535fe06d7"
+      },
+      {
+        "path": "04_COMPONENTS/02_CARDS_WINDOWS/STYLE-002__cw09__v1.2.0.webp",
+        "sha256": "e4d9db5386ca8a42483a828bed3017f902c88a12dbb3d3e76cd55f936e07f938"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl01__v1.2.0.webp",
+        "sha256": "6cd73b580d94ffe37490b8ec2cfe2a29ab80042370ee01836ffd926f0f5bac55"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl02__v1.2.0.webp",
+        "sha256": "33db086494788a56abc2ba903e6d38935882a2eeab4e58967582433c81778bbe"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl03__v1.2.0.webp",
+        "sha256": "5bbb53835a203bf5378c565ed4b52f722a689066e498380e4423c0d1ba8c4842"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl04__v1.2.0.webp",
+        "sha256": "8cd884186392d09c91c9dfb55cc28f32282c384fb560163497de0386e38b485c"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl05__v1.2.0.webp",
+        "sha256": "f15b22649c38ad5fa63acceb27a23d168cd6e1b31c898f56dc7a96b1c1008b1a"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl06__v1.2.0.webp",
+        "sha256": "1e35d5651925ca03aaf7ad7850facc81f48de6bb81407459985fb0ccfdf94f31"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl07__v1.2.0.webp",
+        "sha256": "8c1569fe19e2e1ac504ee6c35f7f00ff3fccc9653e075e6e075e88eac900f147"
+      },
+      {
+        "path": "04_COMPONENTS/03_PLAYERS/STYLE-002__pl08__v1.2.0.webp",
+        "sha256": "d6822993a4676fa34d0804d67531ca4dd9c3fb9417e8af92b9699b0686abc1fa"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch01__v1.2.0.webp",
+        "sha256": "6adf53e314786c18ebc16a14c271e9f9d44bed858bb819442f2e3a6a83933cb0"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch02__v1.2.0.webp",
+        "sha256": "43c2a73d3d2dc9456cb89c2a55107838d476ebdc216efae78f6b79b48c3314cf"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch03__v1.2.0.webp",
+        "sha256": "ed52743c626d95083a61869c4bfff632b203f25d4480a0cc47d31bc20b1f3f95"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch04__v1.2.0.webp",
+        "sha256": "4018b190128688d98bed79df938a46afb307941372c7f4ae2b4730fa3c67ff10"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch05__v1.2.0.webp",
+        "sha256": "f29b92ec472263bb70963111b57676b895777f332e01d4df379af7148ea37d5f"
+      },
+      {
+        "path": "04_COMPONENTS/04_CHARTS/STYLE-002__ch06__v1.2.0.webp",
+        "sha256": "bc66287968f40b2b625f3042414f67fc8022ff02f71400da289af09ed0f5e888"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg01__v1.2.0.webp",
+        "sha256": "16d2e9775d449d70c5baa665ae8fb91e23ddaa42be0f6094e92f718942067021"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg02__v1.2.0.webp",
+        "sha256": "a40e3c3726f3563a28f46acea5bcaa8c433082e38f3015513cce3db69d809528"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg03__v1.2.0.webp",
+        "sha256": "ef88ed5763b579fe33ee9889d2cb5dd195a1ccf33d89df67bb9c56394930903d"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg04__v1.2.0.webp",
+        "sha256": "587105a3ed416a3ec92e0c87a7e81bb90a7bb6de6dc4625b59861b9cc2c18392"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg05__v1.2.0.webp",
+        "sha256": "9fe3adf0d6b1d02096ad295f38993ae225271c144c1b8af574cc250f0f6be968"
+      },
+      {
+        "path": "05_BACKGROUNDS/STYLE-002__bg06__v1.2.0.webp",
+        "sha256": "67a88921719c087c86276be05a56eb315cb3f79ce056817549af23e207afab69"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic01__v1.2.0.webp",
+        "sha256": "94c5f21b3b836653c2be3882bf81299a890bd828cb01444aa17066535e530efc"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic02__v1.2.0.webp",
+        "sha256": "74a74e77c5fe50df70125ef9ab2bc4cbf6294d4ff83929dcdd72c5e5083418bf"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic03__v1.2.0.webp",
+        "sha256": "0905cec8a829972d089a81b5d673d6c13ed11fa950965cce2399188ec1f4a883"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic04__v1.2.0.webp",
+        "sha256": "a33bbe0bfe3e59d806084d7220423ffb93b4bbe17a0c79fe7b3dd2333f6463dd"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic05__v1.2.0.webp",
+        "sha256": "bdd4fd324595a831da0e7e13f1262c54281025615642ca19a2ef70f16565710a"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic06__v1.2.0.webp",
+        "sha256": "9f3b62d26a43115779adb7907ebd8b9efeb3691fa8225e1ef189eeaba4383214"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic07__v1.2.0.webp",
+        "sha256": "f1401de75d880741b93ed462f58f6c9e4d580af4b794a35519c49d9dde36a33d"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic08__v1.2.0.webp",
+        "sha256": "df9e0c1aa476b3922eb50d9d4b25cc2efa9dd0129b6fcb64e8a0c62e9d4a402a"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic09__v1.2.0.webp",
+        "sha256": "11e404194c345c8dcf827d334d5a6bb54d2998a9ea0a6459ae5c1ab7b404c55f"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic10__v1.2.0.webp",
+        "sha256": "2c956453c14248b83f82d0e974ed93af8f3404d0489b6ac217b88e7f05a623eb"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic11__v1.2.0.webp",
+        "sha256": "88fb293c3895c5f831ad31b5c043c8e6687be9c9d105ffa811336d85edb3ef76"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic12__v1.2.0.webp",
+        "sha256": "4a9ec4b041d11b64dbb5b24fc94201330c89bb3beb531bd19c0dd02e50fe6828"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic13__v1.2.0.webp",
+        "sha256": "e652ab114308a6785ea618b21076d93d91f9cc493dd8fc545ea514fc2e98b152"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic14__v1.2.0.webp",
+        "sha256": "f7446ecc1ae9617f0a38bc45a70acbdbca4c75bb841fa5cc0a5889e0409c5abc"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic15__v1.2.0.webp",
+        "sha256": "bb8d1d2f3bae5b096ea953b7a7666e649464cb90d9124c1c5e52c4291576aef9"
+      },
+      {
+        "path": "04_COMPONENTS/05_ICONS/STYLE-002__ic16__v1.2.0.webp",
+        "sha256": "15ba605b76645386d040799e6bb9332d95567aedb540c78b5933ec67b4ab24f1"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc01__v1.2.0.webp",
+        "sha256": "a029c7612c27f85388e8bb3ad8e8ced00ce10b4eea19fbcf56173c12b4a477d7"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc02__v1.2.0.webp",
+        "sha256": "91f1ae39c196454f03f45d4ea6f81037c85a68ba3ed9225937f7627c37aea475"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc03__v1.2.0.webp",
+        "sha256": "3c106eda767e2ce99e3d8b80c36b543378996457137e06e059ea2d3baa36a08c"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc04__v1.2.0.webp",
+        "sha256": "f8a36fab821167e43744d7a266b137a62604e25100391e4bcfece5e0b64410b7"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc05__v1.2.0.webp",
+        "sha256": "6d5453a51542890b478f933a97d7eef85276a1c92cfab4a3f46fb4348a8988c6"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc06__v1.2.0.webp",
+        "sha256": "e0bb93d34bf17d662a06d962f818e7fc2546a12beb6bbf0903433b2bed258e3f"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc07__v1.2.0.webp",
+        "sha256": "fc6abd060a717209f231fe7cf0aa62bc7a595d109557d2c64e49f74e10a978fb"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc08__v1.2.0.webp",
+        "sha256": "e50bdafadb06ef825a3d11e753b32c8effb88191db147103f52a4ed901f9a0e2"
+      },
+      {
+        "path": "04_COMPONENTS/06_DECORATIONS/STYLE-002__dc09__v1.2.0.webp",
+        "sha256": "440ef1ade2ce1ed3352ec4315452b5c67e6969e7079248542ca034b6f3162ba6"
+      },
+      {
+        "path": "06_ASSET_BOARD/STYLE-002__long-asset-board__v1.2.0.webp",
+        "sha256": "c378406245a2a4bdc93ef81fb90fab63fdb4ac88f406686fbccbdd852db173b4"
+      },
+      {
+        "path": "07_CONTACT_SHEET/STYLE-002__contact-sheet__v1.2.0.webp",
+        "sha256": "59f8de90213658bc9190347d8d9b18bd47ee8c9098c126015e3eb5a90623b4b9"
+      }
+    ]
+  },
+  {
+    "id": "STYLE-005",
+    "fileId": "1FiTxTsCQT_GZN_jo1O2E8-I6DCuaVIjr",
+    "assets": [
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__anchor-cover-1x1.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__anchor-hero-4x3.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__anchor-asset-system.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__cover-1x1.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__cover-3x4.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__cover-4x3.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__detail-hero.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__detail-directory.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__detail-layout.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__detail-components.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__detail-type-numbers.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-typography.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-cards-windows.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-players.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-charts.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-icons-decoration.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-player-video.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-player-audio.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-player-carousel.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-chart-pie.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-chart-bar.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-chart-line.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-chart-timeline.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__component-chart-fishbone.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__bg-01.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__bg-02.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__bg-03.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__bg-04.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__bg-05.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__scene-kit-01.webp",
+        "sha256": null
+      },
+      {
+        "path": "CANDIDATE-neon-chibi-credit-gradient__asset-board-long.webp",
+        "sha256": null
+      },
+      {
+        "path": "CONTACT_SHEET.webp",
+        "sha256": null
+      }
+    ]
+  },
+  {
+    "id": "STYLE-006",
+    "fileId": "1IAgCNXAIRhJa9EsCbTZ2CUsLMVmtUnwp",
+    "assets": [
+      {
+        "path": "01_PREVIEWS/CANDIDATE-naive-punk-paper__cover-1x1.webp",
+        "sha256": "ace30f6008be80ef18cc51cee012d8ab968a5dec18a36968138aaf11c57efde7"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-naive-punk-paper__cover-3x4.webp",
+        "sha256": "cd722a2ea179e1ee6d570cde61743a1421ab1dc0996998257cf8aa1264ed991d"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-naive-punk-paper__cover-4x3.webp",
+        "sha256": "c3a796abe5dfaa1b60dbbdb746b852fc205909d3dfd07c17fa1a1488f276c136"
+      },
+      {
+        "path": "02_DETAIL_PAGES/CANDIDATE-naive-punk-paper__detail-hero.webp",
+        "sha256": "3892f66ad52bb734d3f2118668eea4aa0757fee86b3235dc3f8fcc3b1c64dd42"
+      },
+      {
+        "path": "02_DETAIL_PAGES/CANDIDATE-naive-punk-paper__detail-directory.webp",
+        "sha256": "27eaad472c8a25da754214931db1838fcccaa498980308441a84d68520aa658a"
+      },
+      {
+        "path": "02_DETAIL_PAGES/CANDIDATE-naive-punk-paper__detail-layout.webp",
+        "sha256": "f60f7d84d43f3598ea2d7f50eddefcb8eca9a18d402b7de2d6545951f5147d0d"
+      },
+      {
+        "path": "02_DETAIL_PAGES/CANDIDATE-naive-punk-paper__detail-components.webp",
+        "sha256": "720fbee54fa3fd71bfc3c9445ac13cf856906990542739d675bff648d7be4377"
+      },
+      {
+        "path": "02_DETAIL_PAGES/CANDIDATE-naive-punk-paper__detail-title-numbers.webp",
+        "sha256": "3cb0149caef497de0b31f3585b98145347422368ff18adfa4ef2ade288dcf5ed"
+      },
+      {
+        "path": "04_COMPONENTS/avatars/CANDIDATE-naive-punk-paper__avatar-01.webp",
+        "sha256": "c4539b72ca24c296d1aa1de3550347649e298dd87f5100f42cdb2746231a92eb"
+      },
+      {
+        "path": "04_COMPONENTS/avatars/CANDIDATE-naive-punk-paper__avatar-02.webp",
+        "sha256": "56b051ff52897b3e2e652e15215aaf857be79465ddb186df1743226a4c45487e"
+      },
+      {
+        "path": "04_COMPONENTS/avatars/CANDIDATE-naive-punk-paper__avatar-03.webp",
+        "sha256": "b4f78d8323a9bc05954fc027dbe620f937c21f0488294e3ad24261219b7f303a"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-hero-headline.webp",
+        "sha256": "8042ba064b22b4d375f15d036189b26fca91e6ab2b2c4ec35aa6407689247e2f"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-h1.webp",
+        "sha256": "d4f60ce39be514e14a20edcb7172f8678dcbac307de3909302b4d23d9c1701a9"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-h2.webp",
+        "sha256": "8708a906a953591a10d7055958c6925db20c538e5e2c929a3a5dad2733b85b37"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-h3.webp",
+        "sha256": "ca02b93ba92f79e5ce20792f59cb9e6ef432d0241cc537374335fb79660a6181"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-body.webp",
+        "sha256": "7a0c3f34d6df620da7ca80f1989583ac0ef4a445ea67eb165e688a2d1a4fa956"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-quote-caption.webp",
+        "sha256": "2d160887057e43d8519d7ab13496085d1301963530328c02921a22b16b213433"
+      },
+      {
+        "path": "04_COMPONENTS/typography/CANDIDATE-naive-punk-paper__type-numerals-0-9.webp",
+        "sha256": "45a268d283db7c9eca9c0269d36eebdb0b11c0fe38cb6da49e224e654cae9645"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__card-default.webp",
+        "sha256": "e6cded353cd7be0c806a093f7557c5ac3a8a4081ee6f16e79e90f0629fa459ec"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__card-hover.webp",
+        "sha256": "2d96d3b4520e14da56af4ebe7f13a81214c1ff69a96d956488aa4dce49c4ce70"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__window-content.webp",
+        "sha256": "79810ad46acace3b4a0ba2883ddce3e43d1f4c924f9bef8374924872c59c37a8"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__window-dialog.webp",
+        "sha256": "9fb14e8f171989dcc53c1afb0ff306c2bbe5c758cd98d7079b1d9938711f154c"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__button-primary.webp",
+        "sha256": "196393cb8d5a8027262d48ad548d4f1ce2d5f1c1822647ba3239f5a8d040d2ef"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__tag-punk.webp",
+        "sha256": "6c8ef9231e91f842cff5c3652f428c3bc72025d9b6dfb6fdbc6cd6675c07983d"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__input-search.webp",
+        "sha256": "8a49b9a047f95053835bd30058cfbead2cd6a3cc4a26c8fc63cf7c3fd5b74e36"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__status-online.webp",
+        "sha256": "0b38abccb8c1aeb360f9ef8ee4228223f033838536bf4f5c246aad8e16b19f21"
+      },
+      {
+        "path": "04_COMPONENTS/cards-windows/CANDIDATE-naive-punk-paper__card-info.webp",
+        "sha256": "cf9035ab2ef1cc2763c94bb89e0daaff88a2184e0ead2ac723f5c3e12d593371"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-audio.webp",
+        "sha256": "f2d3bffeddaae504ac6bb03a278c2d8ec3617168f671d8db3af8fa651b99fc55"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-video.webp",
+        "sha256": "8f76855950e6e96485f461ff2adf412049ad1a128873117a9eba0e07f4a1eb6b"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-play-button.webp",
+        "sha256": "ce7e603091c04facb983d259737aaf6fda5d464478988758e8d8a74929ce8484"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-pause-button.webp",
+        "sha256": "f0f872c902bd7b8d9171d109a986d56084264d32ffe8f64795d40dc2be59a217"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-progress-bar.webp",
+        "sha256": "3be09e6ee5c8324760a56798dd3b689dd45d6a9fdf2f7bdcafe0718ef22fdc43"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-scrubber.webp",
+        "sha256": "cdb904159e56b63806beef2b74648c02d82b9d1d6384418dc8b34a8f3fed912b"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-volume.webp",
+        "sha256": "6c882934cf58a8bb0ab828e0d3bf1917e5dbb96558610fe8d503984126c5a6c2"
+      },
+      {
+        "path": "04_COMPONENTS/players/CANDIDATE-naive-punk-paper__player-timestamp.webp",
+        "sha256": "3b2650d56838a58042e102ed50d6707dd82e0a85172b8cf7cfbaa129f476ab32"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-bar.webp",
+        "sha256": "9c8b9014dd6fe8633131cac0974a5b11338738738f706d8775ed58de71fae637"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-line.webp",
+        "sha256": "dec34f591da9e8bce769ee6bd79d329d588209f6d306bb6b573223468c942e9c"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-donut.webp",
+        "sha256": "3bf40e2f62ecbcb2f4e606d55671490073f392e0374a557a2e62f10fcc77940a"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-progress.webp",
+        "sha256": "9c2293a270bb09dfad116d62058e422eb6cff4bc8ad98d828e67f4e125d9a7bd"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-big-number.webp",
+        "sha256": "3ed36405124423905a1efc76f68b46b4fb877828e70a9b2eb045d465d595c4d2"
+      },
+      {
+        "path": "04_COMPONENTS/charts/CANDIDATE-naive-punk-paper__chart-timeline.webp",
+        "sha256": "8a67ae77b56456cd41813f4c32513683f7a1bcc44e0016985b703ca04ab23eb5"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-primary-clean-paper.webp",
+        "sha256": "07f484352904963f552392286e646c723f9ea721d169890b3494de38f75c3e55"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-secondary-aged-paper.webp",
+        "sha256": "ffe620c93a2d3a01fadc896467d0afa549ffbbc485a821b3bb6995d7d245052b"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-high-contrast-paper.webp",
+        "sha256": "7066f7dc341eabe08351cd34179ad692d0b67b7d6dcd115f69480595f39835a2"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-low-contrast-paper.webp",
+        "sha256": "1e83c81f68d6f3e020c178013ee48f28bbcdccd01c2f2cd99ef8215f9f9a4e90"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-alternate-color-block.webp",
+        "sha256": "24d722cab6bbb07e8092a1e67c613884e861303b29bd50cddac835c69dcfd1b0"
+      },
+      {
+        "path": "05_BACKGROUNDS/CANDIDATE-naive-punk-paper__bg-texture-graph-paper.webp",
+        "sha256": "0a06b9ab2aa26028608aa8a060aba5e2912943b6a62e700bc35a829521575420"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-star.webp",
+        "sha256": "0e09e1a8dbee576d6ff3a59e96136631bd5320c8601b560a5a88cb405b508f94"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-anarchy.webp",
+        "sha256": "ac9116a0a22134fa5158c327abe03fd4c3c3bd0ec894295d72ba17362816f211"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-heart.webp",
+        "sha256": "73fa52a7f2d344d16547e937ef1b39127918532900ed7710a0d880e89de5bc21"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-skull.webp",
+        "sha256": "7a018cdca2ef5bf9b7143de438beadfda2cbd5dec47893d50b4a33d02ebc6425"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-smile.webp",
+        "sha256": "d448d457129ce8bdd54cafde5ccc985a90beb713ce2ec42083834c54e054ce82"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-bolt.webp",
+        "sha256": "240d19786d6ce14b02327a868afa5ef53b004a503c1230b3a6910c959327fb65"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-globe.webp",
+        "sha256": "7a70c44b358ed3d7ecd0d76a55cdfde3790b3105a370244c3dd9b3c6aa7358cd"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-play.webp",
+        "sha256": "fac11e8ca89dc86100a0eb11ac1f2522d142680445830f29260ef3e7f164d55f"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-pause.webp",
+        "sha256": "aed19de5ab32e8ec9fd5828b52c4f3305de942073c31a7305bbac9f052925f3f"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-arrow-right.webp",
+        "sha256": "971d789cccc49ec7ca8944b2a32543a8cd7f39fa5c264325682fcbfb3a7842c3"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-close.webp",
+        "sha256": "17a2bd9e1a6e19ebfbec17f6274e6338afdb2111b214afd2eb34e8b054623eb0"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-menu.webp",
+        "sha256": "87068c1860d66811076d6445682e294edc5d1d0af162b9a783044bd8b68599d6"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-home.webp",
+        "sha256": "5a9ac675392f3c4bd1506af6d1928843dad1e5ffbebbc29f900d140dbed20204"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-search.webp",
+        "sha256": "7b5a471d279e7968cdc3ca133ae5789f89ad841342a20c777fc2e845bb29b585"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-user.webp",
+        "sha256": "47835fa8b41c22c1ab61fa68f03777dd1e47900cc6ddd3935c8ea6d67f215da5"
+      },
+      {
+        "path": "04_COMPONENTS/icons/CANDIDATE-naive-punk-paper__icon-image.webp",
+        "sha256": "2edbf1cde7e8d5cec587cf3ca1cc73bb81b7b9a1f9d4fb443e4ffe1f0fdf3b96"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-tape-yellow.webp",
+        "sha256": "67f67711c3b9821737822d0435b22221b20563a16314202e2ba6989e23ec584a"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-label-blue.webp",
+        "sha256": "5e4c22e48203ce2a7c00adc78c65c383474b9f1f4cdfe5ae355ee9f288eb4527"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-sticker-punk.webp",
+        "sha256": "4b93937c0ac1a83b447633fb238a72b974c5dfd655fb0c55bf74e931a7fb39cd"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-starburst-red.webp",
+        "sha256": "3e514030e4a5d089213773879ea98e3f16455e08529cf2b66cd67cbf367ef786"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-anarchy-mark.webp",
+        "sha256": "df92827e7bd04a2e53cf88e68793a7ffa02a591d05c92e3d2b10725a854adaf3"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-scribble-underline.webp",
+        "sha256": "5a6e8e67509eb4ab5942480982191a42cc26ca45b38bab526f7192f9fa92439c"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-x-mark.webp",
+        "sha256": "5f7c2602db3daa4350ddc8b95980895d00cc933aa86324219e8d6afdb61feb98"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-circle-highlight.webp",
+        "sha256": "0c99ef6c54b28f1f7ddbbdfc4c5a93f5e1d47d20ed886a6a1ccfcadeca22997c"
+      },
+      {
+        "path": "04_COMPONENTS/decorations/CANDIDATE-naive-punk-paper__deco-patch-smile.webp",
+        "sha256": "f25e1df05293d4cd528c4a21d7847c5cf3850af5b878c2cff00e127306545ac7"
+      },
+      {
+        "path": "03_ASSET_BOARD/CANDIDATE-naive-punk-paper__asset-board-long.webp",
+        "sha256": "675b510ce7a5636c71a2a6d5e9ba3b96bcdbcc11de8e7fe45fdc699701705e9a"
+      },
+      {
+        "path": "CANDIDATE-naive-punk-paper__contact-sheet.webp",
+        "sha256": "aef4b3a46bc851c734a918918a39bb3e22cb8292c3c342f162777d5fa991f2d9"
+      }
+    ]
+  },
+  {
+    "id": "STYLE-007",
+    "fileId": "1bsP5uboBhNM4vBy3D4ygZVWrPyvElyy4",
+    "assets": [
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__cover-1x1.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__cover-3x4.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__cover-4x3.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__detail-01-hero.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__detail-02-index.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__detail-03-layouts.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__detail-04-components.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__detail-05-type-number.png",
+        "sha256": null
+      },
+      {
+        "path": "INBOX-20260922-105000-quiet-editorial-qe4a7c__asset-board.png",
+        "sha256": null
+      }
+    ]
+  },
+  {
+    "id": "IMAGE-001",
+    "fileId": "1PV-5SqVfSfc4TWJbFUHiMXFZkqpGAHQh",
+    "assets": [
+      {
+        "path": "01_PREVIEWS/CANDIDATE-frosted-liquid-core-form__preview-1x1.webp",
+        "sha256": "ea8378b3c3494c2355e44045e02aafa416195614a40bea9c8da376dd403f77a6"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-frosted-liquid-core-form__preview-4x5.webp",
+        "sha256": "b5cecc39074f5b9349c13b58d531b713d23c6fb20eb7c8481e1b6bced20b49be"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-frosted-liquid-core-form__preview-16x9.webp",
+        "sha256": "dcafffceea468f63fe14bb6c64b463462119e682ba8ae3d1d9a7d2171e330987"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-frosted-liquid-core-form__benchmark-person.webp",
+        "sha256": "eeb8c804cca3d2bf3f310866643ffe00cc038d98bce0c7dcd36ee153486cb054"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-frosted-liquid-core-form__benchmark-object.webp",
+        "sha256": "e92856fe6395052c4d7128d118edb9e7484d18d0924da534aba9dfac9eca7d60"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-frosted-liquid-core-form__benchmark-environment.webp",
+        "sha256": "b0a46cb054df10d1720ece669a63532abcfdfc3a28a9c7198dff9e15f1a211d3"
+      },
+      {
+        "path": "03_DETAIL_PAGES/CANDIDATE-frosted-liquid-core-form__detail-color-lighting.webp",
+        "sha256": "f63ecf10263e97a82d4715f6aa5dbd241455c402d16351cadd67bc87b9083888"
+      },
+      {
+        "path": "03_DETAIL_PAGES/CANDIDATE-frosted-liquid-core-form__detail-composition.webp",
+        "sha256": "a7b2822e20e2179494ce162f73f4a3f33823f283089b26e091207e7ae56fa11b"
+      },
+      {
+        "path": "03_DETAIL_PAGES/CANDIDATE-frosted-liquid-core-form__detail-texture-treatment.webp",
+        "sha256": "36a81c8125c2ca102525347677fb3164096779884e165fa8cbf30be77a174231"
+      },
+      {
+        "path": "04_COMPONENTS/CANDIDATE-frosted-liquid-core-form__application-grid.webp",
+        "sha256": "64e5551f8ac71c932a7ac3164d9a5f7645bbcf4d75b81062e0e023fe8781bdbf"
+      },
+      {
+        "path": "06_DERIVED/CANDIDATE-frosted-liquid-core-form__contact-sheet.webp",
+        "sha256": "abbcdab31167ea25bf2a02c1539c48517ed435680777f3f114a4c2d0538a7569"
+      }
+    ]
+  },
+  {
+    "id": "IMAGE-002",
+    "fileId": "1F1ts4CXfESGC3zeIrTPZB8NYp2sMDgg9",
+    "assets": [
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-post-human-fractured-specimen-archive__series-01.webp",
+        "sha256": "a42d11921dba2015f789df28c3fd7316059b7136ad52f9fb3426d5b79edd8bd3"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-post-human-fractured-specimen-archive__series-02.webp",
+        "sha256": "644679d566cb5aaa24e9caca927eae760a441a67a227dc2b9c8b93ed2f247242"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-post-human-fractured-specimen-archive__series-03.webp",
+        "sha256": "01e3bfd5733814a8911e167ea10617d2a8c0d4986bde793d2d3e7ce706f81871"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-post-human-fractured-specimen-archive__preview-4x5.webp",
+        "sha256": "43c83134bc167417aaab9665b8d01e590b2444dccd1ed660c8dec87f8c7daea4"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-post-human-fractured-specimen-archive__preview-1x1.webp",
+        "sha256": "b0a327fe1413bb55c16ffaaf5c66cbb58e62541ab7e2531b32833e2be56b2894"
+      },
+      {
+        "path": "01_PREVIEWS/CANDIDATE-post-human-fractured-specimen-archive__preview-16x9.webp",
+        "sha256": "a307117e7f2987f0e14fa4ddc0247bcace00caeef61aee718d7ed7c1132882ce"
+      },
+      {
+        "path": "02_PRIMARY_OUTPUTS/CANDIDATE-post-human-fractured-specimen-archive__textless-set.webp",
+        "sha256": "9617de37f91da9c05665adc8e9eb0e6795b3513f8a04ad85969aaa3790bd7d0e"
+      },
+      {
+        "path": "03_DETAIL_PAGES/CANDIDATE-post-human-fractured-specimen-archive__detail-layout.webp",
+        "sha256": "76667155e7ec9ea46324460c62dd7b4c10667737584a4e510a587e92c775e411"
+      },
+      {
+        "path": "03_DETAIL_PAGES/CANDIDATE-post-human-fractured-specimen-archive__detail-system.webp",
+        "sha256": "8e1b26a672048adb467a003dd331601dbede00312a4f01b53c17499768c42577"
+      },
+      {
+        "path": "04_COMPONENTS/CANDIDATE-post-human-fractured-specimen-archive__contact-sheet.webp",
+        "sha256": "b79e5f704ee3f960e555e31253cf69103932add40644abc9b8326c5f5e8e621c"
+      }
+    ]
+  },
+  {
+    "id": "IMAGE-003",
+    "fileId": "1R_7rx8UQLFZy0auUM1NPrUgwbS_XEm5a",
+    "assets": [
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__preview-1x1.webp",
+        "sha256": "68abe114e9b6cbc3f887c0e72db08590d0a3c90d17a0008e7108aa7681d4cf8c"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__preview-4x5.webp",
+        "sha256": "7a2b13464ebd04f92ca8fa0e8b12dfc6ba339da84b347223dc684371669a788e"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__preview-16x9.webp",
+        "sha256": "fcdc14e57d3b256b2e164d4c2c879254b1db42e9f89c3eeef824cbffdea1492c"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__series-01.webp",
+        "sha256": "832fdba6c22881850e2d66de7309e0bd49a0215e326ff00ca6f0bf64bf58ee97"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__series-02.webp",
+        "sha256": "ddb0996c524cd4e632cb75a54b973787a30ae0323950d9ed058e2083400dfe49"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__series-03.webp",
+        "sha256": "66e7c847265c93ca8d0f2d3f3f030c9c3c4d83de0735e6f3c8077bf16287c4b8"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__textless-set.webp",
+        "sha256": "c0cc02a94c324c605fd6d423990925b171f21d9eb4ffe7cb5ed07d11005d790a"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__detail-layout.webp",
+        "sha256": "7f1de3c77b97225c828a4330e83e31919e32328c268dc80a8030d765d459b7e4"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__detail-system.webp",
+        "sha256": "85f14fe7f5891b4619f0eb1110ff7ab1f12f9501e9bc8e1c5d982d00433d4bc7"
+      },
+      {
+        "path": "CANDIDATE-frosted-shell-internal-inflation__contact-sheet.webp",
+        "sha256": "0c38db44ed2115c40031f66e1ed6b2e969a3452eb978bc03ee02eed1d8b65ba3"
+      }
+    ]
+  },
+  {
+    "id": "IMAGE-004",
+    "fileId": "1bbpwx2gMeG2rxYTxcf8_jhH-L4gSAXz0",
+    "assets": [
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__preview-1x1.webp",
+        "sha256": "dcc6544e8ed8ee60b952a3226687fb23f96bfc1b4b9d8394b1f47da27ed3b4a2"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__preview-4x5.webp",
+        "sha256": "dfd98fc6a86f68e9ff19e5755c9fdc84921d47ab37725a7779f9ccb7796e1b6b"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__preview-16x9.webp",
+        "sha256": "4525fddc00a1dc1fb4160bfed1b4f81d1142875320c1c805e0ed4efb1092f096"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__series-01.webp",
+        "sha256": "9dbad386f52635d4491fa4bceef80f2e68b56535caff91187cdb0e711f99f413"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__series-02.webp",
+        "sha256": "5df5c05faa4f3f41ab1ee422c334e7660cb44c89e8e5ac035a67acfc309c9334"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__series-03.webp",
+        "sha256": "856407916e6bdcef4faf6df697a02bf2d9fafea73b987b75ab00c0355ab38c05"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__textless-set.webp",
+        "sha256": "818e05f479f9b7a9737375730f1dbf03250128245fd87df1d42d73a50e53595c"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__detail-layout.webp",
+        "sha256": "0847e4e6829b2dc816d572db17dae54e68f16de9f15efda0ea53982c697eab0c"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__detail-system.webp",
+        "sha256": "a9beb71d8f34a566df138b6a6e5d652eda3505f0d14bc33fffc09a95a742ef31"
+      },
+      {
+        "path": "CANDIDATE-paper-relief-editorial-poster__contact-sheet.webp",
+        "sha256": "ac18d71537a5b10000667ab094f994b7f799b5e65aa86bee46e547f1b96e64a2"
+      }
+    ]
+  }
+]
