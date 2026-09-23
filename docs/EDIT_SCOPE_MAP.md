@@ -1,5 +1,17 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260920-01
+
+- 执行设备：Codex 本地隔离工作树；任务入口：L-One 主站 About v4.2 本地候选。
+- 任务目标：以 L-One 指定的 `L-One-Homepage-v4.2-FIXED-SINGLE.html` 替换主站 `#about` 的既有占位信息页；About 激活时使用来源页自身页头，离开时恢复主站页头；将用户提供的 V9 作品详情页接入为“进入作品集”按钮的本地跳转目标，补充可核验的本地作品封面与用户提供的四张项目品牌图，并完成作品页本轮授权的排版、按键与详情展示调整；为 About 的 4:3 时间线视频增加保守放大、白灰材质承托和边缘渐隐融合。L-One 已于 2026-09-23 确认部署。
+- 功能分支：`work/A-20260920-01-about-v42-replacement`；开始 commit：`34f2ff2e5b19804ecf45bae3ac3996e0f8834eca`。
+- 允许修改：`index.html` 中 `#page-about`、只作用于 About 的内嵌样式和初始化脚本；`assets/about-v42/` 内本轮提供的 About 源页与素材；`portfolio.html`；`assets/portfolio-v9/` 中由用户明确提供的四张项目品牌原图的本地副本；对现有 `assets/works/` 的只读引用；`docs/about/L_ONE_ABOUT_V42_REVIEW.md`、新建的 `docs/portfolio/L_ONE_PORTFOLIO_V9_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本范围声明。
+- 只读参考：`C:\Users\Administrator\Downloads\L-One-Homepage-v4.2-FIXED-SINGLE.html`；`E:\A0-3 新媒体项目\01-橘肉丸负负得正\L One形象资产\网页介绍\作品集详情页\查看作品详情页.zip` 及其解包资料；`E:\公共展示资产\旅行生活笔记\首钢园\喜--首钢园-45.jpg`、`E:\公共展示资产\品牌合作案例\泰迅手机壳\增距\ReefColor_Original_1789196415837.jpg`、`F:\项目经历总结\灌木科普短视频\城市——重庆\精简版 - 简化.00_00_06_30.Still003.jpg`、`E:\A0-3 新媒体项目\01-橘肉丸负负得正\曾数字人素材\静态卡通形象素材\作品 (20).png`；早前 ZIP 仅保留为历史候选来源；`L-ONE_PUBLIC_EXPRESSION_STANDARD.md`、`TASK_GUARDRAILS.md`、`SITE_STATUS.md`、`docs/MULTI_DEVICE_WORKFLOW.md`、`docs/VERSIONING_RULES.md`。
+- 明确禁止：压缩包中的部署指令、根目录整体覆盖、主站全局导航和页面顺序、现有 `#works`、Notes/Store/Materials/Motion、服务端、DNS、EdgeOne 配置、密钥、生产凭据和云端配置；不得把无法核验来源的外部封面写入页面。经本轮明确部署授权，仅允许将本范围精确提交推送至 GitHub、通过 PR 合并至 `main`，并回读既有 EdgeOne 自动部署结果。
+- 预计影响范围：生产站的 `/#about` 及其 `portfolio.html` 跳转目标；远端仅新增本范围文件。其他公开页面、预览站、EdgeOne 配置与云端数据不变。
+- 测试方式：素材 SHA-256 对照清单；`node scripts/site-audit.js`；`git diff --check`；本地 Chrome 在 1440×900、834×1112、390×844 下检查时间线、二维码键盘操作、外链、无横向溢出和控制台错误。
+- 回滚方式：审核不通过时废弃未提交的本地候选分支；若未来经批准合并后发现问题，使用 `git revert <commit>` 创建可审计回退。
+
 ## 本轮范围：A-20260904-01
 
 - 执行设备：A（公司台式机）；任务入口：`l-one asia-1`。

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L-One Portfolio Motion Prototype</title>
+<style>
+:root {
+  --bg:#ffffff;
+  --fg:#0b0b0b;
+  --accent:#ed1b24;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --fast:560ms;
+  --slow:900ms;
+}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--fg)}
+body{font-family:Arial,"Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif}
+button,a{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+#app{position:fixed;inset:0;background:var(--bg);overflow:hidden}
+.screen{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) min(51.2vw,78.571vh);justify-content:end;background:var(--bg)}
+.screen.enter{animation:screenIn 850ms var(--ease) both}
+.screen.exit{animation:screenOut 620ms var(--ease) both}
+@keyframes screenIn{from{opacity:.01;transform:translateX(10vw) scale(1.025)}to{opacity:1;transform:none}}
+@keyframes screenOut{from{opacity:1;transform:none}to{opacity:0;transform:translateX(-8vw) scale(.955)}}
+
+.left{position:relative;overflow:hidden;background:var(--bg)}
+.right{position:relative;width:100%;height:auto;align-self:center;aspect-ratio:5.5 / 7;overflow:hidden;background:#111;transform:translateZ(0)}
+.kicker{position:absolute;left:3.1vw;top:2.6vh;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.counter{position:absolute;right:2.2vw;top:2.6vh;font-size:10px;font-weight:800;letter-spacing:.18em}
+.project-rail{
+  position:absolute;
+  left:2.6vw;
+  right:1.8vw;
+  top:8px;
+  height:auto;
+  overflow:visible;
+}
+.project-list{
+  width:100%;
+  transform:none!important;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+}
+.project-row{
+  flex:0 0 auto;
+  display:flex;
+  align-items:flex-start;
+  position:relative;
+  cursor:pointer;
+  user-select:none;
+  z-index:1;
+  overflow:visible;
+}
+.project-row.active{z-index:6}
+.project-name{
+  display:inline-block;
+  max-width:98%;
+  font-family:Impact,"Arial Black","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif;
+  font-weight:950;
+  font-size:clamp(74px,9.88vw,174px);
+  line-height:.84;
+  letter-spacing:-.065em;
+  transform:scaleX(.84) scaleY(1);
+  transform-origin:left top;
+  white-space:nowrap;
+  will-change:transform,color;
+  backface-visibility:hidden;
+}
+.project-row.active .project-name{color:var(--accent)}
+.overview-media{position:absolute;inset:0;background:#111;overflow:hidden}
+.media-scene{position:absolute;inset:-3%;transition:transform 900ms var(--ease);will-change:transform}
+.project-visual{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.025);filter:saturate(.96) contrast(1.03)}
+.scene-grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.scene-cell{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:3vw;background:#161616;color:white}
+.scene-cell:nth-child(2){background:#f3f3f1;color:#111}
+.scene-cell:nth-child(3){background:var(--accent)}
+.scene-cell:nth-child(4){background:#262626}
+.scene-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,transparent 10%,rgba(255,255,255,.08),transparent 55%);transform:translateX(-110%);animation:sheen 5.2s ease-in-out infinite}
+@keyframes sheen{0%,38%{transform:translateX(-110%)}62%,100%{transform:translateX(110%)}}
+.big-mark{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(72px,10vw,190px);line-height:.72;letter-spacing:-.05em;transform:scaleX(.82);transform-origin:left bottom}
+.scene-caption{position:absolute;left:2.3vw;top:2.2vh;font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.about-key{position:absolute;left:3.1vw;bottom:3.6vh;min-width:154px;height:54px;padding:0 18px;background:#fff;border:2px solid #0b0b0b;border-radius:6px;box-shadow:0 6px 0 #0b0b0b;color:#0b0b0b;font-size:12px;font-weight:950;letter-spacing:.08em;display:grid;place-items:center;transition:transform 150ms ease,box-shadow 150ms ease;z-index:8}
+.about-key:hover{transform:translateY(2px);box-shadow:0 4px 0 #0b0b0b}
+.about-key:active{transform:translateY(6px);box-shadow:0 0 0 #0b0b0b}
+
+.detail-left{position:relative}
+.detail-copy{position:absolute;left:4.2vw;right:2.8vw;bottom:calc(4.1vh + 82px);z-index:8}
+.work-display-title{margin:0;font-family:"Arial Black","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:clamp(16px,2.65vw,42px);font-weight:950;line-height:1.16;letter-spacing:-.055em;text-align:left}
+.work-display-title .title-line{display:block;white-space:nowrap;word-break:keep-all;overflow-wrap:normal}
+.work-source-link{display:inline-block;margin-top:12px;color:#4b4b4b;font-size:12px;font-weight:800;letter-spacing:.03em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.detail-actions{position:absolute;left:4.2vw;bottom:4.1vh;display:flex;gap:14px;align-items:center;z-index:8}
+.key-arrow{width:60px;height:52px;background:#fff;border:2px solid #0b0b0b;border-radius:6px;box-shadow:0 5px 0 #0b0b0b;color:#0b0b0b;font-family:Arial,"Microsoft YaHei UI",sans-serif;font-size:28px;font-weight:900;line-height:1;display:grid;place-items:center;transition:transform 150ms ease,box-shadow 150ms ease}
+.key-arrow:hover{transform:translateY(2px);box-shadow:0 3px 0 #0b0b0b}
+.key-arrow:active{transform:translateY(5px);box-shadow:0 0 0 #0b0b0b}
+.back{position:absolute;left:4.2vw;top:4.2vh;width:58px;height:48px;background:#fff;border:2px solid #0b0b0b;border-radius:5px;box-shadow:0 4px 0 #0b0b0b;font-size:11px;font-weight:950;letter-spacing:.08em;display:grid;place-items:center;z-index:8;transition:transform 160ms ease,box-shadow 160ms ease}
+.back:hover{transform:translateY(2px);box-shadow:0 2px 0 #0b0b0b}
+.back:active{transform:translateY(4px);box-shadow:0 0 0 #0b0b0b}
+.work-stage{position:absolute;inset:0;background:#0c0c0c;overflow:hidden}
+.work-card{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;color:#fff;transform-origin:center bottom;transition:transform 780ms var(--ease),opacity 520ms ease,filter 520ms ease;background:#111;cursor:pointer}
+.work-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.work-card.next{transform:translateY(100%) scale(.82)}
+.work-card.current{transform:translateY(0) scale(1)}
+.work-card.previous{transform:translateY(-100%) scale(.94);opacity:.18;filter:grayscale(1)}
+.work-card.arrive{animation:workArrive 900ms var(--ease) both}
+@keyframes workArrive{0%{transform:translateY(100%) scale(.78)}44%{transform:translateY(-1.2%) scale(1.018)}100%{transform:translateY(0) scale(1)}}
+.work-card.theme-0{background:linear-gradient(145deg,#101010 0%,#252525 58%,#0b0b0b 100%)}
+.work-card.theme-1{background:linear-gradient(145deg,#ffffff 0%,#d9d9d5 100%);color:#0b0b0b}
+.work-card.theme-2{background:linear-gradient(145deg,#ed1b24 0%,#b71118 100%)}
+.work-card.theme-3{background:linear-gradient(145deg,#171717 0%,#090909 100%)}
+
+.about-key:focus-visible,.key-arrow:focus-visible,.back:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){.about-key,.key-arrow,.back{transition:none}.media-scene{transition:none}}
+
+@media(max-width:900px){
+ .screen{grid-template-columns:minmax(0,1fr) min(56vw,78.571vh)}
+ .project-name{font-size:clamp(58px,10.4vw,112px)}
+ .detail-left{padding-left:3vw;padding-right:2.6vw}
+ .detail-actions,.back{left:3vw}
+ .detail-copy{left:3vw;right:2vw}
+ .about-key{left:3vw}
+}
+@media(max-width:500px){
+ .work-display-title{font-size:12px;letter-spacing:-.04em}
+ .work-source-link{margin-top:8px;font-size:10px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const projects = [{"name": "喜大川", "latin": "L-ONE / XIDACHUAN", "account": "L-One喜大川", "works": [["运动相机拍摄分享——上期挖坑，本期填坑", "小红书", "https://www.xiaohongshu.com/discovery/item/68f5a00400000000040143de?source=webshare&xhsshare=pc_web&xsec_token=ABYGBv3z-4ZP7dFOqZUI9TrbanGjH4-KwzIW-sPbASj-M=&xsec_source=pc_share"], ["去废弃铁轨上拍个照｜将府公园", "小红书", "https://www.xiaohongshu.com/discovery/item/68c24414000000001d018616?source=webshare&xhsshare=pc_web&xsec_token=AB7cDR6ZddjVQmXc-D16IeYj5xmNck8PuwDP1knyP05Ko=&xsec_source=pc_share"], ["如果你也在大望路上班｜别在公司附近溜达", "小红书", "https://www.xiaohongshu.com/discovery/item/68bdaf4e000000001d027d3a?source=webshare&xhsshare=pc_web&xsec_token=ABNEm8cfEnn9qHlwSRphxoGCOlrWjJv4bM7Kr8e8rhdhU=&xsec_source=pc_share"], ["环球影城｜年度总结篇 2/3【吃喝】", "小红书", "https://www.xiaohongshu.com/discovery/item/68903ca9000000000403d551?source=webshare&xhsshare=pc_web&xsec_token=ABhyvJD6PuAO6KY7TC4R40XmZeQTyeWgTz6WL24DdiTy0=&xsec_source=pc_share"], ["环球影城｜一年去二十多次的总结篇 1/3", "小红书", "https://www.xiaohongshu.com/discovery/item/688eff950000000004002535?source=webshare&xhsshare=pc_web&xsec_token=ABcXyK9H43hGkFKm2QOop8KUeJJVw-ckNg7mKw62UgCbs=&xsec_source=pc_share"], ["一口叹气！好看的地方就是藏着不给看", "小红书", "https://www.xiaohongshu.com/discovery/item/68aec79c000000001d02e1c6?source=webshare&xhsshare=pc_web&xsec_token=AB9zYlylxGYs5ORDkPdo0oL4QsAxfTKlDKys0AmPKWwr8=&xsec_source=pc_share"]]}, {"name": "疯游精", "latin": "FENGYOUJING", "account": "疯游精", "works": [["存20个「环球影城」中小众却超级出片的位置", "小红书", "https://www.xiaohongshu.com/discovery/item/67b994ff0000000029019491?source=webshare&xhsshare=pc_web&xsec_token=ABGkB9eZptHNJl1JeElv2bKAHufU_eyuduVHZbFxyXh60=&xsec_source=pc_share"], ["环球影城泼水节｜提前预习5个爽玩小tips", "小红书", "https://www.xiaohongshu.com/discovery/item/6a292e9500000000350271ad?source=webshare&xhsshare=pc_web&xsec_token=ABfZp0Lqz4D5Fz7a2E8VdpWiDJ40xowaHBerAW2dpu9-0=&xsec_source=pc_share"], ["世界予我万般滋味，何不尽兴而返", "小红书", "https://www.xiaohongshu.com/discovery/item/6a0fbb040000000035030d75?source=webshare&xhsshare=pc_web&xsec_token=ABHTGnM0uC-xlooSncVJ8E7aJ1YOYArU0e-bNkNwxOrrU=&xsec_source=pc_share"], ["Lady～～，居然也有机会让我用上了这个BGM", "小红书", "https://www.xiaohongshu.com/discovery/item/69c0fb3b0000000023013858?source=webshare&xhsshare=pc_web&xsec_token=ABTNwQWtx0APWOTk8g1WB0Hxh4DLDxOZrBhWOPZ-zufCM=&xsec_source=pc_share"], ["蓝调的泡泡乐园｜找寻那些无用但舒适的时间", "小红书", "https://www.xiaohongshu.com/discovery/item/6a48500f000000001101f1ca?source=webshare&xhsshare=pc_web&xsec_token=ABvtRC0HxB6nTDh1wR4fDmO1I1ZtOWVPKfaqO6m-82AIY=&xsec_source=pc_share"], ["带着增距镜逛「北环」还真能拍出点不一般的", "小红书", "https://www.xiaohongshu.com/discovery/item/6aa9f638000000002803ac6a?source=webshare&xhsshare=pc_web&xsec_token=AB-yJT3GTkW-I1QGupiiajuGNTx5i0ePNjvyg-wT7hDog=&xsec_source=pc_share"], ["北京国家植物园，一日徒步vlog", "小红书", "https://www.xiaohongshu.com/discovery/item/6a7ea96d000000002c0032e8?source=webshare&xhsshare=pc_web&xsec_token=ABw1Lv7jXejIlo2SJS7TXjQbF6mPC6OiOON9tL0RVa2-M=&xsec_source=pc_share"], ["小技巧出大片2/20｜vlog拍摄之-慢门技巧", "小红书", "https://www.xiaohongshu.com/discovery/item/6a6346fc000000000f02a829?source=webshare&xhsshare=pc_web&xsec_token=ABH-tugRtAyvkP2bglBTyFzk0QS25e6rPtWJ7nB1QxvHY=&xsec_source=pc_share"], ["环球影城大攻略4｜游乐，必须快乐", "小红书", "https://www.xiaohongshu.com/discovery/item/6a50c793000000000f0146d6?source=webshare&xhsshare=pc_web&xsec_token=ABdD5FUsmGhKdnPGguOfzQGnEkzYi6vEUX_p4L8FI_ME0=&xsec_source=pc_share"], ["小众预警｜送给巫师的「圣诞暗夜颂歌」", "小红书", "https://www.xiaohongshu.com/discovery/item/693282b9000000001d03bf20?source=webshare&xhsshare=pc_web&xsec_token=ABf36LtmwwW8IW7tLtUu6JH8Dg0XKNS4xAeBYP3AY_gTo=&xsec_source=pc_share"]]}, {"name": "灌木", "latin": "GUANMU CULTURE", "account": "灌木文化", "works": [["别掉队，1分钟走进AI时代", "抖音", "https://www.douyin.com/video/7606298141276654889?modeFrom=userPost&secUid=MS4wLjABAAAA9qsFQlp_aCgs1AvoiT7Q6pDB0eDo81kh8CJSHDFDca4"], ["这座城到底有多硬核｜重庆", "抖音", "https://www.douyin.com/video/7665661615995374899?modeFrom=userPost&secUid=MS4wLjABAAAAHr-8bVg-qioUwYXE2vmpuFYRj4Us0DfFFGYfWwIY_TA"]]}, {"name": "过往作品", "latin": "SELECTED ARCHIVE", "account": "王钧过往其他视频作品", "works": [["自我介绍", "新片场", "https://www.xinpianchang.com/a13500547?channel=copyLink&from=webShare"], ["地产品牌形象片《光熙长者公寓》", "新片场", "https://www.xinpianchang.com/a10184837?channel=copyLink&from=webShare"], ["喜大川er2023艺人&游戏广告3", "阿里云盘", "https://www.alipan.com/s/pMFvUF1vUJS"], ["喜大川er2023EP雅莹", "阿里云盘", "https://www.alipan.com/s/otuCRed6yG2"], ["从开机到打卡的机器人", "阿里云盘", "https://www.alipan.com/s/XSH3jqkdt2K"]]}];
+let mode = 'overview';
+let projectIndex = 0;
+let workIndex = 0;
+let wheelLock = false;
+let app = document.getElementById('app');
+
+// Only title-matched, existing L-One originals are used. Unavailable covers stay as V9's motion posters.
+const workCovers = new Map([
+  ['去废弃铁轨上拍个照｜将府公园','assets/works/jiangfu-railway/cover.jpg'],
+  ['如果你也在大望路上班｜别在公司附近溜达','assets/works/dawanglu-after-work/cover.jpg'],
+  ['环球影城｜年度总结篇 2/3【吃喝】','assets/works/universal-food-2/cover.jpg'],
+  ['环球影城｜一年去二十多次的总结篇 1/3','assets/works/universal-summary-1/cover.jpg'],
+  ['一口叹气！好看的地方就是藏着不给看','assets/works/hidden-view/cover.jpg']
+]);
+
+// Four user-supplied project identity originals. No generated replacement is used.
+const projectVisuals = new Map([
+  ['喜大川',{src:'assets/portfolio-v9/project-xidachuan.jpg',position:'center 66%'}],
+  ['疯游精',{src:'assets/portfolio-v9/project-fengyoujing.jpg',position:'center 48%'}],
+  ['灌木',{src:'assets/portfolio-v9/project-guanmu.jpg',position:'center center'}],
+  ['过往作品',{src:'assets/portfolio-v9/project-past-works.png',position:'center center'}]
+]);
+
+// L-One supplied display copy. Each line is explicit; the browser never decides title breaks.
+const workTitleOverrides = new Map([
+  ['如果你也在大望路上班｜别在公司附近溜达',['如果你也在大望路上班','别在公司附近溜达']],
+  ['环球影城｜年度总结篇 2/3【吃喝】',['环球影城年度总结篇2','<吃喝>']],
+  ['环球影城｜一年去二十多次的总结篇 1/3',['环球影城年度总结篇1','<拍照>']],
+  ['一口叹气！好看的地方就是藏着不给看',['四惠东一口叹气','好看的地方就是藏着不给看']],
+  ['去废弃铁轨上拍个照｜将府公园',['去废弃铁轨上拍个照','<将府公园>']],
+  ['存20个「环球影城」中小众却超级出片的位置',['存20个环球影城','小众却超级出片的位置']],
+  ['环球影城泼水节｜提前预习5个爽玩小tips',['环球影城泼水节','提前预习5个爽玩小tips']],
+  ['世界予我万般滋味，何不尽兴而返',['世界予我万般滋味','何不尽兴而返']],
+  ['蓝调的泡泡乐园｜找寻那些无用但舒适的时间',['蓝调的泡泡乐园','那些无用但舒适的时间']],
+  ['带着增距镜逛「北环」还真能拍出点不一般的',['带着增距镜逛北环','还真能拍出点不一般的']],
+  ['北京国家植物园，一日徒步vlog',['北京国家植物园','一日徒步vlog']],
+  ['小技巧出大片2/20｜vlog拍摄之-慢门技巧',['小技巧出大片','<慢门视频>']],
+  ['环球影城大攻略4｜游乐，必须快乐',['环球影城大攻略','游乐必须快乐']],
+  ['小众预警｜送给巫师的「圣诞暗夜颂歌」',['小众预警','送给巫师的圣诞暗夜颂歌']],
+  ['喜大川er2023艺人&游戏广告3',['艺人游戏品牌案例']],
+  ['喜大川er2023EP雅莹',['艺人时尚品牌案例']]
+]);
+
+function pad(n){ return String(n+1).padStart(2,'0'); }
+
+function cleanWorkTitle(title){
+  return Array.from(title.replace(/[\p{P}\p{S}\s]/gu,'')).join('');
+}
+
+function splitWorkTitle(title){
+  const overridden=workTitleOverrides.get(title);
+  if(overridden) return overridden;
+  const chars=Array.from(cleanWorkTitle(title));
+  if(chars.length<=12) return [chars.join('')];
+  const midpoint=Math.ceil(chars.length/2);
+  return [chars.slice(0,midpoint).join(''),chars.slice(midpoint).join('')];
+}
+
+function overview() {
+  mode='overview';
+  const p=projects[projectIndex];
+  const visual=projectVisuals.get(p.name);
+  app.innerHTML = `
+    <div class="screen enter" id="screen">
+      <section class="left">
+        <div class="project-rail"><div class="project-list" id="projectList">
+          ${projects.map((x,i)=>`
+            <div class="project-row ${i===projectIndex?'active':''}" data-i="${i}">
+              <span class="project-name">${x.name}</span>
+            </div>`).join('')}
+        </div></div>
+        <button class="about-key" id="backToAbout" type="button">回到 About</button>
+      </section>
+      <section class="right">
+        <div class="overview-media">
+          <div class="media-scene" id="mediaScene">
+            <img class="project-visual" id="projectVisual" src="${visual.src}" alt="${p.name}项目品牌图" style="object-position:${visual.position}">
+          </div>
+        </div>
+      </section>
+    </div>`;
+  positionProjectList(false);
+  document.querySelectorAll('.project-row').forEach(row=>row.onclick=()=>{
+    const i=+row.dataset.i;
+    if(i!==projectIndex) selectProject(i);
+    else enterDetail();
+  });
+  document.getElementById('backToAbout').onclick=()=>window.location.href='index.html#about';
+  bindParallax();
+}
+
+function positionProjectList() {
+  const list=document.getElementById('projectList');
+  if(list) list.style.transform='none';
+  applyProjectTypography(false);
+}
+
+function companionRows(activeIndex){
+  // 每次固定由两排文字承担压缩：
+  // 顶部向下拉长 -> 下方两排压缩；
+  // 底部向上拉长 -> 上方两排压缩；
+  // 中间项 -> 上下各一排压缩。
+  if(activeIndex===0) return [1,2];
+  if(activeIndex===1) return [0,2];
+  if(activeIndex===2) return [1,3];
+  return [1,2];
+}
+
+function scalePattern(activeIndex, activeScale=1.5){
+  const scales=[1,1,1,1];
+  scales[activeIndex]=activeScale;
+  const compressed=1-(activeScale-1)/2;
+  companionRows(activeIndex).forEach(i=>scales[i]=compressed);
+  return scales;
+}
+
+function applyProjectTypography(animate=true){
+  const rows=[...document.querySelectorAll('.project-row')];
+  if(!rows.length) return;
+  const names=rows.map(row=>row.querySelector('.project-name'));
+
+  // 使用未变形文字的真实排版高度作为统一基准。
+  names.forEach(name=>name.style.transform='scaleX(.84) scaleY(1)');
+  const baseTextH=Math.max(...names.map(name=>name.offsetHeight));
+  // 每一行的可见文字边界以下都保留同一段明显空白，不随放大比例而改变。
+  const fixedGap=Math.max(42,Math.min(58,innerHeight*0.055));
+
+  const previousScales=rows.map((row,idx)=>{
+    const v=parseFloat(row.dataset.scale || '1');
+    return Number.isFinite(v)?v:1;
+  });
+
+  const finalScales=scalePattern(projectIndex,1.5);
+  const stages=animate ? [
+    {offset:0, scales:previousScales},
+    {offset:.38, scales:scalePattern(projectIndex,1.60)},
+    {offset:.62, scales:scalePattern(projectIndex,1.44)},
+    {offset:.82, scales:scalePattern(projectIndex,1.53)},
+    {offset:1, scales:finalScales}
+  ] : [{offset:1, scales:finalScales}];
+
+  rows.forEach((row,idx)=>{
+    const name=names[idx];
+    if(row._rowAnim) row._rowAnim.cancel();
+    if(name._nameAnim) name._nameAnim.cancel();
+
+    const rowFrames=stages.map(stage=>({
+      offset:stage.offset,
+      height:(baseTextH*stage.scales[idx] + (idx<rows.length-1?fixedGap:0))+'px'
+    }));
+    const nameFrames=stages.map(stage=>({
+      offset:stage.offset,
+      transform:`scaleX(.84) scaleY(${stage.scales[idx]})`
+    }));
+
+    if(animate){
+      row._rowAnim=row.animate(rowFrames,{duration:760,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});
+      name._nameAnim=name.animate(nameFrames,{duration:760,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});
+    }
+
+    const finalScale=finalScales[idx];
+    row.style.height=(baseTextH*finalScale + (idx<rows.length-1?fixedGap:0))+'px';
+    name.style.transform=`scaleX(.84) scaleY(${finalScale})`;
+    row.dataset.scale=String(finalScale);
+  });
+
+  const totalHeight=finalScales.reduce((sum,s)=>sum+baseTextH*s,0)+fixedGap*(rows.length-1);
+  const rail=document.querySelector('.project-rail');
+  if(rail) rail.style.height=totalHeight+'px';
+}
+
+function selectProject(i) {
+  projectIndex=(i+projects.length)%projects.length;
+  const p=projects[projectIndex];
+  const rows=[...document.querySelectorAll('.project-row')];
+  rows.forEach((r,idx)=>r.classList.toggle('active',idx===projectIndex));
+  applyProjectTypography(true);
+
+  const visual=projectVisuals.get(p.name);
+  const projectVisual=document.getElementById('projectVisual');
+  if(projectVisual && visual){
+    projectVisual.src=visual.src;
+    projectVisual.alt=`${p.name}项目品牌图`;
+    projectVisual.style.objectPosition=visual.position;
+  }
+
+  const scene=document.getElementById('mediaScene');
+  if(scene){
+    scene.animate(
+      [
+        {transform:'translate3d(0,1.8vh,0) scale(.985)',opacity:.72},
+        {transform:'translate3d(0,0,0) scale(1.025)',opacity:1}
+      ],
+      {duration:520,easing:'cubic-bezier(.16,1,.3,1)'}
+    );
+  }
+}
+
+function enterDetail() {
+  const old=document.getElementById('screen');
+  old && old.classList.add('exit');
+  setTimeout(()=>{ workIndex=0; detail(); },380);
+}
+
+function detail() {
+  mode='detail';
+  const p=projects[projectIndex];
+  app.innerHTML=`
+    <div class="screen enter" id="screen">
+      <section class="left detail-left">
+        <button class="back" id="back" aria-label="Back to projects">ESC</button>
+        <div class="detail-copy">
+          <h1 class="work-display-title" id="workDisplayTitle"></h1>
+          <a class="work-source-link" id="open" target="_blank" rel="noreferrer">跳转原文链接</a>
+        </div>
+        <div class="detail-actions" aria-label="切换作品">
+          <button class="key-arrow" id="prev" aria-label="上一作品">←</button>
+          <button class="key-arrow" id="next" aria-label="下一作品">→</button>
+        </div>
+      </section>
+      <section class="right">
+        <div class="work-stage" id="workStage"></div>
+      </section>
+    </div>`;
+  document.getElementById('back').onclick=overview;
+  document.getElementById('prev').onclick=()=>moveWork(-1);
+  document.getElementById('next').onclick=()=>moveWork(1);
+  renderWorks(true);
+}
+
+function cardHTML(w,idx,pos,arrive=false) {
+  const theme=idx%4;
+  const cover=workCovers.get(w[0]);
+  return `<article class="work-card theme-${theme} ${cover?'has-cover':''} ${pos} ${arrive?'arrive':''}" data-url="${w[2]}">
+    ${cover?`<img class="work-cover" src="${cover}" alt="">`:''}
+  </article>`;
+}
+
+function renderWorks(arrive=false) {
+  const p=projects[projectIndex], n=p.works.length;
+  const prev=(workIndex-1+n)%n, next=(workIndex+1)%n;
+  const stage=document.getElementById('workStage');
+  stage.innerHTML=cardHTML(p.works[prev],prev,'previous')+
+                  cardHTML(p.works[workIndex],workIndex,'current',arrive)+
+                  cardHTML(p.works[next],next,'next');
+  stage.querySelectorAll('.work-card').forEach(c=>c.onclick=()=>window.open(c.dataset.url,'_blank','noopener'));
+  const title=document.getElementById('workDisplayTitle');
+  const sourceLink=document.getElementById('open');
+  if(title){
+    title.replaceChildren(...splitWorkTitle(p.works[workIndex][0]).map(line=>{
+      const span=document.createElement('span');
+      span.className='title-line';
+      span.textContent=line;
+      return span;
+    }));
+  }
+  if(sourceLink) sourceLink.href=p.works[workIndex][2];
+}
+
+function moveWork(dir) {
+  const n=projects[projectIndex].works.length;
+  workIndex=(workIndex+dir+n)%n;
+  renderWorks(true);
+}
+
+function bindParallax() {
+  const scene=document.getElementById('mediaScene');
+  if(!scene)return;
+  window.onpointermove=(e)=>{
+    if(mode!=='overview') return;
+    const x=(e.clientX/innerWidth-.5)*1.6;
+    const y=(e.clientY/innerHeight-.5)*1.2;
+    scene.style.transform=`translate3d(${x}vw,${y}vh,0) scale(1.025)`;
+  };
+}
+
+window.addEventListener('wheel',(e)=>{
+  e.preventDefault();
+  if(wheelLock)return;
+  if(Math.abs(e.deltaY)<12)return;
+  wheelLock=true;
+  if(mode==='overview') selectProject(projectIndex+(e.deltaY>0?1:-1));
+  else moveWork(e.deltaY>0?1:-1);
+  setTimeout(()=>wheelLock=false,620);
+},{passive:false});
+
+window.addEventListener('resize',()=>{
+  if(mode==='overview') applyProjectTypography(false);
+});
+
+window.addEventListener('keydown',(e)=>{
+  if(mode==='overview'){
+    if(['ArrowDown','ArrowRight'].includes(e.key))selectProject(projectIndex+1);
+    if(['ArrowUp','ArrowLeft'].includes(e.key))selectProject(projectIndex-1);
+    if(e.key==='Enter')enterDetail();
+  }else{
+    if(['ArrowDown','ArrowRight'].includes(e.key))moveWork(1);
+    if(['ArrowUp','ArrowLeft'].includes(e.key))moveWork(-1);
+    if(e.key==='Escape'||e.key==='Backspace')overview();
+  }
+});
+
+overview();
+</script>
+</body>
+</html>
