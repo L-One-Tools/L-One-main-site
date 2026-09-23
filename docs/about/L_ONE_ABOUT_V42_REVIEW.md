@@ -124,3 +124,46 @@
 - P0 finding：上版的底材可见度不足、圆角语言不统一；rework，当前轮 fix-now。
 - P1：内嵌图片自身无法由 CSS 消除的原始像素倒角，accept，原因是保留用户提供的真实键帽材质；如需完全直角，需要 L-One 提供或批准重制的按键原图。
 - P2：圆形阴影、角色投影和功能性圆点不按矩形规则硬改；accept，原因是它们不是窗口边缘。
+
+## 2026-09-23 NOW 工具标识透明化与作品滚动条
+
+### Mode and comparison contract
+
+- Mode：adaptation。目标是 About v4.2 NOW 区，桌面参考为 L-One 提供的两张滚动状态截图；内容、标题、轨道方向和键帽材料均为既有实现。
+- 目标视口：桌面 `1440×900`、平板 `834×1112`、手机 `390×844`；上排工具标识、观点标题、下排作品轨道、作品集入口及悬停状态。
+
+### Intent Lock
+
+| Field | Locked intent | Evidence | Confidence | Implementation consequence | P0 blocker? |
+| --- | --- | --- | --- | --- | --- |
+| composition | translate：观点标题仍位于两条滚动轨道之间；作品集键帽改置于标题下方、下排轨道上方。 | L-One 本轮书面说明与截图。 | high | 仅移动现有入口节点，不改变标题或两个轨道的方向。 | yes |
+| visual focus | preserve：工具标识仍是上排焦点，观点标题仍是 NOW 的文字焦点。 | 用户截图。 | high | 不改变工具名称、标题、字号或人工分行。 | yes |
+| spatial/depth hierarchy | translate：下排卡片放大 15%；悬停卡片增加 8%，相邻卡片同步让位。 | 用户明确数值。 | high | 固定卡间距，使用同级元素反向/正向位移保障悬停间距。 | no |
+| material and light | translate：移除图标外部白色方底，保留 3D 键帽的高光、阴影、纹理及实体边缘。 | 用户反馈“白色图片与网页背景割裂”。 | high | 使用透明 PNG 副本；不以 CSS 白色遮罩替代。 | yes |
+| typography | preserve：所有现有公开文字、标题单行规则与说明文字不改。 | L-One 公共表达规范；既有批准内容。 | high | 不改文本 DOM。 | yes |
+| color | preserve：继续使用白灰、低饱和色调；透明图标通过现有底材融合。 | 两张用户截图。 | high | 不增加彩色底框或强调色。 | no |
+| critical assets | preserve/translate：四张原工具键帽保持原始设计，新增仅外部背景透明化的副本。 | 原图 `003`—`006`；用户请求。 | medium | 原始文件不覆盖；透明副本使用 RGBA/Alpha。 | yes |
+| critical interaction | translate：下排卡片 hover 时放大并带动邻卡让位；原滚动、作品集按键 pressed/focus 与跳转保留。 | 用户说明；既有按键行为。 | high | CSS hover/focus 与 `prefers-reduced-motion` 回退；不新增业务逻辑。 | no |
+
+### Rendering route and interaction plan
+
+- Rendering route：透明 PNG 资产 + CSS/DOM。透明资产解决真实白底问题；CSS 负责保持 16px 卡距、卡片放大与邻卡避让。拒绝 CSS `mix-blend-mode` 假透明（不能移除白方底）和重绘工具标识（会损失真实素材保真度）。
+- 下排轨道卡片宽度从 `225px` 调整为 `259px`；动画周期从 `90s` 调整为 `103.5s`，以维持近似相同的像素滚动速度。悬停或键盘焦点状态下目标卡片缩放至 `1.08`，前后相邻项分别向外偏移半个新增宽度。
+- `prefers-reduced-motion` 下停止轨道动画与放大/位移动画，保留卡片、标题、入口和跳转。
+
+### Restoration boundary, screenshot validity and priorities
+
+- Restoration boundary：透明化仅抠除工具键帽外部背景；字形、键帽、阴影、纹理、工具封面、时间线、作品集内容及所有公开文案保持不变。AI 透明化的原始输入与输出须以文件清单及 Alpha 校验记录可追溯。
+- Screenshot validity：用户截图与候选页面的 NOW 内容匹配；滚动时刻和精确视口未知，因此对最终截图作 diagnostic review，不作逐像素结论。
+- P0：白色方底与页面背景割裂；fix-now。P1：卡片尺寸、均匀间距、等速滚动、键帽上下间距；fix-now。P2：悬停阴影与小屏降级；fix-now，并由三端截图复核。
+## 2026-09-23 NOW 六工具、纵向压缩与滚动调整（A-20260923-03）
+
+### Intent Lock
+
+- 模式：在已批准 About v4.2 的本地候选上做组件数量、留白和运动调整；不部署。
+- 已观察：当前桌面视口只露出 NOW 的四个工具；下排作品条带有不属于作品封面的浅灰底；左上品牌标记在滚动中持续压住页面。
+- 已提供：Wave 工具图已为透明 RGBA；One BAR 工具图带外部白底，必须仅抠除该外部背景。两图均为 `1254×1254`。
+- 推断且锁定：保持工具卡片与下排作品卡片的视觉尺寸；通过收紧 NOW 内的纵向留白，使首屏同时露出下排作品；不缩放作品卡片。
+- 渲染路径：Wave 直接采用提供的 Alpha 源图；One BAR 生成透明 PNG 副本。两个新图和先前四图一起按 6 个不同工具、完整重复两次的无缝跑马灯渲染；图标显示原有色彩和真实 Alpha；下排作品条背景透明以连续显示 NOW 页面底材。禁止用白底、混合模式或 CSS 近似替代透明图。
+- 数值：上排滚动周期由 `90s` 变为 `128.571s`，下排由 `103.5s` 变为 `147.857s`；两者的速度均为当前的 70%（降低 30%）。下排作品卡片尺寸/间距不变；下排至 statement 的底部留白由 `28px` 增至 `56px`。品牌仅在 `scrollY > 20` 时淡出，菜单保持可见与可用。
+- 无障碍：保留所有工具图 `alt` 和文字图注；滚动品牌淡出不影响菜单；`prefers-reduced-motion` 下停止跑马灯。

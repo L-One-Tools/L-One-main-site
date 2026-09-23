@@ -1,5 +1,28 @@
 # 当前任务交接
 
+## 2026-09-23 About NOW 更新发布交接
+
+- 任务编号：`A-20260923-04`。L-One 已明确要求将当前更新网页同步至 `l-one.asia`；发布范围仅为此前本地候选 `A-20260923-02`、`A-20260923-03` 的 About NOW 区及六个透明工具 PNG。
+- 发布前修正：下排作品条删除固定浅灰背景，保持与 NOW 页面底材连续。此项已纳入相同候选验收。
+- 执行路径：从当前工作分支精确提交并推送，经 PR、CI 合并至 `main`，等待现有 EdgeOne 自动部署后回读正式域名。GitHub、EdgeOne 和正式域名结果待本轮执行完成后记录；在回读完成前均为未验证。
+
+
+## 2026-09-23 本地候选：NOW 工具标识透明化与作品滚动
+
+- 任务编号：`A-20260923-02`；本地分支：`work/A-20260923-02-about-now-material-marquee`；基线：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。本轮严格限于 About 来源页的 NOW 区、4 个新增透明 PNG 和对应评审/状态记录。
+- 四个工具图原文件不覆盖。新增 `assets/about-v42/tools-transparent/` 下的 `l1-text-transparent.png`、`capture-transparent.png`、`story-flow-transparent.png`、`rubbing-transparent.png`；均为 `1254×1254` RGBA，Alpha 范围 `0–255`。页面按既有 alt 映射引用透明副本，左上主站品牌标记不变。
+- 下排作品卡片从 `225px` 增至 `259px`（+15%），保留左右 `8px` 外边距；滚动动画 `90s` 同比改为 `103.5s`。悬停/键盘焦点放大 `1.08`，两侧卡片以等量 `translateX` 让位；减少动态偏好时停止该条滚动并取消位移动画。
+- 空格键作品集入口由脚本移动到主观点后、下排作品条前；入口上下均使用 `--now-entry-gap` 的同一较宽间距。未改动标题文案、视频、作品集内容、线上配置或生产资源。
+- 本地验收：`node scripts/site-audit.js`、评审记录校验、透明 PNG 尺寸/Alpha 校验、内联脚本解析、`git diff --check` 与本地 HTTP 资源回读通过。预览仍为 `http://127.0.0.1:4174/#about`。本轮未提交、未推送、未合并、未部署；如获得单独授权，仍需精确提交、PR、CI、合并与正式域名回读。
+
+## 2026-09-23 本地候选：NOW 六工具与视口留白调整
+
+- 任务编号：`A-20260923-03`；分支沿用 `work/A-20260923-02-about-now-material-marquee`；基线仍为 `74224efebd89e814c4dfea20cdf76e24ba3dac03`。本轮只改 About 来源页 NOW 区和其透明工具副本/记录。
+- 新增透明工具副本：`tools-transparent/wave-transparent.png` 直接复制用户提供的 Alpha PNG；`tools-transparent/one-bar-transparent.png` 为只移除用户提供图外部白底后的 RGBA 副本。两者均 `1254×1254`、Alpha 范围 `0–255`，原图不覆盖。
+- NOW 上排运行六种工具两次以保持无缝，图注依次为 L-1 TEXT、CAPTURE、STORY FLOW、RUBBING、WAVE、ONE BAR。工具与下排作品卡片尺寸不变；通过缩短 NOW 纵向留白，让下排更早进入默认桌面视口。
+- 上/下滚动周期分别为 `128.571s` / `147.857s`，即较前一版本速度各降低 30%；下排改用无纹理纯净底色；下排至 statement 的留白 `56px`；页面滚动超过 `20px` 时仅左上品牌淡出，菜单仍可使用。
+- 待验收：本地资源、脚本行为、全站审计和差异检查。未提交、未推送、未合并、未部署。
+
 ## 2026-09-20 本地候选：About v4.2 替换
 
 - 任务编号：`A-20260920-01`；分支：`work/A-20260920-01-about-v42-replacement`；开始 commit：`34f2ff2e5b19804ecf45bae3ac3996e0f8834eca`。
