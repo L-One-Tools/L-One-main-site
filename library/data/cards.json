@@ -1,0 +1,422 @@
+[
+  {
+    "key": "STYLE-001",
+    "id": "STYLE-001",
+    "type": "STYLE",
+    "title_cn": "复古波普漫画式卡通 3D",
+    "title_en": "Retro Pop Cartoon 3D",
+    "intro": "高饱和纯色舞台、黑色漫画粗描边、哑光玩具 Cel-Shaded 3D、奶油白贴纸 UI、硬边阴影、超粗展示字体与大面积留白，共同形成具有复古快餐广告、儿童玩具包装、漫画贴纸与宇宙游戏感的视觉系统。",
+    "tags": [
+      "复古波普",
+      "卡通3D",
+      "玩具感"
+    ],
+    "hook": "高饱和纯色舞台、黑色漫画粗描边、哑光玩具 Cel-Shaded 3D、奶油白贴纸 UI、硬边阴影、超粗展示字体与大面积留白，共同形成具有复古快餐广告、儿童玩具包装、漫画贴纸与宇宙游戏感的视觉系统。",
+    "visual_keywords": [
+      "retro-pop",
+      "cartoon-3d",
+      "toon-3d",
+      "cel-shading",
+      "sticker-ui",
+      "toy-like"
+    ],
+    "copy_prompt": "将 `{CONTENT}` / `{SUBJECT}` / `{ASSET_TYPE}` / `{FORMAT}` 统一转换为 **Retro Pop Cartoon 3D｜复古波普漫画式卡通 3D** 视觉系统。使用单一高饱和纯色舞台，以 Cosmic Red `#EB3322`、Solar Yellow `#FFC737` 或 Cream `#F7F2E5` 作为主背景；Ink Black `#111111` 统一承担描边、主要文字、图标与结构线。核心 `{SUBJECT}` 采用 Matte Toy Polymer 哑光玩具塑料材质与两级 Cel Shading，仅保留清晰亮面和暗面；角色、主物件、贴纸与关键组件统一使用 `2–4px` 黑色漫画轮廓。每个视口以 1 个主视觉为核心，配置 1–2 个次视觉和约 2–5 个 Sticker，桌面端保留约 `45%–70%` 舞台留白。Hero 使用超粗展示无衬线；漫画标题采用 Cream 填充、`3–4px` 黑描边与 `5–7px` 黑色硬阴影；正文与 UI 使用 Poppins 或同类几何无衬线。按钮采用 Cream 表面、`3px` 黑边、`14px` 圆角与 `4–6px` 右下硬阴影，Pressed 状态整体下沉约 `3px`。图标采用 `2–3px` 粗黑线、圆角线帽和低细节几何结构。装饰系统使用 Sparkle、Soft Star、Burst、Arrow、Pin、Planet 与 Orbit。Web 动效采用中慢速的进入、漂浮、旋转、拆分、下落、重组与离开，建立清晰的物理因果与滚动编舞。跨媒介输出持续保持高饱和、粗黑边、玩具感、贴纸感、超粗标题、单主视觉和大空场。",
+    "cover_data": "./assets/cards/STYLE-001/cover.webp",
+    "detail_data": [
+      "./assets/cards/STYLE-001/detail-01.webp",
+      "./assets/cards/STYLE-001/detail-02.webp",
+      "./assets/cards/STYLE-001/detail-03.webp",
+      "./assets/cards/STYLE-001/detail-04.webp",
+      "./assets/cards/STYLE-001/detail-05.webp"
+    ],
+    "sort_order": 1,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "1ZHU54z1XBEjC8ubiEYPCRC5JFx9B1OBW",
+      "preview_file_id": "1vQoDKgpiQvwShZxwvEKyDWCpQKbFmRzm",
+      "version": "1.1.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-002",
+    "id": "STYLE-002",
+    "type": "STYLE",
+    "title_cn": "红黑动态粗野主义作品集系统",
+    "title_en": "Red-Black Kinetic Brutalist Portfolio",
+    "intro": "以纯黑连续主板、高纯信号红、巨型超窄粗体文字、直角零阴影界面、动态文字遮罩与极小人物剪影，构成具有数字粗野主义张力、电影舞台感与互动作品集节奏的视觉系统。",
+    "tags": [
+      "红黑",
+      "动态粗野主义",
+      "巨型排版"
+    ],
+    "hook": "以纯黑连续主板、高纯信号红、巨型超窄粗体文字、直角零阴影界面、动态文字遮罩与极小人物剪影，构成具有数字粗野主义张力、电影舞台感与互动作品集节奏的视觉系统。",
+    "visual_keywords": [
+      "红黑",
+      "动态粗野主义",
+      "巨型排版",
+      "超窄粗体",
+      "电影舞台",
+      "直角界面"
+    ],
+    "copy_prompt": "将 `{CONTENT}` / `{SUBJECT}` / `{ASSET_TYPE}` / `{FORMAT}` 统一转译为 **Red-Black Kinetic Brutalist Portfolio｜红黑动态粗野主义作品集系统**。使用连续纯黑 `#000000` 作为全局主板，高纯信号红 `#FF0000` 作为第一强调，白色作为主文字。Hero 与主标题采用超窄、超粗、高压缩无衬线，字重 `850–900`，行高 `0.82–0.95`，尺寸允许达到视口 `40–80%`。主要组件采用直角、`0px` 圆角、零外投影和极少边框；信息通过字号、比例、位置、留白和颜色分层。每页设置一个主视觉锚点，可使用巨型文字、红色发光舞台或 Full Bleed 媒体屏幕。文字直接承担导航、按钮、标签页、状态和媒体遮罩。人物转译为低细节深色剪影，高度约 `2–8vh`，用于提供空间尺度和叙事生命感。图标和贴纸保持极低密度。构图优先使用 Center Stage、Split、Oversized Editorial Type、Sticky Info + Media、Typography Mask、Pause Page。主动效采用 Mask Reveal、Typography Mask、Media Swap、Hover Highlight、Narrative Color Transition。高饱和颜色每页保持 `1–2` 个，章节可使用灰紫、蓝、橙、黄作为 Narrative State。最终画面呈现强硬、直接、实验性、电影舞台化与数字粗野主义气质。",
+    "cover_data": "./assets/cards/STYLE-002/cover.webp",
+    "detail_data": [
+      "./assets/cards/STYLE-002/detail-01.webp",
+      "./assets/cards/STYLE-002/detail-02.webp",
+      "./assets/cards/STYLE-002/detail-03.webp",
+      "./assets/cards/STYLE-002/detail-04.webp",
+      "./assets/cards/STYLE-002/detail-05.webp"
+    ],
+    "sort_order": 2,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "1v3KAWb6LfxgqLhww0hOaKfA4_mMwwPyL",
+      "preview_file_id": "1-e76YO0iMO1InX04ymJHIC2WbJDiWc1D",
+      "version": "1.2.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-003",
+    "id": "STYLE-003",
+    "type": "STYLE",
+    "title_cn": "L-One 材质 01｜冷白磨砂核心",
+    "title_en": "L-One Material 01 — Frosted Core Cold White",
+    "intro": "以厚实圆润的冷白半透明磨砂壳体包裹独立 3D 功能核心，并通过壳体内的纵深距离形成近实远虚的内部扩散层次。",
+    "tags": [
+      "冷白",
+      "磨砂树脂",
+      "半透明外壳"
+    ],
+    "hook": "以厚实圆润的冷白半透明磨砂壳体包裹独立 3D 功能核心，并通过壳体内的纵深距离形成近实远虚的内部扩散层次。",
+    "visual_keywords": [
+      "冷白",
+      "磨砂树脂",
+      "半透明外壳",
+      "立体图标",
+      "圆润厚壳",
+      "内部节点"
+    ],
+    "copy_prompt": "为 `{ASSET_TYPE}` 创建一枚采用 **L-One Material 01 — Frosted Core Cold White** 的高保真 3D 品牌资产。主体使用厚实、饱满、连续大圆角的冷白半透明磨砂工业树脂外壳，视觉结合磨砂亚克力与乳白聚碳酸酯。外壳基础色 `#F4F4F2`，高光接近 `#FAFAF8`，厚边与暗部过渡至 `#C8C8C5`，背景统一 `#EEEEEE`。材质参数保持 Metallic 0.00、IOR 1.46、Surface Roughness 0.60、Specular 0.22、Transmission 0.34、Subsurface Scattering 0.19，光散射距离 2–4mm。壳体短边厚度约 7–9%，半透明外层约占总体厚度 20–25%，四角与边框采用厚实连续的大圆角过渡，整体像轻微充气后的圆润实体。中央区域视觉更实，边缘、圆角和薄壁区域更透，形成乳白折射、柔和亮边和连续体积散射。\n\n将 `{SUBJECT}` / `{CONTENT}` 转化为一个或多个独立 3D 功能核心，核心使用石墨灰 `#202020` 到中性灰 `#727272`，形体圆润、饱满、厚实。核心完全位于磨砂外壳内部，以不规则挤压、错位、交叠和不同旋转角度组织，并建立明确的前后纵深。核心靠近壳体内表面的部分更清晰，深入壳体内部的部分更柔和，形成近实远虚的透壳扩散。内部空间保持纯净，所有深色信息均属于功能核心本体。右下区域保留小型 L1 表层角标，以轻微压印体积融入外壳。\n\n使用大型柔光源从正面偏上方照明，环境光均匀，高光宽而柔，底部保留极浅接触阴影。摄影机正视，70–100mm 产品摄影焦段感，主体居中，四周留白充分。`{FORMAT}` 输出保持高分辨率、真实全局光照、细腻环境遮蔽、折射和体积散射。",
+    "cover_data": "./assets/cards/STYLE-003/cover.webp",
+    "detail_data": [],
+    "sort_order": 3,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "1g5E7CyWrQmAKk1ce6c7L6x_U-row7Dvd",
+      "preview_file_id": "1QE5k6YW7-Ej-LkjCgu5aCgCsW3VjHIlI",
+      "version": "1.0.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-004",
+    "id": "STYLE-004",
+    "type": "STYLE",
+    "title_cn": "软质单色系统界面",
+    "title_en": "Soft Monochrome System UI",
+    "intro": "以连续浅灰主板为环境，用黑白主控、Soft Matte Polymer 软质实体深度、大圆角窗口、Neo-Grotesk 排版、克制胶囊标签与单个灰白 Hero Object，构成低密度、低彩度、强层级的系统化视觉界面。",
+    "tags": [
+      "软质单色",
+      "浅灰主板",
+      "哑光聚合物"
+    ],
+    "hook": "以连续浅灰主板为环境，用黑白主控、Soft Matte Polymer 软质实体深度、大圆角窗口、Neo-Grotesk 排版、克制胶囊标签与单个灰白 Hero Object，构成低密度、低彩度、强层级的系统化视觉界面。",
+    "visual_keywords": [
+      "soft-monochrome",
+      "warm-gray-board",
+      "matte-polymer",
+      "soft-depth",
+      "neo-grotesk",
+      "pill-label"
+    ],
+    "copy_prompt": "将 `{SUBJECT}` / `{CONTENT}` / `{ASSET_TYPE}` / `{FORMAT}` 统一设计为 **Soft Monochrome System UI｜软质单色系统界面**。使用连续 `#F5F5F5` 浅灰主板作为核心环境，Hero 与 Closing 可使用 `#FFFFFF`。整体保持低彩度、低密度、大留白，内容覆盖率约 28–42%，留白约 55–72%，依靠黑白对比、灰阶明度、Soft Matte Polymer 材质与五级深度建立信息关系。\n\n字体采用 Neo-Grotesk 新无衬线体系，优先 Inter / Helvetica Neue / SF Pro Display 类字体，中文回退 PingFang SC / Microsoft YaHei。Hero 64–86px / 400 / 紧字距，H1 48–56px / 400，H2 30–38px / 400–500，Body 15–17px / 400 / 1.4–1.55 行高，Label 10–12px / 500–600，Button 13–15px / 500–600，大数字 48–84px / 300–400 / tabular numerals。一级标题直接落主板，Section Header 优先使用小型 Pill Label → Large Title → Short Description。\n\n卡片与窗口使用 `#F7F7F7–#FFFFFF`，18–20px 圆角、1px 浅边、24–32px padding 与柔和向下投影；Primary Button 使用 `#050505` 黑底白字、高 42–48px、圆角 10–12px；Secondary Button 使用 `#FAFAFA` 白底深字；输入与搜索属于 L2 内嵌层，使用浅灰表面与轻 inner shadow。形状系统采用 8px Micro / 12px Control / 18–20px Window / 28–36px Container / 999px Pill。\n\n材质统一为 Soft Matte Polymer：低颗粒 0–2%、低到中镜面反射、宽柔高光、左上前方 30–45° 软光、阴影向下或右下。卡片 roughness 0.65–0.80；Hero Object 使用哑光陶瓷或树脂 roughness 0.40–0.60；黑色主控件使用缎面黑聚合物 roughness 0.55–0.70。深度固定为 L0 主板、L1 开放内容、L2 内嵌槽、L3 卡片/标签/普通窗口、L4 Primary CTA/Selected Control/Hero Object。\n\n图标采用 Outline Geometric，16/20/24px，Stroke 1.5–2px，圆角线帽与低细节。装饰使用 Pill、小四角星、斜向箭头、4–8px 状态点、步骤数字与 1px 发丝线，单视窗维持 2–5 个。构图优先 Center Stage、2–3 Column Grid 或 Editorial Split；每核心 section 保持 0–1 个 Hero Object，局部占比约 35–70%，Hero 可 50–75%。Hero Object 采用灰白球体、圆环、同心机械体、抽象几何体、人物头模或产品体，并保持低饱和、哑光、柔光。\n\n页面节奏采用“标题停顿 → 内容展开 → 留白缓冲”，section gap 约 90–160px，单屏 2–4 个主模块。交互使用轻抬升、轻下压、淡入和低幅视差；Hover 约 1–2px、Reveal Y 约 12–16px。所有内容先映射到灰阶、圆角、软深度、低密度与单主物件体系，再决定具体组件形式。",
+    "cover_data": "./assets/cards/STYLE-004/cover.webp",
+    "detail_data": [],
+    "sort_order": 4,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "1eeEppd3s-lp-U_S1E3T8AHyKdv9IaWhk",
+      "preview_file_id": "1hsRSXftVvOLlfOcSvUQgJMFxZf5le_XC",
+      "version": "1.0.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-005",
+    "id": "STYLE-005",
+    "type": "STYLE",
+    "title_cn": "霓虹Q版渐变片尾字幕",
+    "title_en": "Neon Chibi Credit Gradient",
+    "intro": "以超大柔焦青蓝紫粉渐变为底，通过白色粗体电影字幕层级、Q版Cel角色、大面积留白与微型星芒，形成正式片尾字幕与轻松角色彩蛋并置的动画视觉系统。",
+    "tags": [
+      "霓虹渐变",
+      "Q版角色",
+      "动画字幕"
+    ],
+    "hook": "以超大柔焦青蓝紫粉渐变为底，通过白色粗体电影字幕层级、Q版Cel角色、大面积留白与微型星芒，形成正式片尾字幕与轻松角色彩蛋并置的动画视觉系统。",
+    "visual_keywords": [
+      "Neon Gradient",
+      "Mesh Gradient",
+      "Animated Credits",
+      "End Credits",
+      "Chibi",
+      "Cel Animation"
+    ],
+    "copy_prompt": "Create {ASSET_TYPE} in the Neon Chibi Credit Gradient style. Use 2–4 oversized, soft-focus cyan/blue/violet/pink mesh-gradient fields with no hard edges and keep roughly 30–50% clean negative space. Build the main typography from warm-white uppercase grotesk sans serif: role labels at medium 500–600 weight with slightly open tracking, and names/main titles at extra-bold 800–900 weight, about 1.45–1.85× larger, with a restrained dark gray-purple lower-right shadow. Add 1–3 expressive chibi characters rendered as flat 2D cel illustration with large heads, small bodies, thin dark outlines and 1–2 levels of shading. Compose text and characters asymmetrically using split-left/right or central-credit layouts. Add only 4–12 tiny hand-drawn sparkles, crosses, notes or hearts. Keep the core tension: formal cinematic credits × playful character performance. For UI, player or chart adaptations, use flat low-depth components and keep controls visually secondary to the title and characters. Content variable: {CONTENT}. Format variable: {FORMAT}.",
+    "cover_data": "./assets/cards/STYLE-005/cover.webp",
+    "detail_data": [
+      "./assets/cards/STYLE-005/detail-01.webp",
+      "./assets/cards/STYLE-005/detail-02.webp",
+      "./assets/cards/STYLE-005/detail-03.webp",
+      "./assets/cards/STYLE-005/detail-04.webp",
+      "./assets/cards/STYLE-005/detail-05.webp"
+    ],
+    "sort_order": 5,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "16b4G3CYSaFPKlu56GT74ixKv-Au7xHMj",
+      "preview_file_id": "1p8Xc32wqEv7pyft79ZD25TJYRC2q7hpx",
+      "version": "1.0.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-006",
+    "id": "STYLE-006",
+    "type": "STYLE",
+    "title_cn": "稚拙朋克纸绘",
+    "title_en": "Naive Punk Paper Draw",
+    "intro": "以暖白纸张为主要视觉场，通过失真人物、自然抖动轮廓、彩铅/马克笔填色痕迹和巨型手写标题，形成粗粝、天真、直接的朋克纸绘风格。",
+    "tags": [
+      "稚拙手绘",
+      "朋克插画",
+      "纸本插画"
+    ],
+    "hook": "以暖白纸张为主要视觉场，通过失真人物、自然抖动轮廓、彩铅/马克笔填色痕迹和巨型手写标题，形成粗粝、天真、直接的朋克纸绘风格。",
+    "visual_keywords": [
+      "稚拙手绘",
+      "朋克插画",
+      "纸本插画",
+      "彩铅",
+      "手绘涂鸦",
+      "粗拙卡通"
+    ],
+    "copy_prompt": "{SUBJECT}, authentic naive punk hand-drawn illustration on warm off-white textured paper, intentionally awkward and expressive proportions, simplified anatomy, wobbly graphite-like contours with natural pressure variation and occasional repeated tracing, visible colored-pencil and marker fill strokes with directional texture and uneven density, large areas of open paper, neutral skin, black, gray and brown as the base palette, concentrated accents of punk red, hot pink, purple, pencil yellow and occasional blue, deadpan or tired character expression, crude recognizable props simplified into a few major shapes, oversized irregular hand-lettered poster typography when text is present, restrained editorial serif for small metadata, flat paper-based spatial logic, minimal dimensional shading, confident poster hierarchy, raw handmade punk-zine energy, analog drawing artifact, clear functional structure for UI and information graphics, {CONTENT}, {ASSET_TYPE}, {FORMAT}",
+    "cover_data": "./assets/cards/STYLE-006/cover.webp",
+    "detail_data": [
+      "./assets/cards/STYLE-006/detail-01.webp",
+      "./assets/cards/STYLE-006/detail-02.webp",
+      "./assets/cards/STYLE-006/detail-03.webp",
+      "./assets/cards/STYLE-006/detail-04.webp",
+      "./assets/cards/STYLE-006/detail-05.webp"
+    ],
+    "sort_order": 6,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "15ULmTQC5x8jv-nj-yomtdDZF4M-3ilcw",
+      "preview_file_id": "1RQiargmXS9HXY-SW9FY9Se0jAEYsgNU_",
+      "version": "1.0.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "STYLE-007",
+    "id": "STYLE-007",
+    "type": "STYLE",
+    "title_cn": "静默编辑主义",
+    "title_en": "Quiet Editorial",
+    "intro": "通过暖白大留白、单一摄影主视觉、超大衬线标题与克制的无衬线信息层级，形成安静、理性、有人味的独立出版物感。",
+    "tags": [
+      "编辑设计",
+      "杂志排版",
+      "极简排版"
+    ],
+    "hook": "通过暖白大留白、单一摄影主视觉、超大衬线标题与克制的无衬线信息层级，形成安静、理性、有人味的独立出版物感。",
+    "visual_keywords": [
+      "编辑设计",
+      "杂志排版",
+      "极简排版",
+      "摄影排版",
+      "暖白",
+      "大留白"
+    ],
+    "copy_prompt": "Create a contemporary independent editorial composition on warm ivory uncoated paper. Use 45–65% intentional negative space and one dominant documentary, lifestyle, architecture, or cultural photograph. Build hierarchy through an elegant modern serif display face paired with restrained neo-grotesk sans-serif body text, using strong 3–7× scale contrast, asymmetric editorial grids, section numbers, captions and metadata. Use near-black typography with a restrained deep-burgundy accent occupying roughly 3–8% of the visual area. Keep components square-cornered, mostly shadowless, and use fine 1px dividers. Add only subtle paper grain and optional low-weight human traces such as one handwritten annotation, tape strip, date mark, red point or white-bordered photo. Maintain calm spacing, photographic realism, print-magazine precision, and a quiet authored quality.",
+    "cover_data": "./assets/cards/STYLE-007/cover.webp",
+    "detail_data": [
+      "./assets/cards/STYLE-007/detail-01.png",
+      "./assets/cards/STYLE-007/detail-02.png",
+      "./assets/cards/STYLE-007/detail-03.png",
+      "./assets/cards/STYLE-007/detail-04.png",
+      "./assets/cards/STYLE-007/detail-05.png"
+    ],
+    "sort_order": 7,
+    "source": {
+      "index_file_id": "1fUFLOijrAp43okPx_BqGyV3x0mb04cC4",
+      "registry_file_id": "17P1lRJfqLe7jmh95s9Q0E8UzaSpAjEJ8",
+      "preview_file_id": "1RedhdFJa7e5-J7VEFuqpUQWBtzwDWWIj",
+      "version": "1.0.0",
+      "updated_at": "2026-09-23T13:00:00+08:00"
+    }
+  },
+  {
+    "key": "IMAGE-001",
+    "id": "IMAGE-001",
+    "type": "IMAGE",
+    "title_cn": "磨砂液芯包覆材质",
+    "title_en": "Frosted Liquid-Core Skin",
+    "intro": "将 {SUBJECT} 的目标几何轮廓重塑为一体式 3D 实体：连续顺滑的深灰液态内芯完整填满形体，外层覆盖厚实、冷白、乳雾半透明的 Frosted Core 软质树脂外皮。",
+    "tags": [
+      "磨砂",
+      "半透明",
+      "液态内芯"
+    ],
+    "hook": "将 {SUBJECT} 的目标几何轮廓重塑为一体式 3D 实体：连续顺滑的深灰液态内芯完整填满形体，外层覆盖厚实、冷白、乳雾半透明的 Frosted Core 软质树脂外皮。",
+    "visual_keywords": [
+      "磨砂",
+      "半透明",
+      "液态内芯",
+      "冷白树脂",
+      "一体成型",
+      "材质重塑"
+    ],
+    "copy_prompt": "**Task**  \nUse {REFERENCE} as the geometry source for {SUBJECT}. Preserve the recognizable silhouette, proportions, internal negative spaces, and structural relationships.\n\n**Material Construction**  \nThe target form itself is made from a two-layer material system. The inner body is a single continuous deep-gray to graphite-gray fluid core that completely fills the volume of the subject. It behaves like dense liquid graphite, soft gel, or smooth high-viscosity fluid. Its tonal transitions are continuous and seamless. Near the outer skin, allow only a restrained soft reflective response.\n\nCover the entire object with a continuous frosted translucent outer skin. The skin is a thick cold-white industrial resin combining frosted acrylic and milky polycarbonate characteristics. It directly follows and wraps the exact geometry of {SUBJECT}. The skin is part of the object itself.\n\n**Default Shell Color System**  \nBase: `#F4F4F2`  \nSoft highlight: `#FAFAF8`  \nThick edge / darker transition: `#C8C8C5`  \nDefault background: `#EEEEEE`\n\n**Reference Material Parameters**  \nMetallic: 0.00  \nIOR: 1.46  \nRoughness: 0.60  \nSpecular: 0.22  \nTransmission: 0.34  \nSSS: 0.19  \nScattering distance: 2–4 mm  \nPerceived shell thickness: 7–9% of the subject short dimension  \nOuter translucent layer: 20–25% of total perceived thickness  \nCentral transmission: 10–16%  \nEdge transmission: 24–34%\n\n**Surface Behavior**  \nKeep the center denser and more opaque. Increase transmission at edges, rounded corners, thin walls, and transitions. Use broad milky refraction, soft subsurface scattering, and restrained edge glow. Surface roughness remains frosted and dry, with soft industrial resin behavior.\n\n**Geometry**  \nPreserve the original target silhouette. Use large continuous radii and soft bevel transitions where the geometry permits. The material should feel slightly pressurized and full while retaining the source geometry.\n\n**Depth Logic**  \nThe liquid core sits directly beneath the translucent skin and fills the entire inner volume. Depth cues come from transmission distance, shell thickness, subsurface scattering, and smooth internal tonal gradients.\n\n**Lighting**  \nLarge softbox from slightly above and in front. Broad diffused highlights, controlled reflections, minimal shallow contact shadow.\n\n**Camera**  \nDefault front view, 70–100 mm product-photography language, mild perspective compression, centered composition, generous clean margins.\n\n**Output**  \nPhotorealistic premium 3D product render. Quiet, minimal, refined industrial-design language. {FORMAT}, {ASPECT_RATIO}.\n\n**Quality Lock**  \nThe final image must read as one materialized object with a continuous liquid core and continuous frosted skin. The subject geometry remains immediately recognizable at small size.",
+    "cover_data": "./assets/cards/IMAGE-001/cover.webp",
+    "detail_data": [
+      "./assets/cards/IMAGE-001/detail-01.webp",
+      "./assets/cards/IMAGE-001/detail-02.webp",
+      "./assets/cards/IMAGE-001/detail-03.webp",
+      "./assets/cards/IMAGE-001/detail-04.webp",
+      "./assets/cards/IMAGE-001/detail-05.webp",
+      "./assets/cards/IMAGE-001/detail-06.webp"
+    ],
+    "sort_order": 8,
+    "source": {
+      "index_file_id": "1hJba9jnMU0Pnbzu-S6RkVYRuQefS2iU8",
+      "registry_file_id": "1vUDXCjRCxCf04UheXeh390lMF2D3jXRm",
+      "preview_file_id": "1vvOuEOlzPk-Q5RrM-erR9FsoU80Dnupk",
+      "version": "1.1.0",
+      "updated_at": "2026-09-22T21:30:00+08:00"
+    }
+  },
+  {
+    "key": "IMAGE-002",
+    "id": "IMAGE-002",
+    "type": "IMAGE",
+    "title_cn": "后人类美学·断裂标本档案",
+    "title_en": "Post-Human Aesthetic — Fractured Specimen Archive",
+    "intro": "这是一个用于未来艺术海报与角色视觉的后人类图像配方。 以可识别的人体来源为基础，将半透明生物组织与机械结构融合，再加入档案编号、细十字准星与局部时间失真。",
+    "tags": [
+      "后人类",
+      "生物机械",
+      "半透明人体"
+    ],
+    "hook": "这是一个用于未来艺术海报与角色视觉的后人类图像配方。 以可识别的人体来源为基础，将半透明生物组织与机械结构融合，再加入档案编号、细十字准星与局部时间失真。",
+    "visual_keywords": [
+      "post-human",
+      "biomechanical",
+      "cyborg anatomy",
+      "translucent body",
+      "bio-membrane",
+      "iridescent material"
+    ],
+    "copy_prompt": "Create a production-grade {CHANNEL} image in {RATIO} using the visual language of a recovered post-human specimen archive.\n\nSUBJECT:\nUse {SUBJECT} as the central specimen. Preserve enough anatomy to identify the human origin. Reconstruct the body as a hybrid of translucent biological membrane, soft resin-like tissue, clear glass-like layers, iridescent interference film, filament mesh, exposed cables, black chrome mechanical joints, micro-circuitry and suspended fragments.\n\nFORM:\nThe subject should feel incomplete, fractured and partially reconstructed. Use missing facial regions, open cavities, dissolved edges, irregular transparent shells, offset layers and asymmetry. Maintain elegance and anatomical plausibility. The visual tension should come from fragile biological tissue surrounding precise cold machinery.\n\nMATERIAL:\nUse wet translucent silicone, clear resin, soft bio-film, milky membrane, pearlescent refraction, fine mesh and black mechanical internals. Keep rainbow interference localized. Preserve real depth, thickness, refraction and subsurface scattering.\n\nCOMPOSITION:\nUse a single dominant specimen occupying roughly 55%–82% of the frame. Allow intentional cropping at the top, sides or bottom. Keep generous empty background around the specimen. Prioritize head, profile, hand, spine, torso or isolated anatomical fragments.\n\nBACKGROUND:\nUse a smooth low-saturation {COLOR_VARIANT} seamless background. Keep it quiet and clinical, with only subtle haze, noise or scan texture.\n\nLIGHTING:\nUse large soft diffused studio lighting from the front-upper region. Keep shadows soft and contrast moderate. Let transparent materials carry bright specular edges, bloom and transmission. Avoid dramatic hard spotlighting.\n\nIMAGE TREATMENT:\nAdd subtle chromatic aberration, optical refraction, soft bloom, ghosting and localized horizontal or vertical temporal smear. Preserve subject readability. Add slight archival grain and low-contrast haze.\n\nGRAPHIC SYSTEM:\nOverlay a sparse white archival interface. Use thin crosshair markers arranged in a loose 3×3 field. Add one small specimen code near the top. Place {TITLE} and {SUBTITLE} in the lower-left area. Use thin monospaced typography. Optional {DATA} may appear as one short annotation with a fine leader line and star-like marker.\n\nTEXT:\nTitle: {TITLE}\nSubtitle: {SUBTITLE}\nData: {DATA}\nProduct / project label: {PRODUCT_NAME}\n\nNEGATIVE DIRECTION:\nAvoid conventional armored robots, glossy sci-fi suits, neon cyberpunk streets, dense HUD panels, game-character styling, superhero anatomy, symmetric perfect faces, hard plastic mannequin skin, excessive rainbow color and decorative typography.\n\nOUTPUT:\nThe final image should feel like a future biological archive: a human-derived lifeform recovered from a fractured timeline, rendered with clinical restraint, fragile materiality and cold technological precision.\n\n---",
+    "cover_data": "./assets/cards/IMAGE-002/cover.webp",
+    "detail_data": [
+      "./assets/cards/IMAGE-002/detail-01.webp",
+      "./assets/cards/IMAGE-002/detail-02.webp",
+      "./assets/cards/IMAGE-002/detail-03.webp",
+      "./assets/cards/IMAGE-002/detail-04.webp",
+      "./assets/cards/IMAGE-002/detail-05.webp",
+      "./assets/cards/IMAGE-002/detail-06.webp"
+    ],
+    "sort_order": 9,
+    "source": {
+      "index_file_id": "1hJba9jnMU0Pnbzu-S6RkVYRuQefS2iU8",
+      "registry_file_id": "1Sgmq0J7oGTZC4da0ldr1cni__OjFFY9t",
+      "preview_file_id": "13QHDFcSuPtPvn11miVPLThWqvEpcSmoX",
+      "version": "1.0.0",
+      "updated_at": "2026-09-22T21:15:00+08:00"
+    }
+  },
+  {
+    "key": "IMAGE-003",
+    "id": "IMAGE-003",
+    "type": "IMAGE",
+    "title_cn": "磨砂外壳内膨胀",
+    "title_en": "Frosted Shell Internal Inflation",
+    "intro": "一个冷白半透明磨砂厚壳，包住一个略大于内部容积的膨胀软体内芯，使内芯在壳内被挤压、贴壁、起伏、局部清晰而大部模糊。",
+    "tags": [
+      "磨砂外壳",
+      "内部膨胀",
+      "挤压感"
+    ],
+    "hook": "一个冷白半透明磨砂厚壳，包住一个略大于内部容积的膨胀软体内芯，使内芯在壳内被挤压、贴壁、起伏、局部清晰而大部模糊。",
+    "visual_keywords": [
+      "磨砂外壳",
+      "内部膨胀",
+      "挤压感",
+      "毛绒",
+      "长毛绒",
+      "近实远虚"
+    ],
+    "copy_prompt": "为 `{ASSET_TYPE}` 创建一枚“Frosted Shell Internal Inflation｜磨砂外壳内膨胀”高保真 3D 品牌资产，比例 `{RATIO}`，标准优先 1:1。\n\n主体外层是一枚厚实、圆润、连续大圆角的冷白半透明磨砂壳体。壳体视觉结合磨砂工业树脂、磨砂亚克力与乳白聚碳酸酯；基础色 `#F4F4F2`，高光接近 `#FAFAF8`，厚边与暗部过渡至 `#C8C8C5`，背景使用 `#EEEEEE`。保持 Metallic 0.00、IOR 1.46、Surface Roughness 0.60、Specular 0.22、Subsurface Scattering 0.19、Light Scatter Distance 2–4mm。壳体短边厚度约 7–9%，外部半透明壳层约占总体厚度 20–25%。四角、边框、转折都采用宽大、连续、鼓起的圆润凸面过渡，形成柔和厚边。\n\n壳体透明度采用低到中低可视透明。内部主体整体应“可感知，但难看清”。壳体边缘与圆角更亮、更透，中央区域更雾化、更柔和。内部清晰度由与壳体前表面的实际距离驱动：只有少量真正高压贴壁的区域出现清晰毛丝、短绒或轮廓；大部分内部区域经过磨砂扩散后保持柔和模糊。以视觉结果优先，避免整体过清或整体统一糊化。\n\n内部填充一个 `{SUBJECT}`，当前确认材质为高密度超细长毛绒。内芯必须略大于壳体内部有效容积，像被充气后继续膨胀的软体，再受到外壳向内约束。内芯不是“刚好放进去”，而是持续顶住四边与四角，内部自由空间接近 0。受压后形成明显但克制的鼓包、回压、褶皱、堆毛、局部毛流分岔、软体错位与前后层次。顶部毛发蓬松外扩后因重量弯曲，侧面毛流逐渐向下，底部长毛更明显下垂；边缘形成柔软不规则长绒剪影。\n\n将 `{CONTENT}` 转化为立体灰色短绒 / 毛毡实体。当前示例为中文“印”。文字采用柔软填充厚度与圆润截面，约 30%–45% 嵌入长毛层；周围白色长毛因挤压向外翻开和分流，部分毛发轻微覆盖文字边缘。文字与毛绒抱枕属于同一软体物理系统，并共同受到外壳压力影响。文字清晰度同样遵循贴壳更清晰、深入内部更模糊。\n\n右下保留小型 L1 表层压印角标，视觉权重低。使用大型柔光源从正面偏上方照明，环境光均匀，高光宽而柔；壳体圆角出现乳白亮边，主体底部保留极浅接触阴影。摄影机正视，轻微产品摄影透视压缩，主体居中，四周保留均匀负空间。\n\n最终视觉必须同时读出：厚实圆润磨砂外壳、内部过量膨胀、壳体约束、局部贴壁清晰、大部深处模糊、毛绒受压形变、立体文字内嵌。\n\n---",
+    "cover_data": "./assets/cards/IMAGE-003/cover.webp",
+    "detail_data": [
+      "./assets/cards/IMAGE-003/detail-01.webp",
+      "./assets/cards/IMAGE-003/detail-02.webp",
+      "./assets/cards/IMAGE-003/detail-03.webp",
+      "./assets/cards/IMAGE-003/detail-04.webp",
+      "./assets/cards/IMAGE-003/detail-05.webp"
+    ],
+    "sort_order": 10,
+    "source": {
+      "index_file_id": "1hJba9jnMU0Pnbzu-S6RkVYRuQefS2iU8",
+      "registry_file_id": "11YcTiU5rLgV8Q_t2UojOuou_BadJgr10",
+      "preview_file_id": "1BsAl9utPyfWJ7iVZDLUexoqxMjst7ius",
+      "version": "1.0.0",
+      "updated_at": "2026-09-22T21:25:00+08:00"
+    }
+  },
+  {
+    "key": "IMAGE-004",
+    "id": "IMAGE-004",
+    "type": "IMAGE",
+    "title_cn": "高端编辑纸雕海报",
+    "title_en": "Paper Relief Editorial Poster",
+    "intro": "将可识别的主题、轮廓、姿势与叙事关系重构为现代编辑纸雕海报：以暖象牙纸、3–6 色有限色板、前中后三层纸艺、可见纸纤维、短柔接触阴影和嵌入式排版建立克制而清晰的纸质视觉系统。",
+    "tags": [
+      "纸雕",
+      "纸艺",
+      "编辑海报"
+    ],
+    "hook": "将可识别的主题、轮廓、姿势与叙事关系重构为现代编辑纸雕海报：以暖象牙纸、3–6 色有限色板、前中后三层纸艺、可见纸纤维、短柔接触阴影和嵌入式排版建立克制而清晰的纸质视觉系统。",
+    "visual_keywords": [
+      "paper relief",
+      "papercut",
+      "paper sculpture",
+      "editorial poster",
+      "layered paper",
+      "warm ivory"
+    ],
+    "copy_prompt": "Transform {REFERENCE} / {SUBJECT} into a modern editorial paper-relief poster. Preserve the recognizable subject, silhouette, pose and narrative relationship. Rebuild the image as layered papercut and paper sculpture with at least foreground, midground and background. Use warm ivory base paper, a controlled 3–6 color palette derived from the source, visible matte paper fibers, clean cut edges and believable 1–3 mm visual layer thickness. Light from upper-left or front-upper direction with short, soft contact shadows. Keep one clear hero, asymmetrical editorial balance and 25–45% negative space. Use a short main title with 2–4 restrained micro-typography groups integrated into paper edges, axes or negative space. Avoid plastic gloss, metallic dominance, random ornaments, gibberish text, overfilled layout and damaged paper edges.",
+    "cover_data": "./assets/cards/IMAGE-004/cover.webp",
+    "detail_data": [
+      "./assets/cards/IMAGE-004/detail-01.webp",
+      "./assets/cards/IMAGE-004/detail-02.webp",
+      "./assets/cards/IMAGE-004/detail-03.webp",
+      "./assets/cards/IMAGE-004/detail-04.webp",
+      "./assets/cards/IMAGE-004/detail-05.webp",
+      "./assets/cards/IMAGE-004/detail-06.webp"
+    ],
+    "sort_order": 11,
+    "source": {
+      "index_file_id": "1hJba9jnMU0Pnbzu-S6RkVYRuQefS2iU8",
+      "registry_file_id": "1oI0r5IXrtnvCnsfrrNA_5PYmMg6l_VoC",
+      "preview_file_id": "1hLyj3WsMqXaJmQ8IcALqSmbz1GdQkEJr",
+      "version": "1.0.0",
+      "updated_at": "2026-09-22T22:45:28+08:00"
+    }
+  }
+]
