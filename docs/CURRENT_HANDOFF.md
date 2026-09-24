@@ -1,11 +1,41 @@
 # 当前任务交接
 
+## 2026-09-24 About 发布体积阻断修复候选
+
+- 任务编号：`A-20260924-01`；独立修复分支：`work/A-20260924-01-about-media-extraction`，以已解决冲突但暂未合并的 PR #17 分支为基线。先验证媒体修复，再合并 PR #17，避免触发已知会失败的中间生产部署。
+- 唯一页面修改：把 About HTML 的 86 处 Base64 媒体引用改为同目录现有 24 个文件的相对路径。每处按原始字节 SHA-256 唯一匹配；原文件未改、不重新编码。HTML 从 `55,696,947` bytes 降为 `74,778` bytes；24 个文件均小于 EdgeOne 单文件 25 MiB 上限，最大 MP4 为 `3,187,462` bytes。
+- 本地验证：改写后的 HTML 与原版对比，除 86 处媒体地址外逐字相同；24 个资源均通过本地 HTTP HEAD；Chrome 1440×900、834×1112、390×844 中视频 `readyState=4`、宽度 `1024`、无解码错误，87 张图片无加载失败，六工具各两次、作品集目标不变且无横向溢出。`node scripts/site-audit.js` 与 `git diff --check` 通过。
+- 待执行：独立修复 PR、PR #17 合并、EdgeOne 新部署日志与正式域名回读。当前不得标记为线上成功；若新部署失败，依据日志定位并暂停继续合并。
+
 ## 2026-09-23 3D 卡片资料库部署
 
 - 任务编号：`A-20260923-01`；分支：`codex/20260923-spatial-library`；开始 commit：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。
 - 已建立 `/library/` 独立页面。11 张卡片的名称、简介、标签、复制提示词、来源文件 ID 由 Google Drive 正式 Style/Image 索引及各自 Registry 生成；封面和已有细节图从 Drive 正式文件及资产包取得。Style-003/004 无正式细节包，详情播放器显示封面。页面只读本地静态快照。
 - 来源和刷新流程：`docs/library/README.md`；手动刷新由 Codex 读取 Drive 重新生成快照、核对资源、完成主站发布流程。定时任务未配置。
 - 本地审计：`node scripts/site-audit.js` 已通过；正式域名部署状态待发布后回读，不得据本地结果推断生产已更新。
+
+## 2026-09-23 About NOW 更新发布交接
+
+- 任务编号：`A-20260923-04`。L-One 已明确要求将当前更新网页同步至 `l-one.asia`；发布范围仅为此前本地候选 `A-20260923-02`、`A-20260923-03` 的 About NOW 区及六个透明工具 PNG。
+- 发布前修正：下排作品条删除固定浅灰背景，保持与 NOW 页面底材连续。此项已纳入相同候选验收。
+- 执行路径：从当前工作分支精确提交并推送，经 PR、CI 合并至 `main`，等待现有 EdgeOne 自动部署后回读正式域名。GitHub、EdgeOne 和正式域名结果待本轮执行完成后记录；在回读完成前均为未验证。
+
+
+## 2026-09-23 本地候选：NOW 工具标识透明化与作品滚动
+
+- 任务编号：`A-20260923-02`；本地分支：`work/A-20260923-02-about-now-material-marquee`；基线：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。本轮严格限于 About 来源页的 NOW 区、4 个新增透明 PNG 和对应评审/状态记录。
+- 四个工具图原文件不覆盖。新增 `assets/about-v42/tools-transparent/` 下的 `l1-text-transparent.png`、`capture-transparent.png`、`story-flow-transparent.png`、`rubbing-transparent.png`；均为 `1254×1254` RGBA，Alpha 范围 `0–255`。页面按既有 alt 映射引用透明副本，左上主站品牌标记不变。
+- 下排作品卡片从 `225px` 增至 `259px`（+15%），保留左右 `8px` 外边距；滚动动画 `90s` 同比改为 `103.5s`。悬停/键盘焦点放大 `1.08`，两侧卡片以等量 `translateX` 让位；减少动态偏好时停止该条滚动并取消位移动画。
+- 空格键作品集入口由脚本移动到主观点后、下排作品条前；入口上下均使用 `--now-entry-gap` 的同一较宽间距。未改动标题文案、视频、作品集内容、线上配置或生产资源。
+- 本地验收：`node scripts/site-audit.js`、评审记录校验、透明 PNG 尺寸/Alpha 校验、内联脚本解析、`git diff --check` 与本地 HTTP 资源回读通过。预览仍为 `http://127.0.0.1:4174/#about`。本轮未提交、未推送、未合并、未部署；如获得单独授权，仍需精确提交、PR、CI、合并与正式域名回读。
+
+## 2026-09-23 本地候选：NOW 六工具与视口留白调整
+
+- 任务编号：`A-20260923-03`；分支沿用 `work/A-20260923-02-about-now-material-marquee`；基线仍为 `74224efebd89e814c4dfea20cdf76e24ba3dac03`。本轮只改 About 来源页 NOW 区和其透明工具副本/记录。
+- 新增透明工具副本：`tools-transparent/wave-transparent.png` 直接复制用户提供的 Alpha PNG；`tools-transparent/one-bar-transparent.png` 为只移除用户提供图外部白底后的 RGBA 副本。两者均 `1254×1254`、Alpha 范围 `0–255`，原图不覆盖。
+- NOW 上排运行六种工具两次以保持无缝，图注依次为 L-1 TEXT、CAPTURE、STORY FLOW、RUBBING、WAVE、ONE BAR。工具与下排作品卡片尺寸不变；通过缩短 NOW 纵向留白，让下排更早进入默认桌面视口。
+- 上/下滚动周期分别为 `128.571s` / `147.857s`，即较前一版本速度各降低 30%；下排改用无纹理纯净底色；下排至 statement 的留白 `56px`；页面滚动超过 `20px` 时仅左上品牌淡出，菜单仍可使用。
+- 待验收：本地资源、脚本行为、全站审计和差异检查。未提交、未推送、未合并、未部署。
 
 ## 2026-09-20 本地候选：About v4.2 替换
 

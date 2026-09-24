@@ -1,5 +1,16 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260924-01
+
+- 执行设备：Codex 本地隔离工作树；任务目标：只修复 About HTML 超过 EdgeOne 单文件 25 MiB 上限的部署阻断。
+- 修复分支：`work/A-20260924-01-about-media-extraction`；基线为 PR #17 已解决冲突的提交 `8ffdb1ca1fd8e1ec94e74b9152159d2a8a77d8d9`。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 中内嵌 Base64 媒体地址；`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本范围声明中的直接交接记录。
+- 只读：`assets/about-v42/` 中现有 24 个独立媒体文件、其余 About 页面内容与素材、PR #17 的透明图标、其他网页和部署配置。
+- 禁止：重新编码、压缩、替换或删除媒体；改动 About 视觉、文字、交互、导航、作品集及其他页面；触碰 EdgeOne 配置、凭据或服务器数据。
+- 影响：仅将 About 的媒体获取方式从 Data URL 改为同目录相对路径；媒体字节和页面其他代码保持不变。
+- 验证：原始内嵌媒体与独立文件 SHA-256 一一匹配；全部文件小于 25 MiB；本地 HTTP、视频解码、图片加载、三端视觉、站点审计和差异检查；合并后核对 EdgeOne 日志与正式域名。
+- 回滚：若生产异常，使用 `git revert` 撤销本轮合并提交，不重写历史；部署失败时停止继续合并并依据新日志定位。
+
 ## 本轮范围：A-20260923-01
 
 - 执行设备：Codex 本地隔离工作树；任务入口：L-One 3D Card Web 接入主站。
@@ -11,6 +22,18 @@
 - 预计影响范围：新增 `https://l-one.asia/library/` 静态页面及其独立资源；其余已发布路由保持现状。
 - 验证方式：逐卡核对 Drive ID、版本、文案和资产哈希；运行 `node scripts/site-audit.js`、`git diff --check`；本地检查桌面、平板、手机的加载、卡片选择、复制提示词、详情查看和资源请求；发布后回读正式域名与 GitHub commit。
 - 回滚方式：若合并发布后出现问题，使用 `git revert <merge-commit>` 撤销本轮可审计提交，并核对正式路由恢复结果。
+
+## 本轮范围：A-20260923-02
+
+- 执行设备：Codex 本地隔离工作树；任务入口：About v4.2 NOW 区视觉融合与滚动条交互调整。
+- 任务目标：将 NOW 上排四种工具键帽标识的外部白色方底替换为保留原 3D 键帽、文字、纹理和投影的透明背景副本；下排作品滚动卡片视觉尺寸增加 15%，保持原有卡间距及相同的像素滚动速度；悬停时目标卡片放大 8%，相邻卡片以等量位移维持间距；将“查看过往作品”键帽移动到观点标题下方、下排作品栏上方，并让其上下间距保持一致。
+- 功能分支：`work/A-20260923-02-about-now-material-marquee`；开始 commit：`74224efebd89e814c4dfea20cdf76e24ba3dac03`。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 中仅 NOW 工具轨道、作品集入口与直接相关的样式/初始化脚本；新增 `assets/about-v42/tools-transparent/` 四张从用户提供工具图标提取背景的透明 PNG；`docs/about/L_ONE_ABOUT_V42_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本范围声明。
+- 只读参考：用户本轮两张 About NOW 截图；`assets/about-v42/003_3f9b8f9b1eba.png`、`004_1025f3fd7cde.png`、`005_4007dac92e5b.png`、`006_060971a51d3b.png` 的原始白底版本；`L-ONE_PUBLIC_EXPRESSION_STANDARD.md`、Design-to-Code Protocol。
+- 明确禁止：替换或重绘工具键帽主体、工具名称、NOW 标题/正文与人工分行；修改时间线、资产表达、作品集页面、作品数据、主导航、路由、云端配置、EdgeOne/DNS、服务器数据、密钥或生产凭据；本轮仅本地候选，不提交、推送、PR、合并或部署。
+- 预计影响范围：仅本地 `/#about` 的 NOW 上排工具标识、下排作品滚动轨道与作品集键帽的视觉/交互位置；其他公开页面与远端状态不变。
+- 测试方式：透明 PNG Alpha 通道与尺寸检查；页面脚本语法检查；`node scripts/site-audit.js`、`git diff --check`、评审记录校验；本地 Chrome 在 1440×900、834×1112、390×844 检查白底消失、间距、滚动、悬停、按键跳转/键盘焦点和无横向溢出。
+- 回滚方式：放弃未提交本地候选；如未来另获批准合并后出现问题，使用 `git revert <commit>` 创建可审计回退。
 
 ## 本轮范围：A-20260920-01
 
@@ -298,3 +321,20 @@
 - 测试方式：生成并校验 Catalog、`node scripts/site-audit.js`、`git diff --check`、本地
   Store/详情页下载链接抽查、正式下载端点响应头与三端浏览器检查。
 - 回滚方式：对本轮单一 hotfix commit 执行 `git revert`，恢复上一个 GitHub 下载直链。
+## 本轮范围：A-20260923-03（About NOW 区压缩、六工具接入与滚动调整）
+
+- 设备：Codex 本地工作树 `about-v42-20260920`；基线为 `74224efebd89e814c4dfea20cdf76e24ba3dac03`。
+- 目标：保持工具和下排作品卡片的尺寸；把 NOW 区在默认桌面视口内压缩为可见下排作品；接入 Wave、One BAR 两个工具图；移除下排作品条的灰底；滚动降速 30%；加大作品条至下一段的留白；滚动后隐藏左上品牌标识。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html`、`assets/about-v42/tools-transparent/` 下 2 个新增 PNG、`docs/about/L_ONE_ABOUT_V42_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、本范围图。
+- 只读：其余 About、主站、作品集和部署配置。
+- 禁止：删除/覆盖既有源图、修改导航菜单、部署、提交、推送、PR、生产或云端配置。
+- 验收：来源/处理/页面映射、RGBA Alpha、工具数与顺序、时序、滚动后标识状态、`node scripts/site-audit.js`、协议评审校验、内联脚本解析、`git diff --check`、本地 HTTP 回读。
+
+## 本轮发布范围：A-20260923-04（同步 About 更新至正式站）
+
+- 设备：Codex 本地工作树 `about-v42-20260920`；发布基线 `74224efebd89e814c4dfea20cdf76e24ba3dac03`。
+- 目标：将 `A-20260923-02` 与 `A-20260923-03` 的已审本地 About NOW 更新通过 GitHub 主分支现有发布链同步到 `l-one.asia`。
+- 允许修改：本轮候选文件 `assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html`、`assets/about-v42/tools-transparent/` 六个 PNG、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、`docs/EDIT_SCOPE_MAP.md`、`docs/about/L_ONE_ABOUT_V42_REVIEW.md`；允许精确暂存、提交、推送功能分支、创建/合并 PR 并核验正式域名。
+- 只读：其余网页、下载、工具发布资料、部署配置、服务器数据及权限。
+- 禁止：修改生产凭据、强制推送、覆盖其他工作树、未经核实声称部署成功。
+- 验收：站点审计、候选文件和资源检查、GitHub/CI、正式域名页面与六个 PNG 回读；未能获取 EdgeOne 部署 commit 时标记未验证；异常使用 `git revert` 创建回退提交。
