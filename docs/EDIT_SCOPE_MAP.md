@@ -1,5 +1,16 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260924-01
+
+- 执行设备：Codex 本地隔离工作树；任务目标：只修复 About HTML 超过 EdgeOne 单文件 25 MiB 上限的部署阻断。
+- 修复分支：`work/A-20260924-01-about-media-extraction`；基线为 PR #17 已解决冲突的提交 `8ffdb1ca1fd8e1ec94e74b9152159d2a8a77d8d9`。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 中内嵌 Base64 媒体地址；`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本范围声明中的直接交接记录。
+- 只读：`assets/about-v42/` 中现有 24 个独立媒体文件、其余 About 页面内容与素材、PR #17 的透明图标、其他网页和部署配置。
+- 禁止：重新编码、压缩、替换或删除媒体；改动 About 视觉、文字、交互、导航、作品集及其他页面；触碰 EdgeOne 配置、凭据或服务器数据。
+- 影响：仅将 About 的媒体获取方式从 Data URL 改为同目录相对路径；媒体字节和页面其他代码保持不变。
+- 验证：原始内嵌媒体与独立文件 SHA-256 一一匹配；全部文件小于 25 MiB；本地 HTTP、视频解码、图片加载、三端视觉、站点审计和差异检查；合并后核对 EdgeOne 日志与正式域名。
+- 回滚：若生产异常，使用 `git revert` 撤销本轮合并提交，不重写历史；部署失败时停止继续合并并依据新日志定位。
+
 ## 本轮范围：A-20260923-01
 
 - 执行设备：Codex 本地隔离工作树；任务入口：L-One 3D Card Web 接入主站。
