@@ -31,6 +31,9 @@ const storeFallbackPath = path.join(root, "public", "data", "store", "catalog.la
 const storeWorkflowPath = path.join(root, ".github", "workflows", "store-catalog-sync.yml");
 const robotsPath = path.join(root, "robots.txt");
 const sitemapPath = path.join(root, "sitemap.xml");
+const spatialLibraryDir = path.join(root, "library");
+const spatialLibraryHtmlPath = path.join(spatialLibraryDir, "index.html");
+const spatialLibraryDataPath = path.join(spatialLibraryDir, "data", "cards.json");
 
 const SOURCE_PLATFORM = "\u5c0f\u7ea2\u4e66";
 const TYPE_IMAGE_TEXT = "\u56fe\u6587";
@@ -608,6 +611,31 @@ for (const work of worksIndex) {
   }
   if (!renderedBody.includes(normalizedDesc.slice(0, 30))) {
     fail(`${work.slug} rendered body does not contain the start of metadata desc.`);
+  }
+}
+
+if (!fs.existsSync(spatialLibraryHtmlPath) || !fs.existsSync(spatialLibraryDataPath)) {
+  fail("Spatial Library page or Drive data snapshot is missing.");
+} else {
+  const spatialHtml = read(spatialLibraryHtmlPath);
+  const spatialCards = JSON.parse(read(spatialLibraryDataPath));
+  if (!spatialHtml.includes("fetch('./data/cards.json'")) {
+    fail("Spatial Library must load its Drive data snapshot.");
+  }
+  if (!spatialCards.length || new Set(spatialCards.map((card) => card.id)).size !== spatialCards.length ||
+      spatialCards.some((card) => !/^(STYLE|IMAGE)-\d{3}$/.test(card.id))) {
+    fail("Spatial Library needs unique, valid Drive card IDs.");
+  }
+  for (const card of spatialCards) {
+    if (!card.source?.registry_file_id || !card.source?.preview_file_id || !card.copy_prompt) {
+      fail(`Spatial Library card ${card.id} lacks Drive provenance or prompt.`);
+    }
+    for (const asset of [card.cover_data, ...(card.detail_data || [])]) {
+      if (!asset?.startsWith("./assets/cards/") ||
+          !fs.existsSync(path.join(spatialLibraryDir, asset.slice(2)))) {
+        fail(`Spatial Library card ${card.id} has a missing local Drive asset: ${asset}`);
+      }
+    }
   }
 }
 
