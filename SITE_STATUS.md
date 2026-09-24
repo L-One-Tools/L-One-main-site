@@ -2,6 +2,12 @@
 
 更新时间：2026-09-23
 
+## 2026-09-24 About 内嵌媒体拆分候选
+
+- EdgeOne 已报告 About 来源页超过单文件 25 MiB 上限；本地将 86 处 Base64 引用精确映射到 `assets/about-v42/` 中已有的 24 个独立媒体文件，逐一按 SHA-256 匹配，未重新编码或替换内容。
+- `L-One-Homepage-v4.2-FIXED-SINGLE.html` 由 `55,696,947` bytes 降至 `74,778` bytes；目录最大独立文件为 `001_e788dee0c431.mp4`，`3,187,462` bytes，所有文件均低于 25 MiB。
+- 本地三端已检查页面、视频解码、87 张图片加载、六工具图标、作品集入口和横向溢出；修复尚未合并 `main`，EdgeOne 新部署及正式域名状态未验证。
+
 ## 2026-09-23 3D 卡片资料库发布候选
 
 - 新增独立页面 `/library/`；11 张卡片由 Google Drive 正式 Style/Image 索引和 Registry 生成，其中 Style 7 张、Image 4 张。封面与可用细节图来自 Drive 当前正式文件或资产包；页面不直接请求私有 Drive。
