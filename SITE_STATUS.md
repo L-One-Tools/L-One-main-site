@@ -2,7 +2,13 @@
 
 更新时间：2026-09-29
 
-## 2026-09-29 主站修改版发布执行中
+## 2026-09-29 修改版主站正式域名回读
+
+- PR #19 已合并至 `main`，合并 commit `27098ecfeb624855b028d2cd251e5884744508d1`。GitHub 的 Store Catalog Sync 检查通过。
+- `https://l-one.asia/`、`/portfolio.html`、`/store/`、`/materials/`、`/materials/data/assets.json`、`/library/` 与共享资源均返回 HTTP 200；线上内容与合并版对应文件匹配。About 源 HTML 规范化换行后相同。曾回读到旧页面，随后新页面及资源已出现；正式域名的本轮代码发布已确认。
+- EdgeOne 控制台部署 ID 未验证。About 四段动态滚动、Works 连续滚轮、Library 完整 3D 场景仍需 L-One 在正式站核实观感。异常回滚以 PR #19 合并 commit `27098ec` 执行 `git revert -m 1` 创建提交。
+
+## 2026-09-29 主站修改版发布前记录（历史）
 
 - L-One 已要求把本地修改版部署到 `l-one.asia`；发布范围为本分支 A-20260928-01 至 04 的页面与资源候选。发布前 `node scripts/site-audit.js` 已通过；远端 `main` 与候选基线一致。
 - GitHub 合并、EdgeOne 部署与正式域名回读尚待完成；未完成前不标记上线成功。

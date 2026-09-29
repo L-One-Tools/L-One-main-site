@@ -1,6 +1,12 @@
 # 当前任务交接
 
-## 2026-09-29 修改版主站发布执行中
+## 2026-09-29 修改版主站发布结果
+
+- PR #19：`https://github.com/L-One-Tools/L-One-main-site/pull/19`，已合并；正式 `main` 为 `27098ecfeb624855b028d2cd251e5884744508d1`。PR 同步检查通过。
+- 正式域名首页、Works、Store、Materials、Materials 清单、Library、共享 CSS/JS 和新的联系图均返回 HTTP 200，字节与发布候选一致；About HTML 在 LF/CRLF 换行规范化后内容一致。EdgeOne 控制台部署 ID 未验证，正式域名回读已确认新版本。
+- 待 L-One 真实浏览器核实：About 四段人物与文字、滚动卡片阴影、Works 连续滚轮、Library 完整 3D 场景。反馈出现异常时记录页面、视口和画面状态；回滚使用 `git revert -m 1 27098ecfeb624855b028d2cd251e5884744508d1` 创建可审计提交。
+
+## 2026-09-29 修改版主站发布前记录（历史）
 
 - 任务编号 `A-20260929-01`；L-One 已授权将本地修改版部署到 `l-one.asia`。发布内容为 A-20260928-01 至 04 的已记录候选，原主站工作树的其他未提交改动不纳入。
 - 发布前：`node scripts/site-audit.js` 通过；`git diff --check` 无差异错误；`origin/main` 与本分支起点一致。GitHub PR、EdgeOne 部署与正式域名回读待完成。
