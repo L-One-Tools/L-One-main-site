@@ -79,6 +79,7 @@ const failures = [];
 const html = read(htmlPath);
 const visibleHtml = stripNonVisibleBlocks(html);
 const worksIndex = JSON.parse(read(worksIndexPath));
+const portfolioHtmlPath = path.join(root, "portfolio.html");
 
 if (!html.includes('href="materials/"') || !html.includes('<strong>Materials</strong><span>素材库</span>')) {
   fail("Main navigation should include Materials / 素材库 linking to materials/.");
@@ -96,37 +97,24 @@ if (/#recent|page-recent|data-route="recent"|route: "recent"/.test(html)) {
   fail("The removed Recent section must not remain in main navigation, routes, page markup, or search.");
 }
 if (!html.includes("grid-template-columns: repeat(5, minmax(0, 1fr));")) {
-  fail("Home center navigation should use five columns after removing Recent.");
+  fail("Home center navigation should use five columns.");
 }
 const mainNav = html.match(/<nav class="nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
-if (mainNav.indexOf('href="store/"') === -1 || mainNav.indexOf('href="store/"') > mainNav.indexOf('href="#works"')) {
+if (mainNav.indexOf('href="store/"') === -1 || mainNav.indexOf('href="store/"') > mainNav.indexOf('href="portfolio.html"')) {
   fail("Store should be the first item in the main site navigation.");
 }
 const homeNav = html.match(/<nav class="home-m3-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
-if (homeNav.indexOf('href="store/"') === -1 || homeNav.indexOf('href="store/"') > homeNav.indexOf('href="#works"')) {
+if (homeNav.indexOf('href="store/"') === -1 || homeNav.indexOf('href="store/"') > homeNav.indexOf('href="portfolio.html"')) {
   fail("Store should be the first item in the home center navigation.");
 }
-if (!html.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>')) {
-  fail("Main navigation should display Notes / \u5b66\u4e60\u7b14\u8bb0.");
+if (!mainNav.includes('href="library/"') || !homeNav.includes('href="library/"')) {
+  fail("Library should appear in both first-level navigations.");
 }
-if (!html.includes('<span class="en">notes</span><span class="zh">\u5b66\u4e60\u7b14\u8bb0</span>')) {
-  fail("Home center navigation should display notes / \u5b66\u4e60\u7b14\u8bb0.");
+if (html.includes('id="page-skills"') || mainNav.includes('>Notes<') || homeNav.includes('>notes<')) {
+  fail("The removed Notes page and navigation must not remain.");
 }
-if (html.includes('class="lib-hero"')) {
-  fail("Notes page must not retain the removed introductory hero.");
-}
-if (!html.includes('{ route: "skills", title: "Notes"')) {
-  fail("Home search index should expose the renamed Notes page.");
-}
-const notesSection = html.match(/<section class="page" id="page-skills">([\s\S]*?)<\/section>/)?.[1] || "";
-if ((notesSection.match(/class="lib-card"/g) || []).length !== 1) {
-  fail("Notes page should contain exactly one published content card.");
-}
-if (!notesSection.includes('href="motion-library.html"') || !notesSection.includes("\u6587\u5b57\u52a8\u6548\u56fe\u4e66\u9986")) {
-  fail("Notes page should retain the Motion Library card.");
-}
-if (notesSection.includes('class="filters"')) {
-  fail("Notes page should not show empty category filters.");
+if (!html.includes('rawRoute === "skills"') || !html.includes('store/#motion-library')) {
+  fail("Legacy Notes links should reach the Motion Library card in Store.");
 }
 if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(5,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
   fail("Home center navigation should keep all five links on one row.");
@@ -164,14 +152,12 @@ if (fs.existsSync(materialsHtmlPath)) {
   if (!materialsHtml.includes('href="../index.html#home"')) {
     fail("Materials page should link back to the main site home route.");
   }
-  if (!materialsHtml.includes('<strong>Notes</strong><span>\u5b66\u4e60\u7b14\u8bb0</span>')) {
-    fail("Materials navigation should display Notes / \u5b66\u4e60\u7b14\u8bb0.");
-  }
+  if (materialsHtml.includes('<strong>Notes</strong>')) fail("Materials navigation must omit Notes.");
   if (!materialsHtml.includes('href="../store/"')) {
     fail("Materials navigation should link to Store.");
   }
   const materialsNav = materialsHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
-  if (materialsNav.includes("#recent") || materialsNav.indexOf('href="../store/"') > materialsNav.indexOf('href="../index.html#works"')) {
+  if (materialsNav.includes("#recent") || materialsNav.indexOf('href="../store/"') > materialsNav.indexOf('href="../portfolio.html"')) {
     fail("Materials navigation should remove Recent and place Store first.");
   }
 }
@@ -197,23 +183,30 @@ if (fs.existsSync(materialsJsPath)) {
     if (!materialsJs.includes(term)) fail(`materials.js is missing required data hook: ${term}.`);
   });
 }
+if (fs.existsSync(materialsConfigPath) && fs.existsSync(materialsDataPath)) {
+  const config = JSON.parse(read(materialsConfigPath));
+  const snapshot = JSON.parse(read(materialsDataPath));
+  if (config.manifestUrl !== "data/assets.json" || !Array.isArray(snapshot) || snapshot.length < 200) {
+    fail("Materials needs its local snapshot before background remote refresh.");
+  }
+}
 
 if (fs.existsSync(motionLibraryHtmlPath)) {
   const motionLibraryHtml = read(motionLibraryHtmlPath);
   if (motionLibraryHtml.includes('<strong>Motion Library</strong>')) {
     fail("Motion Library should not appear as a top-level navigation item.");
   }
-  if (!motionLibraryHtml.includes('<strong>Notes</strong><span>&#23398;&#20064;&#31508;&#35760;</span>')) {
-    fail("Motion Library navigation should identify Notes as its parent section.");
+  if (motionLibraryHtml.includes('<strong>Notes</strong>')) {
+    fail("Motion Library navigation must omit Notes.");
   }
-  if (!motionLibraryHtml.includes('class="motion-back-link" href="index.html#skills"')) {
-    fail("Motion Library should include a back link to Notes.");
+  if (!motionLibraryHtml.includes('class="motion-back-link" href="store/#motion-library"')) {
+    fail("Motion Library should return to its Store card.");
   }
   if (!motionLibraryHtml.includes('href="store/"')) {
     fail("Motion Library navigation should link to Store.");
   }
   const motionNav = motionLibraryHtml.match(/<nav class="motion-nav"[^>]*>([\s\S]*?)<\/nav>/)?.[1] || "";
-  if (motionNav.includes("#recent") || motionNav.indexOf('href="store/"') > motionNav.indexOf('href="index.html#works"')) {
+  if (motionNav.includes("#recent") || motionNav.indexOf('href="store/"') > motionNav.indexOf('href="portfolio.html"')) {
     fail("Motion Library navigation should remove Recent and place Store first.");
   }
 }
@@ -252,8 +245,11 @@ if (fs.existsSync(storeHtmlPath)) {
     fail("Store navigation should expose an active current-page state.");
   }
   const storeNav = storeHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
-  if (storeNav.includes("#recent") || storeNav.indexOf('href="./"') > storeNav.indexOf('href="../index.html#works"')) {
+  if (storeNav.includes("#recent") || storeNav.indexOf('href="./"') > storeNav.indexOf('href="../portfolio.html"')) {
     fail("Store navigation should remove Recent and keep Store first.");
+  }
+  if (storeNav.includes('<strong>Notes</strong>') || !read(storeJsPath).includes('createMotionLibraryCard')) {
+    fail("Store must replace Notes with its Motion Library resource card.");
   }
 }
 
@@ -361,7 +357,7 @@ if (fs.existsSync(fileToTextHtmlPath)) {
     fail("File To Text detail page must not expose local download paths.");
   }
   const detailNav = fileToTextHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
-  if (detailNav.includes("#recent") || detailNav.indexOf('href="../"') > detailNav.indexOf('href="../../index.html#works"')) {
+  if (detailNav.includes("#recent") || detailNav.indexOf('href="../"') > detailNav.indexOf('href="../../portfolio.html"')) {
     fail("File To Text detail navigation should remove Recent and keep Store first.");
   }
 }
@@ -485,132 +481,48 @@ if (visibleHtml.includes(` ${KICKER_SEPARATOR.replace(KICKER_SEPARATOR, "?")} `)
   fail("visible index.html contains a question-mark separator between labels.");
 }
 
-const secondaryCards = html.match(/class="work-card"/g) || [];
-if (secondaryCards.length !== worksIndex.length) {
-  fail(`Works page should render ${worksIndex.length} regular work cards, got ${secondaryCards.length}.`);
+if (html.includes('id="page-works"') || html.includes('id="page-work-')) {
+  fail("The former Works page and its detail pages must be removed from the main HTML.");
 }
-if ((html.match(/data-filter=/g) || []).length !== 3) {
-  fail("Works page should render 3 category filter buttons.");
+if (!html.includes('href="portfolio.html"') || !html.includes('location.replace("portfolio.html")')) {
+  fail("Works navigation and legacy hashes should resolve to the promoted portfolio.");
 }
-const worksPageMatch = html.match(/<section class="page" id="page-works">([\s\S]*?)<section class="page" id="page-work-/);
-const worksPageHtml = worksPageMatch?.[1] || "";
-if (stripNonVisibleBlocks(worksPageHtml).includes("\u5168\u90e8\u5206\u7c7b")) {
-  fail("Works page should not show an all-category filter button.");
-}
-if ((html.match(/work-story original-note/g) || []).length !== worksIndex.length) {
-  fail("Each work detail page must render one original-note body block.");
-}
-const originalNoteCss = html.match(/\.work-story\.original-note \{[\s\S]*?\}/)?.[0] || "";
-if (originalNoteCss.includes("border-top") || originalNoteCss.includes("border-bottom")) {
-  fail("Original note body should not use a hard horizontal divider.");
-}
-if (html.includes('<a class="work-featured"')) {
-  fail("Works page should not render the old static featured card.");
-}
-if (html.includes('<div class="section-head"><h1>WORKS</h1></div>')) {
-  fail("Works page must not retain the removed introductory hero.");
-}
-if (!html.includes('class="works-spotlight" data-works-spotlight')) {
-  fail("Works page should include a scoped recent spotlight module.");
-}
-const latestFiveRoutes = worksIndex
-  .slice()
-  .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)))
-  .slice(0, 5)
-  .map((work) => `work-${work.slug}`);
-const spotlightRoutesMatch = scriptMatch?.[1].match(/const spotlightItems = \[([\s\S]*?)\];/);
-const spotlightRouteText = spotlightRoutesMatch?.[1] || "";
-let previousRouteIndex = -1;
-for (const route of latestFiveRoutes) {
-  const routeIndex = spotlightRouteText.indexOf(`route: "${route}"`);
-  if (routeIndex === -1) {
-    fail(`Works spotlight is missing recent work route: ${route}.`);
+if (!fs.existsSync(portfolioHtmlPath)) {
+  fail("The first-level Works portfolio page is missing.");
+} else {
+  const portfolioHtml = read(portfolioHtmlPath);
+  if (!portfolioHtml.includes('href="assets/site-chrome.css"') ||
+      !portfolioHtml.includes('href="library/"') ||
+      !portfolioHtml.includes('href="store/"')) {
+    fail("The Works portfolio must include shared first-level navigation.");
   }
-  if (routeIndex < previousRouteIndex) {
-    fail("Works spotlight routes should follow publishedAt descending order.");
+  if (!portfolioHtml.includes('const projects = [') ||
+      !portfolioHtml.includes('跳转原文链接') ||
+      !portfolioHtml.includes('assets/portfolio-v9/')) {
+    fail("The promoted Works portfolio appears to be missing its project content.");
   }
-  previousRouteIndex = routeIndex;
+  if (!portfolioHtml.includes('preloadProjectVisuals()') || !portfolioHtml.includes('showProjectVisual(p)')) {
+    fail("Works should decode project images before swapping them.");
+  }
 }
-if (!html.includes("#page-works .works-board [data-work-type]")) {
-  fail("Works filter must only target cards inside .works-board.");
+const aboutHtmlPath = path.join(root, "assets", "about-v42", "L-One-Homepage-v4.2-FIXED-SINGLE.html");
+const aboutHtml = read(aboutHtmlPath);
+for (const asset of ["wechat-v1.png", "rednote-v1.png", "l-one-v1.png"]) {
+  if (!aboutHtml.includes(`contact-transparent/${asset}`) ||
+      !fs.existsSync(path.join(root, "assets", "about-v42", "contact-transparent", asset))) {
+    fail(`About contact icon is missing its transparent version: ${asset}`);
+  }
 }
-if (!html.includes("applyWorkFilter(\"\")")) {
-  fail("Works page should default to the unfiltered regular card collection.");
-}
-if (html.includes("works-selector") || html.includes("worksData")) {
-  fail("Works page must not use the old full-page selector implementation.");
-}
-if (!html.includes("width: min(300px, 100%)")) {
-  fail("Spotlight active title should have a bounded width to avoid image overlap.");
-}
-if (!html.includes("{ x: 64, y: 218")) {
-  fail("Spotlight active title should stay inside the left text area.");
-}
-
 for (const work of worksIndex) {
   const metadataPath = path.join(root, work.metadata);
   const metadataText = read(metadataPath);
   const metadata = JSON.parse(metadataText);
-  const desc = String(metadata.desc || "").trim();
-
   checkNoCorruption(`${work.slug} metadata.json`, metadataText);
-
-  if (metadata.sourcePlatform !== SOURCE_PLATFORM) {
-    fail(`${work.slug} sourcePlatform should be ${SOURCE_PLATFORM}.`);
-  }
-  if (!ALLOWED_TYPES.has(metadata.type)) {
-    fail(`${work.slug} type is not supported: ${metadata.type}.`);
-  }
-  if (work.sourcePlatform !== metadata.sourcePlatform) {
-    fail(`${work.slug} index sourcePlatform does not match metadata.`);
-  }
-  if (work.type !== metadata.type) {
-    fail(`${work.slug} index type does not match metadata.`);
-  }
-  if (String(metadata.sourcePlatform).includes("?") || String(metadata.type).includes("?")) {
-    fail(`${work.slug} metadata platform/type contains question marks.`);
-  }
-  const cardTypePattern = new RegExp(`data-route="work-${work.slug}"[^>]*data-work-type="${metadata.type}"`);
-  if (!cardTypePattern.test(html)) {
-    fail(`${work.slug} Works card is missing or has the wrong data-work-type.`);
-  }
-
-  const minDescLength = metadata.type === TYPE_VIDEO ? 40 : 120;
-  if (desc.length < minDescLength) {
-    fail(`${work.slug} desc is too short for an archived ${metadata.type} note: ${desc.length} chars.`);
-  }
-
-  const sectionPattern = new RegExp(
-    `<section class="page" id="page-work-${work.slug}">([\\s\\S]*?)(?=<section class="page" id="page-|<section class="page" id="page-videos">)`
-  );
-  const sectionMatch = html.match(sectionPattern);
-  if (!sectionMatch) {
-    fail(`${work.slug} detail section is missing.`);
-    continue;
-  }
-
-  const section = sectionMatch[1];
-  checkNoCorruption(`${work.slug} rendered section`, stripNonVisibleBlocks(section));
-  if (section.includes(`${SOURCE_PLATFORM} ? ${metadata.type}`)) {
-    fail(`${work.slug} rendered kicker uses a question-mark separator.`);
-  }
-  if (!section.includes(`${SOURCE_PLATFORM} ${KICKER_SEPARATOR} ${metadata.type}`)) {
-    fail(`${work.slug} rendered kicker is missing normalized platform/type labels.`);
-  }
-
-  const bodyMatch = section.match(/<div class="work-story original-note">\s*<div class="story-body"><p>([\s\S]*?)<\/p><\/div>\s*<\/div>/);
-  if (!bodyMatch) {
-    fail(`${work.slug} original note body is missing.`);
-    continue;
-  }
-
-  const renderedBody = stripHtml(bodyMatch[1]);
-  const normalizedDesc = desc.replace(/\s+/g, " ").trim();
-  if (renderedBody.length < Math.floor(normalizedDesc.length * 0.9)) {
-    fail(`${work.slug} rendered body is shorter than metadata desc (${renderedBody.length}/${normalizedDesc.length}).`);
-  }
-  if (!renderedBody.includes(normalizedDesc.slice(0, 30))) {
-    fail(`${work.slug} rendered body does not contain the start of metadata desc.`);
+  if (metadata.sourcePlatform !== SOURCE_PLATFORM ||
+      !ALLOWED_TYPES.has(metadata.type) ||
+      work.sourcePlatform !== metadata.sourcePlatform ||
+      work.type !== metadata.type) {
+    fail(`${work.slug} archived metadata/index relationship is inconsistent.`);
   }
 }
 
@@ -645,4 +557,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Site audit passed: ${worksIndex.length} works checked.`);
+console.log(`Site audit passed: first-level portfolio, Library, and ${worksIndex.length} archived work records checked.`);

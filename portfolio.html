@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>L-One Portfolio Motion Prototype</title>
+<title>Works｜L-One 作品集</title>
+<link rel="stylesheet" href="assets/site-chrome.css">
 <style>
 :root {
   --bg:#ffffff;
@@ -18,8 +19,8 @@ html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);c
 body{font-family:Arial,"Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif}
 button,a{font:inherit;color:inherit}
 button{background:none;border:0;padding:0;cursor:pointer}
-#app{position:fixed;inset:0;background:var(--bg);overflow:hidden}
-.screen{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) min(51.2vw,78.571vh);justify-content:end;background:var(--bg)}
+#app{position:fixed;inset:var(--lone-header-height) 0 0;background:var(--bg);overflow:hidden}
+.screen{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) min(51.2vw,calc((100dvh - var(--lone-header-height))*5.5/7));justify-content:end;background:var(--bg)}
 .screen.enter{animation:screenIn 850ms var(--ease) both}
 .screen.exit{animation:screenOut 620ms var(--ease) both}
 @keyframes screenIn{from{opacity:.01;transform:translateX(10vw) scale(1.025)}to{opacity:1;transform:none}}
@@ -61,7 +62,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
   max-width:98%;
   font-family:Impact,"Arial Black","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif;
   font-weight:950;
-  font-size:clamp(74px,9.88vw,174px);
+  font-size:clamp(58px,min(9.88vw,14vh),150px);
   line-height:.84;
   letter-spacing:-.065em;
   transform:scaleX(.84) scaleY(1);
@@ -70,10 +71,13 @@ button{background:none;border:0;padding:0;cursor:pointer}
   will-change:transform,color;
   backface-visibility:hidden;
 }
+.project-list.is-ready .project-row{transition:height 560ms cubic-bezier(.22,1,.36,1)}
+.project-list.is-ready .project-name{transition:transform 560ms cubic-bezier(.22,1,.36,1),color 320ms ease}
 .project-row.active .project-name{color:var(--accent)}
 .overview-media{position:absolute;inset:0;background:#111;overflow:hidden}
-.media-scene{position:absolute;inset:-3%;transition:transform 900ms var(--ease);will-change:transform}
-.project-visual{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.025);filter:saturate(.96) contrast(1.03)}
+.media-scene{position:absolute;inset:-3%;transition:transform 240ms ease-out;will-change:transform}
+.project-visual{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.025);filter:saturate(.96) contrast(1.03);opacity:1;transition:opacity 420ms ease}
+.project-visual.is-preparing{opacity:0}
 .scene-grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
 .scene-cell{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:3vw;background:#161616;color:white}
 .scene-cell:nth-child(2){background:#f3f3f1;color:#111}
@@ -127,9 +131,25 @@ button{background:none;border:0;padding:0;cursor:pointer}
  .work-display-title{font-size:12px;letter-spacing:-.04em}
  .work-source-link{margin-top:8px;font-size:10px}
 }
+@media(max-height:650px){
+ .project-name{font-size:clamp(42px,10vh,82px)}
+ .about-key{height:44px;bottom:18px}
+}
 </style>
 </head>
 <body>
+<header class="lone-site-header">
+  <div class="lone-site-header__inner">
+    <a class="lone-site-header__logo" href="index.html#home" aria-label="返回 L-One 首页"><img src="assets/brand/l1-site-mark-3d-transparent-v1.png" alt=""></a>
+    <nav class="lone-site-header__nav" aria-label="主导航">
+      <a href="store/"><strong>Store</strong><span>工具</span></a>
+      <a href="portfolio.html" aria-current="page"><strong>Works</strong><span>作品</span></a>
+      <a href="materials/"><strong>Materials</strong><span>素材库</span></a>
+      <a href="library/"><strong>Library</strong><span>卡片库</span></a>
+      <a href="index.html#about"><strong>About</strong><span>L-One</span></a>
+    </nav>
+  </div>
+</header>
 <div id="app"></div>
 <script>
 const projects = [{"name": "喜大川", "latin": "L-ONE / XIDACHUAN", "account": "L-One喜大川", "works": [["运动相机拍摄分享——上期挖坑，本期填坑", "小红书", "https://www.xiaohongshu.com/discovery/item/68f5a00400000000040143de?source=webshare&xhsshare=pc_web&xsec_token=ABYGBv3z-4ZP7dFOqZUI9TrbanGjH4-KwzIW-sPbASj-M=&xsec_source=pc_share"], ["去废弃铁轨上拍个照｜将府公园", "小红书", "https://www.xiaohongshu.com/discovery/item/68c24414000000001d018616?source=webshare&xhsshare=pc_web&xsec_token=AB7cDR6ZddjVQmXc-D16IeYj5xmNck8PuwDP1knyP05Ko=&xsec_source=pc_share"], ["如果你也在大望路上班｜别在公司附近溜达", "小红书", "https://www.xiaohongshu.com/discovery/item/68bdaf4e000000001d027d3a?source=webshare&xhsshare=pc_web&xsec_token=ABNEm8cfEnn9qHlwSRphxoGCOlrWjJv4bM7Kr8e8rhdhU=&xsec_source=pc_share"], ["环球影城｜年度总结篇 2/3【吃喝】", "小红书", "https://www.xiaohongshu.com/discovery/item/68903ca9000000000403d551?source=webshare&xhsshare=pc_web&xsec_token=ABhyvJD6PuAO6KY7TC4R40XmZeQTyeWgTz6WL24DdiTy0=&xsec_source=pc_share"], ["环球影城｜一年去二十多次的总结篇 1/3", "小红书", "https://www.xiaohongshu.com/discovery/item/688eff950000000004002535?source=webshare&xhsshare=pc_web&xsec_token=ABcXyK9H43hGkFKm2QOop8KUeJJVw-ckNg7mKw62UgCbs=&xsec_source=pc_share"], ["一口叹气！好看的地方就是藏着不给看", "小红书", "https://www.xiaohongshu.com/discovery/item/68aec79c000000001d02e1c6?source=webshare&xhsshare=pc_web&xsec_token=AB9zYlylxGYs5ORDkPdo0oL4QsAxfTKlDKys0AmPKWwr8=&xsec_source=pc_share"]]}, {"name": "疯游精", "latin": "FENGYOUJING", "account": "疯游精", "works": [["存20个「环球影城」中小众却超级出片的位置", "小红书", "https://www.xiaohongshu.com/discovery/item/67b994ff0000000029019491?source=webshare&xhsshare=pc_web&xsec_token=ABGkB9eZptHNJl1JeElv2bKAHufU_eyuduVHZbFxyXh60=&xsec_source=pc_share"], ["环球影城泼水节｜提前预习5个爽玩小tips", "小红书", "https://www.xiaohongshu.com/discovery/item/6a292e9500000000350271ad?source=webshare&xhsshare=pc_web&xsec_token=ABfZp0Lqz4D5Fz7a2E8VdpWiDJ40xowaHBerAW2dpu9-0=&xsec_source=pc_share"], ["世界予我万般滋味，何不尽兴而返", "小红书", "https://www.xiaohongshu.com/discovery/item/6a0fbb040000000035030d75?source=webshare&xhsshare=pc_web&xsec_token=ABHTGnM0uC-xlooSncVJ8E7aJ1YOYArU0e-bNkNwxOrrU=&xsec_source=pc_share"], ["Lady～～，居然也有机会让我用上了这个BGM", "小红书", "https://www.xiaohongshu.com/discovery/item/69c0fb3b0000000023013858?source=webshare&xhsshare=pc_web&xsec_token=ABTNwQWtx0APWOTk8g1WB0Hxh4DLDxOZrBhWOPZ-zufCM=&xsec_source=pc_share"], ["蓝调的泡泡乐园｜找寻那些无用但舒适的时间", "小红书", "https://www.xiaohongshu.com/discovery/item/6a48500f000000001101f1ca?source=webshare&xhsshare=pc_web&xsec_token=ABvtRC0HxB6nTDh1wR4fDmO1I1ZtOWVPKfaqO6m-82AIY=&xsec_source=pc_share"], ["带着增距镜逛「北环」还真能拍出点不一般的", "小红书", "https://www.xiaohongshu.com/discovery/item/6aa9f638000000002803ac6a?source=webshare&xhsshare=pc_web&xsec_token=AB-yJT3GTkW-I1QGupiiajuGNTx5i0ePNjvyg-wT7hDog=&xsec_source=pc_share"], ["北京国家植物园，一日徒步vlog", "小红书", "https://www.xiaohongshu.com/discovery/item/6a7ea96d000000002c0032e8?source=webshare&xhsshare=pc_web&xsec_token=ABw1Lv7jXejIlo2SJS7TXjQbF6mPC6OiOON9tL0RVa2-M=&xsec_source=pc_share"], ["小技巧出大片2/20｜vlog拍摄之-慢门技巧", "小红书", "https://www.xiaohongshu.com/discovery/item/6a6346fc000000000f02a829?source=webshare&xhsshare=pc_web&xsec_token=ABH-tugRtAyvkP2bglBTyFzk0QS25e6rPtWJ7nB1QxvHY=&xsec_source=pc_share"], ["环球影城大攻略4｜游乐，必须快乐", "小红书", "https://www.xiaohongshu.com/discovery/item/6a50c793000000000f0146d6?source=webshare&xhsshare=pc_web&xsec_token=ABdD5FUsmGhKdnPGguOfzQGnEkzYi6vEUX_p4L8FI_ME0=&xsec_source=pc_share"], ["小众预警｜送给巫师的「圣诞暗夜颂歌」", "小红书", "https://www.xiaohongshu.com/discovery/item/693282b9000000001d03bf20?source=webshare&xhsshare=pc_web&xsec_token=ABf36LtmwwW8IW7tLtUu6JH8Dg0XKNS4xAeBYP3AY_gTo=&xsec_source=pc_share"]]}, {"name": "灌木", "latin": "GUANMU CULTURE", "account": "灌木文化", "works": [["别掉队，1分钟走进AI时代", "抖音", "https://www.douyin.com/video/7606298141276654889?modeFrom=userPost&secUid=MS4wLjABAAAA9qsFQlp_aCgs1AvoiT7Q6pDB0eDo81kh8CJSHDFDca4"], ["这座城到底有多硬核｜重庆", "抖音", "https://www.douyin.com/video/7665661615995374899?modeFrom=userPost&secUid=MS4wLjABAAAAHr-8bVg-qioUwYXE2vmpuFYRj4Us0DfFFGYfWwIY_TA"]]}, {"name": "过往作品", "latin": "SELECTED ARCHIVE", "account": "王钧过往其他视频作品", "works": [["自我介绍", "新片场", "https://www.xinpianchang.com/a13500547?channel=copyLink&from=webShare"], ["地产品牌形象片《光熙长者公寓》", "新片场", "https://www.xinpianchang.com/a10184837?channel=copyLink&from=webShare"], ["喜大川er2023艺人&游戏广告3", "阿里云盘", "https://www.alipan.com/s/pMFvUF1vUJS"], ["喜大川er2023EP雅莹", "阿里云盘", "https://www.alipan.com/s/otuCRed6yG2"], ["从开机到打卡的机器人", "阿里云盘", "https://www.alipan.com/s/XSH3jqkdt2K"]]}];
@@ -138,6 +158,8 @@ let projectIndex = 0;
 let workIndex = 0;
 let wheelLock = false;
 let app = document.getElementById('app');
+let visualChange = 0;
+const visualPreloads = new Map();
 
 // Only title-matched, existing L-One originals are used. Unavailable covers stay as V9's motion posters.
 const workCovers = new Map([
@@ -228,6 +250,7 @@ function positionProjectList() {
   const list=document.getElementById('projectList');
   if(list) list.style.transform='none';
   applyProjectTypography(false);
+  requestAnimationFrame(()=>list?.classList.add('is-ready'));
 }
 
 function companionRows(activeIndex){
@@ -249,54 +272,19 @@ function scalePattern(activeIndex, activeScale=1.5){
   return scales;
 }
 
-function applyProjectTypography(animate=true){
+function applyProjectTypography(){
   const rows=[...document.querySelectorAll('.project-row')];
   if(!rows.length) return;
   const names=rows.map(row=>row.querySelector('.project-name'));
-
-  // 使用未变形文字的真实排版高度作为统一基准。
-  names.forEach(name=>name.style.transform='scaleX(.84) scaleY(1)');
   const baseTextH=Math.max(...names.map(name=>name.offsetHeight));
-  // 每一行的可见文字边界以下都保留同一段明显空白，不随放大比例而改变。
-  const fixedGap=Math.max(42,Math.min(58,innerHeight*0.055));
-
-  const previousScales=rows.map((row,idx)=>{
-    const v=parseFloat(row.dataset.scale || '1');
-    return Number.isFinite(v)?v:1;
-  });
-
+  const available=Math.max(320,app.clientHeight-136);
+  const fixedGap=Math.max(14,Math.min(44,(available-baseTextH*4)/3));
   const finalScales=scalePattern(projectIndex,1.5);
-  const stages=animate ? [
-    {offset:0, scales:previousScales},
-    {offset:.38, scales:scalePattern(projectIndex,1.60)},
-    {offset:.62, scales:scalePattern(projectIndex,1.44)},
-    {offset:.82, scales:scalePattern(projectIndex,1.53)},
-    {offset:1, scales:finalScales}
-  ] : [{offset:1, scales:finalScales}];
-
   rows.forEach((row,idx)=>{
     const name=names[idx];
-    if(row._rowAnim) row._rowAnim.cancel();
-    if(name._nameAnim) name._nameAnim.cancel();
-
-    const rowFrames=stages.map(stage=>({
-      offset:stage.offset,
-      height:(baseTextH*stage.scales[idx] + (idx<rows.length-1?fixedGap:0))+'px'
-    }));
-    const nameFrames=stages.map(stage=>({
-      offset:stage.offset,
-      transform:`scaleX(.84) scaleY(${stage.scales[idx]})`
-    }));
-
-    if(animate){
-      row._rowAnim=row.animate(rowFrames,{duration:760,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});
-      name._nameAnim=name.animate(nameFrames,{duration:760,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});
-    }
-
     const finalScale=finalScales[idx];
     row.style.height=(baseTextH*finalScale + (idx<rows.length-1?fixedGap:0))+'px';
     name.style.transform=`scaleX(.84) scaleY(${finalScale})`;
-    row.dataset.scale=String(finalScale);
   });
 
   const totalHeight=finalScales.reduce((sum,s)=>sum+baseTextH*s,0)+fixedGap*(rows.length-1);
@@ -304,31 +292,48 @@ function applyProjectTypography(animate=true){
   if(rail) rail.style.height=totalHeight+'px';
 }
 
+function preloadProjectVisuals(){
+  for(const {src} of projectVisuals.values()){
+    if(visualPreloads.has(src)) continue;
+    const image=new Image();
+    image.src=src;
+    visualPreloads.set(src,image.decode().catch(()=>{}));
+  }
+}
+
+async function showProjectVisual(project){
+  const token=++visualChange;
+  const visual=projectVisuals.get(project.name);
+  const scene=document.getElementById('mediaScene');
+  if(!visual||!scene) return;
+  await visualPreloads.get(visual.src);
+  if(token!==visualChange||scene!==document.getElementById('mediaScene')) return;
+  const previous=scene.querySelector('.project-visual:last-of-type');
+  if(previous?.getAttribute('src')===visual.src) return;
+  const next=document.createElement('img');
+  next.className='project-visual is-preparing';
+  next.src=visual.src;
+  next.alt=`${project.name}项目品牌图`;
+  next.style.objectPosition=visual.position;
+  scene.append(next);
+  void next.offsetWidth;
+  requestAnimationFrame(()=>{
+    if(token!==visualChange) return;
+    next.classList.remove('is-preparing');
+    [...scene.querySelectorAll('.project-visual')].filter(image=>image!==next).forEach(image=>{
+      image.style.opacity='0';
+      setTimeout(()=>image.remove(),440);
+    });
+  });
+}
+
 function selectProject(i) {
   projectIndex=(i+projects.length)%projects.length;
   const p=projects[projectIndex];
   const rows=[...document.querySelectorAll('.project-row')];
   rows.forEach((r,idx)=>r.classList.toggle('active',idx===projectIndex));
-  applyProjectTypography(true);
-
-  const visual=projectVisuals.get(p.name);
-  const projectVisual=document.getElementById('projectVisual');
-  if(projectVisual && visual){
-    projectVisual.src=visual.src;
-    projectVisual.alt=`${p.name}项目品牌图`;
-    projectVisual.style.objectPosition=visual.position;
-  }
-
-  const scene=document.getElementById('mediaScene');
-  if(scene){
-    scene.animate(
-      [
-        {transform:'translate3d(0,1.8vh,0) scale(.985)',opacity:.72},
-        {transform:'translate3d(0,0,0) scale(1.025)',opacity:1}
-      ],
-      {duration:520,easing:'cubic-bezier(.16,1,.3,1)'}
-    );
-  }
+  applyProjectTypography();
+  showProjectVisual(p);
 }
 
 function enterDetail() {
@@ -410,6 +415,7 @@ function bindParallax() {
 }
 
 window.addEventListener('wheel',(e)=>{
+  if(e.target.closest('.lone-site-header'))return;
   e.preventDefault();
   if(wheelLock)return;
   if(Math.abs(e.deltaY)<12)return;
@@ -424,6 +430,7 @@ window.addEventListener('resize',()=>{
 });
 
 window.addEventListener('keydown',(e)=>{
+  if(e.target.closest('.lone-site-header'))return;
   if(mode==='overview'){
     if(['ArrowDown','ArrowRight'].includes(e.key))selectProject(projectIndex+1);
     if(['ArrowUp','ArrowLeft'].includes(e.key))selectProject(projectIndex-1);
@@ -436,6 +443,8 @@ window.addEventListener('keydown',(e)=>{
 });
 
 overview();
+preloadProjectVisuals();
 </script>
+<script src="assets/site-prefetch.js" defer></script>
 </body>
 </html>

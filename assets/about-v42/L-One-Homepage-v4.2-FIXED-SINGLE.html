@@ -1087,6 +1087,9 @@ body{overflow-x:hidden}
   }
 </style>
 
+
+<script>if(window.self!==window.top)document.documentElement.classList.add('embedded-about');</script>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
@@ -1355,15 +1358,15 @@ body{overflow-x:hidden}
     <div class="section-head"><div><span>04</span><span>CONTACT</span></div></div>
     <div class="contact-grid">
       <a class="contact-item wechat" href="#" data-qr="true">
-        <img src="021_589bd3ae49c7.png" alt="微信"/>
+        <img src="contact-transparent/wechat-v1.png" alt="微信"/>
         <div><strong>WECHAT</strong><span>L_One_Chat</span></div>
       </a>
       <a class="contact-item" href="https://xhslink.cn/o/5yCVvileSd5" target="_blank" rel="noreferrer">
-        <img src="022_7abed43a49e7.png" alt="小红书"/>
+        <img src="contact-transparent/rednote-v1.png" alt="小红书"/>
         <div><strong>REDNOTE</strong><span>小红书主页</span></div>
       </a>
       <div class="contact-item no-link">
-        <img src="023_c3f34c8a2d67.png" alt="L-One"/>
+        <img src="contact-transparent/l-one-v1.png" alt="L-One"/>
         <div><strong>L-ONE</strong><span>186 1422 1993</span></div>
       </div>
     </div>
@@ -1607,7 +1610,7 @@ qr.addEventListener('click',e=>{if(e.target===qr){qr.classList.remove('open');qr
       section.classList.remove('is-started');
     }
 
-    if(metadataReady && Math.abs(video.currentTime-scrubTime) > .02){
+    if(metadataReady && !video.seeking && Math.abs(video.currentTime-scrubTime) > .08){
       try{
         video.currentTime =
           Math.min(video.duration || TOTAL, scrubTime);
@@ -1757,20 +1760,66 @@ qr.addEventListener('click',e=>{if(e.target===qr){qr.classList.remove('open');qr
     #now .tool-track-b:has(.note-card:hover) .note-card:hover ~ .note-card{transform:none}
   }
 </style>
+<style id="l-one-site-ia-20260928">
+  .embedded-about .site-header{display:none}
+  .timeline__canvas{width:100vw;height:100vh;aspect-ratio:auto;transform:none !important;box-shadow:none !important;background-color:#dce2e5;background-image:var(--about-ambient);background-position:center 62%;background-size:100% auto}
+  .timeline__video,.timeline__overlay{inset:auto;top:50%;left:50%;width:min(100vw,133.333vh);height:min(100vh,75vw);transform:translate(-50%,-50%)}
+  .timeline__video{object-fit:contain;background:transparent}
+  .timeline__canvas::after{background:linear-gradient(0deg,rgba(239,241,242,.48),transparent 10%)}
+  #now .tool-track-a figure{width:205px;margin:0 9px}
+  #now .tool-track-a figure img{width:180px;height:180px}
+  #now .tool-track-a{animation-duration:43s}
+  #now .tool-track-a .tool-link{display:block;flex:none;color:inherit;text-decoration:none}
+  #now .tool-track-a .tool-link:focus-visible{outline:2px solid #111;outline-offset:4px}
+  #now .tool-track-a .tool-link:hover img,
+  #now .tool-track-a .tool-link:focus-visible img{transform:translateY(-4px) scale(1.04)}
+  #now .tool-track-a:has(.tool-link:hover),
+  #now .tool-track-a:has(.tool-link:focus-visible){animation-play-state:paused}
+  #now .tool-track-b{animation-duration:70s}
+  #now .tool-track-b .note-card,
+  #now .tool-track-b .note-card img{width:184px}
+  #now .tool-track-b .note-card{flex-basis:184px;margin:0 6px;transition:transform 480ms cubic-bezier(.18,1.7,.3,1)}
+  #now .tool-track-b .note-card img{box-shadow:0 7px 16px -12px rgba(55,63,68,.12);transition:box-shadow 480ms cubic-bezier(.18,1.7,.3,1)}
+  #now .tool-track-b .note-card:hover{transform:translateY(-12px) scale(1.14)}
+  #now .tool-track-b .note-card:hover img{box-shadow:0 10px 20px -12px rgba(55,63,68,.16)}
+  #now .tool-track-b:has(.note-card:hover){animation-play-state:paused}
+  @media(max-width:900px){
+    #now .tool-track-a figure{width:156px;margin:0 7px}
+    #now .tool-track-a figure img{width:140px;height:140px}
+    #now .tool-track-b .note-card,
+    #now .tool-track-b .note-card img{width:145px}
+    #now .tool-track-b .note-card{flex-basis:145px;margin:0 5px}
+  }
+  @media(max-width:560px){
+    #now .tool-track-a figure{width:130px;margin:0 6px}
+    #now .tool-track-a figure img{width:118px;height:118px}
+    #now .tool-track-b .note-card,
+    #now .tool-track-b .note-card img{width:116px}
+    #now .tool-track-b .note-card{flex-basis:116px;margin:0 4px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    #now .tool-track-a,#now .tool-track-b{animation:none}
+    #now .tool-track-b .note-card:hover{transform:none}
+  }
+</style>
+<style id="l-one-contact-icons-20260928">
+  .contact-item img{object-fit:contain;filter:none;mix-blend-mode:normal;background:transparent}
+  .contact-item:hover img{filter:none}
+</style>
 <script id="l-one-now-transparent-tools-and-entry-position">
 (() => {
   const tools = [
-    ['L-1 Text','L-1 TEXT','tools-transparent/l1-text-transparent.png'],
+    ['L-1 Text','L-1 TEXT','tools-transparent/l1-text-transparent.png','../../store/l-1-file-to-text/'],
     ['Capture','CAPTURE','tools-transparent/capture-transparent.png'],
     ['StoryFlow','STORY FLOW','tools-transparent/story-flow-transparent.png'],
-    ['拓印','RUBBING','tools-transparent/rubbing-transparent.png'],
+    ['拓印','RUBBING','tools-transparent/rubbing-transparent.png','../../store/l-1-web-capture/'],
     ['Wave','WAVE','tools-transparent/wave-transparent.png'],
     ['One BAR','ONE BAR','tools-transparent/one-bar-transparent.png']
   ];
   const track = document.querySelector('#now .tool-track-a');
   if (track) {
     const cards = document.createDocumentFragment();
-    [...tools, ...tools].forEach(([alt, caption, source]) => {
+    [...tools, ...tools].forEach(([alt, caption, source, href], index) => {
       const figure = document.createElement('figure');
       const image = document.createElement('img');
       const figcaption = document.createElement('figcaption');
@@ -1778,7 +1827,18 @@ qr.addEventListener('click',e=>{if(e.target===qr){qr.classList.remove('open');qr
       image.alt = alt;
       figcaption.textContent = caption;
       figure.append(image, figcaption);
-      cards.append(figure);
+      if (href) {
+        const link = document.createElement('a');
+        link.className = 'tool-link';
+        link.href = href;
+        link.target = '_top';
+        link.setAttribute('aria-label', caption + '：查看工具详情');
+        if (index >= tools.length) { link.tabIndex = -1; link.setAttribute('aria-hidden', 'true'); }
+        link.append(figure);
+        cards.append(link);
+      } else {
+        cards.append(figure);
+      }
     });
     track.replaceChildren(cards);
   }

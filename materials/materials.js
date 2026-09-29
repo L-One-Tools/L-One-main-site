@@ -1,3 +1,5 @@
+const LOCAL_THUMBNAILS = new Set(["0030cb3ee0384c3ab82fbfe008f4374a", "0034ee53b7fc40a28c97aec4fecd11ee", "00447caea1874ca0b4d4433b5b7f9e76", "017964293adf477392caae3bad3ea556", "02d250318c6543c6903150988f47080b", "040f2fd3b7ea4e678aadcb4641692450", "053635846d824b3ba6b675798e9c1950", "05da57243ae74f2a83055c164bfc17c4", "089c1942361743119d43781ac9bd753c", "0aca7d0a10744797ba28c337025e18fc", "11af4e57b922480ea9a1bb2ecf0d040d", "126ce9ea304b4b00b2b77061828e6956", "1389dccb8d224eb380fa6df51a51760b", "13d4a2a360b34234976ab1ceca9f437d", "14529af6466d4de5aa084489781dc3ed", "14cd19b3b5ba48638a0fea7c50e6aeed", "15438e8781924065952c8ec9618385ae", "1bae57179ede4f3f8cc6faa6da872cde", "1bbc3bd3c7e3483e965a8082c01faa8c", "208990afb2bd44b8a514d8afd8888e2d"]);
+
 const state = {
   config: { manifestUrl: "data/assets.json", mediaBaseUrl: "", uploadUrl: "" },
   assets: [],
@@ -28,6 +30,12 @@ const elements = {
   detail: document.querySelector("[data-detail-backdrop]"),
 };
 
+function resolveThumbnailUrl(asset) {
+  const relative = asset.thumbnail || asset.previewGif || asset.image;
+  if (LOCAL_THUMBNAILS.has(asset.id) && relative === `assets/${asset.id}/thumbnail.webp`) return relative;
+  return resolveMediaUrl(relative);
+}
+
 function resolveMediaUrl(value) {
   if (!value) return "";
   if (/^(https?:)?\/\//i.test(value) || value.startsWith("data:")) return value;
@@ -37,7 +45,7 @@ function resolveMediaUrl(value) {
 }
 
 async function loadConfig() {
-  const response = await fetch("config.json", { cache: "no-store" });
+  const response = await fetch("config.json", { cache: "default" });
   if (!response.ok) throw new Error(`配置读取失败：${response.status}`);
   state.config = { ...state.config, ...(await response.json()) };
   if (state.config.uploadUrl) {
@@ -50,15 +58,33 @@ async function loadAssets() {
   setStatus("loading");
   try {
     await loadConfig();
-    const response = await fetch(state.config.manifestUrl, { cache: "no-store" });
+    const response = await fetch(state.config.manifestUrl, { cache: "default" });
     if (!response.ok) throw new Error(`素材清单读取失败：${response.status}`);
     const data = await response.json();
     state.assets = Array.isArray(data) ? data : Array.isArray(data.assets) ? data.assets : [];
     buildFilterOptions();
     applyFilters();
+    const refresh = () => refreshRemoteAssets();
+    if ("requestIdleCallback" in window) requestIdleCallback(refresh, { timeout: 3000 });
+    else setTimeout(refresh, 1200);
   } catch (error) {
     elements.errorMessage.textContent = error instanceof Error ? error.message : "未知读取错误";
     setStatus("error");
+  }
+}
+
+async function refreshRemoteAssets() {
+  try {
+    const response = await fetch("https://static.l-one.asia/materials/data/assets.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    const assets = Array.isArray(data) ? data : Array.isArray(data.assets) ? data.assets : null;
+    if (!assets?.length || JSON.stringify(assets) === JSON.stringify(state.assets)) return;
+    state.assets = assets;
+    buildFilterOptions();
+    applyFilters();
+  } catch {
+    // The local snapshot remains usable when the remote manifest is unavailable.
   }
 }
 
@@ -170,16 +196,18 @@ function createAssetCard(asset) {
   const preview = document.createElement("div");
   preview.className = "asset-preview";
   const previewVideo = resolveMediaUrl(asset.previewVideo);
-  const thumbnail = resolveMediaUrl(asset.thumbnail || asset.previewGif || asset.image);
+  const thumbnail = resolveThumbnailUrl(asset);
   if (previewVideo) {
     const video = document.createElement("video");
-    video.src = previewVideo;
     video.poster = thumbnail;
     video.muted = true;
     video.loop = true;
-    video.preload = "metadata";
+    video.preload = "none";
     video.playsInline = true;
-    card.addEventListener("pointerenter", () => video.play().catch(() => {}));
+    card.addEventListener("pointerenter", () => {
+      if (!video.src) video.src = previewVideo;
+      video.play().catch(() => {});
+    });
     card.addEventListener("pointerleave", () => video.pause());
     preview.append(video);
   } else if (thumbnail) {

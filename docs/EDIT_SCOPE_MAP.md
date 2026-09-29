@@ -1,5 +1,52 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260929-01
+
+- 执行设备：Codex 隔离工作树 `codex/20260928-site-ia`；发布来源为本分支已完成的 A-20260928-01 至 04 候选。
+- 唯一目标：将用户要求的当前修改版主站通过 GitHub `main` 与 EdgeOne 发布至 `l-one.asia`，并回读正式页面。
+- 允许修改：本分支前述范围列出的页面、共享样式与预热脚本、透明联系图、Materials 本地快照和缩略图、直接相关的 `SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、本范围记录与 `docs/site-ia/20260928-intent-lock.md`；允许精确提交、推送、创建及合并 PR。
+- 只读：其他工作树未提交内容、原始媒体和封面、Google Drive 及外部 Materials 数据源、生产凭据与后台。
+- 预期可见结果：正式站五项导航；Works 指向作品集；Library 可进入；Notes 资源移到 Store；About 的联系图、完整人物画幅和收紧的作品卡片阴影；Materials 首屏使用本地清单。
+- 验证与回滚：发布前站点审查、差异与秘密检查；发布后核对 GitHub `main`、EdgeOne 可见状态与正式域名关键页面。异常优先用 `git revert`，不重写历史。
+
+## 本轮范围：A-20260928-04
+
+- 执行设备：Codex 隔离工作树 `codex/20260928-site-ia`。
+- 唯一目标：收小 About 下排滚动作品卡片的常态及悬停阴影，消除用户截图中底部清晰的黑色边缘。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 中 `#now .tool-track-b .note-card img` 的阴影样式；本范围声明和直接交接记录。
+- 只读：作品封面原图、文字、导航、时间线视频、其他页面。
+- 回滚：撤销该两处阴影值；未来发布后如有异常，使用 `git revert`。
+
+## 本轮范围：A-20260928-03
+
+- 执行设备：Codex 隔离工作树 `codex/20260928-site-ia`，继续修改本地未提交候选。
+- 唯一目标：修复 About 时间线中人物头部和年份/说明文字被 4:3 视频铺满裁切的问题；完整呈现原视频与同坐标 SVG 文字。
+- 允许修改：`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 的时间线舞台 CSS、SVG 比例属性及前轮裁切脚本；直接相关的 `SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、`docs/site-ia/20260928-intent-lock.md` 与本范围声明。
+- 只读：原始 1024×768 视频、海报、底材、用户本轮四张截图、其他页面及资料。
+- 画面约束：任何宽高比下人物头部、身体和文字必须完整保留；舞台外的宽屏余量用既有白灰底材填充，不通过放大视频、`object-fit:cover` 或 SVG `slice` 裁切内容。
+- 回滚：保留原视频和素材字节；本地撤销本轮 CSS/SVG 改动即可。若未来发布后异常，使用 `git revert`。
+
+## 本轮范围：A-20260928-02
+
+- 执行设备：Codex 上轮隔离工作树 `codex/20260928-site-ia`；继续使用未提交候选，不触碰主工作区的其他改动。
+- 目标：修正 About 联系方式图标背景与灰度、Works 全屏重叠及切换闪帧；加快 Materials、Library 的首次可见加载并提供空闲期预热；删除 Notes 一级页，把文字动效图书馆列为 Store 中的资源卡。
+- 允许修改：本轮六项导航直接涉及的 `index.html`、`portfolio.html`、`store/index.html`、`store/store.js`、`store/store.css`、`materials/index.html`、`materials/materials.js`、`materials/config.json`、`materials/data/assets.json`、`motion-library.html`、`library/index.html`、两个 Store 详情页、共享 `assets/site-chrome.css`、`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html`；新增 `assets/about-v42/contact-transparent/` 三张透明副本、`materials/assets/` 中首页可见项的原始缩略图快照与 `assets/site-prefetch.js`；直接相关的 `scripts/site-audit.js`、状态、交接和评审记录。
+- 只读：原始联系方式三图、原有作品图与链接、正式 Materials 清单、Library Drive 卡片来源及静态资源、正式域名。
+- 禁止修改：原始位图、外部静态服务器、上传后台、下载链接、产品版本、数据库、DNS、EdgeOne 设置、生产凭据。
+- 预期可见结果：一级导航五项 Store/Works/Materials/Library/About；`#skills` 旧链接安全导向 Store 的文字动效卡；Works 标题与返回键无重叠、切换不闪空帧；Materials 可立即显示本地快照并在后台刷新远端；Library 只在空闲时预热数据和必要模块，仍优先当前页面。
+- 回滚：本地候选可整体放弃；未来发布异常使用 `git revert`，不重写历史。
+
+## 本轮范围：A-20260928-01
+
+- 执行设备：Codex 隔离工作树；功能分支：`codex/20260928-site-ia`；开始 commit：`80e1f592649ce4e2580903378819d314d975a952`。
+- 目标：统一主站一级导航，把原 About 作品集提升为 Works 一级页面；让 Library 有入口与导航；把 About 中已发布工具连接到 Store；按本轮反馈收紧图标尺寸、提升 About 头图与双排滚动体验。
+- 允许修改：`index.html` 中导航、旧 Works 入口/页面/路由及 About iframe 容器；`portfolio.html` 中顶栏与因顶栏必要的排版；`assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html` 中顶栏、头图、NOW 工具/作品条的样式和交互；`library/index.html` 中顶栏；`store/index.html`、两张已发布工具详情页、`store/store.css`、`materials/index.html`、`materials/materials.css`、`motion-library.html`、`motion-library.css` 中直接相关导航与图标大小；新增仅供这三张独立页共用的 `assets/site-chrome.css`；直接相关的 `scripts/site-audit.js`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、`docs/site-ia/` 与本范围声明。
+- 只读：作品与 Store 的内容数据、原始封面/图标/视频文件、Library 卡片数据和 Drive 来源资料；当前正式域名和用户提供的两张参考截图。
+- 禁止修改：产品版本、下载入口、作品原文链接、图片字节、素材后台、登录/权限、EdgeOne 配置、DNS、仓库设置和其他独立页面的业务数据。
+- 预期可见结果：一级导航为 Store、Works、Notes、Materials、Library、About；Works 直达 `portfolio.html`；旧 `#works` 和旧作品详情入口安全导向作品集；About 的 Text/拓印图标分别进入已发布工具详情；About/作品集/Library 顶部均有主站导航；默认桌面比例下图标更克制，头图无明显两侧空白，滚动更紧凑流畅。
+- 验证门槛：比较用户截图与候选三端页面，检查入口与跳转、键盘焦点、缩小尺寸、头图裁切和双排滚动状态；检查任务 diff 与资源来源。当前先交本地候选供 L-One 视觉审核，不直接宣称正式站已更新。
+- 回滚：若之后经批准发布出现异常，用 `git revert` 撤销本轮合并提交，不重写历史。
+
 ## 本轮范围：A-20260924-01
 
 - 执行设备：Codex 本地隔离工作树；任务目标：只修复 About HTML 超过 EdgeOne 单文件 25 MiB 上限的部署阻断。
