@@ -1,6 +1,6 @@
 # OneBar Store 本地预览记录
 
-状态：本地候选；未提交、未推送、未建 PR、未合并、未部署。正式公开下载尚未开放。
+状态：介绍页已公开；安装包下载尚未开放。
 
 页面验收更新（2026-09-29）：L-One 已明确确认当前最新页面通过，并授权继续公开发布既有已审页面与首位 Store 卡片。该授权不包含更改页面内容或公开安装包。OneBar Release/下载 URL 目前不存在，安装包未签名且部分安装验收未完成；发布后的下载状态仍须保持禁用，直至获得核验过的公开下载端点和发行验收资料。
 
@@ -35,6 +35,13 @@
 - 浏览器：Chrome headless，Store 与详情页分别在 1440×900、834×1112、390×844 实测。Store 三端首卡均为 OneBar；详情页三端下载按钮均为禁用；图像无加载失败；视口无横向溢出。浏览器脚本异常未发现。Store 桌面端有一次浏览器自动请求 `/favicon.ico` 返回 404；页面本身未引用该路径。
 - 截图：`E:\L-One知识库\codex\visualizations\2026\09\29\onebar-store-preview\`，包括 `store-{1440x900,834x1112,390x844}.png` 与 `onebar-detail-{1440x900,834x1112,390x844}.png`。详情页截图为完整长页，包含底部下载模块。
 
-## 后续发布阻塞
+## 下载开放的阻塞项
 
-接入并匿名验证真实 HTTPS 下载地址、文件名、字节数和 SHA-256 后，才可启用按钮；同时需补齐公开反馈入口（如计划提供）并按 L-One 对外表达规范复核文章事实。签名、安装升级、拖动真实文件和全新系统验收状态未变前，页面继续显示待开放状态。当前不代表正式网站已更新。
+接入并匿名验证真实 HTTPS 下载地址、文件名、字节数和 SHA-256 后，才可启用按钮；同时需补齐公开反馈入口（如计划提供）并按 L-One 对外表达规范复核文章事实。签名、安装升级、拖动真实文件和全新系统验收状态未变前，页面继续显示待开放状态。介绍页已在正式站公开，下载发行版仍未开放。
+
+## 2026-09-29 页面批准与生产回读
+
+- L-One 明确确认最新本地预览通过，并授权公开发布已审核页面；PR [#21](https://github.com/L-One-Tools/L-One-main-site/pull/21) 已合并。提交 `776ba99b4b2cec3a839c84291fd1ec4adda9711b`；`Store Catalog Sync` run `36537406477` 通过；合并提交 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`。
+- 生产 `https://l-one.asia/store/`、`/store/onebar/`、`/public/data/store/catalog.json`、`/public/data/store/catalog.last-known-good.json`、`/store/store.js`、`/store/store.css`、OneBar 标识和 sitemap 均 HTTP 200。Store HTML/JS/CSS、Catalog 主/备份与透明 Logo 和合并仓库逐字节匹配；详情页因静态服务换行，LF 规范化后匹配，线上 24,398 bytes，SHA-256 `7831D6EB5150BD6E72ABE9B4AB7A00E42EE25EF2974C9BD8256DB217938302BC`。Catalog 首卡 `onebar`、状态 `coming-soon`、`download_available=false`；页面保留禁用下载按钮。
+- 桌面、平板、手机截图与布局检查记录于本页前述“本地验收”；生产页面资源字节已与批准实现核对，未另行生成生产浏览器截图。EdgeOne 控制台 deployment ID 未验证。
+- 正式页面回滚：`git revert -m 1 ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`，通过 PR 合并。安装包未上传或修改。
