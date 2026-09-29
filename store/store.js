@@ -114,13 +114,25 @@ function createToolCard(tool) {
   return card;
 }
 
-function createCatalogNote() {
-  const note = document.createElement("aside");
-  note.className = "catalog-note";
-  note.setAttribute("aria-label", "工具目录说明");
-  appendText(note, "p", "eyebrow", "Catalog note");
-  note.insertAdjacentHTML("beforeend", "<h2>先选工具，<br>再看详细说明。</h2><p>目录页不承担下载、校验和限制说明；这些留给单项详情页。</p><small>第 3 项公开工具加入后，此栏将替换为同规格工具卡。</small>");
-  return note;
+function createMotionLibraryCard() {
+  const card = document.createElement("a");
+  card.className = "catalog-card motion-library-card";
+  card.id = "motion-library";
+  card.href = "../motion-library.html";
+  const cover = document.createElement("div");
+  cover.className = "catalog-cover motion-library-cover";
+  const mark = appendText(cover, "span", "motion-library-mark", "Aa");
+  mark.setAttribute("aria-hidden", "true");
+  const copy = document.createElement("div");
+  appendText(copy, "h2", "", "文字动效图书馆");
+  appendText(copy, "p", "", "浏览可循环预览的文字动效，复制独立 HTML 或嵌入组件代码。");
+  const meta = document.createElement("div");
+  meta.className = "catalog-meta-row";
+  appendText(meta, "span", "", "网页资源");
+  appendText(meta, "span", "", "64 个动效");
+  copy.append(meta);
+  card.append(cover, copy);
+  return card;
 }
 
 async function fetchCatalog(url, cache) {
@@ -155,7 +167,9 @@ async function loadCatalog() {
       elements.loading.hidden = true;
       elements.meta.textContent = "Catalog 不可用";
       showError(`无法读取工具资料：${primaryError.message}`);
+      elements.list.appendChild(createMotionLibraryCard());
       elements.list.setAttribute("aria-busy", "false");
+      if (location.hash === "#motion-library") document.getElementById("motion-library")?.scrollIntoView();
       return;
     }
   }
@@ -164,8 +178,9 @@ async function loadCatalog() {
   elements.loading.hidden = true;
   elements.empty.hidden = tools.length > 0;
   tools.forEach((tool) => elements.list.appendChild(createToolCard(tool)));
-  elements.list.appendChild(createCatalogNote());
+  elements.list.appendChild(createMotionLibraryCard());
   elements.list.setAttribute("aria-busy", "false");
+  if (location.hash === "#motion-library") document.getElementById("motion-library")?.scrollIntoView();
   const date = formatDate(catalog.generated_at);
   elements.meta.textContent = `${usingFallback ? "稳定快照" : "Catalog"} · 更新于 ${date}`;
 }
