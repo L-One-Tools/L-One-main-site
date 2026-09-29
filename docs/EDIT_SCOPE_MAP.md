@@ -1,5 +1,15 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260929-03（OneBar 生产交接记录）
+
+- 执行设备：Codex 主站工作树；基线 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`。
+- 唯一目标：记录已合并 OneBar 介绍页的 CI、正式域名回读、内容状态和回滚方式。
+- 允许修改：`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md`、`docs/store/ONEBAR_STORE_PREVIEW_REVIEW.md`、本任务范围声明。
+- 只读：全部页面、Catalog、素材、脚本和安装包。
+- 禁止：改写页面正文/布局/图片/Logo/链接，上传或启用安装包，修改产品源码或生产配置。
+- 验证：核对 PR/CI/merge commit；匿名 HTTP 状态、Catalog 值和正式文件 SHA-256；`git diff --check`。
+- 回滚：仅在记录错误时用后续文档提交纠正；页面生产异常则按 A-20260929-02 记录 revert 合并提交。
+
 ## 本轮范围：A-20260929-02
 
 - 执行设备：Codex 主站工作树；分支 `work/A-20260929-02-onebar-store-preview`；开始基线 `1811ae26487478415dcaed6c39c540860c609a43`。

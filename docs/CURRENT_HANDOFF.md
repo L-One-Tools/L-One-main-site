@@ -1,11 +1,12 @@
 # 当前任务交接
 
-## 2026-09-29 OneBar 页面获批，公开发布进行中
+## 2026-09-29 OneBar 介绍页生产交接
 
-- L-One 已确认最新本地页面通过，并授权继续发布审核过的页面与 Store 首位卡片；文案、图像、Logo、布局和交互保持冻结。
-- 公开安装包仍缺真实下载 URL/Release 资产；现有 v1.0.0 包未签名，拖动文件端到端、升级回归及干净 Windows 10/11 x64 验收未完成。故本次只发布产品介绍页，下载按钮继续禁用并显示“下载准备中”。
-- GitHub 当前没有 OneBar Release 资产；不得把本地 ZIP/EXE 当作公开下载，也不得编造地址。页面生产发布状态待 PR、CI、合并和正式域名回读后更新。
-- 如后续下载与验收资料齐全，第一步核验匿名下载响应、文件名、字节数、SHA-256 和安装验收，再最小接入下载区并重新审核发生变化的内容。
+- PR [#21](https://github.com/L-One-Tools/L-One-main-site/pull/21) 已合并；CI `Store Catalog Sync` run `36537406477` 通过；合并提交 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`。正式 Store、详情、Catalog、回退 Catalog、Store JS/CSS 与标识均 HTTP 200，线上核心文件与 `origin/main` 字节一致（详情 HTML 统一为 LF 后一致）。EdgeOne 控制台部署 ID 未验证。
+- `https://l-one.asia/store/onebar/` 已公开；Store Catalog 第一项为 OneBar。产品状态保持 `coming-soon`，详情页按钮“下载准备中”且禁用。
+- 暂缺公开下载 URL/Release 资产；v1.0.0 包未签名，真实文件拖动端到端、升级回归、干净 Windows 10/11 x64 验收未完成。不得将本地 ZIP/EXE当成公开下载，不得编造链接。
+- 后续若发行资料补齐，第一步核验匿名下载响应、文件名、字节数、SHA-256、签名与安装验收，再最小接入下载区；这将改变已审核页面，需先重新提供 L-One 本地预览审核。
+- 页面回滚提交：`git revert -m 1 ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`，再通过 PR 合并部署。
 
 ## 2026-09-29 OneBar Store 本地预览候选
 

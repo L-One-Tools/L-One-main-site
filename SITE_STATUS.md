@@ -2,11 +2,13 @@
 
 更新时间：2026-09-29
 
-## 2026-09-29 OneBar 已审核页面公开发布进行中
+## 2026-09-29 OneBar 介绍页已公开
 
-- L-One 已确认 OneBar 最新本地页面通过，并授权继续公开发布。发布范围是既有 Store 首位卡片与 `/store/onebar/` 已审核页面，不改正文、素材、Logo、布局或交互。
-- OneBar v1.0.0 安装包仍没有公开 Release/下载 URL；GitHub Releases 当前未见 OneBar 资产。包未签名，拖动真实文件流程、升级回归和全新 Windows 环境验收未完成，因此页面继续显示“下载准备中”，不上传或启用下载。
-- 本轮提交、PR、CI、合并及 EdgeOne/正式域名验证完成前，不能标记为已上线；生产回滚使用本轮合并提交 `git revert -m 1`。
+- L-One 确认页面通过后，PR [#21](https://github.com/L-One-Tools/L-One-main-site/pull/21) 已合并，合并提交 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`；Store Catalog Sync CI run `36537406477` 通过。只发布审核过的 Store 首位卡片与 `/store/onebar/` 详情页，页面正文、图片、Logo、布局和交互未改写。
+- `https://l-one.asia/store/`、`/store/onebar/`、`/public/data/store/catalog.json`、`/public/data/store/catalog.last-known-good.json`、Store JS/CSS、sitemap 与 OneBar 透明标识均返回 HTTP 200。生产 Store、JS、CSS、主/备用 Catalog、标识字节与合并仓库一致；详情页经 LF 换行规范化后与合并仓库一致（线上 24,398 bytes，SHA-256 `7831D6EB5150BD6E72ABE9B4AB7A00E42EE25EF2974C9BD8256DB217938302BC`）。
+- 线上 Catalog 首项为 OneBar，状态 `coming-soon`；v1.0.0、51,204,097 bytes 和 SHA-256 元数据正确，下载状态为 false，详情页按钮仍禁用。OneBar 安装包未签名且拖动真实文件、升级、干净 Windows 验收未完成，当前没有公开 Release/下载 URL；因此已公开的是产品介绍页，不是可下载发行版。
+- 三端 1440×900、834×1112、390×844 的页面截图验收来自已批准本地预览；生产 Store HTML/JS/CSS、Catalog 和详情页字节已对照合并版本，未另行制作线上截图。EdgeOne 控制台部署 ID 未验证。截图和全项 QA 见 `docs/store/ONEBAR_STORE_PREVIEW_REVIEW.md`。
+- 页面回滚：对合并提交 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d` 执行 `git revert -m 1`，经 PR 合并触发重新部署；不上传或修改安装包。
 
 ## 2026-09-29 OneBar Store 本地预览
 
