@@ -24,6 +24,9 @@ const webCaptureDir = path.join(storeDir, "l-1-web-capture");
 const webCaptureHtmlPath = path.join(webCaptureDir, "index.html");
 const webCaptureCssPath = path.join(webCaptureDir, "web-capture.css");
 const webCaptureJsPath = path.join(webCaptureDir, "web-capture.js");
+const onebarDir = path.join(storeDir, "onebar");
+const onebarHtmlPath = path.join(onebarDir, "index.html");
+const onebarLogoPath = path.join(storeDir, "assets", "products", "onebar", "onebar-mark-transparent.png");
 const storeSourcePath = path.join(storeDir, "catalog.source.json");
 const storeSchemaPath = path.join(storeDir, "catalog.schema.json");
 const storeCatalogPath = path.join(root, "public", "data", "store", "catalog.json");
@@ -225,6 +228,8 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
   storeWorkflowPath,
   robotsPath,
   sitemapPath,
+  onebarHtmlPath,
+  onebarLogoPath,
 ].forEach((filePath) => {
   if (!fs.existsSync(filePath)) fail(`Store file is missing: ${path.relative(root, filePath)}.`);
 });
@@ -258,6 +263,34 @@ if (fs.existsSync(storeCssPath)) {
   const mobileStoreRules = storeCss.match(/@media \(max-width: 580px\) \{([\s\S]*?)\n\}/)?.[1] || "";
   if (!mobileStoreRules.includes(".tool-list { grid-template-columns: minmax(0, 1fr); overflow: visible;")) {
     fail("Store mobile catalog should use a single-column grid without horizontal overflow.");
+  }
+}
+
+if (fs.existsSync(onebarHtmlPath)) {
+  const onebarHtml = read(onebarHtmlPath);
+  checkNoCorruption("visible Store OneBar detail page", stripNonVisibleBlocks(onebarHtml));
+  ["复制三次就烦了", "顶边一碰", "OneBar_Setup_v1.0.0.exe", "下载准备中", "Windows 10/11 x64", "安装包未签名"].forEach((term) => {
+    if (!onebarHtml.includes(term)) fail(`OneBar detail page is missing required text: ${term}.`);
+  });
+  if (!onebarHtml.includes('href="../assets/products/onebar/onebar-mark-transparent.png"') || !onebarHtml.includes('type="button" disabled aria-disabled="true"')) {
+    fail("OneBar detail page must use its transparent icon and keep download disabled until a public URL is verified.");
+  }
+  if (/\bdata-download\b|href=["'](?:file:|https?:\/\/)/i.test(onebarHtml)) {
+    fail("OneBar detail page must not expose an unverified download or external link.");
+  }
+  ["hero-lit-screen.png", "onebar-oblique-closeup.png", "onebar-xiaobao-strip.png", "pain-triptych.png", "quiet-light.png", "workflow-hierarchy-banner.png"].forEach((name) => {
+    if (!fs.existsSync(path.join(onebarDir, name))) fail(`OneBar article image is missing: ${name}.`);
+  });
+}
+
+if (fs.existsSync(onebarLogoPath)) {
+  const onebarLogo = fs.readFileSync(onebarLogoPath);
+  const onebarLogoHash = crypto.createHash("sha256").update(onebarLogo).digest("hex").toUpperCase();
+  if (onebarLogoHash !== "AFF9CCBDC625CE6DBD61294BE3CB6824968FB10019625BF3919BCE37300E5411") {
+    fail("OneBar transparent logo checksum does not match the reviewed asset.");
+  }
+  if (onebarLogo.readUInt32BE(16) !== 1254 || onebarLogo.readUInt32BE(20) !== 1254 || onebarLogo[25] !== 6) {
+    fail("OneBar logo should remain a 1254×1254 PNG with an alpha channel.");
   }
 }
 
@@ -405,8 +438,8 @@ if (fs.existsSync(storeWorkflowPath)) {
 if (fs.existsSync(robotsPath) && !read(robotsPath).includes("https://l-one.asia/sitemap.xml")) {
   fail("robots.txt should reference the public sitemap.");
 }
-if (fs.existsSync(sitemapPath) && (!read(sitemapPath).includes("https://l-one.asia/store/") || !read(sitemapPath).includes("https://l-one.asia/store/l-1-file-to-text/"))) {
-  fail("sitemap.xml should include the Store and File To Text routes.");
+if (fs.existsSync(sitemapPath) && (!read(sitemapPath).includes("https://l-one.asia/store/") || !read(sitemapPath).includes("https://l-one.asia/store/l-1-file-to-text/") || !read(sitemapPath).includes("https://l-one.asia/store/onebar/"))) {
+  fail("sitemap.xml should include the Store, File To Text, and OneBar routes.");
 }
 
 if (fs.existsSync(storeJsPath)) {
@@ -427,9 +460,14 @@ if (fs.existsSync(storeCatalogPath)) {
   const storyFlow = storeCatalog.tools?.find((tool) => tool.id === "story-flow");
   const fileToText = storeCatalog.tools?.find((tool) => tool.id === "l-1-file-to-text");
   const webCapture = storeCatalog.tools?.find((tool) => tool.id === "l-1-web-capture");
+  const onebar = storeCatalog.tools?.find((tool) => tool.id === "onebar");
   if (!storyFlow) fail("Store Catalog should include Story Flow.");
   if (!fileToText) fail("Store Catalog should include L-1 File To Text.");
   if (!webCapture) fail("Store Catalog should include L-1 网页拓印.");
+  if (!onebar) fail("Store Catalog should include OneBar.");
+  if (storeCatalog.tools?.[0]?.id !== "onebar" || onebar?.status !== "coming-soon" || onebar?.release?.download_available !== false || onebar?.release?.assets?.[0]?.available !== false || onebar?.release?.assets?.[0]?.url !== "") {
+    fail("OneBar must be the first Store card and remain visibly coming soon without a verified download URL.");
+  }
   if (storyFlow?.release?.download_available !== false) {
     fail("Story Flow must remain unavailable until a public installer is verified.");
   }

@@ -1,5 +1,20 @@
 # 当前任务交接
 
+## 2026-09-29 OneBar 页面获批，公开发布进行中
+
+- L-One 已确认最新本地页面通过，并授权继续发布审核过的页面与 Store 首位卡片；文案、图像、Logo、布局和交互保持冻结。
+- 公开安装包仍缺真实下载 URL/Release 资产；现有 v1.0.0 包未签名，拖动文件端到端、升级回归及干净 Windows 10/11 x64 验收未完成。故本次只发布产品介绍页，下载按钮继续禁用并显示“下载准备中”。
+- GitHub 当前没有 OneBar Release 资产；不得把本地 ZIP/EXE 当作公开下载，也不得编造地址。页面生产发布状态待 PR、CI、合并和正式域名回读后更新。
+- 如后续下载与验收资料齐全，第一步核验匿名下载响应、文件名、字节数、SHA-256 和安装验收，再最小接入下载区并重新审核发生变化的内容。
+
+## 2026-09-29 OneBar Store 本地预览候选
+
+- 任务：`A-20260929-02`；分支：`work/A-20260929-02-onebar-store-preview`；开始基线：`1811ae26487478415dcaed6c39c540860c609a43`。
+- Store 第一张卡片为 OneBar；详情页 `/store/onebar/` 沿用 ZIP 原文章布局，底部新增安装包状态组件。源文章现有正文和 CSS 未改写，配图原样复制；卡片图与 favicon 使用去除画布背景后的 OneBar 标识。
+- 包事实：v1.0.0，`OneBar_Setup_v1.0.0.exe`，51,204,097 bytes，SHA-256 `CAF38EDBF3992E580A13C162389FFB2715807F80EB9BAE6093753268305D6CFE`。包未签名、未公开托管；真实拖动文件端到端、安装升级与全新 Windows 10/11 x64 验收未完成。Catalog 标记 `coming-soon`，下载按钮禁用，未编造 URL/反馈入口。
+- 本地预览：`http://127.0.0.1:4175/store/`、`http://127.0.0.1:4175/store/onebar/`。三端截图位于 `E:\L-One知识库\codex\visualizations\2026\09\29\onebar-store-preview\`。Catalog 生成、校验、回退测试、站点审计和差异检查通过；详情页三端无横向溢出、图像加载失败或脚本异常。Store 桌面浏览器自动请求 `/favicon.ico` 返回一次 404。
+- 评审与素材记录：`docs/store/ONEBAR_STORE_PREVIEW_REVIEW.md`。当前仅本地候选，未提交、推送、PR、合并或部署。正式下载需先交付真实公开 HTTPS 地址并通过匿名文件名、字节数和 SHA-256 核验；产品未通过项不得改写为已验收。
+
 ## 2026-09-29 修改版主站发布结果
 
 - PR #19：`https://github.com/L-One-Tools/L-One-main-site/pull/19`，已合并；正式 `main` 为 `27098ecfeb624855b028d2cd251e5884744508d1`。PR 同步检查通过。

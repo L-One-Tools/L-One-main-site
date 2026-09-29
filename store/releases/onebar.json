@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "tool_id": "onebar",
+  "updated_at": "2026-09-29T00:00:00+08:00",
+  "source": "manual",
+  "channel": "test",
+  "version": "1.0.0",
+  "tag": "",
+  "published_at": "",
+  "release_notes": [
+    "官网介绍页已准备；公开下载安装地址尚未开放。",
+    "安装包未签名；拖动真实文件完整流程、安装升级和全新 Windows 环境验收仍待完成。",
+    "文章中的产品画面为结构效果图，不作为运行截图或功能证明。"
+  ],
+  "download_available": false,
+  "recalled": false,
+  "assets": [
+    {
+      "name": "OneBar_Setup_v1.0.0.exe",
+      "platform": "windows",
+      "architecture": "x64",
+      "size": 51204097,
+      "url": "",
+      "sha256": "caf38edbf3992e580a13c162389ffb2715807f80eb9bae6093753268305d6cfe",
+      "minimum_system": "Windows 10/11 x64",
+      "available": false,
+      "recalled": false
+    }
+  ]
+}

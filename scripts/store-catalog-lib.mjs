@@ -65,10 +65,15 @@ export function validateCatalog(catalog, options = {}) {
     if (!ID_PATTERN.test(tool.slug || "")) errors.push(`${prefix}.slug is invalid`);
     if (slugs.has(tool.slug)) errors.push(`duplicate tool slug: ${tool.slug}`);
     slugs.add(tool.slug);
-    for (const key of ["name", "summary", "description", "repository"]) {
+    for (const key of ["name", "summary", "description"]) {
       if (typeof tool[key] !== "string" || !tool[key].trim()) errors.push(`${prefix}.${key} is required`);
     }
     if (!TOOL_STATUSES.has(tool.status)) errors.push(`${prefix}.status is invalid`);
+    if (typeof tool.repository !== "string" || (!tool.repository.trim() && tool.status !== "coming-soon")) {
+      errors.push(`${prefix}.repository is required unless the tool is coming soon`);
+    } else if (tool.repository && !/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(tool.repository)) {
+      errors.push(`${prefix}.repository is invalid`);
+    }
     if (typeof tool.featured !== "boolean") errors.push(`${prefix}.featured must be boolean`);
     if (!Number.isInteger(tool.sort_order) || tool.sort_order < 0) errors.push(`${prefix}.sort_order is invalid`);
     for (const key of ["screenshots", "features", "platforms"]) {

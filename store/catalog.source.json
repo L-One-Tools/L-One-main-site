@@ -1,7 +1,39 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-04T17:58:25+08:00",
+  "updated_at": "2026-09-29T00:00:00+08:00",
   "tools": [
+    {
+      "id": "onebar",
+      "slug": "onebar",
+      "name": "OneBar",
+      "summary": "把常用提示词放在屏幕顶边，需要时按分类快速复制。",
+      "description": "将常用 TXT 指令按项目整理；鼠标移到屏幕顶边唤出分类栏，点击条目复制全文。",
+      "status": "coming-soon",
+      "featured": true,
+      "sort_order": 1,
+      "repository": "",
+      "icon": "assets/products/onebar/onebar-mark-transparent.png",
+      "cover": "",
+      "screenshots": [],
+      "features": [
+        "将常用 TXT 指令按项目分类保存",
+        "移到屏幕顶边唤出分类工具栏",
+        "点击条目复制完整内容"
+      ],
+      "platforms": [
+        {
+          "id": "windows",
+          "name": "Windows",
+          "architectures": ["x64"],
+          "minimum_version": "Windows 10/11 x64"
+        }
+      ],
+      "links": {
+        "docs": "/store/onebar/",
+        "privacy": "",
+        "feedback": ""
+      }
+    },
     {
       "id": "l-1-file-to-text",
       "slug": "l-1-file-to-text",
@@ -10,7 +42,7 @@
       "description": "安装后先在资源中心确认下载 FireRed 中文识别模型与 FFmpeg，再从一个小文件开始试用。大批量真实文件仍在测试。",
       "status": "beta",
       "featured": true,
-      "sort_order": 1,
+      "sort_order": 2,
       "repository": "L-One-Tools/l-one-tools-releases",
       "icon": "",
       "cover": "",
@@ -42,7 +74,7 @@
       "description": "停留在当前标签页，选择网页长图或网页录制，等待自动滚动结束后到浏览器下载目录查看文件。",
       "status": "beta",
       "featured": true,
-      "sort_order": 2,
+      "sort_order": 3,
       "repository": "L-One-Tools/l-one-tools-releases",
       "icon": "assets/products/l-1-web-capture/logo-2d-local-preview.png",
       "cover": "",
@@ -74,7 +106,7 @@
       "description": "以可视化画布、属性编辑、分页预览和本地文件工作流为核心，支持明亮与暗夜主题、导入导出、模板和异常退出恢复。",
       "status": "internal",
       "featured": true,
-      "sort_order": 3,
+      "sort_order": 4,
       "repository": "L-One-Tools/story-flow",
       "icon": "",
       "cover": "",
