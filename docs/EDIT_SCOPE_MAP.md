@@ -1,5 +1,24 @@
 # L-One 主站编辑范围地图
 
+## 本轮范围：A-20260929-02
+
+- 执行设备：Codex 主站工作树；分支 `work/A-20260929-02-onebar-store-preview`；开始基线 `1811ae26487478415dcaed6c39c540860c609a43`。
+- 唯一目标：将 OneBar 接入 Store 首位，并以 ZIP 中现成 HTML 文章制作详情页；保留原文章排版，只在底部新增安装包状态/下载组件。
+- 允许修改：`store/catalog.source.json`、`store/releases/onebar.json`、`store/catalog.schema.json`、`scripts/store-catalog-lib.mjs`、生成后的主/备用 Catalog、`store/store.js` 中即将开放卡片展示逻辑；新增 `store/onebar/` 文章与原配图副本、新增 `store/assets/products/onebar/` 透明标识；直接关联的审查脚本、`scripts/test-store-catalog.mjs`、`docs/store/ONEBAR_STORE_PREVIEW_REVIEW.md`、`SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与本任务范围声明。
+- 只读：OneBar ZIP 原件、OneBar 构建/安装包、现有工具正文/图片/版本/下载字段、About 页面和其它网站内容。
+- 明确禁止：上传或托管 51,204,097 字节安装包、编造下载 URL/反馈入口/验收事实、修改产品源码、重排或改写文章现有正文、推送、PR、合并、部署生产。
+- 预期可见结果：Store 最前显示 OneBar 卡片并标注下载准备状态；`/store/onebar/` 显示原文章既有布局及追加的禁用下载区，安装包未公开托管前无法下载。
+- 验证：核验 ZIP 文件哈希与资源引用；Catalog 生成/校验/回退测试、站点审计、`git diff --check`；本地 HTTP 与桌面 1440×900、平板 834×1112、手机 390×844 浏览器验收。
+- 回滚：本地预览候选可通过撤销本任务提交或放弃本地分支撤回；未来如获发布授权并上线异常，使用 `git revert` 回滚，不重写历史。
+
+### A-20260929-02 发布阶段授权补充（2026-09-29）
+
+- L-One 已明确确认本地页面通过，可继续公开发布已审核页面状态。
+- 允许精确提交、推送本任务分支、创建 PR、等待 CI、合并至 `main` 并验证 EdgeOne 正式站；允许更新本任务 `SITE_STATUS.md`、`docs/CURRENT_HANDOFF.md` 与评审记录。
+- 发布对象仍为本任务既有批准页面、首位 Store 卡片及其 Catalog/站点资源；不改写正文、图像、Logo、布局或交互。
+- 安装包公开 URL 尚不存在，且未签名、拖动真实文件流程/升级/干净 Windows 验收未完成；禁止上传或启用下载。线上继续显示“下载准备中”。
+- 测试与回滚沿用本范围原约定；生产回滚对本次合并提交执行 `git revert -m 1 <merge-commit>`。
+
 ## 本轮范围：A-20260929-01
 
 - 执行设备：Codex 隔离工作树 `codex/20260928-site-ia`；发布来源为本分支已完成的 A-20260928-01 至 04 候选。

@@ -174,7 +174,7 @@ async function loadCatalog() {
     }
   }
 
-  const tools = catalog.tools.filter((tool) => validTool(tool) && tool.links?.docs && ["stable", "beta"].includes(tool.status));
+  const tools = catalog.tools.filter((tool) => validTool(tool) && tool.links?.docs && ["stable", "beta", "coming-soon"].includes(tool.status));
   elements.loading.hidden = true;
   elements.empty.hidden = tools.length > 0;
   tools.forEach((tool) => elements.list.appendChild(createToolCard(tool)));

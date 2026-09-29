@@ -2,6 +2,20 @@
 
 更新时间：2026-09-29
 
+## 2026-09-29 OneBar 已审核页面公开发布进行中
+
+- L-One 已确认 OneBar 最新本地页面通过，并授权继续公开发布。发布范围是既有 Store 首位卡片与 `/store/onebar/` 已审核页面，不改正文、素材、Logo、布局或交互。
+- OneBar v1.0.0 安装包仍没有公开 Release/下载 URL；GitHub Releases 当前未见 OneBar 资产。包未签名，拖动真实文件流程、升级回归和全新 Windows 环境验收未完成，因此页面继续显示“下载准备中”，不上传或启用下载。
+- 本轮提交、PR、CI、合并及 EdgeOne/正式域名验证完成前，不能标记为已上线；生产回滚使用本轮合并提交 `git revert -m 1`。
+
+## 2026-09-29 OneBar Store 本地预览
+
+- `A-20260929-02` 在 `work/A-20260929-02-onebar-store-preview` 基于 `1811ae26487478415dcaed6c39c540860c609a43` 制作本地候选。Store 第一张为 OneBar，详情页使用交接 ZIP 内原文章布局，并只追加底部安装包状态组件。
+- ZIP 内 OneBar v1.0.0 安装包为 51,204,097 bytes，SHA-256 `CAF38EDBF3992E580A13C162389FFB2715807F80EB9BAE6093753268305D6CFE`；当前没有公开下载地址。Catalog 状态为 `coming-soon`，下载禁用；页面说明安装包未签名，拖动真实文件流程、安装升级和全新 Windows 10/11 x64 验收仍待完成。
+- Store Catalog 生成、校验、回退测试、站点审计与 `git diff --check` 通过。Chrome 桌面 1440×900、平板 834×1112、手机 390×844 检查 Store 卡片和详情页：OneBar 为首卡，图片正常，详情下载按钮禁用，无横向溢出。Store 桌面有一次未配置的 `/favicon.ico` 请求 404，不影响页面渲染。
+- 预览：`http://127.0.0.1:4175/store/`、`http://127.0.0.1:4175/store/onebar/`；截图见 `E:\L-One知识库\codex\visualizations\2026\09\29\onebar-store-preview\`；素材来源与安装包边界见 `docs/store/ONEBAR_STORE_PREVIEW_REVIEW.md`。
+- 本轮未提交、未推送、未建 PR、未合并、未部署，正式站未验证。启用下载前仍需真实公开 HTTPS 地址和匿名响应核验；安装包相关未完成验收状态保持公开边界。
+
 ## 2026-09-29 修改版主站正式域名回读
 
 - PR #19 已合并至 `main`，合并 commit `27098ecfeb624855b028d2cd251e5884744508d1`。GitHub 的 Store Catalog Sync 检查通过。
