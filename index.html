@@ -1999,7 +1999,7 @@
     </section>
 
     <section class="page about-page about-v42" id="page-about">
-      <iframe class="about-v42__source-frame" data-src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html" title="L-One 王钧 About v4.2" loading="eager"></iframe>
+      <iframe class="about-v42__source-frame" data-src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html" data-version="20261002-about-r1" title="L-One 王钧 About v4.2" loading="eager" style="background:#191b1d"></iframe>
       <template>
       <header class="about-v42__intro">
         <div><div class="about-v42__kicker">L-One / Personal page</div><h1>王钧<br>JUN WANG</h1></div>
@@ -2191,7 +2191,7 @@
       navLinks.forEach((link) => link.classList.toggle("active", link.dataset.route === route));
       if (route === "about") {
         const frame = pages.about?.querySelector(".about-v42__source-frame");
-        if (frame && !frame.hasAttribute("src")) frame.src = frame.dataset.src;
+        if (frame && !frame.hasAttribute("src")) frame.src = frame.dataset.src + "?v=" + frame.dataset.version;
         homeRenderer?.stop();
       } else homeRenderer?.start();
       updateHomeRevealState(route);
