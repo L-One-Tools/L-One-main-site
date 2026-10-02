@@ -1,5 +1,11 @@
 # L-One 主站编辑范围地图
 
+## A-20261002-05：OneBar 顶部导航
+
+- 用户授权直接上线；基线c119735，分支codex/20261002-onebar-nav。允许store/onebar/index.html导航HTML/CSS与三份任务记录，其他文件只读。
+- 接入现有site-chrome（不改共享文件）、导航与首屏同色无分割线，返回Store/首页及Works/Materials/Library/About。正文/素材/下载不改。
+- 验证三端颜色/边框/焦点/链接/溢出、site-audit/diff、PR/CI/生产回读；回滚merge revert。
+
 ## A-20261002-04：OneBar 标题与操作卡片排版
 
 - 用户明确授权直接修复并部署；基线723effb；分支codex/20261002-onebar-type-fix。
