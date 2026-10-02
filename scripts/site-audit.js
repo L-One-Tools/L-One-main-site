@@ -537,9 +537,19 @@ if (!fs.existsSync(portfolioHtmlPath)) {
   const projects = JSON.parse(read(path.join(root, "assets", "works", "projects.json")));
   if (!portfolioHtml.includes('assets/works/works.js') ||
       projects.map(project => project.name).join("/") !== "喜大川/疯游精/灌木/商业作品" ||
-      projects.reduce((count, project) => count + project.works.length, 0) !== 29 ||
+      projects.reduce((count, project) => count + project.works.length, 0) !== 18 ||
       projects.some(project => project.works.some(work => !work.video_id || !work.video_title || !(work.duration > 0) || !(work.width > 0) || !(work.height > 0) || !fs.existsSync(path.join(root, work.poster_path))))) {
-    fail("V2 Works must expose four verified projects and all 29 source videos with valid metadata and posters.");
+    fail("V2 Works must expose four verified projects and 18 approved videos with valid metadata and posters.");
+  }
+  const approvedOrders = [
+    "xidachuan-01,xidachuan-02,xidachuan-03,xidachuan-04",
+    "fengyoujing-13,fengyoujing-14,fengyoujing-15,fengyoujing-16,fengyoujing-08,fengyoujing-07,fengyoujing-04",
+    "guanmu-01,guanmu-02",
+    "commercial-05,commercial-01,commercial-03,commercial-04,commercial-06"
+  ];
+  if (projects.some((project, index) => project.works.map(work => work.video_id).join(",") !== approvedOrders[index] ||
+      project.works.some((work, index) => work.display_order !== index + 1))) {
+    fail("Works video order must match the approved public lists.");
   }
   if (!worksScript.includes('image.decode()') || !worksScript.includes('showProjectVisual(p)')) {
     fail("Works should decode project images before swapping them.");

@@ -1,5 +1,12 @@
 # L-One 主站编辑范围地图
 
+## A-20261002-07：Works 两分类清单及顺序（授权上线）
+
+- 基线aab59e88bbeea4652860ebe9c46aa0d1f18b3966；codex/20261002-works-order。
+- 允许projects.json的疯游精/商业works数组与display_order、scripts/site-audit.js的数量及批准顺序断言、本范围/CURRENT_HANDOFF/SITE_STATUS；不改标题/媒体URL/其它分类/播放代码/样式/服务器。
+- 疯游精保留7件按用户顺序；商业保留5件，移除穿搭。删除仅官网清单，不删除原素材。总计18件。
+- 测试精确映射与顺序、其余分类和保留作品字段不变、浏览器目录/详情/下一件、site-audit/diff，PR及正式回读；回滚merge revert。
+
 ## A-20261002-06：Works 手机候选（未授权发布）
 
 - 基线f920997509d084c2d320a1e551e694c614421aa8；codex/20261002-works-mobile；本轮接收分析包后实施。
