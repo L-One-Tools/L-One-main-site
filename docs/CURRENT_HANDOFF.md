@@ -1,5 +1,15 @@
 # 当前任务交接
 
+## A-20261002-02：作品声音与缓冲修复
+
+用户明确授权修复并直接发布至正式站供其检查。基线 ddb0e1cbf96495f9af4d22fb89d55431ecbc69f8；分支 codex/20261002-works-playback。仅修改 works.js 与本任务交接。
+
+点击作品后初始 muted=false、volume=1；保留用户主动静音/音量选择。所有视口优先既有720p文件；原1080p与作品资料不变。删除两个隐藏视频预加载及全部预热调用；返回列表时暂停并卸载旧视频，避免后台继续下载。
+
+节点语法、site-audit 与 diff 检查通过。三端真实媒体浏览器验证证据：E:/codex-site-deploy-20261002/playback-fix-local/results.json，正式验证将在 playback-fix-production/results.json 记录。验证实际音频解码、解除静音、720p URL、只请求当前视频、暂停/继续/静音/切换/返回和20秒播放推进。限速压力抽测仍有缓冲，不承诺所有网络无卡顿；正式发布后以实际网络抽测为准。
+
+PR/CI/合并与正式脚本匹配结果完成后追加。EdgeOne 控制台 ID 未验证。回滚使用本任务合并提交 git revert。
+
 ## 2026-10-02 V2 正式发布完成
 
 - A-20261002-01；用户明确授权最终交接候选部署及临时 SSH 连接。功能提交 5e63f27175fd39ad76fe9583990b065f75cd087b；PR https://github.com/L-One-Tools/L-One-main-site/pull/23 已合并，合并提交 33382bb9252f69c15318fb16b3bf6417a66ddf82；CI Store Catalog Sync run 36954313348 成功。
