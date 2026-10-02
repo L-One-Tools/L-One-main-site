@@ -1,5 +1,9 @@
 # L-One Main Site Status
 
+## 2026-10-02 Works 手机适配已发布
+
+PR #33，merge2811bec48b559360c0b5fd5aac20b0354d5d4697。正式CSS/JS匹配，四视口分类/目录/详情及有声720p单视频和返回卸载检查通过。现有CI路径未触发，不记CI通过；实体Safari/所有网络及EdgeOne控制台ID未验证。生产证据/回滚见CURRENT_HANDOFF；下方未上线候选记录为历史。
+
 ## Works 手机候选获发布授权
 
 L-One明确授权当前A-20261002-06候选部署，发布验证进行中；下方未发布记录为历史。

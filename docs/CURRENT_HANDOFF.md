@@ -1,5 +1,13 @@
 # 当前任务交接
 
+## A-20261002-06 Works 手机版已在正式域名验证
+
+- L-One批准具体候选后发布：功能42ee911，PR #33，merge2811bec48b559360c0b5fd5aac20b0354d5d4697。现有CI路径未覆盖Works CSS/JS，没有检查项，不记CI通过；site-audit、JS语法、diff和本地四视口检查通过。
+- 正式works.css/works.js规范化内容与合并任务匹配。最初等待传播时回读旧版，正式匹配后重新完整检查通过；不是第一次旧版失败即标成功。
+- 正式Chromium 393×852、390×844、1440×900、834×1112：四类4/17/2/6目录、无溢出/pageerror；手机14px/44px点击区/56px分类、重复分类只切换；进入首作品未静音音量1、720p、仅当前视频请求，返回无video。实体Safari手势/帧率、所有作品全片及所有网络未验证。
+- 证据E:/L-One知识库/codex/visualizations/2026/10/02/works-mobile-analysis/production/results.json与四视口分类/详情截图；复现脚本check-candidate.cjs使用WORKS_CHECK_BASE=https://l-one.asia。
+- 正式https://l-one.asia/portfolio.html；About/OneBar/数据/原素材未修改。EdgeOne控制台ID未验证，正式内容与浏览器行为已验证。回滚git revert -m 1 2811bec48b559360c0b5fd5aac20b0354d5d4697，经PR合并发布，不删素材。
+
 ## A-20261002-06 正式发布授权
 
 L-One明确要求部署当前手机候选，覆盖下方未发布暂停。fetch确认main未前进，仅五个已知任务文件；site-audit、JS语法、diff通过。发布前继续核验候选播放保护项，完成正式域名回读前不标记上线成功。
