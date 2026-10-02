@@ -1,5 +1,12 @@
 # 当前任务交接
 
+## 2026-10-02 About 修复正式域名已更新
+
+- 功能提交 b6af07bf67e32644d64dfbad4fb62c3c6bfbc809；PR #27；CI run 36965280792 成功；合并 511b243c53c9f3e45a46bd0e8ab4f8727809824c。
+- 正式 index.html、带版本 About HTML/gallery.css HTTP 200，规范化内容与任务提交一致；浏览器 iframe 使用 ?v=20261002-about-r1，首屏深色。
+- 三端生产 Chromium 检查及截图：E:/codex-site-deploy-20261002/about-parity/live-fixed-{1440,834,390}-{top,now}.png；实体 iOS 和用户另一电脑旧缓存尚待用户核实。EdgeOne 控制台部署 ID 未验证，不等同控制台部署证据。
+- 回滚：git revert -m 1 511b243c53c9f3e45a46bd0e8ab4f8727809824c，经 PR 发布；不删素材/服务器数据。下方待发布记录为历史。
+
 ## 2026-10-02 About 修复发布授权
 
 L-One 明确要求直接上线 A-20261002-03，覆盖下方本地待审核暂停。仅发布六个已核对任务文件；站点审计/diff 通过，远程 main 未前进。正在提交、PR/CI、合并及正式域名回读；完成前不标记生产成功。
