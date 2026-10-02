@@ -2,6 +2,12 @@
 
 ## A-20261002-02：作品声音与缓冲修复
 
+正式发布完成：PR https://github.com/L-One-Tools/L-One-main-site/pull/25，功能提交 8c5ef71f017ea126d4da1bc0ba7e950a191f4c71，合并提交 25940c2e608cbbec6f0a341c1b957028639343db。现有 CI 路径过滤未触发此 JS/文档任务（无检查项，不记为 CI 通过）；本地语法/site-audit/diff 通过。正式 works.js 与合并文件规范化换行后匹配。
+
+正式桌面1440×900、平板834×1112、手机390×844全部通过：每次20秒实际网络观察分别推进20.018、20.006、20.004秒，waiting事件0；muted=false、volume=1、音频已解码，全部使用720p。进入目录零视频请求；只请求当前视频，点击下一作品才请求下一文件。暂停/继续、静音/恢复、切换和返回卸载均通过，无pageerror。证据 E:/codex-site-deploy-20261002/playback-fix-production/results.json 与同目录截图；这是首作品短时抽测，不代表全部网络与全片无缓冲。EdgeOne控制台部署ID仍未验证，正式内容和行为已验证。
+
+回滚 git revert -m 1 25940c2e608cbbec6f0a341c1b957028639343db，经PR合并重新部署。以下为实施过程记录。
+
 用户明确授权修复并直接发布至正式站供其检查。基线 ddb0e1cbf96495f9af4d22fb89d55431ecbc69f8；分支 codex/20261002-works-playback。仅修改 works.js 与本任务交接。
 
 点击作品后初始 muted=false、volume=1；保留用户主动静音/音量选择。所有视口优先既有720p文件；原1080p与作品资料不变。删除两个隐藏视频预加载及全部预热调用；返回列表时暂停并卸载旧视频，避免后台继续下载。
