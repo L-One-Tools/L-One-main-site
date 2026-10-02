@@ -24,3 +24,32 @@
 
 /* Project names remain complete on one line, with size fitted to their column. */
 .overview-index .work-item{font-size:var(--directory-font-size,10px);white-space:nowrap;word-break:normal;overflow-wrap:normal}.overview-index .work-item span{flex:0 0 auto;white-space:nowrap;word-break:normal;overflow-wrap:normal}
+
+/* A-20261002-06: mobile follows reading order, without desktop title stretching. */
+@media(max-width:760px){
+  #app{padding:24px 20px 32px}
+  .work-screen:not(.detail-screen){display:flex;flex-direction:column;gap:24px}
+  .work-screen:not(.detail-screen)>section{width:100%;margin:0}
+  .work-screen:not(.detail-screen) .project-column{order:0}
+  .project-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}
+  .project-row{height:auto;min-height:56px;align-items:center;transition:color 180ms}
+  .project-name{font-size:clamp(28px,8vw,44px);letter-spacing:-.03em;transform:none!important;transition:color 180ms}
+  .project-row.active .project-name{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+  .work-screen:not(.detail-screen) .about-key{margin-top:12px;min-height:44px;display:flex;align-items:center}
+  .project-media-column{order:1}
+  .project-media{height:auto;overflow:visible}
+  .project-visual{position:static;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;transition:none}
+  .project-visual:not(:last-child){display:none}
+  .project-caption{font-size:12px;line-height:1.65;letter-spacing:0;margin:10px 0 0}
+  .overview-index{order:2;width:100%;max-height:none;overflow:visible;transform:none!important;transition:none}
+  .overview-index .work-item{font-size:14px;min-height:44px;padding:10px 0;line-height:1.65;border-top:1px solid var(--line)}
+  .detail-arrows{position:static;display:flex;gap:16px;margin-top:16px}
+  .back,.detail-arrows button{min-width:44px;min-height:44px}
+  .detail-title{font-size:clamp(32px,9vw,48px);letter-spacing:-.03em}
+  .detail-screen .work-index{max-height:none;overflow:visible}
+  .detail-screen .work-item{font-size:14px;min-height:44px}
+  .video-controls{flex:0 0 auto;min-height:96px;display:grid;grid-template-columns:44px minmax(40px,1fr) auto;gap:4px 8px;padding:4px 8px}
+  .video-controls button{min-width:44px;min-height:44px;font-size:12px}
+  .video-controls input{min-height:44px;min-width:40px;margin:0}
+  .video-controls .volume{width:100%}
+}
