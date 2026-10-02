@@ -65,3 +65,5 @@
   .lone-site-header__nav { justify-content: flex-start; flex: 1; gap: 16px; overflow-x: auto; scrollbar-width: none; }
   .lone-site-header__nav::-webkit-scrollbar { display: none; }
 }
+
+.lone-site-header{border-bottom:0!important;box-shadow:none!important;background:var(--chrome-bg,var(--bg,var(--paper,var(--page,#fff))))!important;color:var(--chrome-ink,var(--fg,#171717))!important}.lone-site-header__nav span{color:inherit!important;opacity:.85}.lone-site-header__nav a[aria-current="page"]::after{background:currentColor!important}

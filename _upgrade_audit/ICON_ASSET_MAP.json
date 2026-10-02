@@ -1,0 +1,150 @@
+[
+  {
+    "id": "brand",
+    "name": "L-One",
+    "source": "E:\\L-1设计部\\exec-8649c0d4-78d1-43ee-a682-dcec4672711d.png",
+    "source_sha256": "69b42e2d56b84778a795072dea9307c49ac5a0375551df77468d589f34864f9b",
+    "output": "assets/brand/l1-site-mark-3d-transparent-v1.png",
+    "output_sha256": "5fcc70cf71d74367c7c1a82d2c958ce6b7df380e7c0a759c0472785add1513f0",
+    "width": 1241,
+    "height": 1268,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "2026-10-01 user correction: restore original transparent PNG",
+    "usage_routes": [
+      "home",
+      "about navigation",
+      "works",
+      "store navigation"
+    ]
+  },
+  {
+    "id": "l-1-file-to-text",
+    "name": "L-1 File To Text",
+    "source": "E:\\L-1设计部\\l-1 text logo1-frosted-core-test.png",
+    "source_sha256": "3f9b8f9b1eba415ab2a32a924e133c4adf37052a8e7cac29d5e908000601ccdb",
+    "output": "assets/about-v42/tools-transparent/l1-text-transparent.png",
+    "output_sha256": "f50d58c83ea4f9510121c7f1890f7fe6130526303406c5c66a3500810c5abfba",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  },
+  {
+    "id": "capture",
+    "name": "Capture",
+    "source": "E:\\L-1设计部\\b6b6c03e-a8a4-47a6-9319-c80f3419c261.png",
+    "source_sha256": "1025f3fd7cde3917cc9358636faf085c26868bfae984a146d099fa1772bb8dab",
+    "output": "assets/about-v42/tools-transparent/capture-transparent.png",
+    "output_sha256": "c6e2466810f819d24d226460bbc1d6509881382c039a7adc9b50b3ff16289e52",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  },
+  {
+    "id": "story-flow",
+    "name": "Story Flow",
+    "source": "E:\\L-1设计部\\ChatGPT_Image_2026年9月17日_11_04_25.png",
+    "source_sha256": "7f300e6c9ce93c1f3dd841575ba950e9c168e4d370acda2c74be6cda36d27721",
+    "output": "assets/about-v42/tools-transparent/story-flow-transparent.png",
+    "output_sha256": "6b34f3818a2468a8539308b8d87f3f6364ec76479fca54f0e6ba4770190957cc",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  },
+  {
+    "id": "l-1-web-capture",
+    "name": "L-1 网页拓印",
+    "source": "E:\\L-1设计部\\ChatGPT_Image_2026年9月17日_13_27_21.png",
+    "source_sha256": "060971a51d3b7b1da18ad6a557a2833b2807da8edb1af2026fcdcc29d79e3063",
+    "output": "assets/about-v42/tools-transparent/rubbing-transparent.png",
+    "output_sha256": "0019e5feddbae1c1f6b0131626d1f3ed93f03382c079991fc999d1201dfe1cdb",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  },
+  {
+    "id": "wave",
+    "name": "Wave",
+    "source": "E:\\L-1设计部\\ChatGPT_Image_2026年9月23日_17_50_18.png",
+    "source_sha256": "2e60c5b0f2edb48f0df9b9cf5f8c831382dd2483d0886e8367b37adeb213d9ff",
+    "output": "assets/about-v42/tools-transparent/wave-transparent.png",
+    "output_sha256": "2e60c5b0f2edb48f0df9b9cf5f8c831382dd2483d0886e8367b37adeb213d9ff",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  },
+  {
+    "id": "onebar",
+    "name": "OneBar",
+    "source": "E:\\L-1设计部\\ChatGPT_Image_2026年9月23日_17_51_30.png",
+    "source_sha256": "1bf082c77849abd75c76e47bcc97c9e1b3a72b2b9155a159ffa151ecfcd69cc4",
+    "output": "assets/about-v42/tools-transparent/one-bar-transparent.png",
+    "output_sha256": "5ce6ebe9bc3ecaad0edcecfe47c2b463a55812a4c4a2e11f17380bae7fbda964",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "version": "existing transparent derivative; source visually matched 2026-10-01",
+    "usage_routes": [
+      "about",
+      "store",
+      "tool detail"
+    ]
+  }
+]

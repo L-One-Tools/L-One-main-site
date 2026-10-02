@@ -1,5 +1,25 @@
 # L-One 主站编辑范围地图
 
+## A-20261002-01：当前 V2 候选发布接管
+
+- 授权：L-One 在本对话明确要求将两份交接资料对应的新网站部署上线，并要求回顾任务继续上线；此授权替代下方本地候选阶段的发布暂停。
+- 设备/来源：当前 Codex；codex/20261001-site-v2；开始 HEAD 和 fetch 后 origin/main 均为 e6a59282c8df0cb965980bbf10132aa4bec44302。现有未提交候选来源已由交接确认；其他工作树不纳入。
+- 允许：精确提交交接的现有 V2 页面、样式、脚本与资产；仅补必要的 assets/works/projects.json 正式媒体映射、字体许可附件；更新本范围、SITE_STATUS.md、docs/CURRENT_HANDOFF.md 和直接发布证据。允许推送、PR、CI 后合并并回读现有 EdgeOne 自动部署。
+- 只读：原媒体、其他工作树、产品发行与 Catalog 事实、服务器配置与秘密；不重新改设计。媒体上传仅在实际连接身份、目录和空间验证后进行。
+- 验证：站点/动效/Catalog 审计、diff 检查；三端浏览器；58 个正式视频和 29 封面 HTTP/Range/播放；正式站与合并版本匹配。
+- 回滚：发布后使用 git revert 撤销合并提交，保留上一媒体映射和源文件。
+
+## 本轮范围：A-20261001-01（V2候选）
+
+- 设备：A/Codex；独立分支codex/20261001-site-v2；基线e6a59282c8df0cb965980bbf10132aa4bec44302。
+- 目标：按本轮V2页面执行卡顺序完成HOME、WORK、ABOUT、STORE本地升级和自审，最后诊断ChatGPT访问问题。
+- 允许：index.html中HOME及About入口加载；portfolio.html及其专用CSS/JS/作品快照；About源页对应区块及专用画廊资源；store/index.html、store/store.css、store/store.js；产品详情仅图标引用；新增官方图标映射与ToolIconMarquee共享组件、真实产品主图、视频poster及metadata；相关审计（scripts/site-audit.js仅本轮页面相冲突断言）、_upgrade_audit/、SITE_STATUS.md、CURRENT_HANDOFF.md。
+- 只读：Materials/Library/其他独立路由、归档作品数据、Store版本/下载/业务事实、本轮原始素材与其他工作树、云端生产资料。
+- 禁止：推送/合并/部署、服务器写入、DNS/EdgeOne/权限/真实秘密；编造工具路由、作品标题/贡献、下载能力。
+- 验证：PAGE_SPEC固定视口截图与真实交互；性能前后各3次中位数；WORK视频专项；最后一次全站导航smoke和node scripts/site-audit.js；diff及冻结文件核对。
+- 回滚：候选逐文件撤销；生产发布须另获本轮授权后按revert流程。
+
+
 ## 本轮范围：A-20260929-03（OneBar 生产交接记录）
 
 - 执行设备：Codex 主站工作树；基线 `ac5b3ae3b87e43e65c47e30abb6287f7f8cc610d`。

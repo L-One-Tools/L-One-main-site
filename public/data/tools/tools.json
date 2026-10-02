@@ -1,0 +1,122 @@
+[
+  {
+    "id": "l-1-file-to-text",
+    "slug": "l-1-file-to-text",
+    "name": "L-1 File To Text",
+    "category": "desktop",
+    "icon": "l-1-file-to-text",
+    "hero_visual": "assets/store-promos/file-to-text.webp",
+    "status": "beta",
+    "detail_route": "store/l-1-file-to-text/",
+    "marquee": true,
+    "one_line_summary": "Windows 本地音视频转写公开内测；已验证短样本可整理为 Markdown 文本。",
+    "platform": [
+      {
+        "id": "windows",
+        "name": "Windows",
+        "architectures": [
+          "x64"
+        ],
+        "minimum_version": "Windows"
+      }
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "capture",
+    "slug": "capture",
+    "name": "Capture",
+    "category": null,
+    "icon": "capture",
+    "hero_visual": null,
+    "status": "unconfirmed",
+    "detail_route": null,
+    "marquee": true,
+    "one_line_summary": "",
+    "platform": [],
+    "display_order": 2
+  },
+  {
+    "id": "story-flow",
+    "slug": "story-flow",
+    "name": "Story Flow",
+    "category": null,
+    "icon": "story-flow",
+    "hero_visual": null,
+    "status": "internal",
+    "detail_route": null,
+    "marquee": true,
+    "one_line_summary": "本地视觉故事、分页内容与界面流程编辑工具。",
+    "platform": [
+      {
+        "id": "windows",
+        "name": "Windows",
+        "architectures": [
+          "x64"
+        ],
+        "minimum_version": "Windows 10"
+      }
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "l-1-web-capture",
+    "slug": "l-1-web-capture",
+    "name": "L-1 网页拓印",
+    "category": "browser",
+    "icon": "l-1-web-capture",
+    "hero_visual": "assets/store-promos/web-capture.webp",
+    "status": "beta",
+    "detail_route": "store/l-1-web-capture/",
+    "marquee": true,
+    "one_line_summary": "把当前网页保存为长图 PNG，或录成一段无声滚动视频。",
+    "platform": [
+      {
+        "id": "chrome",
+        "name": "Chrome",
+        "architectures": [
+          "116+"
+        ],
+        "minimum_version": "Chrome 116 或更高版本"
+      }
+    ],
+    "display_order": 4
+  },
+  {
+    "id": "wave",
+    "slug": "wave",
+    "name": "Wave",
+    "category": null,
+    "icon": "wave",
+    "hero_visual": null,
+    "status": "unconfirmed",
+    "detail_route": null,
+    "marquee": true,
+    "one_line_summary": "",
+    "platform": [],
+    "display_order": 5
+  },
+  {
+    "id": "onebar",
+    "slug": "onebar",
+    "name": "OneBar",
+    "category": "desktop",
+    "icon": "onebar",
+    "hero_visual": "assets/store-promos/onebar.webp",
+    "status": "coming-soon",
+    "detail_route": "store/onebar/",
+    "marquee": true,
+    "one_line_summary": "把常用提示词放在屏幕顶边，需要时按分类快速复制。",
+    "platform": [
+      {
+        "id": "windows",
+        "name": "Windows",
+        "architectures": [
+          "x64"
+        ],
+        "minimum_version": "Windows 10/11 x64"
+      }
+    ],
+    "display_order": 6
+  }
+]

@@ -1,0 +1,959 @@
+[
+  {
+    "video_id": "xidachuan-01",
+    "ok": true,
+    "size": 58929719,
+    "duration": "103.700000",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "cffb0ebecaac667a37c79c73dcb4ed4977c7eda3816c066792d8c65ff998a3e7",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\xidachuan-01-720.mp4",
+      "ok": true,
+      "size": 17610863,
+      "width": 960,
+      "height": 720,
+      "duration": "103.700000",
+      "sha256": "4e0d3a3dbf59566f824d2a638099e1026970117b9945fa7008d90e7f5525852c",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "xidachuan-02",
+    "ok": true,
+    "size": 76284827,
+    "duration": "193.933008",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "b2534595f3af1f93d1857404173003a105f88931e4e8da0baa7701029e4bb310",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\xidachuan-02-720.mp4",
+      "ok": true,
+      "size": 23857391,
+      "width": 960,
+      "height": 720,
+      "duration": "193.933008",
+      "sha256": "f5b8a1e79a6924cecaaf341186b4bb1fe550129de4dbc2ff6dbb98e6256937cf",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "xidachuan-03",
+    "ok": true,
+    "size": 18768064,
+    "duration": "85.705011",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "fedf485e8af7fb417ad52dcaec7eb5abeccc69fbc2f16b52a3bc2f8256787c64",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\xidachuan-03-720.mp4",
+      "ok": true,
+      "size": 6801403,
+      "width": 960,
+      "height": 720,
+      "duration": "85.705011",
+      "sha256": "1ba4d7933538fec76aad13c9eb1b7e2b62943f4d5cd967b890560f29ecb78741",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "xidachuan-04",
+    "ok": true,
+    "size": 29853835,
+    "duration": "116.378005",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "4f6ef552d0b92a3debf3cf5ccd22693d2b2caf57acb36a820a26de275091a37e",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\xidachuan-04-720.mp4",
+      "ok": true,
+      "size": 11079654,
+      "width": 960,
+      "height": 720,
+      "duration": "116.378005",
+      "sha256": "ab767f83564f00a24de773314ec9c9a8a68b4b8e07c3a57484eaa154e6375d65",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-01",
+    "ok": true,
+    "size": 15472458,
+    "duration": "108.552993",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "67d3aea5154728b6b5da13be22435626aaf2604181344c70982fcab62c31c9bd",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-01-720.mp4",
+      "ok": true,
+      "size": 5703279,
+      "width": 540,
+      "height": 720,
+      "duration": "108.552993",
+      "sha256": "3719fd994eafa188b320c535f2e5e40f6d8e00e9728a7ba16a2d187f8f10e03b",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-02",
+    "ok": true,
+    "size": 22535383,
+    "duration": "59.600000",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "4b04fd85004b0732c9ded1f2d98189536165c493266f077998460739c90a289a",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-02-720.mp4",
+      "ok": true,
+      "size": 7113918,
+      "width": 960,
+      "height": 720,
+      "duration": "59.600000",
+      "sha256": "5cabd00274df2af1e13dac9681057a1fc46d2fcac8b9259935149b945f59983a",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-03",
+    "ok": true,
+    "size": 9567859,
+    "duration": "77.787007",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "08f87e6e5f4c97534c527ad1005f450c6894ec35945b5fe1014670658f95601b",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-03-720.mp4",
+      "ok": true,
+      "size": 3883990,
+      "width": 540,
+      "height": 720,
+      "duration": "77.787007",
+      "sha256": "7656b0fdcec5bf27433f8e7f7825139ef1cf9b0c4ae8686b22456bf646494d79",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-04",
+    "ok": true,
+    "size": 43771690,
+    "duration": "72.533333",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "b8380131a5b39b3278807ab79e9277c51ac74fa362f0cece62cd3a35fd4cba9a",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-04-720.mp4",
+      "ok": true,
+      "size": 12921448,
+      "width": 1280,
+      "height": 720,
+      "duration": "72.533008",
+      "sha256": "479844d812aec06bc39f992c26d8c74943795e4e0fbe1d26f890585c0e8847b2",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-05",
+    "ok": true,
+    "size": 72602339,
+    "duration": "101.866667",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "9b7830e93704d3120e4189a8cb3f57ba72f9a257becdd104b3726985740ab4ff",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-05-720.mp4",
+      "ok": true,
+      "size": 22075686,
+      "width": 1280,
+      "height": 720,
+      "duration": "101.866667",
+      "sha256": "5034532549a4a9eefdd26c241cf47c85cdfac7fd019869180376f960681f0c50",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-06",
+    "ok": true,
+    "size": 16320180,
+    "duration": "52.245011",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "401d2293acefa1f926add1c17b89233fb7def5eae7e70bfbb038d66ed6f9eda2",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-06-720.mp4",
+      "ok": true,
+      "size": 5669450,
+      "width": 540,
+      "height": 720,
+      "duration": "52.245011",
+      "sha256": "5127240b843f6181255c42b1d8a0e47f44c65d30a97e4e7703b2bd327d73144f",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-07",
+    "ok": true,
+    "size": 30344075,
+    "duration": "119.833333",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "1f5ff663e711697840cdfb62a5e5d714c9b029d9559e569038aad8e346bcef9a",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-07-720.mp4",
+      "ok": true,
+      "size": 10739135,
+      "width": 540,
+      "height": 720,
+      "duration": "119.833333",
+      "sha256": "0f3713897cf368c6780d4c5d3cd000117ec865e64116b79fe5f1fea7e844d739",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-08",
+    "ok": true,
+    "size": 38799294,
+    "duration": "143.243991",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "7c4916fa7eb37e695509c4283b9911247b4224e136335bedcbe6709e91a4cab3",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-08-720.mp4",
+      "ok": true,
+      "size": 13577919,
+      "width": 540,
+      "height": 720,
+      "duration": "143.243991",
+      "sha256": "6f709a13432ef043ea4930b44cfbd9ab3716dee27ea3539840b0f0d7d89d7fe3",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-09",
+    "ok": true,
+    "size": 186059,
+    "duration": "6.733333",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "0b0d8c2929c1a646aebd0d774eb66c5899ec23217ae908c01712a0faeb1d93a7",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-09-720.mp4",
+      "ok": true,
+      "size": 76462,
+      "width": 540,
+      "height": 720,
+      "duration": "6.733991",
+      "sha256": "86e02e109c566ce9a7750b79086734c1f8284ccc038f023c50b70fc69eea53c3",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-10",
+    "ok": true,
+    "size": 58605880,
+    "duration": "193.834000",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "5166146553c996c768ec624ccacd642e01c332ad53f4df20255da02b51df083a",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-10-720.mp4",
+      "ok": true,
+      "size": 20995698,
+      "width": 540,
+      "height": 720,
+      "duration": "193.834000",
+      "sha256": "ad86d37dec576ae909d83a97006a5dfe0b8e7e763361c0bf1e21dc653cefdf49",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-11",
+    "ok": true,
+    "size": 56474375,
+    "duration": "184.133333",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "06dd9b54808f2a8f89dc5f44969c58b0eb9d4b2b7d5e902b619010d6642389a0",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-11-720.mp4",
+      "ok": true,
+      "size": 20114003,
+      "width": 540,
+      "height": 720,
+      "duration": "184.133333",
+      "sha256": "6c8eca1589d39f6255321ca6cc2cb80f9e5d853477f37aa78d829f2ed8b630bc",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-12",
+    "ok": true,
+    "size": 31266475,
+    "duration": "62.033333",
+    "width": 772,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "bb5c4ac2a48400c1ab42d09c6a865b73960333c2e517069e82c6c35b71e02069",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-12-720.mp4",
+      "ok": true,
+      "size": 9293075,
+      "width": 514,
+      "height": 720,
+      "duration": "62.033333",
+      "sha256": "e615f7ab509f52dc39187c848cac872a59f02d8b6a9dfcc555d604f98cd0c145",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-13",
+    "ok": true,
+    "size": 90740008,
+    "duration": "163.512993",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "d8d03b487786b6b1a40a282daaa19d6e90dbc2333c1fc8d48ae19476d4e76641",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-13-720.mp4",
+      "ok": true,
+      "size": 31055796,
+      "width": 1280,
+      "height": 720,
+      "duration": "163.515011",
+      "sha256": "55b12b6c2435179e9d349f6c220e56869e51d2dd96cd6068f13d4ea300f97641",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-14",
+    "ok": true,
+    "size": 66309181,
+    "duration": "90.533333",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "cab19dca4173f9df75e08053fa839dbd8214d976adfa036cd707056baff7129e",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-14-720.mp4",
+      "ok": true,
+      "size": 21864115,
+      "width": 1280,
+      "height": 720,
+      "duration": "90.533991",
+      "sha256": "f9c1a287d741eca85794d52b3cbe45d370d28ff4145e754747bfdef18a4eea3d",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-15",
+    "ok": true,
+    "size": 21155421,
+    "duration": "73.833333",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "4b370736f8f30296e4a9c4e6d5ce63ec5e085ffa1d03ac5724ca233432f49420",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-15-720.mp4",
+      "ok": true,
+      "size": 8025696,
+      "width": 960,
+      "height": 720,
+      "duration": "73.833333",
+      "sha256": "5065c1dd54ede36d426eb0b2486caff167ec1688404f54e31f99f205f0f6089d",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-16",
+    "ok": true,
+    "size": 27817447,
+    "duration": "60.133333",
+    "width": 1440,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "d8b1373e74bd91c9f5708c0ef08acf12e3fd49f939e7664d09b455f18dbf5bd5",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-16-720.mp4",
+      "ok": true,
+      "size": 8504086,
+      "width": 960,
+      "height": 720,
+      "duration": "60.133333",
+      "sha256": "73d33f4e9ab7fec9b0aa622920994dd6ae60420b0904b27bc58ea788b39bfe7f",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "fengyoujing-17",
+    "ok": true,
+    "size": 15626919,
+    "duration": "34.040000",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "95d09c4bc1a3548d9bd923029b798469c7a291e6291c3e197d6f9f41fc8a81b3",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\fengyoujing-17-720.mp4",
+      "ok": true,
+      "size": 4885074,
+      "width": 1280,
+      "height": 720,
+      "duration": "34.040000",
+      "sha256": "774c8140d6c78f78846754cb8ec66324c67f21d8f468e2c4afd34fc439b136a4",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "guanmu-01",
+    "ok": true,
+    "size": 10174144,
+    "duration": "68.011995",
+    "width": 608,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "80544ef595ce0502db3c3c4358a3d91c14a97313d707bb8502ec6b632e6ee19e",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\guanmu-01-720.mp4",
+      "ok": true,
+      "size": 4029961,
+      "width": 406,
+      "height": 720,
+      "duration": "68.033991",
+      "sha256": "42f45fd1dce83a7f75ecc86a0c76da47c01249476e799c94b81162362595a398",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "guanmu-02",
+    "ok": true,
+    "size": 17549285,
+    "duration": "42.005000",
+    "width": 608,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "010a118e63fe0ee2cfd715bac04435a13b6e64ad7c4a76ae7514c57d758f41ae",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\guanmu-02-720.mp4",
+      "ok": true,
+      "size": 5824322,
+      "width": 406,
+      "height": 720,
+      "duration": "42.005000",
+      "sha256": "bce7cd7cb0cca7b7b46e58c4e7e608eb536a78e7e3e8dadb7eee62efbb42d8a8",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-01",
+    "ok": true,
+    "size": 117914101,
+    "duration": "465.088000",
+    "width": 1910,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "36524e93192b667d004816affd620d9da244537c98b2763fcea4e2ce58f1369d",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-01-720.mp4",
+      "ok": true,
+      "size": 38551839,
+      "width": 1274,
+      "height": 720,
+      "duration": "465.088000",
+      "sha256": "8832cc0aa0ac640c64c21a5af7fd8e540ca414db28628f3e99ad6bd407205893",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-02",
+    "ok": true,
+    "size": 1162822,
+    "duration": "6.060000",
+    "width": 810,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "f45de2dae605f0597f3a70c0a94d98b5a06642f9e534f358dd279b212fd2f115",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-02-720.mp4",
+      "ok": true,
+      "size": 438828,
+      "width": 540,
+      "height": 720,
+      "duration": "6.060000",
+      "sha256": "5b3b2cf7ec341d57d6fda83d220a844d895b2a10e4e8e901bbd9c9f07c062d4f",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-03",
+    "ok": true,
+    "size": 5705452,
+    "duration": "29.610000",
+    "width": 1920,
+    "height": 1012,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "6994f41058e3227c2c39444fdf6b23e7625d545fbac1f7d2f76b55fb6b249657",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-03-720.mp4",
+      "ok": true,
+      "size": 2354158,
+      "width": 1280,
+      "height": 674,
+      "duration": "29.610000",
+      "sha256": "52f6a94696a1a226ca8f2aa7aa5c242fbd3776ded8cb8d0393d4cb47fd7392da",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-04",
+    "ok": true,
+    "size": 10919034,
+    "duration": "57.002000",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "834879ea30db7e79101a497504e1168ed5bf42f3bef99758501966f3f1df9097",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-04-720.mp4",
+      "ok": true,
+      "size": 3414956,
+      "width": 1280,
+      "height": 720,
+      "duration": "57.002000",
+      "sha256": "5ea0ed3eba81fba5f70750d5657670878bb3ea24b47adda49dd2144faded5c1d",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-05",
+    "ok": true,
+    "size": 100435287,
+    "duration": "300.000000",
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "66b31533ca66c38c6a3c52a7e854cb18aef39c7e92ab3a11f55c4c480be02d5f",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-05-720.mp4",
+      "ok": true,
+      "size": 35680942,
+      "width": 1280,
+      "height": 720,
+      "duration": "300.000000",
+      "sha256": "bac93ce1142f24007e5e617962439508574114673111fcd95aa36bf12f1d37d7",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  },
+  {
+    "video_id": "commercial-06",
+    "ok": true,
+    "size": 21448307,
+    "duration": "321.216000",
+    "width": 854,
+    "height": 426,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": "aac",
+    "atoms": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "sha256": "1a1a891c96af56c236993b36fac5ebafde3a0536d0469daf6fb92c1da1d30056",
+    "mobile": {
+      "path": "E:\\L-One知识库\\codex\\visualizations\\2026\\10\\01\\site-v2\\work-playback\\commercial-06-720.mp4",
+      "ok": true,
+      "size": 14995298,
+      "width": 854,
+      "height": 426,
+      "duration": "321.216000",
+      "sha256": "04b6551d6c0ebecb0f5ad95d18a0e235dccfa0ed68c8d5f7108bd0d3c70976f3",
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ]
+    }
+  }
+]

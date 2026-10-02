@@ -1,0 +1,49 @@
+{
+  "final_tokens": {
+    "ink": "#333333",
+    "muted": "#666666",
+    "wall": "#f5f5f5 to #ececec",
+    "environment": "#f4f4f4 to #e5e5e5",
+    "frame": "#888888/#c5c5c5",
+    "roof": "original photo; rgba(12,20,28,.35) overlay; white text"
+  },
+  "previous_browser_observations": [
+    {
+      "width": 1440,
+      "height": 900,
+      "colors": {
+        "wall": "rgb(238, 238, 231)",
+        "ink": "rgb(56, 60, 57)",
+        "space": "rgb(238, 238, 231)"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "colors": {
+        "wall": "rgb(238, 238, 231)",
+        "ink": "rgb(56, 60, 57)",
+        "space": "rgb(238, 238, 231)"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1112,
+      "colors": {
+        "wall": "rgb(238, 238, 231)",
+        "ink": "rgb(56, 60, 57)",
+        "space": "rgb(238, 238, 231)"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "colors": {
+        "wall": "rgb(238, 238, 231)",
+        "ink": "rgb(56, 60, 57)",
+        "space": "rgb(238, 238, 231)"
+      }
+    }
+  ],
+  "final_evidence": "about-correction three viewport screenshots/checks.json"
+}

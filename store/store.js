@@ -16,7 +16,6 @@ const elements = {
   errorMessage: document.querySelector("[data-error-message]"),
   empty: document.querySelector("[data-empty]"),
   list: document.querySelector("[data-tool-list]"),
-  meta: document.querySelector("[data-catalog-meta]"),
   retry: document.querySelector("[data-retry]")
 };
 
@@ -53,15 +52,6 @@ function isAllowedDownloadUrl(value) {
   }
 }
 
-function formatDate(value) {
-  if (!value || Number.isNaN(Date.parse(value))) return "待发布";
-  return new Intl.DateTimeFormat("zh-CN", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  }).format(new Date(value));
-}
-
 function formatSize(value) {
   if (!Number.isFinite(value) || value <= 0) return "待补充";
   const units = ["B", "KB", "MB", "GB"];
@@ -82,37 +72,24 @@ function appendText(parent, tag, className, text) {
   return element;
 }
 
+let presentationMap=new Map(),iconMap={},publicTools=[],category='all';
 function createToolCard(tool) {
-  const card = document.createElement("a");
-  card.className = "catalog-card";
-  card.dataset.toolId = tool.id;
-  card.href = tool.links.docs;
-
-  const cover = document.createElement("div");
-  cover.className = "catalog-cover";
-  const productLogo = tool.id === "l-1-file-to-text" ? "assets/products/l-1-file-to-text/product-logo.png" : tool.icon;
-  if (productLogo) {
-    const image = document.createElement("img");
-    image.src = productLogo;
-    image.alt = "";
-    cover.appendChild(image);
-  }
-
-  const copy = document.createElement("div");
-  appendText(copy, "h2", "", tool.name);
-  appendText(copy, "p", "", tool.summary);
-  const platforms = tool.platforms.map((platform) => {
-    const architectures = Array.isArray(platform.architectures) ? platform.architectures.join("/") : "";
-    return `${platform.name}${architectures ? ` ${architectures}` : ""}`;
-  }).join("、") || "待补充";
-  const meta = document.createElement("div");
-  meta.className = "catalog-meta-row";
-  appendText(meta, "span", "", platforms);
-  appendText(meta, "span", "", STATUS_LABELS[tool.status] || "状态待确认");
-  copy.appendChild(meta);
-  card.append(cover, copy);
-  return card;
+  const view=presentationMap.get(tool.id),card=document.createElement('a');
+  card.className='catalog-card';card.dataset.toolId=tool.id;card.href=new URL(view.detail_route,window.LOneTools.root);
+  const header=document.createElement('div');header.className='catalog-card__header';
+  const icon=document.createElement('img');icon.className='catalog-card__icon';icon.src=new URL(iconMap[view.icon].src,window.LOneTools.root);icon.alt='';icon.width=64;icon.height=64;icon.draggable=false;
+  const title=document.createElement('div');appendText(title,'h2','',tool.name);appendText(title,'p','catalog-card__status',STATUS_LABELS[tool.status]||'状态待确认');header.append(icon,title);
+  const summary=document.createElement('p');summary.className='catalog-card__summary';summary.textContent=tool.summary;
+  const hero=document.createElement('figure');hero.className='catalog-card__hero';const image=document.createElement('img');const originalVisuals={'onebar':'store/onebar/hero-lit-screen.png','l-1-file-to-text':'store/l-1-file-to-text/assets/txt-1.png','l-1-web-capture':'store/l-1-web-capture/assets/real-popup-preview.png'};image.src=new URL(originalVisuals[tool.id]||view.hero_visual,window.LOneTools.root);image.alt=tool.id==='onebar'?'OneBar使用场景示意':tool.name+'实际界面';image.width=1600;image.height=1000;image.draggable=false;hero.append(image);
+  const foot=document.createElement('p');foot.className='catalog-card__foot';appendText(foot,'span','',tool.id==='onebar'?'场景示意':tool.platforms.map(p=>p.name).join(' / '));appendText(foot,'span','','查看详情 ↗');card.append(header,summary,hero,foot);return card;
 }
+function updateArrows(){const list=elements.list;document.querySelector('[data-carousel-prev]').disabled=list.scrollLeft<5;document.querySelector('[data-carousel-next]').disabled=list.scrollLeft+list.clientWidth>=list.scrollWidth-5;}
+function renderCategory(){elements.list.replaceChildren();const visible=publicTools.filter(t=>category==='all'||presentationMap.get(t.id)?.category===category);visible.forEach(t=>elements.list.append(createToolCard(t)));elements.empty.hidden=visible.length>0;elements.empty.querySelector('p').textContent=category==='ai-skill'?'暂无公开 AI Skills':'暂无公开工具';elements.list.setAttribute('aria-labelledby','category-'+category);document.querySelectorAll('[data-category]').forEach(b=>{const active=b.dataset.category===category;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});elements.list.scrollLeft=0;requestAnimationFrame(updateArrows);}
+document.querySelectorAll('[data-category]').forEach(b=>{b.addEventListener('click',()=>{category=b.dataset.category;renderCategory();});b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const tabs=[...document.querySelectorAll('[data-category]')],i=tabs.indexOf(b),next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];next.focus();next.click();});});
+document.querySelector('[data-carousel-prev]').onclick=()=>elements.list.scrollBy({left:-(elements.list.firstElementChild?.clientWidth+24||400),behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+document.querySelector('[data-carousel-next]').onclick=()=>elements.list.scrollBy({left:elements.list.firstElementChild?.clientWidth+24||400,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+elements.list.addEventListener('scroll',updateArrows,{passive:true});addEventListener('resize',updateArrows);
+let drag=null,moved=false;elements.list.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;drag={x:e.clientX,left:elements.list.scrollLeft,id:e.pointerId};moved=false;});elements.list.addEventListener('pointermove',e=>{if(!drag)return;const diff=e.clientX-drag.x;if(Math.abs(diff)>8){moved=true;elements.list.style.scrollSnapType='none';elements.list.setPointerCapture(drag.id);elements.list.scrollLeft=drag.left-diff;}});elements.list.addEventListener('pointerup',()=>{drag=null;elements.list.style.scrollSnapType='';setTimeout(()=>moved=false,150);});elements.list.addEventListener('pointercancel',()=>{drag=null;moved=false;elements.list.style.scrollSnapType='';});elements.list.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();}});elements.list.addEventListener('dragstart',e=>e.preventDefault());
 
 function createMotionLibraryCard() {
   const card = document.createElement("a");
@@ -155,6 +132,7 @@ async function loadCatalog() {
   elements.list.replaceChildren();
   elements.list.setAttribute("aria-busy", "true");
   let catalog;
+  try {const [icons,presentation]=await window.LOneTools.ready;iconMap=icons;presentationMap=new Map(presentation.map(t=>[t.id,t]));} catch {elements.loading.hidden=true;showError("工具展示资料暂时无法读取，请重试。");elements.list.setAttribute("aria-busy","false");return;}
   let usingFallback = false;
   try {
     catalog = await fetchCatalog(PRIMARY_CATALOG_URL, "no-cache");
@@ -165,9 +143,8 @@ async function loadCatalog() {
       showError("最新资料读取失败，当前显示上一份有效快照。");
     } catch {
       elements.loading.hidden = true;
-      elements.meta.textContent = "Catalog 不可用";
       showError(`无法读取工具资料：${primaryError.message}`);
-      elements.list.appendChild(createMotionLibraryCard());
+      document.querySelector("[data-resource-list]").replaceChildren(createMotionLibraryCard());
       elements.list.setAttribute("aria-busy", "false");
       if (location.hash === "#motion-library") document.getElementById("motion-library")?.scrollIntoView();
       return;
@@ -177,12 +154,11 @@ async function loadCatalog() {
   const tools = catalog.tools.filter((tool) => validTool(tool) && tool.links?.docs && ["stable", "beta", "coming-soon"].includes(tool.status));
   elements.loading.hidden = true;
   elements.empty.hidden = tools.length > 0;
-  tools.forEach((tool) => elements.list.appendChild(createToolCard(tool)));
-  elements.list.appendChild(createMotionLibraryCard());
+  publicTools=tools.filter(t=>presentationMap.get(t.id)?.detail_route&&presentationMap.get(t.id)?.hero_visual);
+  renderCategory();
+  document.querySelector("[data-resource-list]").replaceChildren(createMotionLibraryCard());
   elements.list.setAttribute("aria-busy", "false");
   if (location.hash === "#motion-library") document.getElementById("motion-library")?.scrollIntoView();
-  const date = formatDate(catalog.generated_at);
-  elements.meta.textContent = `${usingFallback ? "稳定快照" : "Catalog"} · 更新于 ${date}`;
 }
 
 elements.retry?.addEventListener("click", loadCatalog);

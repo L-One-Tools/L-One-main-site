@@ -1,5 +1,17 @@
 # L-One Main Site Status
 
+## 2026-10-02 V2 发布接管
+
+用户已授权发布当前最终候选（A-20261002-01）；历史“没有发布授权”说明不再适用于本轮。站点、Motion、Catalog、Catalog 回退和差异检查通过，远程 main 未前进。经用户授权临时连接，58 个播放视频和 29 封面已上传正式服务器新目录，87 项服务器 SHA-256 全部一致，正式媒体映射已接入；浏览器/HTTP 媒体验证正在执行。详情见 docs/CURRENT_HANDOFF.md 当前接管记录。生产 V2 与 EdgeOne 部署 commit 尚未验证。
+
+## 2026-10-01 V2本地候选（当前；未发布）
+
+- A-20261001-01；隔离树E:/L-One知识库/codex/worktrees/site-review-20260930/L-One-main-site；codex/20261001-site-v2；再次fetch的origin/main为e6a59282c8df0cb965980bbf10132aa4bec44302。原E:/L-One-main-site脏树保留。
+- HOME/WORK/ABOUT/STORE本地候选与共享官方图标已实施，四视口100%截图自行查看并修正；静态审计、diff检查通过。详情、性能与未验证项见_upgrade_audit/05_final/FINAL_REPORT.md。
+- 候选http://127.0.0.1:4180/；WORK29视频的1080/720副本外置本地挂载，cloud字段为空，正式视频上传未执行。不能直接发布此快照并宣称所有视频可用。
+- ChatGPT网页读取正式域名仍失败；本机robots/TLS/15个HTTP检查正常。原因未确定，等待EdgeOne同时段日志；控制台记录未验证，故障未修复。
+- 未提交/推送/PR/合并/部署。本轮没有正式发布授权；真实设备连续动态视觉与正式V2内容均未验证。下方旧候选/发布记录为历史，不继承本轮授权。
+
 更新时间：2026-09-29
 
 ## 2026-09-29 OneBar 介绍页已公开
@@ -350,3 +362,5 @@
 - HTTP 已使用 301 重定向至 HTTPS；HSTS 暂时保持关闭。
 - 公网登录、会话 Cookie、CSRF、容量接口和后台状态接口已验证通过。
 - 管理后台登录凭据保存在：`D:\L-One Center\server-access\l-one-admin-credentials.txt`。
+
+2026-10-01 用户最新决定：ChatGPT访问故障延期至下次独立任务，本轮不再索取EdgeOne安全日志或继续排查。用户允许后续查看已登录Chrome中的腾讯云页面；当前未接管浏览器会话，未取得或验证控制台日志，未获生产配置修改/发布授权。截图显示正式域名对应l-one-main-site-org（L-One-Tools/L-One-main-site），另有旧l-one-main-site项目；后续须在控制台再次核对。

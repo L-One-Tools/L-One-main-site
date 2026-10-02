@@ -13,7 +13,9 @@
   <link rel="canonical" href="https://l-one.asia/store/">
   <title>L-One Store｜工具</title>
   <link rel="stylesheet" href="../materials/materials.css?v=20260612-2">
-  <link rel="stylesheet" href="store.css?v=20260730-1">
+  <link rel="stylesheet" href="../assets/site-chrome.css">
+  <link rel="stylesheet" href="../assets/tool-icons.css">
+  <link rel="stylesheet" href="store.css?v=20261001-v2">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,70 +34,27 @@
 </head>
 <body>
   <a class="skip-link" href="#store-content">跳到主要内容</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo" href="../index.html#home" aria-label="返回 L-One 首页">
-        <img src="../assets/brand/l1-site-mark-3d-transparent-v1.png" alt="" width="32" height="32">
-      </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a class="active" href="./" aria-current="page"><strong>Store</strong><span>工具</span></a>
-        <a href="../portfolio.html"><strong>Works</strong><span>作品</span></a>
-        <a href="../materials/"><strong>Materials</strong><span>素材库</span></a>
-        <a href="../library/"><strong>Library</strong><span>卡片库</span></a>
-        <a href="../index.html#about"><strong>About</strong><span>L-One</span></a>
-      </nav>
-    </div>
-  </header>
+  <header class="lone-site-header"><div class="lone-site-header__inner"><a class="lone-site-header__logo" href="../index.html#home" aria-label="返回 L-One 首页"><img src="../assets/brand/l1-site-mark-3d-transparent-v1.png" alt=""></a><nav class="lone-site-header__nav" aria-label="主导航"><a href="./" aria-current="page"><strong>Store</strong><span>工具</span></a><a href="../portfolio.html"><strong>Works</strong><span>作品</span></a><a href="../materials/"><strong>Materials</strong><span>素材库</span></a><a href="../library/"><strong>Library</strong><span>卡片库</span></a><a href="../index.html#about"><strong>About</strong><span>L-One</span></a></nav></div></header>
 
   <main class="store-page" id="store-content">
-    <section class="store-list-section" aria-labelledby="tool-list-title">
-      <div class="store-section-heading">
-        <div>
-          <p class="eyebrow">Catalog / 02 tools + 01 resource</p>
-          <h1 id="tool-list-title">工具目录</h1>
-        </div>
-        <p class="catalog-meta" data-catalog-meta aria-live="polite">公开工具 · 静态展示</p>
-      </div>
-
-      <div class="store-state store-loading" data-loading role="status">
-        <span class="loading-mark" aria-hidden="true"></span>
-        <div>
-          <strong>正在加载工具资料</strong>
-          <p>正在读取经过校验的 Store Catalog。</p>
-        </div>
-      </div>
-
-      <div class="store-state store-error" data-error role="alert" hidden>
-        <div>
-          <strong>工具资料暂时无法更新</strong>
-          <p data-error-message>正在尝试使用上一份有效快照。</p>
-        </div>
-        <button type="button" data-retry>重新加载</button>
-      </div>
-
-      <div class="store-state store-empty" data-empty hidden>
-        <strong>暂无可展示工具</strong>
-        <p>Catalog 当前没有通过校验的工具资料，请稍后再试。</p>
-      </div>
-
-      <div class="tool-list" data-tool-list aria-live="polite" aria-busy="true"></div>
+    <section class="store-list-section" aria-label="工具目录">
+      <div class="store-browse-controls"><div class="store-categories" role="tablist" aria-label="工具分类"><button type="button" role="tab" id="category-all" data-category="all" aria-selected="true" aria-controls="tool-carousel">全部</button><button type="button" role="tab" id="category-browser" data-category="browser" aria-selected="false" aria-controls="tool-carousel">浏览器插件</button><button type="button" role="tab" id="category-desktop" data-category="desktop" aria-selected="false" aria-controls="tool-carousel">桌面工具</button><button type="button" role="tab" id="category-ai-skill" data-category="ai-skill" aria-selected="false" aria-controls="tool-carousel">AI Skills</button></div><div class="carousel-arrows"><button type="button" data-carousel-prev aria-label="上一个工具" disabled>←</button><button type="button" data-carousel-next aria-label="下一个工具" disabled>→</button></div></div>
+      <div class="store-state store-loading" data-loading role="status"><span class="loading-mark" aria-hidden="true"></span><p>正在加载工具资料</p></div>
+      <div class="store-state store-error" data-error role="alert" hidden><p data-error-message></p><button type="button" data-retry>重新加载</button></div>
+      <div class="store-state store-empty" data-empty hidden><p>暂无公开工具</p></div>
+      <div class="tool-list" id="tool-carousel" data-tool-list role="tabpanel" aria-labelledby="category-all" aria-busy="true"></div>
     </section>
-
-    <section class="featured-empty" aria-labelledby="featured-title">
-      <div>
-        <p class="eyebrow">Featured / placeholder</p>
-        <h2 id="featured-title">编辑推荐</h2>
-      </div>
-      <p>推荐文章准备中</p>
-    </section>
+    <section class="store-brand" aria-label="L-One品牌表达"><h2>将经验沉淀成资产</h2><p>拥有的任何经验都将回报价值</p><tool-icon-marquee></tool-icon-marquee></section>
+    <section class="store-resources" aria-label="可复用资源" data-resource-list></section>
   </main>
 
   <footer class="store-footer">
-    <p>L-One Store · 真实发布状态与可回退数据快照</p>
+    <p>L-One Store</p>
     <a href="../index.html#home">返回 L-One</a>
   </footer>
 
-  <script src="store.js?v=20260730-1" defer></script>
+  <script src="../assets/tool-icons.js" defer></script>
+  <script src="store.js?v=20261001-v2" defer></script>
   <script src="../assets/site-prefetch.js" defer></script>
 </body>
 </html>
