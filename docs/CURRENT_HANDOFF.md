@@ -1,5 +1,15 @@
 # 当前任务交接
 
+## 2026-10-02 V2 正式发布完成
+
+- A-20261002-01；用户明确授权最终交接候选部署及临时 SSH 连接。功能提交 5e63f27175fd39ad76fe9583990b065f75cd087b；PR https://github.com/L-One-Tools/L-One-main-site/pull/23 已合并，合并提交 33382bb9252f69c15318fb16b3bf6417a66ddf82；CI Store Catalog Sync run 36954313348 成功。
+- 正式 https://l-one.asia/、/portfolio.html、/store/、/materials/、/library/ 和 /#about 已更新。21 个核心页面/资源匿名 HTTP 200，字节或仅 LF/CRLF 规范化后与合并仓库一致；透明 Logo、Works JSON、画廊场景和工具映射全部匹配。
+- 1440×900、834×1112、390×844 各六页共 18 项正式浏览器检查，无横向溢出、无 pageerror；Works 实际进入视频并解码播放。正式站检查共 39 项全部通过。证据 E:/codex-site-deploy-20261002/site-checks/results.json 和同目录截图；已查看三端代表截图。Library 连续 3D 动态与完整 timeline 逐帧人工验收仍未做，不宣称实体设备全验收。
+- 29 作品的 58 个播放视频和 29 封面位于 /www/l-one-static/works/site-v2-20261002/，对应 static.l-one.asia HTTPS。服务器 87 项 SHA-256 全部匹配；58 个 Range 206 与长度通过；87 个匿名响应加 58 个实际桌面/手机视频播放，共 145 项全部通过。证据 E:/codex-site-deploy-20261002/media-checks.json。
+- 未改 DNS、EdgeOne/服务器配置、产品版本与下载事实；其他工作树保留。EdgeOne 控制台部署 ID/commit 未验证；正式域名内容已核对与本轮合并版本一致。GitHub 未返回单独 deployment/check-run 记录，不能将其当成控制台验证。
+- 临时服务器公钥已撤销，重新连接返回 Permission denied；本机两份临时私钥已删除。服务器仅移除本轮两个上传 tar 归档（约 1.46GB），播放文件和原素材保留；本机 tar 与编码原副本保留，可重新生成上传包。服务器剩余空间约 29GB。
+- 回滚：git revert -m 1 33382bb9252f69c15318fb16b3bf6417a66ddf82，经测试/PR 合入 main 自动部署，恢复发布前网站；保留媒体目录，不删除原素材。以下接管/候选记录均为历史过程。
+
 ## 2026-10-02 V2 发布接管：已授权，媒体已上传
 
 - 当前用户明确授权部署交接的最终 V2 网站；旧“没有发布授权”记录仅属历史。任务 A-20261002-01，继续 codex/20261001-site-v2 的已确认候选，不纳入 b9d0 的 OneBar 下载改动。
