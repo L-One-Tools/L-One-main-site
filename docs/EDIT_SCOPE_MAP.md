@@ -1,5 +1,11 @@
 # L-One 主站编辑范围地图
 
+## A-20261002-04：OneBar 标题与操作卡片排版
+
+- 用户明确授权直接修复并部署；基线723effb；分支codex/20261002-onebar-type-fix。
+- 允许：store/onebar/index.html 标题字号/字距、map-card文字对齐；本范围、CURRENT_HANDOFF、SITE_STATUS。其他文件/正文/素材/下载事实/服务器只读。
+- 验证：三端标题边界、操作卡片标题/正文坐标、站点审计/diff、PR/CI及生产回读。回滚本任务合并提交revert。
+
 ## A-20261002-03：About 加载与手机工具排列修复
 
 - 基线：1c06a5907d53a1f7d5f3b4c1979b70194095eab6；分支 codex/20261002-about-loading-mobile；设备 Codex。
