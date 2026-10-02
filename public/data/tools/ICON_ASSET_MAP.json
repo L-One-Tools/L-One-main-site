@@ -1,0 +1,44 @@
+{
+  "brand": {
+    "src": "assets/brand/l1-site-mark-3d-transparent-v1.png",
+    "name": "L-One",
+    "version": "2026-10-01 restored original transparent PNG",
+    "sha256": "5fcc70cf71d74367c7c1a82d2c958ce6b7df380e7c0a759c0472785add1513f0"
+  },
+  "l-1-file-to-text": {
+    "src": "assets/about-v42/tools-transparent/l1-text-transparent.png",
+    "name": "L-1 File To Text",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "f50d58c83ea4f9510121c7f1890f7fe6130526303406c5c66a3500810c5abfba"
+  },
+  "capture": {
+    "src": "assets/about-v42/tools-transparent/capture-transparent.png",
+    "name": "Capture",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "c6e2466810f819d24d226460bbc1d6509881382c039a7adc9b50b3ff16289e52"
+  },
+  "story-flow": {
+    "src": "assets/about-v42/tools-transparent/story-flow-transparent.png",
+    "name": "Story Flow",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "6b34f3818a2468a8539308b8d87f3f6364ec76479fca54f0e6ba4770190957cc"
+  },
+  "l-1-web-capture": {
+    "src": "assets/about-v42/tools-transparent/rubbing-transparent.png",
+    "name": "L-1 网页拓印",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "0019e5feddbae1c1f6b0131626d1f3ed93f03382c079991fc999d1201dfe1cdb"
+  },
+  "wave": {
+    "src": "assets/about-v42/tools-transparent/wave-transparent.png",
+    "name": "Wave",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "2e60c5b0f2edb48f0df9b9cf5f8c831382dd2483d0886e8367b37adeb213d9ff"
+  },
+  "onebar": {
+    "src": "assets/about-v42/tools-transparent/one-bar-transparent.png",
+    "name": "OneBar",
+    "version": "2026-10-01 verified existing transparent original derivative",
+    "sha256": "5ce6ebe9bc3ecaad0edcecfe47c2b463a55812a4c4a2e11f17380bae7fbda964"
+  }
+}

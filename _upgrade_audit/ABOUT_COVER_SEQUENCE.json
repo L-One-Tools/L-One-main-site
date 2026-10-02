@@ -1,0 +1,75 @@
+{
+  "unique_count": 16,
+  "repeat_distance_cards": 16,
+  "removed_display_only": [
+    "014_ec3873f64fe7.webp",
+    "015_57a3fdbc7fc1.webp"
+  ],
+  "source_files_preserved": true,
+  "sequence": [
+    {
+      "src": "007_4256972ef4de.webp",
+      "alt": "城市作品封面"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-03.webp",
+      "alt": "白塔寺 · 2025"
+    },
+    {
+      "src": "008_9ad6584a1ec7.webp",
+      "alt": "摄影作品封面"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-07.webp",
+      "alt": "环球城市 · 项目体验"
+    },
+    {
+      "src": "009_ccc2a9db9d1c.webp",
+      "alt": "北京环球影城"
+    },
+    {
+      "src": "../../assets/works/posters/xidachuan-01.webp",
+      "alt": "烂漫胡同 Walk"
+    },
+    {
+      "src": "010_d4c0fa24bb23.webp",
+      "alt": "运动相机配件推荐"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-04.webp",
+      "alt": "白塔寺 · 2026"
+    },
+    {
+      "src": "011_b65bfdf01127.webp",
+      "alt": "夜游 CBD"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-08.webp",
+      "alt": "环球城市 · 拍照攻略"
+    },
+    {
+      "src": "012_3506613adfa1.webp",
+      "alt": "首钢园"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-01.webp",
+      "alt": "杨梅竹与三里河"
+    },
+    {
+      "src": "013_a668eb446887.webp",
+      "alt": "旅行作品封面"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-12.webp",
+      "alt": "环球夏日 Tips"
+    },
+    {
+      "src": "016_c12560e149a1.webp",
+      "alt": "城市作品封面"
+    },
+    {
+      "src": "../../assets/works/posters/fengyoujing-16.webp",
+      "alt": "小技巧拍大片 · 模拟航拍"
+    }
+  ]
+}

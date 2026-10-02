@@ -1,0 +1,14 @@
+{
+  "final_tokens": {
+    "paper": "#ffffff",
+    "navigation": "#ffffff",
+    "ink": "#383c39",
+    "muted": "#646b60",
+    "onebar_card": "#e6d4c3",
+    "file_to_text_card": "#5f666d",
+    "file_to_text_ink": "#f7f6f1",
+    "web_capture_card": "#fff8f5"
+  },
+  "previous_browser_observations": null,
+  "final_evidence": "store-correction screenshots/checks.json after user correction"
+}

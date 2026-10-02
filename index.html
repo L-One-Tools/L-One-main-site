@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>L-One | 个人知识库</title>
+  <link rel="preload" as="image" href="assets/home/diffuse-desktop.webp" media="(min-width:761px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/home/diffuse-mobile.webp" media="(max-width:760px)" fetchpriority="high">
+  <link rel="icon" href="assets/brand/l1-site-mark-3d-transparent-v1.png">
   <style>
     :root {
       --bg: #fff;
@@ -156,7 +159,7 @@
       inset: 0;
     }
     .home-m3-base {
-      background-image: url("assets/diffuse-home-bg.png");
+      background-image: url("assets/home/diffuse-desktop.webp");
       background-size: cover;
       background-position: center;
       filter: brightness(.7) saturate(.88) contrast(1.05);
@@ -190,15 +193,26 @@
     .home-m3-brand {
       position: fixed;
       left: 50%;
+      transform: translateX(-50%);
       top: clamp(22px, 4vw, 48px);
       z-index: 8;
-      transform: translateX(-50%);
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: transparent;
+      border-radius: 0;
       color: rgba(255,255,255,.88);
       font-size: clamp(18px, 2vw, 24px);
       font-weight: 500;
       letter-spacing: -.03em;
       text-shadow: 0 1px 18px rgba(0,0,0,.34);
     }
+    .home-m3-brand img { width: 36px; height: 36px; object-fit: contain; }
+    .home-m3-brand:focus-visible { outline: 2px solid #eee; outline-offset: 5px; }
+    @media(max-width:760px) { .home-m3-base { background-image: url("assets/home/diffuse-mobile.webp"); } .home-m3-brand img { width:30px; height:30px; } }
+    @media(pointer:coarse) { body.home-shell {cursor:auto} .home-m3-cursor {display:none} }
+    @media(prefers-reduced-motion:reduce) { body.home-shell {cursor:auto} .home-m3-cursor {display:none} }
     .home-m3-center {
       position: fixed;
       left: 50%;
@@ -243,74 +257,6 @@
       opacity: .72;
       letter-spacing: .03em;
     }
-    .home-m3-search {
-      position: relative;
-      width: min(460px, 100%);
-      margin: 0 auto;
-    }
-    .home-m3-search input {
-      width: 100%;
-      height: 46px;
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 999px;
-      outline: none;
-      padding: 0 22px;
-      color: rgba(255,255,255,.92);
-      background: rgba(255,255,255,.08);
-      box-shadow: 0 18px 58px rgba(0,0,0,.16);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      text-align: center;
-      cursor: text;
-    }
-    .home-m3-search input::placeholder { color: rgba(255,255,255,.54); }
-    .home-m3-search input:focus {
-      border-color: rgba(255,255,255,.46);
-      background: rgba(255,255,255,.12);
-    }
-    .home-search-results {
-      position: absolute;
-      left: 50%;
-      top: calc(100% + 12px);
-      display: none;
-      width: min(420px, calc(100vw - 56px));
-      max-height: 280px;
-      overflow: auto;
-      padding: 10px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 18px;
-      background: rgba(14,19,20,.72);
-      box-shadow: 0 24px 80px rgba(0,0,0,.22);
-      transform: translateX(-50%);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-    }
-    .home-search-results.active { display: grid; gap: 6px; }
-    .home-search-result {
-      display: grid;
-      gap: 5px;
-      padding: 11px 12px;
-      border-radius: 12px;
-      color: rgba(255,255,255,.88);
-      text-align: left;
-    }
-    .home-search-result:hover { background: rgba(255,255,255,.08); }
-    .home-search-result strong {
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.35;
-    }
-    .home-search-result span {
-      color: rgba(255,255,255,.52);
-      font-size: 11px;
-      line-height: 1.4;
-    }
-    .home-search-empty {
-      padding: 12px;
-      color: rgba(255,255,255,.52);
-      font-size: 12px;
-      text-align: center;
-    }
     .home-m3-cursor {
       position: fixed;
       left: 0;
@@ -329,7 +275,6 @@
     @media (max-width: 900px) {
       .home-m3-brand { top: 24px; }
       .home-m3-center { width: min(300px, calc(100vw - 72px)); gap: 22px; }
-      .home-m3-search { width: min(300px, 100%); }
       .home-m3-nav .en { font-size: 12px; }
       .home-m3-nav .zh { font-size: 10px; }
       .home-m3-search input { height: 44px; }
@@ -1913,22 +1858,20 @@
     body.about-v42-shell #page-about.about-v42 { height: calc(100dvh - 72px); margin-top: 72px; background: #f5f5f0; overflow: hidden; }
     .about-v42__source-frame { display: block; width: 100%; height: 100%; border: 0; background: #f5f5f0; }
   </style>
+<link rel="stylesheet" href="assets/site-chrome.css">
+<style>body.about-v42-shell .site-header{padding:0}body.about-v42-shell main{height:calc(100dvh - 72px);min-height:0;margin-top:72px}body.about-v42-shell #page-about.about-v42{height:100%;margin-top:0}</style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="logo" href="#home" data-route="home" aria-label="返回 L-One 首页"><img src="assets/brand/l1-site-mark-3d-transparent-v1.png" alt="" width="32" height="32"></a>
-      <nav class="nav" aria-label="主导航">
-        <a class="nav-link" href="store/"><strong>Store</strong><span>工具</span></a>
-        <a class="nav-link" href="portfolio.html"><strong>Works</strong><span>作品</span></a>
-        <a class="nav-link" href="materials/"><strong>Materials</strong><span>素材库</span></a>
-        <a class="nav-link" href="library/"><strong>Library</strong><span>卡片库</span></a>
-        <a class="nav-link" href="#about" data-route="about"><strong>About</strong><span>L-One</span></a>
+  <header class="site-header lone-site-header" id="top">
+    <div class="lone-site-header__inner">
+      <a class="lone-site-header__logo" href="#home" data-route="home" aria-label="返回 L-One 首页"><img src="assets/brand/l1-site-mark-3d-transparent-v1.png" alt=""></a>
+      <nav class="lone-site-header__nav" aria-label="主导航">
+        <a href="store/"><strong>Store</strong><span>工具</span></a>
+        <a href="portfolio.html"><strong>Works</strong><span>作品</span></a>
+        <a href="materials/"><strong>Materials</strong><span>素材库</span></a>
+        <a href="library/"><strong>Library</strong><span>卡片库</span></a>
+        <a class="nav-link" href="#about" data-route="about" aria-current="page"><strong>About</strong><span>L-One</span></a>
       </nav>
-      <label class="search" aria-label="搜索知识库">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <input type="search" placeholder="搜索知识库">
-      </label>
     </div>
   </header>
 
@@ -1940,7 +1883,7 @@
         <div class="home-m3-shade" aria-hidden="true"></div>
         <div class="home-m3-grain" aria-hidden="true"></div>
         <div class="home-m3-cursor" id="home-m3-cursor" aria-hidden="true"></div>
-        <a class="home-m3-brand" href="#home" data-route="home">L-One</a>
+        <a class="home-m3-brand" href="#home" data-route="home" aria-label="返回 L-One 首页"><img src="assets/brand/l1-site-mark-3d-transparent-v1.png" alt="" width="36" height="36"></a>
         <div class="home-m3-center">
           <nav class="home-m3-nav" aria-label="主导航">
             <a href="store/"><span class="en">store</span><span class="zh">工具</span></a>
@@ -1949,10 +1892,6 @@
             <a href="library/"><span class="en">library</span><span class="zh">卡片库</span></a>
             <a href="#about" data-route="about"><span class="en">about</span><span class="zh">关于</span></a>
           </nav>
-          <form class="home-m3-search" id="home-search-form" role="search" autocomplete="off">
-            <input id="home-search-input" type="search" placeholder="搜索 L-One" aria-label="搜索 L-One">
-            <div class="home-search-results" id="home-search-results" aria-live="polite"></div>
-          </form>
         </div>
       </div>
       <div class="container">
@@ -2060,7 +1999,7 @@
     </section>
 
     <section class="page about-page about-v42" id="page-about">
-      <iframe class="about-v42__source-frame" src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html" title="L-One 王钧 About v4.2" loading="eager"></iframe>
+      <iframe class="about-v42__source-frame" data-src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html" title="L-One 王钧 About v4.2" loading="eager"></iframe>
       <template>
       <header class="about-v42__intro">
         <div><div class="about-v42__kicker">L-One / Personal page</div><h1>王钧<br>JUN WANG</h1></div>
@@ -2097,14 +2036,7 @@
     let homeRevealDone = false;
     const homeRevealEnabled = false;
     let revealTimer = 0;
-    const searchItems = [
-      { url: "store/", title: "Store", meta: "工具 · 版本与发布状态", keywords: "工具 store story flow 版本 下载 内测" },
-      { url: "portfolio.html", title: "Works", meta: "作品集", keywords: "作品 图文 视频 文章 works" },
-      { url: "materials/", title: "Materials", meta: "素材库 · 视频 图片 GIF 创作资产", keywords: "素材库 materials 视频 图片 gif 资产 下载" },
-      { url: "library/", title: "Library", meta: "Style Card · Image Card", keywords: "卡片库 风格卡 图片卡 style image library" },
-      { url: "motion-library.html", title: "文字动效图书馆", meta: "Store · 文字动效资源", keywords: "文字动效 动效库 motion library 素材库 代码" },
-      { route: "about", title: "About", meta: "L-One · 个人介绍", keywords: "关于 about l-one" },
-    ];
+    let homeRenderer = null;
     function initM3Home() {
       const stage = document.getElementById("home-m3-stage");
       const canvas = document.getElementById("home-m3-canvas");
@@ -2113,32 +2045,38 @@
 
       const ctx = canvas.getContext("2d", { alpha: true });
       const image = new Image();
-      image.src = "assets/diffuse-home-bg.png";
+      image.src = matchMedia("(max-width:760px)").matches ? "assets/home/diffuse-mobile.webp" : "assets/home/diffuse-desktop.webp";
+      const reduced = matchMedia("(prefers-reduced-motion:reduce)");
+      const backing = document.createElement("canvas");
+      const backdrop = backing.getContext("2d");
+      let animationFrame = 0;
+      let pointerDirty = false;
       const pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2, tx: window.innerWidth / 2, ty: window.innerHeight / 2 };
       const ripples = [];
       const smoke = [];
       let frame = 0;
 
       function resizeM3() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, matchMedia("(pointer:coarse)").matches ? 1 : 2);
         canvas.width = Math.floor(window.innerWidth * dpr);
         canvas.height = Math.floor(window.innerHeight * dpr);
         canvas.style.width = window.innerWidth + "px";
         canvas.style.height = window.innerHeight + "px";
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cacheBackdrop();
       }
-      function drawCoverImage(alpha) {
+      function cacheBackdrop() {
+        backing.width = Math.max(1, window.innerWidth);
+        backing.height = Math.max(1, window.innerHeight);
         if (!image.complete || !image.naturalWidth) return;
-        const scale = Math.max(window.innerWidth / image.naturalWidth, window.innerHeight / image.naturalHeight);
+        const scale = Math.max(innerWidth / image.naturalWidth, innerHeight / image.naturalHeight);
         const width = image.naturalWidth * scale;
         const height = image.naturalHeight * scale;
-        const left = (window.innerWidth - width) / 2;
-        const top = (window.innerHeight - height) / 2;
-        ctx.save();
-        ctx.globalAlpha = alpha;
-        ctx.drawImage(image, left, top, width, height);
-        ctx.restore();
+        backdrop.clearRect(0, 0, backing.width, backing.height);
+        backdrop.globalAlpha = .08;
+        backdrop.drawImage(image, (innerWidth-width)/2, (innerHeight-height)/2, width, height);
       }
+      image.addEventListener("load", cacheBackdrop, {once:true});
       function pushRipple(x, y, power) {
         ripples.push({ x, y, r: 18, a: power });
         if (ripples.length > 14) ripples.shift();
@@ -2156,14 +2094,20 @@
         if (smoke.length > 42) smoke.shift();
       }
       function drawM3() {
-        requestAnimationFrame(drawM3);
-        if (!document.body.classList.contains("home-shell")) return;
+        animationFrame = 0;
+        if (!document.body.classList.contains("home-shell") || document.hidden || reduced.matches) return;
+        animationFrame = requestAnimationFrame(drawM3);
+        if (pointerDirty) {
+          stage.style.setProperty("--m3-x", pointer.tx + "px");
+          stage.style.setProperty("--m3-y", pointer.ty + "px");
+          pointerDirty = false;
+        }
         frame += 1;
         pointer.x += (pointer.tx - pointer.x) * .11;
         pointer.y += (pointer.ty - pointer.y) * .11;
         ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-        drawCoverImage(.08);
+        ctx.drawImage(backing, 0, 0);
         const ambient = ctx.createRadialGradient(pointer.x, pointer.y, 10, pointer.x, pointer.y, Math.max(window.innerWidth, window.innerHeight) * .48);
         ambient.addColorStop(0, "rgba(255,255,255,.13)");
         ambient.addColorStop(.38, "rgba(196,214,219,.06)");
@@ -2208,16 +2152,17 @@
       stage.addEventListener("pointermove", (event) => {
         pointer.tx = event.clientX;
         pointer.ty = event.clientY;
-        stage.style.setProperty("--m3-x", event.clientX + "px");
-        stage.style.setProperty("--m3-y", event.clientY + "px");
-        document.documentElement.style.setProperty("--m3-x", event.clientX + "px");
-        document.documentElement.style.setProperty("--m3-y", event.clientY + "px");
+        pointerDirty = true;
         if (cursor) cursor.style.opacity = "1";
         if (frame % 4 === 0) pushRipple(event.clientX, event.clientY, .12);
       });
       stage.addEventListener("pointerdown", (event) => pushRipple(event.clientX, event.clientY, .24));
       stage.addEventListener("pointerleave", () => { if (cursor) cursor.style.opacity = "0"; });
-      drawM3();
+      const start = () => { if (!animationFrame) animationFrame = requestAnimationFrame(drawM3); };
+      const stop = () => { cancelAnimationFrame(animationFrame); animationFrame = 0; };
+      document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+      reduced.addEventListener("change", () => reduced.matches ? stop() : start());
+      return {start, stop};
     }
 
     function updateHomeRevealState(route) {
@@ -2244,68 +2189,18 @@
       document.body.classList.toggle("about-v42-shell", route === "about");
       routes.forEach((name) => pages[name]?.classList.toggle("active", name === route));
       navLinks.forEach((link) => link.classList.toggle("active", link.dataset.route === route));
+      if (route === "about") {
+        const frame = pages.about?.querySelector(".about-v42__source-frame");
+        if (frame && !frame.hasAttribute("src")) frame.src = frame.dataset.src;
+        homeRenderer?.stop();
+      } else homeRenderer?.start();
       updateHomeRevealState(route);
       document.title = route === "home" ? "L-One | 个人知识库" : "L-One | " + route;
       window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
     }
-    function getSearchMatches(query) {
-      const term = query.trim().toLowerCase();
-      if (!term) return [];
-      return searchItems.filter((item) => (item.title + " " + item.meta + " " + item.keywords).toLowerCase().includes(term)).slice(0, 6);
-    }
-    function renderHomeSearch(query) {
-      const results = document.getElementById("home-search-results");
-      if (!results) return [];
-      const matches = getSearchMatches(query);
-      results.innerHTML = "";
-      results.classList.toggle("active", Boolean(query.trim()));
-      if (!query.trim()) return [];
-      if (matches.length === 0) {
-        const empty = document.createElement("div");
-        empty.className = "home-search-empty";
-        empty.textContent = "没有找到匹配内容";
-        results.appendChild(empty);
-        return [];
-      }
-      matches.forEach((item) => {
-        const link = document.createElement("a");
-        link.className = "home-search-result";
-        link.href = item.url || "#" + item.route;
-        if (item.route) link.dataset.route = item.route;
-        const title = document.createElement("strong");
-        title.textContent = item.title;
-        const meta = document.createElement("span");
-        meta.textContent = item.meta;
-        link.append(title, meta);
-        results.appendChild(link);
-      });
-      return matches;
-    }
-    function navigateToRoute(route) {
-      if (!route) return;
-      if (route.endsWith(".html")) {
-        location.href = route;
-        return;
-      }
-      location.hash = "#" + route;
-      setRoute(route);
-    }
-    document.getElementById("home-search-input")?.addEventListener("input", (event) => renderHomeSearch(event.target.value));
-    document.getElementById("home-search-form")?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const input = document.getElementById("home-search-input");
-      const matches = renderHomeSearch(input?.value || "");
-      const first = matches[0];
-      if (first?.url) {
-        location.href = first.url;
-        return;
-      }
-      if (first?.route) navigateToRoute(first.route);
-    });
     window.addEventListener("hashchange", () => setRoute(location.hash.replace("#", "")));
     document.addEventListener("click", (event) => {
       const routeLink = event.target.closest("[data-route]");
-      if (routeLink && routeLink.closest("#home-search-results")) document.getElementById("home-search-results")?.classList.remove("active");
       if (routeLink && location.hash === "#" + routeLink.dataset.route) setRoute(routeLink.dataset.route);
       if (event.target.closest("[data-top]")) window.scrollTo({ top: 0, behavior: "smooth" });
     });
@@ -2356,10 +2251,12 @@
       dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
       requestTimelineUpdate();
     }
-    initM3Home();
+    homeRenderer = initM3Home();
     initAboutV42();
     setRoute(location.hash.replace("#", ""));
   </script>
 <script src="assets/site-prefetch.js" defer></script>
 </body>
 </html>
+
+<script>addEventListener('message',event=>{const frame=document.querySelector('.about-v42__source-frame');if(event.origin!==location.origin||event.source!==frame?.contentWindow||event.data?.type!=='lone-about-chrome')return;const header=document.querySelector('#top');header.style.setProperty('--chrome-bg',event.data.bg);header.style.setProperty('--chrome-ink',event.data.ink);});</script>

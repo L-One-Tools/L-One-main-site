@@ -327,3 +327,5 @@ a { color: inherit; text-decoration: none; }
   .detail-preview { min-height: 280px; }
   .detail-info { padding: 4px; }
 }
+
+.site-header{background:var(--page);border-bottom:0;box-shadow:none}.site-nav a,.site-nav a span{color:#171717}

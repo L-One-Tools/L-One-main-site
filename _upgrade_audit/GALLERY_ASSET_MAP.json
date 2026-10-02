@@ -1,0 +1,7 @@
+{
+  "asset": "assets/about-v42/gallery/monitor-room.webp",
+  "sha256": "12c9199846293577943373424506d43ffdf2294ad1b69ec50e04f9aed407e9e1",
+  "source": "Built-in image_gen; localized edit removes right monitor thickness",
+  "rendering": "Decorative scene height adjusted to align original 4:3 video with frameless panel; video and text unchanged",
+  "prompt": "Black white grayscale 2D cel shaded room: black desk, thick frameless monitor, overhead triangular rear light, left floor lamp and black armchair, right cropped tall window and upright plant. No text or people."
+}

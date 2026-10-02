@@ -1,0 +1,38 @@
+[
+  {
+    "source": "assets/portfolio-v9/project-xidachuan.jpg",
+    "source_sha256": "69feb4d811aa037063e0859b3c7c0faf23c6ca09b2007d619116d7b7542f015a",
+    "output": "assets/works/project-xidachuan.webp",
+    "output_sha256": "2aa75500ee75a59178d62a7bb4bf3208afe454f497ef7dfcb973e8b623bac8ce",
+    "source_size": 1389065,
+    "output_size": 124722,
+    "crop": false
+  },
+  {
+    "source": "assets/portfolio-v9/project-fengyoujing.jpg",
+    "source_sha256": "b5934a8a7a9b1475224b627f7633478ea49f2d4e3a228b620c594895d9f637d2",
+    "output": "assets/works/project-fengyoujing.webp",
+    "output_sha256": "3bd9c5b788acbff6629320a7e166193297e3947c36da9109bf3fc5064b9d978e",
+    "source_size": 1286266,
+    "output_size": 356224,
+    "crop": false
+  },
+  {
+    "source": "assets/portfolio-v9/project-guanmu.jpg",
+    "source_sha256": "7741e1538d1a95d5574e16c463b189188757dde156eca825d02ecc6e65416032",
+    "output": "assets/works/project-guanmu.webp",
+    "output_sha256": "a65a4ef2867ace88973cf3d6464c75f1fbfc3049fa9ea4452dc066296ab27098",
+    "source_size": 1942965,
+    "output_size": 160026,
+    "crop": false
+  },
+  {
+    "source": "assets/portfolio-v9/project-past-works.png",
+    "source_sha256": "4eda8c1bc8b090b8226959a5656e013aaddcf5eda8571bcf8ff35dcd33e33206",
+    "output": "assets/works/project-commercial.webp",
+    "output_sha256": "1e13e36cfbd4aab4606ca343d9ea62ce698c2adfd6d835d07e7a777e1eefb797",
+    "source_size": 1787354,
+    "output_size": 101730,
+    "crop": false
+  }
+]

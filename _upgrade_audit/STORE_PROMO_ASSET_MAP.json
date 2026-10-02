@@ -1,0 +1,35 @@
+[
+  {
+    "id": "onebar",
+    "source": "store/onebar/hero-lit-screen.png",
+    "source_sha256": "72fc951d42738bed3fa95b64ad43b632c5c5bb9e878275fa065707465fe540a3",
+    "output": "assets/store-promos/onebar.webp",
+    "sha256": "d3d898688b4a969b5ee16487abcf93d0280b02dffe749860c1d6cd689c23a5a4",
+    "width": 1600,
+    "height": 1000,
+    "crop": false,
+    "note": "现有产品场景示意，不作为已发布界面证据"
+  },
+  {
+    "id": "l-1-file-to-text",
+    "source": "store/l-1-file-to-text/assets/txt-1.png",
+    "source_sha256": "038973d97b6deeeb592de834d7fba370b4bbbf87aa81751722c7903721643c1f",
+    "output": "assets/store-promos/file-to-text.webp",
+    "sha256": "1088ab900a4dc4932e4849d9abfa1df1b1cfa91d5ba8d3ab96111a95142e251f",
+    "width": 1600,
+    "height": 1000,
+    "crop": false,
+    "note": "现有真实界面截图，原隐私遮罩保留"
+  },
+  {
+    "id": "l-1-web-capture",
+    "source": "store/l-1-web-capture/assets/real-popup-preview.png",
+    "source_sha256": "d961ebe7a6a8239cc48957a1230e4a7a0a02077a6446250194e476cbe7f61aea",
+    "output": "assets/store-promos/web-capture.webp",
+    "sha256": "1bfc21381b49ac0b0055458706af24ba102b0cb977ed2fabe0064ae359e00722",
+    "width": 1600,
+    "height": 1000,
+    "crop": false,
+    "note": "现有真实浏览器弹窗截图"
+  }
+]

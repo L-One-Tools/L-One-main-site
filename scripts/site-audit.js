@@ -87,14 +87,14 @@ const portfolioHtmlPath = path.join(root, "portfolio.html");
 if (!html.includes('href="materials/"') || !html.includes('<strong>Materials</strong><span>素材库</span>')) {
   fail("Main navigation should include Materials / 素材库 linking to materials/.");
 }
-if (!html.includes('{ url: "materials/", title: "Materials"')) {
-  fail("Home search index should include the Materials page.");
+if (html.includes('id="home-search-form"')) {
+  fail("V2 Home must not retain the removed center search form.");
 }
 if (!html.includes('href="store/"') || !html.includes('<strong>Store</strong><span>工具</span>')) {
   fail("Main navigation should include Store / 工具 linking to store/.");
 }
-if (!html.includes('{ url: "store/", title: "Store"')) {
-  fail("Home search index should include the Store page.");
+if (!html.includes('data-src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.html"')) {
+  fail("About media must stay deferred until the About route is opened.");
 }
 if (/#recent|page-recent|data-route="recent"|route: "recent"/.test(html)) {
   fail("The removed Recent section must not remain in main navigation, routes, page markup, or search.");
@@ -102,7 +102,7 @@ if (/#recent|page-recent|data-route="recent"|route: "recent"/.test(html)) {
 if (!html.includes("grid-template-columns: repeat(5, minmax(0, 1fr));")) {
   fail("Home center navigation should use five columns.");
 }
-const mainNav = html.match(/<nav class="nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+const mainNav = html.match(/<nav class="lone-site-header__nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
 if (mainNav.indexOf('href="store/"') === -1 || mainNav.indexOf('href="store/"') > mainNav.indexOf('href="portfolio.html"')) {
   fail("Store should be the first item in the main site navigation.");
 }
@@ -237,7 +237,7 @@ if (fs.existsSync(motionLibraryHtmlPath)) {
 if (fs.existsSync(storeHtmlPath)) {
   const storeHtml = read(storeHtmlPath);
   checkNoCorruption("visible store/index.html", stripNonVisibleBlocks(storeHtml));
-  ["L-One Store", "Catalog / 02", "工具目录", "编辑推荐"].forEach((term) => {
+  ["L-One Store", "浏览器插件", "桌面工具", "AI Skills", "将经验沉淀成资产", "拥有的任何经验都将回报价值", "tool-icon-marquee"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing required text: ${term}.`);
   });
   if (storeHtml.includes('class="store-hero"')) {
@@ -246,10 +246,10 @@ if (fs.existsSync(storeHtmlPath)) {
   ["description", "canonical", "og:title", "application/ld+json"].forEach((term) => {
     if (!storeHtml.includes(term)) fail(`Store page is missing SEO metadata: ${term}.`);
   });
-  if (!storeHtml.includes('class="active" href="./" aria-current="page"')) {
+  if (!storeHtml.includes('href="./" aria-current="page"')) {
     fail("Store navigation should expose an active current-page state.");
   }
-  const storeNav = storeHtml.match(/<nav class="site-nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
+  const storeNav = storeHtml.match(/<nav class="lone-site-header__nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
   if (storeNav.includes("#recent") || storeNav.indexOf('href="./"') > storeNav.indexOf('href="../portfolio.html"')) {
     fail("Store navigation should remove Recent and keep Store first.");
   }
@@ -260,9 +260,8 @@ if (fs.existsSync(storeHtmlPath)) {
 
 if (fs.existsSync(storeCssPath)) {
   const storeCss = read(storeCssPath);
-  const mobileStoreRules = storeCss.match(/@media \(max-width: 580px\) \{([\s\S]*?)\n\}/)?.[1] || "";
-  if (!mobileStoreRules.includes(".tool-list { grid-template-columns: minmax(0, 1fr); overflow: visible;")) {
-    fail("Store mobile catalog should use a single-column grid without horizontal overflow.");
+  if (!storeCss.includes("overflow-x:auto") || !storeCss.includes("scroll-snap-type:x mandatory")) {
+    fail("V2 Store carousel must retain native horizontal scrolling and snap alignment.");
   }
 }
 
@@ -272,7 +271,7 @@ if (fs.existsSync(onebarHtmlPath)) {
   ["复制三次就烦了", "顶边一碰", "OneBar_Setup_v1.0.0.exe", "下载准备中", "Windows 10/11 x64", "安装包未签名"].forEach((term) => {
     if (!onebarHtml.includes(term)) fail(`OneBar detail page is missing required text: ${term}.`);
   });
-  if (!onebarHtml.includes('href="../assets/products/onebar/onebar-mark-transparent.png"') || !onebarHtml.includes('type="button" disabled aria-disabled="true"')) {
+  if (!onebarHtml.includes('href="../../assets/about-v42/tools-transparent/one-bar-transparent.png"') || !onebarHtml.includes('type="button" disabled aria-disabled="true"')) {
     fail("OneBar detail page must use its transparent icon and keep download disabled until a public URL is verified.");
   }
   if (/\bdata-download\b|href=["'](?:file:|https?:\/\/)/i.test(onebarHtml)) {
@@ -534,12 +533,15 @@ if (!fs.existsSync(portfolioHtmlPath)) {
       !portfolioHtml.includes('href="store/"')) {
     fail("The Works portfolio must include shared first-level navigation.");
   }
-  if (!portfolioHtml.includes('const projects = [') ||
-      !portfolioHtml.includes('跳转原文链接') ||
-      !portfolioHtml.includes('assets/portfolio-v9/')) {
-    fail("The promoted Works portfolio appears to be missing its project content.");
+  const worksScript = read(path.join(root, "assets", "works", "works.js"));
+  const projects = JSON.parse(read(path.join(root, "assets", "works", "projects.json")));
+  if (!portfolioHtml.includes('assets/works/works.js') ||
+      projects.map(project => project.name).join("/") !== "喜大川/疯游精/灌木/商业作品" ||
+      projects.reduce((count, project) => count + project.works.length, 0) !== 29 ||
+      projects.some(project => project.works.some(work => !work.video_id || !work.video_title || !(work.duration > 0) || !(work.width > 0) || !(work.height > 0) || !fs.existsSync(path.join(root, work.poster_path))))) {
+    fail("V2 Works must expose four verified projects and all 29 source videos with valid metadata and posters.");
   }
-  if (!portfolioHtml.includes('preloadProjectVisuals()') || !portfolioHtml.includes('showProjectVisual(p)')) {
+  if (!worksScript.includes('image.decode()') || !worksScript.includes('showProjectVisual(p)')) {
     fail("Works should decode project images before swapping them.");
   }
 }

@@ -1,0 +1,721 @@
+{
+  "final_tokens": {
+    "ivory": {
+      "background": "#eeeae2",
+      "text": "#272827",
+      "muted": "#62665d"
+    },
+    "charcoal": {
+      "background": "#292c2e",
+      "text": "#f3f1eb",
+      "muted": "#aaadae"
+    }
+  },
+  "previous_browser_observations": [
+    {
+      "width": 1440,
+      "height": 900,
+      "project": 0,
+      "theme": "ivory",
+      "items": 4,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 86.390625,
+          "y": 133,
+          "right": 306.84375,
+          "bottom": 253.140625
+        },
+        {
+          "text": "疯游精",
+          "x": 86.390625,
+          "y": 293,
+          "right": 306.84375,
+          "bottom": 353.0703125
+        },
+        {
+          "text": "灌木",
+          "x": 86.390625,
+          "y": 393,
+          "right": 233.359375,
+          "bottom": 453.0703125
+        },
+        {
+          "text": "商业作品",
+          "x": 86.390625,
+          "y": 493,
+          "right": 380.328125,
+          "bottom": 573.09375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": 1,
+      "theme": "charcoal",
+      "items": 17,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 86.390625,
+          "y": 133,
+          "right": 306.84375,
+          "bottom": 193.0703125
+        },
+        {
+          "text": "疯游精",
+          "x": 86.390625,
+          "y": 233,
+          "right": 306.84375,
+          "bottom": 353.140625
+        },
+        {
+          "text": "灌木",
+          "x": 86.390625,
+          "y": 393,
+          "right": 233.359375,
+          "bottom": 453.0703125
+        },
+        {
+          "text": "商业作品",
+          "x": 86.390625,
+          "y": 493,
+          "right": 380.328125,
+          "bottom": 573.09375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": 2,
+      "theme": "ivory",
+      "items": 2,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 86.390625,
+          "y": 133,
+          "right": 306.84375,
+          "bottom": 213.09375
+        },
+        {
+          "text": "疯游精",
+          "x": 86.390625,
+          "y": 253,
+          "right": 306.84375,
+          "bottom": 313.0703125
+        },
+        {
+          "text": "灌木",
+          "x": 86.390625,
+          "y": 353,
+          "right": 233.359375,
+          "bottom": 473.140625
+        },
+        {
+          "text": "商业作品",
+          "x": 86.390625,
+          "y": 513,
+          "right": 380.328125,
+          "bottom": 573.0703125
+        }
+      ],
+      "image": 900,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "project": 3,
+      "theme": "charcoal",
+      "items": 6,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 86.390625,
+          "y": 133,
+          "right": 306.84375,
+          "bottom": 213.09375
+        },
+        {
+          "text": "疯游精",
+          "x": 86.390625,
+          "y": 253,
+          "right": 306.84375,
+          "bottom": 313.0703125
+        },
+        {
+          "text": "灌木",
+          "x": 86.390625,
+          "y": 353,
+          "right": 233.359375,
+          "bottom": 413.0703125
+        },
+        {
+          "text": "商业作品",
+          "x": 86.390625,
+          "y": 453,
+          "right": 380.328125,
+          "bottom": 573.140625
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "project": 0,
+      "theme": "ivory",
+      "items": 4,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 245,
+          "y": 140.1875,
+          "right": 534.171875,
+          "bottom": 297.7578125
+        },
+        {
+          "text": "疯游精",
+          "x": 245,
+          "y": 337.6875,
+          "right": 534.171875,
+          "bottom": 416.47265625
+        },
+        {
+          "text": "灌木",
+          "x": 245,
+          "y": 456.4375,
+          "right": 437.78125,
+          "bottom": 535.22265625
+        },
+        {
+          "text": "商业作品",
+          "x": 245,
+          "y": 575.1875,
+          "right": 630.5625,
+          "bottom": 680.234375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "project": 1,
+      "theme": "charcoal",
+      "items": 17,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 245,
+          "y": 140.1875,
+          "right": 534.171875,
+          "bottom": 218.97265625
+        },
+        {
+          "text": "疯游精",
+          "x": 245,
+          "y": 258.9375,
+          "right": 534.171875,
+          "bottom": 416.5078125
+        },
+        {
+          "text": "灌木",
+          "x": 245,
+          "y": 456.4375,
+          "right": 437.78125,
+          "bottom": 535.22265625
+        },
+        {
+          "text": "商业作品",
+          "x": 245,
+          "y": 575.1875,
+          "right": 630.5625,
+          "bottom": 680.234375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "project": 2,
+      "theme": "ivory",
+      "items": 2,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 245,
+          "y": 140.1875,
+          "right": 534.171875,
+          "bottom": 245.234375
+        },
+        {
+          "text": "疯游精",
+          "x": 245,
+          "y": 285.1875,
+          "right": 534.171875,
+          "bottom": 363.97265625
+        },
+        {
+          "text": "灌木",
+          "x": 245,
+          "y": 403.9375,
+          "right": 437.78125,
+          "bottom": 561.5078125
+        },
+        {
+          "text": "商业作品",
+          "x": 245,
+          "y": 601.4375,
+          "right": 630.5625,
+          "bottom": 680.22265625
+        }
+      ],
+      "image": 900,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "project": 3,
+      "theme": "charcoal",
+      "items": 6,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 245,
+          "y": 140.1875,
+          "right": 534.171875,
+          "bottom": 245.234375
+        },
+        {
+          "text": "疯游精",
+          "x": 245,
+          "y": 285.1875,
+          "right": 534.171875,
+          "bottom": 363.97265625
+        },
+        {
+          "text": "灌木",
+          "x": 245,
+          "y": 403.9375,
+          "right": 437.78125,
+          "bottom": 482.72265625
+        },
+        {
+          "text": "商业作品",
+          "x": 245,
+          "y": 522.6875,
+          "right": 630.5625,
+          "bottom": 680.2578125
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1112,
+      "project": 0,
+      "theme": "ivory",
+      "items": 4,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 32,
+          "y": 127,
+          "right": 185.09375,
+          "bottom": 210.4140625
+        },
+        {
+          "text": "疯游精",
+          "x": 32,
+          "y": 251,
+          "right": 185.09375,
+          "bottom": 292.70703125
+        },
+        {
+          "text": "灌木",
+          "x": 32,
+          "y": 333,
+          "right": 134.0625,
+          "bottom": 374.70703125
+        },
+        {
+          "text": "商业作品",
+          "x": 32,
+          "y": 415,
+          "right": 236.125,
+          "bottom": 470.609375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1112,
+      "project": 1,
+      "theme": "charcoal",
+      "items": 17,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 32,
+          "y": 127,
+          "right": 185.09375,
+          "bottom": 168.70703125
+        },
+        {
+          "text": "疯游精",
+          "x": 32,
+          "y": 209,
+          "right": 185.09375,
+          "bottom": 292.4140625
+        },
+        {
+          "text": "灌木",
+          "x": 32,
+          "y": 333,
+          "right": 134.0625,
+          "bottom": 374.70703125
+        },
+        {
+          "text": "商业作品",
+          "x": 32,
+          "y": 415,
+          "right": 236.125,
+          "bottom": 470.609375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1112,
+      "project": 2,
+      "theme": "ivory",
+      "items": 2,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 32,
+          "y": 127,
+          "right": 185.09375,
+          "bottom": 182.609375
+        },
+        {
+          "text": "疯游精",
+          "x": 32,
+          "y": 223,
+          "right": 185.09375,
+          "bottom": 264.70703125
+        },
+        {
+          "text": "灌木",
+          "x": 32,
+          "y": 305,
+          "right": 134.0625,
+          "bottom": 388.4140625
+        },
+        {
+          "text": "商业作品",
+          "x": 32,
+          "y": 429,
+          "right": 236.125,
+          "bottom": 470.70703125
+        }
+      ],
+      "image": 900,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 834,
+      "height": 1112,
+      "project": 3,
+      "theme": "charcoal",
+      "items": 6,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 32,
+          "y": 127,
+          "right": 185.09375,
+          "bottom": 182.609375
+        },
+        {
+          "text": "疯游精",
+          "x": 32,
+          "y": 223,
+          "right": 185.09375,
+          "bottom": 264.70703125
+        },
+        {
+          "text": "灌木",
+          "x": 32,
+          "y": 305,
+          "right": 134.0625,
+          "bottom": 346.70703125
+        },
+        {
+          "text": "商业作品",
+          "x": 32,
+          "y": 387,
+          "right": 236.125,
+          "bottom": 470.4140625
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": 0,
+      "theme": "ivory",
+      "items": 4,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 20,
+          "y": 96,
+          "right": 121.734375,
+          "bottom": 151.40625
+        },
+        {
+          "text": "疯游精",
+          "x": 20,
+          "y": 163.5,
+          "right": 121.734375,
+          "bottom": 191.203125
+        },
+        {
+          "text": "灌木",
+          "x": 20,
+          "y": 203.25,
+          "right": 87.828125,
+          "bottom": 230.953125
+        },
+        {
+          "text": "商业作品",
+          "x": 20,
+          "y": 243,
+          "right": 155.640625,
+          "bottom": 279.9375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": 1,
+      "theme": "charcoal",
+      "items": 17,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 20,
+          "y": 96,
+          "right": 121.734375,
+          "bottom": 123.703125
+        },
+        {
+          "text": "疯游精",
+          "x": 20,
+          "y": 135.75,
+          "right": 121.734375,
+          "bottom": 191.15625
+        },
+        {
+          "text": "灌木",
+          "x": 20,
+          "y": 203.25,
+          "right": 87.828125,
+          "bottom": 230.953125
+        },
+        {
+          "text": "商业作品",
+          "x": 20,
+          "y": 243,
+          "right": 155.640625,
+          "bottom": 279.9375
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": 2,
+      "theme": "ivory",
+      "items": 2,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 20,
+          "y": 96,
+          "right": 121.734375,
+          "bottom": 132.9375
+        },
+        {
+          "text": "疯游精",
+          "x": 20,
+          "y": 145,
+          "right": 121.734375,
+          "bottom": 172.703125
+        },
+        {
+          "text": "灌木",
+          "x": 20,
+          "y": 184.75,
+          "right": 87.828125,
+          "bottom": 240.15625
+        },
+        {
+          "text": "商业作品",
+          "x": 20,
+          "y": 252.25,
+          "right": 155.640625,
+          "bottom": 279.953125
+        }
+      ],
+      "image": 900,
+      "colors": {
+        "background": "rgb(238, 234, 226)",
+        "text": "rgb(39, 40, 39)",
+        "selected": "rgb(39, 40, 39)"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "project": 3,
+      "theme": "charcoal",
+      "items": 6,
+      "overflow": false,
+      "titles": [
+        {
+          "text": "喜大川",
+          "x": 20,
+          "y": 96,
+          "right": 121.734375,
+          "bottom": 132.9375
+        },
+        {
+          "text": "疯游精",
+          "x": 20,
+          "y": 145,
+          "right": 121.734375,
+          "bottom": 172.703125
+        },
+        {
+          "text": "灌木",
+          "x": 20,
+          "y": 184.75,
+          "right": 87.828125,
+          "bottom": 212.453125
+        },
+        {
+          "text": "商业作品",
+          "x": 20,
+          "y": 224.5,
+          "right": 155.640625,
+          "bottom": 279.90625
+        }
+      ],
+      "image": 1200,
+      "colors": {
+        "background": "rgb(41, 44, 46)",
+        "text": "rgb(243, 241, 235)",
+        "selected": "rgb(243, 241, 235)"
+      }
+    }
+  ],
+  "final_evidence": "final-reviewed screenshots at 100%/DPR1; local candidate only"
+}
