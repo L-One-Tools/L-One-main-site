@@ -1,5 +1,9 @@
 # 当前任务交接
 
+## A-20261002-04 OneBar 排版已发布
+
+PR #29，功能提交6e2cfef，CI 36974534171通过，合并9b5d65b0983ef135d88f9a7143e3d01bb8728ba4。正式详情HTML规范化换行后匹配；三端标题字距正常、无横向溢出，放碰点标题/说明起点一致。截图E:/codex-site-deploy-20261002/onebar-type-live-{1440,834,390}.png。原有对比度/装饰标签等detector建议未扩围修改。EdgeOne控制台ID/实体设备未验证。回滚git revert -m 1 9b5d65b0983ef135d88f9a7143e3d01bb8728ba4。
+
 ## A-20261002-04 OneBar 排版修复
 
 用户授权直接发布；只修改标题字距/字号与放碰点卡片对齐，不改正文、素材、链接/下载。基线723effb，分支codex/20261002-onebar-type-fix；本地三端、站点审计、diff、PR/CI和正式回读进行中。发布前不记成功，回滚本任务merge revert。
