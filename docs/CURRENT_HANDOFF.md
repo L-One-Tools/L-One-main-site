@@ -1,5 +1,18 @@
 # 当前任务交接
 
+## 2026-10-02 About 修复发布授权
+
+L-One 明确要求直接上线 A-20261002-03，覆盖下方本地待审核暂停。仅发布六个已核对任务文件；站点审计/diff 通过，远程 main 未前进。正在提交、PR/CI、合并及正式域名回读；完成前不标记生产成功。
+
+## 2026-10-02 About 加载/手机排列修复：本地待审核
+
+- A-20261002-03；分支 codex/20261002-about-loading-mobile；开始 HEAD 1c06a5907d53a1f7d5f3b4c1979b70194095eab6，fetch/pull 无远程新增，原 b9d0 修改保留。
+- 正式样式移至 head，深色关键底色及背景预加载；iframe/CSS/JS 带 20261002-about-r1 版本查询，避免旧地址长期缓存。未改服务器配置、正文、素材或其他页面。
+- About 工具组不收缩、每项固定宽度、图标尺寸及名称约束。当前 Chromium 未复现用户旧截图重叠，不宣称定位用户设备唯一原因。
+- 预览 http://127.0.0.1:4180/index.html#about；截图 E:/codex-site-deploy-20261002/about-parity/fixed-{1440,834,390,320}-{top,now}.png。
+- 四视口 Chromium 无横向溢出/pageerror，手机项124px/图108px、桌面项156px/图140px；CSS 中断时首屏仍深色。site-audit、diff --check 通过；impeccable detector 无发现。
+- 实体 iOS Safari/旧缓存未验证。未提交/推送/部署，排版修复待 L-One 本地审核。生产未改变；回滚本任务精确 diff，发布后 revert。
+
 ## A-20261002-02：作品声音与缓冲修复
 
 正式发布完成：PR https://github.com/L-One-Tools/L-One-main-site/pull/25，功能提交 8c5ef71f017ea126d4da1bc0ba7e950a191f4c71，合并提交 25940c2e608cbbec6f0a341c1b957028639343db。现有 CI 路径过滤未触发此 JS/文档任务（无检查项，不记为 CI 通过）；本地语法/site-audit/diff 通过。正式 works.js 与合并文件规范化换行后匹配。

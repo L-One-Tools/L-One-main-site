@@ -1090,6 +1090,13 @@ body{overflow-x:hidden}
 
 <script>if(window.self!==window.top)document.documentElement.classList.add('embedded-about');</script>
 
+<style id="about-critical-loading">
+html,body,.timeline{background:#191b1d}
+.timeline .timeline__sticky{background:#191b1d}
+</style>
+<link rel="preload" href="gallery/monitor-room.webp" as="image">
+<link rel="stylesheet" href="../../assets/tool-icons.css?v=20261002-about-r1">
+<link rel="stylesheet" href="gallery/gallery.css?v=20261002-about-r1">
 </head>
 <body>
 <header class="site-header" id="siteHeader">
@@ -1727,10 +1734,8 @@ qr.addEventListener('click',e=>{if(e.target===qr){qr.classList.remove('open');qr
   .contact-item img{object-fit:contain;filter:none;mix-blend-mode:normal;background:transparent}
   .contact-item:hover img{filter:none}
 </style>
-<link rel="stylesheet" href="../../assets/tool-icons.css">
-<link rel="stylesheet" href="gallery/gallery.css">
-<script src="../../assets/tool-icons.js" defer></script>
-<script src="gallery/gallery.js" defer></script>
+<script src="../../assets/tool-icons.js?v=20261002-about-r1" defer></script>
+<script src="gallery/gallery.js?v=20261002-about-r1" defer></script>
 <script id="l-one-now-transparent-tools-and-entry-position">
 (() => {
   const message = document.querySelector('#now .now-message');
