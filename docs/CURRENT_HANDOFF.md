@@ -1,5 +1,9 @@
 # 当前任务交接
 
+## A-20261002-05 OneBar 导航已发布
+
+PR #31，CI run36975351830通过，功能1512ec7，合并3f97ac89e3b95fc37266a42170363017e60dcdcf。正式HTML与任务文件匹配，六入口HTTP200；三端header/hero同为rgb(241,236,227)，border0、无横向溢出。截图E:/codex-site-deploy-20261002/onebar-nav-live-{1440,834,390}.png。正文/素材/下载不变；EdgeOne控制台ID/实体设备未验证。回滚git revert -m 1 3f97ac89e3b95fc37266a42170363017e60dcdcf。
+
 ## A-20261002-05 OneBar 导航
 
 L-One授权直接发布；只接入现有主站导航并匹配首屏背景#f1ece3、文字#222a2e、无分割线。正文/素材/下载不变；基线c119735，分支codex/20261002-onebar-nav。三端/审计/PR/CI/生产核验后追加结果；回滚本任务merge revert。

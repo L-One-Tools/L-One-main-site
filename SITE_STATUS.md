@@ -1,5 +1,9 @@
 # L-One Main Site Status
 
+## 2026-10-02 OneBar 顶部导航已上线
+
+PR #31/CI通过，合并3f97ac89e3b95fc37266a42170363017e60dcdcf；正式页面匹配，三端同色无边线/无溢出、六入口HTTP200。正文/下载不变；证据与回滚见CURRENT_HANDOFF，EdgeOne控制台ID/实体设备未验证。
+
 ## A-20261002-05 OneBar 导航修复进行中
 
 授权直接发布首屏同色无边线主站导航，增加首页/Store及各主页面入口；只改OneBar页面，生产结果待回读。
