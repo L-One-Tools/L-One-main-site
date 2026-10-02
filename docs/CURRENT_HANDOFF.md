@@ -1,5 +1,18 @@
 # 当前任务交接
 
+## A-20261002-06 正式发布授权
+
+L-One明确要求部署当前手机候选，覆盖下方未发布暂停。fetch确认main未前进，仅五个已知任务文件；site-audit、JS语法、diff通过。发布前继续核验候选播放保护项，完成正式域名回读前不标记上线成功。
+
+## A-20261002-06 Works 手机候选完成，未发布
+
+- 分析包接收后实施；最新fetch/pull与HEAD均f920997509d084c2d320a1e551e694c614421aa8，codex/20261002-works-mobile。改works.css、works.js手机布局/分类点按，数据/字体/素材/其他页面不变；精确范围见EDIT_SCOPE_MAP。
+- <=760px四类2×2原字体、取消标题伸缩、封面完整无固定空框、说明紧邻、统一14px右对齐单行目录，作品点击区44px，17项自然页面滚动。分类每次只切换，封面不增点击；待图片解码后再切换手机状态。详情按钮正常流、播放触控两排。
+- 本地同网预览：http://192.168.0.140:4183/portfolio.html（本机HTTP200，手机须同一局域网；未核验实体手机及防火墙入站，不修改防火墙）。本机http://127.0.0.1:4182/portfolio.html。4183由Python http.server绑定0.0.0.0，重启命令python -m http.server 4183 --bind 0.0.0.0，cwd为本工作树。
+- 证据 E:/L-One知识库/codex/visualizations/2026/10/02/works-mobile-analysis/candidate/：393及390四分类全页图、1440/834回归图及详情图；results.json；复现脚本上级check-candidate.cjs。
+- Chromium 393×852/390×844/1440×900/834×1112：四分类4/17/2/6正确，无横向溢出/pageerror；手机目录14px、44.09375px点击区、分类行56px，重复点击分类不进详情；原作品视频未静音音量1、720p、只当前视频请求、返回无video。站点审计、JS语法、diff通过；截图已人工查看。检测器仅报告原有Arial/桌面height动画，本轮保留桌面既有设计。
+- 无实体Safari帧率/手势、浏览器栏伸缩或公网速度数据；本地模拟不等同实体/生产。未提交/推送/PR/合并/部署，等待本轮具体候选授权。生产站仍是原版手机布局。回滚精确本任务diff，不重置工作树。
+
 ## A-20261002-05 OneBar 导航已发布
 
 PR #31，CI run36975351830通过，功能1512ec7，合并3f97ac89e3b95fc37266a42170363017e60dcdcf。正式HTML与任务文件匹配，六入口HTTP200；三端header/hero同为rgb(241,236,227)，border0、无横向溢出。截图E:/codex-site-deploy-20261002/onebar-nav-live-{1440,834,390}.png。正文/素材/下载不变；EdgeOne控制台ID/实体设备未验证。回滚git revert -m 1 3f97ac89e3b95fc37266a42170363017e60dcdcf。
