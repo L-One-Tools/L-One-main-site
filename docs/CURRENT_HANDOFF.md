@@ -1,5 +1,15 @@
 # 当前任务交接
 
+## 2026-10-19 双向导航已发布并在正式域名验证
+
+- A-20261019-01；功能提交 9ecd8c5e9e0bd26d4245a2a61fb24e10a57bb829；PR #37；Store Catalog Sync run 39188480480 成功；合并 059cbbf94882380436ee90635fccbeda9801b0c2。仅原五个主站候选文件，无新增设计/功能；原脏工作区保留。
+- https://l-one.asia/ 正式 HTML 规范化换行后与已合并候选全文一致，入口指向 https://notes.l-one.asia/app/。起初观察到旧版，传播后匹配，再完成生产浏览器验证。
+- Notes 只更新 /opt/l1-notes/app/index.html，SHA256 0a4c70451af32390099d5e16bd2196ed9a051edd94230dd9fda8fa64060baaa8；公网响应逐字节匹配。版本仍为0.15.0，本轮为前端导航修订。原始嵌入图片字节未变；服务未重启，受保护后端/core与systemd/Nginx配置校验未变，不覆盖数据/环境文件。
+- 正式 Chromium 1440×900、834×1112、390×844：主页Notes入口按Enter进入工作台；项目列表Logo按Enter、画布Logo点击及按Enter返回主站；修改标题后离开、再进入内容保留，焦点轮廓有效。手机主页六入口三列两行、页面无横向溢出，pageerror为0；截图已人工查看。About页头新增入口三端实际点击也通过。
+- 保存验证使用隔离、未登录的浏览器样例，仅证明本地编辑保留，不代表云端同步已完成。实体手机/蜂窝网络未验证；既有Notes完整编辑能力不在本次验收范围。EdgeOne控制台部署ID/commit未验证，GitHub该merge无deployment/check-run记录；不将HTTP200等同交互验收。
+- 证据 E:/L-1Studio/L1 Notes/evidence/nav-release-20261019/：production-results.json、production-about-results.json、正式三端截图、site-public-content.json、notes-public-content.json、notes-deploy.json。
+- 回滚：主站 git revert -m 1 059cbbf94882380436ee90635fccbeda9801b0c2，经PR发布；Notes更新前备份 /var/backups/l1-notes/nav-20261019T020640Z/index-before.html，原SHA256 d5e97aa2ceed84c1ed1984079c6a8b6c79a9b9f5eb8779c65584f7e5838f4194。恢复前端HTML，权限root:l1notes/0660，不恢复或覆盖数据库。具体原子恢复命令在外部 notes-deploy.json。下方待审核/未发布记录为历史。
+
 ## 2026-10-19 双向导航发布接管授权
 
 L-One 在当前消息明确批准发布既有候选，替代下方本地预览/待审核暂停。唯一范围：原五个主站候选文件，以及 Notes 工程 app/index.html 两个 Logo 返回主页、键盘焦点与 flushSave；不新增设计/功能，不改服务端配置、数据库、项目数据或密钥。主站经精确提交、PR、CI、合并与正式域名实点验证；Notes 仅备份后原子更新必要前端 HTML。记录发布结果前不宣称成功。基线 93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；其他工作树改动保留。回滚主站使用本轮 merge revert；Notes 使用更新前 HTML 备份恢复，数据不回滚。
