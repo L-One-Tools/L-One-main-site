@@ -1,5 +1,21 @@
 # 当前任务交接
 
+## 2026-10-19 双向导航发布接管授权
+
+L-One 在当前消息明确批准发布既有候选，替代下方本地预览/待审核暂停。唯一范围：原五个主站候选文件，以及 Notes 工程 app/index.html 两个 Logo 返回主页、键盘焦点与 flushSave；不新增设计/功能，不改服务端配置、数据库、项目数据或密钥。主站经精确提交、PR、CI、合并与正式域名实点验证；Notes 仅备份后原子更新必要前端 HTML。记录发布结果前不宣称成功。基线 93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；其他工作树改动保留。回滚主站使用本轮 merge revert；Notes 使用更新前 HTML 备份恢复，数据不回滚。
+
+## A-20261019-01 L1 Notes 首页入口（预览待审核）
+
+- 基线：93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；分支 work/A-20261019-01-notes-entry；独立候选目录 E:/L-1Studio/L1 Notes/website-nav-preview，原 E:/L-One-main-site 的未提交 About 工作未动。
+- 官网正式首页尚无工作台入口。本地在首页中心导航与 index.html 页头中，Store 后新增 L1 Notes／创作画布，直接同标签页打开 https://notes.l-one.asia/app/。
+- 页面层级：官网首页→L1 Notes 独立子域工作台→项目；不改旧 #skills 路由，不恢复旧学习笔记栏目，不改权限、数据库或 Notes 服务器。
+- 本地预览：http://127.0.0.1:8790/ 。1440×900、834×1112 六列单行，390×844 三列两行；无全页横向溢出，手机链接点击区 100×44；About 页头入口可达。真实点击已打开公网 Notes，开发控制台无 error 日志。
+- site-audit 通过，diff 检查通过。此副本位于 type:module 的上级目录下，原 CommonJS 审计用仓库外 operations/run-site-audit.cjs 加载执行，未改依赖或源脚本模块格式。
+- Impeccable 检查发现既有字号、字距等风格告警；本轮沿用现有导航视觉，不扩展为全站样式整改。
+- 截图与布局证据：E:/L-1Studio/L1 Notes/evidence/website-nav/ 。尚未提交、推送、PR、合并或部署；中央公开规范要求具体候选经 L-One 审核后发布，EdgeOne 本轮部署未验证。
+- 下一步：取得本预览发布授权后，精确暂存五个任务文件，复核远端基线，通过 PR/CI 发布并读取正式域名确认两处入口。
+- 回滚：未发布时撤销本任务精确 diff；发布后对本任务提交 git revert，保留独立 Notes 服务和数据。
+
 ## A-20261002-07 Works 清单调整（授权发布）
 
 用户明确给出疯游精7件/商业5件顺序并要求直接上线；官网移除疯游精其余10件和商业穿搭1件，不删素材。保留原标题对应用户简称：环球万圣季·配音版、小技巧拍大片、白塔寺·2026，以及喜大川er/金茂守望者完整原标题。其余两类不变。
@@ -459,3 +475,5 @@ Works目录字号统一：每个视口预先计算四分类最小字号，全部
 ### 全站导航与Store尺寸（2026-10-01）
 共享site-chrome.css统一移除导航底线、采用页面底色与高反差文字；Materials只修改导航样式；Library只修改导航底色/白字。About gallery.js向同源父页面传递当前板块深浅色，父导航同步，校验消息来源。Store分类间距28→42px、手机12→18px，选中黑底白字同Materials，3:4卡片宽高缩至原70%（桌面308×410.66px），内部尺寸相应收紧。
 1879、834、390三个宽度检查Store/Materials/Library/About截图，导航底线0px，无页面横向溢出；About白色statement/FUTURE与暗色NOW滚动导航切换另行验证。只核查本轮导航与Store区域，未重新验收其余动态交互。site-audit通过；未发布。
+
+发布前复核：三端1440×900、834×1112、390×844已实际键盘打开主页Notes链接、项目列表Logo按Enter返回、编辑页Logo鼠标返回，修改标题后返回内容保留；pageerror为0，手机无全页横溢出，截图已查看。Notes仅前端HTML已原子更新为SHA256 0a4c70451af32390099d5e16bd2196ed9a051edd94230dd9fda8fa64060baaa8，更新前备份/var/backups/l1-notes/nav-20261019T020640Z/index-before.html，服务/后端/反代配置校验未变。证据 E:/L-1Studio/L1 Notes/evidence/nav-release-20261019/；主站PR/CI与正式双向验证待完成。site-audit、diff通过；实体手机及EdgeOne控制台ID未验证。

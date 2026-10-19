@@ -99,8 +99,8 @@ if (!html.includes('data-src="assets/about-v42/L-One-Homepage-v4.2-FIXED-SINGLE.
 if (/#recent|page-recent|data-route="recent"|route: "recent"/.test(html)) {
   fail("The removed Recent section must not remain in main navigation, routes, page markup, or search.");
 }
-if (!html.includes("grid-template-columns: repeat(5, minmax(0, 1fr));")) {
-  fail("Home center navigation should use five columns.");
+if (!html.includes("grid-template-columns: repeat(6, minmax(0, 1fr));")) {
+  fail("Home center navigation should use six columns.");
 }
 const mainNav = html.match(/<nav class="lone-site-header__nav" aria-label="主导航">([\s\S]*?)<\/nav>/)?.[1] || "";
 if (mainNav.indexOf('href="store/"') === -1 || mainNav.indexOf('href="store/"') > mainNav.indexOf('href="portfolio.html"')) {
@@ -113,14 +113,17 @@ if (homeNav.indexOf('href="store/"') === -1 || homeNav.indexOf('href="store/"') 
 if (!mainNav.includes('href="library/"') || !homeNav.includes('href="library/"')) {
   fail("Library should appear in both first-level navigations.");
 }
+if (!mainNav.includes('href="https://notes.l-one.asia/app/"') || !homeNav.includes('href="https://notes.l-one.asia/app/"')) {
+  fail("L1 Notes should link to its HTTPS workspace from both homepage navigations.");
+}
 if (html.includes('id="page-skills"') || mainNav.includes('>Notes<') || homeNav.includes('>notes<')) {
   fail("The removed Notes page and navigation must not remain.");
 }
 if (!html.includes('rawRoute === "skills"') || !html.includes('store/#motion-library')) {
   fail("Legacy Notes links should reach the Motion Library card in Store.");
 }
-if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(5,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
-  fail("Home center navigation should keep all five links on one row.");
+if (!/\.home-m3-nav\s*\{[^}]*grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\)/.test(html)) {
+  fail("Home center navigation should keep six links on one row above the phone breakpoint.");
 }
 
 [
