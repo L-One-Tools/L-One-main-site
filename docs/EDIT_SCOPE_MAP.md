@@ -1,5 +1,21 @@
 # L-One 主站编辑范围地图
 
+## 2026-10-19 双向导航发布接管授权
+
+L-One 在当前消息明确批准发布既有候选，替代下方本地预览/待审核暂停。唯一范围：原五个主站候选文件，以及 Notes 工程 app/index.html 两个 Logo 返回主页、键盘焦点与 flushSave；不新增设计/功能，不改服务端配置、数据库、项目数据或密钥。主站经精确提交、PR、CI、合并与正式域名实点验证；Notes 仅备份后原子更新必要前端 HTML。记录发布结果前不宣称成功。基线 93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；其他工作树改动保留。回滚主站使用本轮 merge revert；Notes 使用更新前 HTML 备份恢复，数据不回滚。
+
+## 本轮范围：A-20261019-01 L1 Notes 首页入口（本地预览）
+
+- 设备：当前 Windows Codex；基线 93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；分支 work/A-20261019-01-notes-entry。
+- 唯一目标：在官网首页中心导航及 index.html 页头增加 L1 Notes／创作画布入口，链接 https://notes.l-one.asia/app/；层级为官网首页→独立 Notes 工作台→项目。
+- 允许：index.html 两处导航及六项导航所需的局部响应式样式；scripts/site-audit.js 直接相关的入口与列数断言；本范围、SITE_STATUS.md、docs/CURRENT_HANDOFF.md。
+- 只读：共享 site-chrome、其他页面导航、Store/Catalog、Library、Works、素材、Notes 工程和服务、用户数据、登录权限、DNS、证书及部署配置。
+- 新 L1 Notes 是独立创作工具，不恢复已移除的 Notes／学习笔记旧栏目及 #skills 路由。
+- 可见结果：桌面和平板中心六项一行；手机中心三列两行，名称单行、键盘可达；同标签页进入 HTTPS 工作台。
+- 验证：site-audit、diff检查，1440×900／834×1112／390×844 导航布局、焦点、真实跳转及 About 页头回归。
+- 当前仅预览：具体候选经 L-One 审核后才发布；未授权绕过预览审核直接合并 main。
+- 回滚：预览可撤销本任务精确 diff；发布后以 git revert 撤销本任务提交。
+
 ## A-20261002-07：Works 两分类清单及顺序（授权上线）
 
 - 基线aab59e88bbeea4652860ebe9c46aa0d1f18b3966；codex/20261002-works-order。

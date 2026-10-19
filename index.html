@@ -226,7 +226,7 @@
     .home-m3-nav {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0;
       align-items: center;
       color: rgba(255,255,255,.86);
@@ -237,6 +237,7 @@
       display: grid;
       gap: 5px;
       min-width: 0;
+      white-space: nowrap;
       text-align: center;
       opacity: .72;
       transition: opacity .24s ease, transform .24s ease;
@@ -274,12 +275,17 @@
     }
     @media (max-width: 900px) {
       .home-m3-brand { top: 24px; }
-      .home-m3-center { width: min(300px, calc(100vw - 72px)); gap: 22px; }
+      .home-m3-center { width: min(620px, calc(100vw - 40px)); gap: 22px; }
       .home-m3-nav .en { font-size: 12px; }
       .home-m3-nav .zh { font-size: 10px; }
       .home-m3-search input { height: 44px; }
       .home-m3-cursor { display: none; }
       body.home-shell { cursor: auto; }
+    }
+    @media (max-width: 480px) {
+      .home-m3-center { width: min(300px, calc(100vw - 48px)); }
+      .home-m3-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 20px; }
+      .home-m3-nav a { min-height: 44px; align-content: center; }
     }
     #page-home.awaiting-reveal .home-reveal-content {
       opacity: 0;
@@ -1867,6 +1873,7 @@
       <a class="lone-site-header__logo" href="#home" data-route="home" aria-label="返回 L-One 首页"><img src="assets/brand/l1-site-mark-3d-transparent-v1.png" alt=""></a>
       <nav class="lone-site-header__nav" aria-label="主导航">
         <a href="store/"><strong>Store</strong><span>工具</span></a>
+        <a href="https://notes.l-one.asia/app/"><strong>L1 Notes</strong><span>创作画布</span></a>
         <a href="portfolio.html"><strong>Works</strong><span>作品</span></a>
         <a href="materials/"><strong>Materials</strong><span>素材库</span></a>
         <a href="library/"><strong>Library</strong><span>卡片库</span></a>
@@ -1887,6 +1894,7 @@
         <div class="home-m3-center">
           <nav class="home-m3-nav" aria-label="主导航">
             <a href="store/"><span class="en">store</span><span class="zh">工具</span></a>
+            <a href="https://notes.l-one.asia/app/"><span class="en">l1 notes</span><span class="zh">创作画布</span></a>
             <a href="portfolio.html"><span class="en">works</span><span class="zh">作品</span></a>
             <a href="materials/"><span class="en">materials</span><span class="zh">素材库</span></a>
             <a href="library/"><span class="en">library</span><span class="zh">卡片库</span></a>
