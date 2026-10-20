@@ -1,5 +1,14 @@
 # 当前任务交接
 
+## A-20261020-03 OneBar 安装包更新（发布前）
+
+- 用户只授权安装包版本与下载更新，不上传源码、新图标、迭代介绍；原文章、图片、Logo、布局及其他工具对象已比对保持。基线ae1ab2f7dbf384bdee3b3c8628acf1a67322c204，隔离codex/20261020-onebar-installer；旧工作区改动保留。
+- 冻结安装包1.1.0-local.2，51,460,854字节，SHA256 297518153aabfc334b8a16de9940d6bdada14839facb7c4e1a13bcebd8ef722e。ZIP校验匹配用户ADCA0720…C767C7，43项清单及CRC通过；未签名，不宣称新机器安装/卸载或完整升级验收。
+- 仅在现有发行仓库新建预发布 https://github.com/L-One-Tools/l-one-tools-releases/releases/tag/onebar-v1.1.0-local.2，上传冻结EXE，保留旧版；没有上传源码、图标或新功能文案。匿名下载和本地预览按钮实际下载均核对大小/SHA256一致。
+- 候选更新底部安装包区、版本快照、主/备用Catalog及必要状态/校验；用户已明确批准Schema/校验器最小扩围支持-local.2，不改其他规则。三端1440×900、834×1112、390×844下载区完整、无页面横溢出/pageerror；手机截图已查看，真实点击下载通过。Catalog生成/验证/失败回退及site-audit/diff通过。
+- 预览 http://127.0.0.1:4186/store/onebar/；证据 E:/L-One知识库/codex/visualizations/2026/10/20/onebar-installer/。主站PR/CI/合并及正式内容核对待完成；EdgeOne控制台ID与实体手机未验证。
+- 回滚主站使用本轮merge revert恢复旧下载入口；保留版本化安装包、旧Release和用户设置，不删除素材。
+
 ## 2026-10-19 双向导航已发布并在正式域名验证
 
 - A-20261019-01；功能提交 9ecd8c5e9e0bd26d4245a2a61fb24e10a57bb829；PR #37；Store Catalog Sync run 39188480480 成功；合并 059cbbf94882380436ee90635fccbeda9801b0c2。仅原五个主站候选文件，无新增设计/功能；原脏工作区保留。

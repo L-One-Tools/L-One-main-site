@@ -1,5 +1,15 @@
 # L-One 主站编辑范围地图
 
+## A-20261020-03 OneBar 安装包版本更新（用户授权）
+
+- 设备：当前Windows Codex；隔离分支codex/20261020-onebar-installer；fetch/pull基线ae1ab2f7dbf384bdee3b3c8628acf1a67322c204。原主目录及website-nav-preview未提交改动保留。
+- 唯一目标：发布用户冻结OneBar_Setup_v1.1.0-local.2.exe并更新Store安装包版本/下载入口/大小/SHA256；不上传源码、新图标或功能介绍。
+- 允许：store/releases/onebar.json，store/catalog.source.json仅OneBar发布状态/必要仓库字段，public/data/store/catalog.json及catalog.last-known-good.json仅OneBar和生成时间，store/onebar/index.html仅底部安装包区及下载按钮必要样式，scripts/site-audit.js与scripts/test-store-catalog.mjs仅OneBar发布断言，本范围/CURRENT_HANDOFF/SITE_STATUS。
+- 发布：在既有L-One-Tools/l-one-tools-releases创建新版本预发布，仅上传冻结安装包及必要版本/校验说明，不覆盖旧资产；主站经PR/CI合并并回读。用户“其他信息不需要上传更新”优先于包内图标/源码/更新介绍指引。
+- 只读/禁止：文章正文、图片、Logo、布局、其他产品与页面、OneBar源码仓库、Notes、生产配置/DNS/凭据；不运行安装包修改现有工作流。
+- 测试：ZIP及全部43项清单、安装包签名状态，公网回下载大小和SHA256、Catalog生成/验证/失败回退、site-audit、三视口下载区与真实点击。未实测干净机器安装/卸载则如实保留边界。
+- 回滚：主站revert本轮merge恢复旧下载入口；保留旧/新安装包和Release，不覆盖旧版本，不回退用户设置。
+
 ## 2026-10-19 双向导航发布接管授权
 
 L-One 在当前消息明确批准发布既有候选，替代下方本地预览/待审核暂停。唯一范围：原五个主站候选文件，以及 Notes 工程 app/index.html 两个 Logo 返回主页、键盘焦点与 flushSave；不新增设计/功能，不改服务端配置、数据库、项目数据或密钥。主站经精确提交、PR、CI、合并与正式域名实点验证；Notes 仅备份后原子更新必要前端 HTML。记录发布结果前不宣称成功。基线 93c812fdaa65b11888d9e03b28f5bb8ec4fffa9f；其他工作树改动保留。回滚主站使用本轮 merge revert；Notes 使用更新前 HTML 备份恢复，数据不回滚。
@@ -496,3 +506,5 @@ L-One 在当前消息明确批准发布既有候选，替代下方本地预览/�
 - 只读：其余网页、下载、工具发布资料、部署配置、服务器数据及权限。
 - 禁止：修改生产凭据、强制推送、覆盖其他工作树、未经核实声称部署成功。
 - 验收：站点审计、候选文件和资源检查、GitHub/CI、正式域名页面与六个 PNG 回读；未能获取 EdgeOne 部署 commit 时标记未验证；异常使用 `git revert` 创建回退提交。
+
+2026-10-20 用户明确批准扩围：仅 scripts/store-catalog-lib.mjs 的版本号规则与 store/catalog.schema.json 对应pattern支持预发布后缀，scripts/test-store-catalog.mjs补对应合法/非法后缀测试。保留1.1.0-local.2，不改其他校验或产品内容。

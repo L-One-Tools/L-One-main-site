@@ -5,7 +5,7 @@ const TOOL_STATUSES = new Set(["internal", "coming-soon", "beta", "stable", "una
 const RELEASE_CHANNELS = new Set(["internal", "test", "beta", "stable"]);
 const RELEASE_SOURCES = new Set(["repository-audit", "github-release", "manual"]);
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const VERSION_PATTERN = /^(?:\d+\.\d+\.\d+)?$/;
+const VERSION_PATTERN = /^(?:\d+\.\d+\.\d+(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?)?$/;
 const SHA256_PATTERN = /^(?:[a-f0-9]{64})?$/i;
 const OFFICIAL_GITHUB_RELEASE_PREFIX = "/L-One-Tools/l-one-tools-releases/releases/download/";
 

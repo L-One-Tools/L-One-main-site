@@ -271,14 +271,15 @@ if (fs.existsSync(storeCssPath)) {
 if (fs.existsSync(onebarHtmlPath)) {
   const onebarHtml = read(onebarHtmlPath);
   checkNoCorruption("visible Store OneBar detail page", stripNonVisibleBlocks(onebarHtml));
-  ["复制三次就烦了", "顶边一碰", "OneBar_Setup_v1.0.0.exe", "下载准备中", "Windows 10/11 x64", "安装包未签名"].forEach((term) => {
+  ["复制三次就烦了", "顶边一碰", "OneBar_Setup_v1.1.0-local.2.exe", "下载测试安装包", "Windows 10/11 x64", "安装包未签名"].forEach((term) => {
     if (!onebarHtml.includes(term)) fail(`OneBar detail page is missing required text: ${term}.`);
   });
-  if (!onebarHtml.includes('href="../../assets/about-v42/tools-transparent/one-bar-transparent.png"') || !onebarHtml.includes('type="button" disabled aria-disabled="true"')) {
-    fail("OneBar detail page must use its transparent icon and keep download disabled until a public URL is verified.");
+  if (!onebarHtml.includes('href="../../assets/about-v42/tools-transparent/one-bar-transparent.png"')) {
+    fail("OneBar detail page must retain its reviewed transparent icon.");
   }
-  if (/\bdata-download\b|href=["'](?:file:|https?:\/\/)/i.test(onebarHtml)) {
-    fail("OneBar detail page must not expose an unverified download or external link.");
+  const onebarDownloadAnchors = [...onebarHtml.matchAll(/<a[^>]*data-download[^>]*href="([^"]+)"[^>]*>/g)].map((match) => match[1]);
+  if (onebarDownloadAnchors.length !== 1 || onebarDownloadAnchors[0] !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/onebar-v1.1.0-local.2/OneBar_Setup_v1.1.0-local.2.exe") {
+    fail("OneBar should expose only the verified 1.1.0-local.2 test installer.");
   }
   ["hero-lit-screen.png", "onebar-oblique-closeup.png", "onebar-xiaobao-strip.png", "pain-triptych.png", "quiet-light.png", "workflow-hierarchy-banner.png"].forEach((name) => {
     if (!fs.existsSync(path.join(onebarDir, name))) fail(`OneBar article image is missing: ${name}.`);
@@ -467,8 +468,8 @@ if (fs.existsSync(storeCatalogPath)) {
   if (!fileToText) fail("Store Catalog should include L-1 File To Text.");
   if (!webCapture) fail("Store Catalog should include L-1 网页拓印.");
   if (!onebar) fail("Store Catalog should include OneBar.");
-  if (storeCatalog.tools?.[0]?.id !== "onebar" || onebar?.status !== "coming-soon" || onebar?.release?.download_available !== false || onebar?.release?.assets?.[0]?.available !== false || onebar?.release?.assets?.[0]?.url !== "") {
-    fail("OneBar must be the first Store card and remain visibly coming soon without a verified download URL.");
+  if (storeCatalog.tools?.[0]?.id !== "onebar" || onebar?.status !== "beta" || onebar?.release?.version !== "1.1.0-local.2" || onebar?.release?.channel !== "test" || onebar?.release?.download_available !== true || onebar?.release?.assets?.[0]?.available !== true || onebar?.release?.assets?.[0]?.url !== "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/onebar-v1.1.0-local.2/OneBar_Setup_v1.1.0-local.2.exe" || onebar?.release?.assets?.[0]?.size !== 51460854 || onebar?.release?.assets?.[0]?.sha256 !== "297518153aabfc334b8a16de9940d6bdada14839facb7c4e1a13bcebd8ef722e") {
+    fail("OneBar must remain the first Store card and expose the verified 1.1.0-local.2 test installer.");
   }
   if (storyFlow?.release?.download_available !== false) {
     fail("Story Flow must remain unavailable until a public installer is verified.");
