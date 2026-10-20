@@ -1,5 +1,14 @@
 # 当前任务交接
 
+## 2026-10-20 OneBar 1.1.0-local.2 安装包已上线
+
+- A-20261020-03；功能9e3c77777011f4af2adb01ef6bbabf5d55108759；PR #39；CI Store Catalog Sync run39386087814通过；merge78e3b1f59d506b0eb53c3bb6c5a3b57266865312。
+- 正式 https://l-one.asia/store/onebar/ 安装包区及主/备用Catalog与合并候选全文规范化一致；OneBar为1.1.0-local.2测试安装包。仅安装包/版本/下载必要元数据与获授权的预发布版本校验改变；文章正文、图片、Logo、布局、其他工具对象及OneBar源码仓库保持。
+- 公共预发布 https://github.com/L-One-Tools/l-one-tools-releases/releases/tag/onebar-v1.1.0-local.2；唯一EXE https://github.com/L-One-Tools/l-one-tools-releases/releases/download/onebar-v1.1.0-local.2/OneBar_Setup_v1.1.0-local.2.exe，51,460,854字节，SHA256 297518153aabfc334b8a16de9940d6bdada14839facb7c4e1a13bcebd8ef722e。匿名完整回下载、本地按钮实际完整浏览器下载均校验一致；正式按钮点击触发同名下载，确认后取消，未重复下载第三份完整文件。旧版Release/资产保留。
+- 正式1440×900、834×1112、390×844从Store OneBar卡片点击详情，版本/大小/未签名提示/链接正确，下载区无全页横溢出/pageerror；手机截图已查看。Catalog/预发布合法非法版本/失败回退测试、site-audit/diff通过。证据 E:/L-One知识库/codex/visualizations/2026/10/20/onebar-installer/（production-results、production-content、download-verification及截图）。
+- 未签名；本轮不运行安装器，不宣称干净机器安装/卸载、全历史升级、多屏DPI通过。使用冻结交付物，本轮未上传新图标、源码或功能介绍；原设置保留/333ms说明以交接事实为准，没有扩写网站文章。EdgeOne控制台部署ID/commit及实体手机未验证；GitHub未返回此merge的deployment记录，正式域名内容及交互已验证。
+- 回滚 git revert -m 1 78e3b1f59d506b0eb53c3bb6c5a3b57266865312 经PR发布恢复旧入口，不覆盖/删除安装包，不修改用户设置。下方发布前记录为历史。
+
 ## A-20261020-03 OneBar 安装包更新（发布前）
 
 - 用户只授权安装包版本与下载更新，不上传源码、新图标、迭代介绍；原文章、图片、Logo、布局及其他工具对象已比对保持。基线ae1ab2f7dbf384bdee3b3c8628acf1a67322c204，隔离codex/20261020-onebar-installer；旧工作区改动保留。
