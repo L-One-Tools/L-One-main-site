@@ -1,5 +1,9 @@
 # L-One Main Site Status
 
+## 2026-10-20 OneBar 安装包更新已发布
+
+PR #39/CI39386087814通过，merge78e3b1f59d506b0eb53c3bb6c5a3b57266865312。正式OneBar安装包区、主/备用Catalog匹配，三端从Store进入详情及下载触发检查通过；1.1.0-local.2测试EXE匿名与浏览器下载大小/SHA256一致。文章/图标/图片/其他产品不改；未签名和安装验收边界保留。EdgeOne控制台记录未验证。证据与回滚见CURRENT_HANDOFF最新记录。
+
 ## 2026-10-20 OneBar 安装包更新准备发布
 
 仅更新1.1.0-local.2测试安装包与必要下载元数据；文章/图标/其他工具不改。安装包预发布已上传，匿名/浏览器下载校验一致，三端下载区及Catalog/site-audit通过。主站发布及正式验证待完成；完整记录和回滚见CURRENT_HANDOFF。
