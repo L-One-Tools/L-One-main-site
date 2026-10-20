@@ -1,29 +1,29 @@
 {
   "schema_version": "1.0",
   "tool_id": "onebar",
-  "updated_at": "2026-09-29T00:00:00+08:00",
-  "source": "manual",
+  "updated_at": "2026-10-20T07:18:55Z",
+  "source": "github-release",
   "channel": "test",
-  "version": "1.0.0",
-  "tag": "",
-  "published_at": "",
+  "version": "1.1.0-local.2",
+  "tag": "onebar-v1.1.0-local.2",
+  "published_at": "2026-10-20T07:18:55Z",
   "release_notes": [
-    "官网介绍页已准备；公开下载安装地址尚未开放。",
+    "1.1.0-local.2 测试安装包，非稳定版。",
     "安装包未签名；拖动真实文件完整流程、安装升级和全新 Windows 环境验收仍待完成。",
     "文章中的产品画面为结构效果图，不作为运行截图或功能证明。"
   ],
-  "download_available": false,
+  "download_available": true,
   "recalled": false,
   "assets": [
     {
-      "name": "OneBar_Setup_v1.0.0.exe",
+      "name": "OneBar_Setup_v1.1.0-local.2.exe",
       "platform": "windows",
       "architecture": "x64",
-      "size": 51204097,
-      "url": "",
-      "sha256": "caf38edbf3992e580a13c162389ffb2715807f80eb9bae6093753268305d6cfe",
+      "size": 51460854,
+      "url": "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/onebar-v1.1.0-local.2/OneBar_Setup_v1.1.0-local.2.exe",
+      "sha256": "297518153aabfc334b8a16de9940d6bdada14839facb7c4e1a13bcebd8ef722e",
       "minimum_system": "Windows 10/11 x64",
-      "available": false,
+      "available": true,
       "recalled": false
     }
   ]

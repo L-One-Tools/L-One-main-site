@@ -46,16 +46,32 @@ assert.equal(webCapture.release.assets[0].size, 16700);
 assert.equal(webCapture.release.assets[0].sha256, "fb9441ed595e24e6a6b9e8dd3d994e353b412fa22efc44c923ad7e7d499df055");
 assert.equal(webCapture.release.assets[0].url, "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/l-1-web-imprint-v0.2.2/L-1-.-v0.2.2-.zip");
 assert.equal(catalog.tools[0].id, "onebar");
-assert.equal(onebar.status, "coming-soon");
-assert.equal(onebar.release.version, "1.0.0");
-assert.equal(onebar.release.download_available, false);
-assert.equal(onebar.release.assets[0].available, false);
-assert.equal(onebar.release.assets[0].url, "");
-assert.equal(onebar.release.assets[0].size, 51204097);
-assert.equal(onebar.release.assets[0].sha256, "caf38edbf3992e580a13c162389ffb2715807f80eb9bae6093753268305d6cfe");
+assert.equal(onebar.status, "beta");
+assert.equal(onebar.release.version, "1.1.0-local.2");
+assert.equal(onebar.release.channel, "test");
+assert.equal(onebar.release.download_available, true);
+assert.equal(onebar.release.assets[0].available, true);
+assert.equal(onebar.release.assets[0].url, "https://github.com/L-One-Tools/l-one-tools-releases/releases/download/onebar-v1.1.0-local.2/OneBar_Setup_v1.1.0-local.2.exe");
+assert.equal(onebar.release.assets[0].size, 51460854);
+assert.equal(onebar.release.assets[0].sha256, "297518153aabfc334b8a16de9940d6bdada14839facb7c4e1a13bcebd8ef722e");
+
+// Pre-release identifiers must retain their real version without weakening URL checks.
+const versionSchemaPattern = new RegExp(schema.$defs.release.properties.version.pattern);
+for (const version of ["1.1.0-local.2", "1.1.0-beta.1", "1.1.0"]) {
+  const candidate = structuredClone(catalog);
+  candidate.tools.find((tool) => tool.id === "onebar").release.version = version;
+  assert.deepEqual(validateCatalog(candidate), []);
+  assert(versionSchemaPattern.test(version));
+}
+for (const version of ["1.1.0-", "1.1.0-local..2", "1.1.0/local.2"]) {
+  const candidate = structuredClone(catalog);
+  candidate.tools.find((tool) => tool.id === "onebar").release.version = version;
+  assert(validateCatalog(candidate).some((error) => error.includes("version is invalid")));
+  assert(!versionSchemaPattern.test(version));
+}
 
 const missingRepository = structuredClone(catalog);
-missingRepository.tools.find((tool) => tool.id === "onebar").status = "beta";
+missingRepository.tools.find((tool) => tool.id === "onebar").repository = "";
 assert(validateCatalog(missingRepository).some((error) => error.includes("repository is required")));
 
 const testRelease = structuredClone(release);
